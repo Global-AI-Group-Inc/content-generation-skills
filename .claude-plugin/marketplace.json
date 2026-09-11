@@ -1,0 +1,29 @@
+{
+  "name": "mira",
+  "owner": {
+    "name": "Global AI Group, Inc.",
+    "url": "https://mira.mybots.pro"
+  },
+  "plugins": [
+    {
+      "name": "mira",
+      "description": "Generate images and video on Mira AI: playbook skills for UGC, product, ads, cinematic, explainer and stylised media, plus model and craft knowledge.",
+      "source": ".",
+      "version": "0.2.19",
+      "author": {
+        "name": "Global AI Group, Inc."
+      },
+      "homepage": "https://mira.mybots.pro/skills",
+      "license": "MIT",
+      "keywords": [
+        "video",
+        "image",
+        "generation",
+        "mcp",
+        "ugc",
+        "ads",
+        "prompting"
+      ]
+    }
+  ]
+}

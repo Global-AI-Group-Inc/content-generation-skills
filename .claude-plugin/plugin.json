@@ -1,0 +1,22 @@
+{
+  "name": "mira",
+  "version": "0.2.19",
+  "description": "Mira AI skills: playbooks and prompting knowledge for image and video generation through the Mira MCP server.",
+  "author": {
+    "name": "Global AI Group, Inc.",
+    "url": "https://mira.mybots.pro"
+  },
+  "homepage": "https://mira.mybots.pro/skills",
+  "repository": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "image",
+    "generation",
+    "mcp",
+    "ugc",
+    "ads",
+    "prompting"
+  ],
+  "skills": "./skills"
+}

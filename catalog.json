@@ -1,0 +1,505 @@
+{
+  "schema": "visual-guides-catalog-1",
+  "snapshot": "0.2.19",
+  "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
+  "tools": {},
+  "skills": [
+    {
+      "id": "ugc",
+      "skill": "mira-ugc",
+      "title": "UGC",
+      "kind": "both",
+      "video_style": "ugc",
+      "image_style": "ugc",
+      "models": [
+        "minimax",
+        "omni",
+        "seedance-2-5",
+        "kling",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "nano-banana-pro",
+        "muse-image"
+      ],
+      "order": 10,
+      "icon": "smartphone",
+      "when": "A real person shows or talks about a product the way a customer would: a review, an unboxing, a short how-to, a testimonial, a \"day with it\" clip. Vertical, social, meant to sit between other people's phone videos and not stand out as paid.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "product",
+      "skill": "mira-product",
+      "title": "Product",
+      "kind": "both",
+      "video_style": "product",
+      "image_style": "product-card",
+      "models": [
+        "seedance-2-5",
+        "kling",
+        "veo",
+        "gpt-image-2",
+        "gpt-image-2.5-sunburst",
+        "seedream-5-pro",
+        "seedream-4"
+      ],
+      "order": 20,
+      "icon": "package",
+      "when": "A packshot, a product video, a marketplace card, a lifestyle scene where the product is in use but still the hero. Anything where a buyer needs to see exactly what they get.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "ads",
+      "skill": "mira-ads",
+      "title": "Ads",
+      "kind": "both",
+      "video_style": "ads",
+      "image_style": "banner",
+      "models": [
+        "runway",
+        "omni",
+        "minimax",
+        "kling",
+        "gpt-image-2.5-flare",
+        "gpt-image-2.5-sunburst",
+        "nano-banana-pro",
+        "gpt-image-2",
+        "muse-image"
+      ],
+      "order": 30,
+      "icon": "megaphone",
+      "when": "Paid social creative, a launch teaser, a sale announcement, a static banner with a headline. The piece exists to make someone act, not to be admired.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "cinematic",
+      "skill": "mira-cinematic",
+      "title": "Cinematic",
+      "kind": "both",
+      "video_style": "cinematic",
+      "image_style": "cinematic",
+      "models": [
+        "veo-quality",
+        "veo",
+        "seedance-2-5",
+        "runway",
+        "gpt-image-2",
+        "gpt-image-2.5-sunburst",
+        "seedream-5-pro",
+        "seedream-4"
+      ],
+      "order": 40,
+      "icon": "clapperboard",
+      "when": "A brand film, a teaser, a hero shot, a key visual, an atmospheric moment with a person, a place or a product. The piece is meant to be felt before it is understood.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "explainer",
+      "skill": "mira-explainer",
+      "title": "Explainer",
+      "kind": "video",
+      "video_style": "explainer",
+      "image_style": null,
+      "models": [
+        "omni",
+        "minimax",
+        "kling",
+        "wan3"
+      ],
+      "order": 50,
+      "icon": "presentation",
+      "when": "A product demo, a how-it-works piece, a step-by-step, a before-and-after, an app or service shown in use. The audience is deciding whether it is for them.",
+      "tool": "generate_video"
+    },
+    {
+      "id": "anime",
+      "skill": "mira-anime",
+      "title": "Anime",
+      "kind": "both",
+      "video_style": "anime",
+      "image_style": "anime",
+      "models": [
+        "seedance-2-5",
+        "kling",
+        "omni",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "nano-banana-pro"
+      ],
+      "order": 60,
+      "icon": "sparkles",
+      "when": "The user wants a scene, a person, a product or a photo re-drawn as Japanese animation. The identity of a character or a product stays; the medium changes completely.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "illustration",
+      "skill": "mira-illustration",
+      "title": "Illustration",
+      "kind": "video",
+      "video_style": "illustration",
+      "image_style": null,
+      "models": [
+        "omni",
+        "seedance-2-5",
+        "kling"
+      ],
+      "order": 70,
+      "icon": "pen-tool",
+      "when": "An explainer that should feel like a magazine illustration, a storybook moment, a comic panel that comes alive, a flat vector scene for a product story, a watercolour mood piece.",
+      "tool": "generate_video"
+    },
+    {
+      "id": "toon3d",
+      "skill": "mira-toon3d",
+      "title": "3D toon",
+      "kind": "both",
+      "video_style": "toon3d",
+      "image_style": "render3d",
+      "models": [
+        "seedance-2-5",
+        "kling",
+        "omni",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "nano-banana-pro"
+      ],
+      "order": 80,
+      "icon": "box",
+      "when": "A character piece in the manner of an animated feature, a product turned into a designed CGI key visual, a mascot brought to life, an explainer with a friendly 3D cast.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "pixel",
+      "skill": "mira-pixel",
+      "title": "Pixel art",
+      "kind": "both",
+      "video_style": "pixel",
+      "image_style": "pixel",
+      "models": [
+        "omni",
+        "seedance-2-5",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "nano-banana-pro"
+      ],
+      "order": 90,
+      "icon": "grid-2x2",
+      "when": "A retro game look for a product, a mascot as a sprite, a short scene that plays like a cutscene from an indie game, a pixel banner or key visual.",
+      "tool": "generate_video / generate_image"
+    },
+    {
+      "id": "3d",
+      "skill": "mira-3d",
+      "title": "3D model",
+      "kind": "model3d",
+      "video_style": null,
+      "image_style": null,
+      "models": [
+        "hunyuan-3.1",
+        "meshy-7",
+        "trellis-2",
+        "rodin-fast"
+      ],
+      "order": 95,
+      "icon": "box",
+      "when": "A character, a prop, a product or a piece of environment that has to exist as geometry: to drop into Blender, Unity, Unreal or a browser game, to print, to show in AR, to animate as a rigged humanoid. Anything where the deliverable is a file with polygons, not a picture.",
+      "tool": "generate_3d"
+    }
+  ],
+  "guides": {
+    "mira-3d": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-3d",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "3D models on Mira AI: a textured mesh (GLB, FBX, OBJ, USDZ) from a text prompt or from one to four photos, optionally rigged as a humanoid with animation clips",
+      "entry": "SKILL.md",
+      "entryBytes": 4776,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-ads": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-ads",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
+      "entry": "SKILL.md",
+      "entryBytes": 4229,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-anime": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-anime",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Hand-drawn anime on Mira AI: cel-shaded characters, painted backgrounds, drawn camera, not footage",
+      "entry": "SKILL.md",
+      "entryBytes": 3773,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-blender-scene": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-blender-scene",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
+      "entry": "SKILL.md",
+      "entryBytes": 7914,
+      "hasNotice": false,
+      "sections": {
+        "blockout": {
+          "file": "references/blockout.md",
+          "bytes": 10017,
+          "title": "Blockout rules and helpers"
+        }
+      }
+    },
+    "mira-cinematic": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-cinematic",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Film-grade mood pieces on Mira AI: one strong image, motivated light, real optics, a grade",
+      "entry": "SKILL.md",
+      "entryBytes": 4191,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-craft": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-craft",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "The camera, light, look, rhythm, time and continuity banks Mira's prompt pipeline is built on, generated from the live registry: 58 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity doctrine",
+      "entry": "SKILL.md",
+      "entryBytes": 2269,
+      "hasNotice": false,
+      "sections": {
+        "camera": {
+          "file": "references/camera.md",
+          "bytes": 18942,
+          "title": "Camera"
+        },
+        "continuity": {
+          "file": "references/continuity.md",
+          "bytes": 7069,
+          "title": "Continuity, count and cause"
+        },
+        "light": {
+          "file": "references/light.md",
+          "bytes": 5492,
+          "title": "Light"
+        },
+        "look": {
+          "file": "references/look.md",
+          "bytes": 9663,
+          "title": "Look"
+        },
+        "rhythm": {
+          "file": "references/rhythm.md",
+          "bytes": 7857,
+          "title": "Rhythm and sound"
+        }
+      }
+    },
+    "mira-explainer": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-explainer",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Clear demonstration clips on Mira AI: show how a product or service works in plain light and plain framing so the value is obvious without words",
+      "entry": "SKILL.md",
+      "entryBytes": 3261,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-generate": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-generate",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
+      "entry": "SKILL.md",
+      "entryBytes": 8628,
+      "hasNotice": false,
+      "sections": {
+        "locks-and-references": {
+          "file": "references/locks-and-references.md",
+          "bytes": 3657,
+          "title": "References, locks and failure handling"
+        },
+        "playbooks": {
+          "file": "references/playbooks.md",
+          "bytes": 1847,
+          "title": "Choosing a playbook"
+        }
+      }
+    },
+    "mira-illustration": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-illustration",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Drawn and painted artwork in motion on Mira AI: editorial illustration, storybook, comic panel, flat vector, watercolour or gouache brought to life",
+      "entry": "SKILL.md",
+      "entryBytes": 3655,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-image-prompting": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-image-prompting",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K and 5 Pro, Muse Image, Flux",
+      "entry": "SKILL.md",
+      "entryBytes": 3719,
+      "hasNotice": false,
+      "sections": {
+        "composition": {
+          "file": "references/composition.md",
+          "bytes": 2202,
+          "title": "Composition patterns"
+        },
+        "craft": {
+          "file": "references/craft.md",
+          "bytes": 2963,
+          "title": "Building the image prompt"
+        },
+        "grade": {
+          "file": "references/grade.md",
+          "bytes": 2384,
+          "title": "Grades"
+        },
+        "light": {
+          "file": "references/light.md",
+          "bytes": 3742,
+          "title": "Lighting schemes"
+        },
+        "materiality": {
+          "file": "references/materiality.md",
+          "bytes": 2010,
+          "title": "Materials and surfaces"
+        },
+        "models": {
+          "file": "references/models.md",
+          "bytes": 3967,
+          "title": "Image models on Mira"
+        },
+        "optics": {
+          "file": "references/optics.md",
+          "bytes": 2433,
+          "title": "Optics and shot size"
+        }
+      }
+    },
+    "mira-pixel": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-pixel",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Pixel art on Mira AI: sprites on a visible grid, a limited palette, stair-stepped edges, motion in held frames",
+      "entry": "SKILL.md",
+      "entryBytes": 3490,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-product": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-product",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Product-as-hero visuals on Mira AI: studio packshots, lifestyle scenes with the product in use, hands holding it, marketplace cards",
+      "entry": "SKILL.md",
+      "entryBytes": 4559,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-toon3d": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-toon3d",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Stylised 3D animation and CGI key visuals on Mira AI: the look of a modern animated feature, appealing simplified shapes, designed studio light, bouncy timing",
+      "entry": "SKILL.md",
+      "entryBytes": 3603,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-ugc": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-ugc",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Creator-style clips and photos on Mira AI: phone-shot, handheld, someone talking to the camera, a review, an unboxing, a how-to, a testimonial",
+      "entry": "SKILL.md",
+      "entryBytes": 5230,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-video-prompting": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Which of Mira's fourteen video models to pick and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 2.7 and 3.0, Grok Imagine",
+      "entry": "SKILL.md",
+      "entryBytes": 3915,
+      "hasNotice": false,
+      "sections": {
+        "models/happyhorse": {
+          "file": "references/models/happyhorse.md",
+          "bytes": 5808,
+          "title": "HappyHorse 1.1 (happyhorse)"
+        },
+        "models/kling-motion": {
+          "file": "references/models/kling-motion.md",
+          "bytes": 2154,
+          "title": "kling-motion (kling-motion)"
+        },
+        "models/kling": {
+          "file": "references/models/kling.md",
+          "bytes": 5845,
+          "title": "Kling 3.0 (kling)"
+        },
+        "models/minimax": {
+          "file": "references/models/minimax.md",
+          "bytes": 7399,
+          "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
+        },
+        "models/omni": {
+          "file": "references/models/omni.md",
+          "bytes": 4978,
+          "title": "Google Gemini Omni Flash (omni)"
+        },
+        "models/runway": {
+          "file": "references/models/runway.md",
+          "bytes": 5440,
+          "title": "Runway Gen-4.5 (runway)"
+        },
+        "models/seedance-2-5": {
+          "file": "references/models/seedance-2-5.md",
+          "bytes": 8839,
+          "title": "ByteDance Seedance 2.5 (seedance-2-5)"
+        },
+        "models/veo-lite": {
+          "file": "references/models/veo-lite.md",
+          "bytes": 5071,
+          "title": "Google Veo 3.1 Lite (veo-lite)"
+        },
+        "models/veo-quality": {
+          "file": "references/models/veo-quality.md",
+          "bytes": 5123,
+          "title": "Google Veo 3.1 Quality (veo-quality)"
+        },
+        "models/veo": {
+          "file": "references/models/veo.md",
+          "bytes": 4998,
+          "title": "Google Veo 3.1 Fast (veo)"
+        },
+        "models/wan3": {
+          "file": "references/models/wan3.md",
+          "bytes": 7506,
+          "title": "Wan 3.0 (wan3)"
+        },
+        "selection": {
+          "file": "references/selection.md",
+          "bytes": 4459,
+          "title": "Selecting the model"
+        },
+        "universal-rules": {
+          "file": "references/universal-rules.md",
+          "bytes": 2940,
+          "title": "Universal rules"
+        }
+      }
+    }
+  }
+}
