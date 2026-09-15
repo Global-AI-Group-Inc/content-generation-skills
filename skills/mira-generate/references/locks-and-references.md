@@ -32,9 +32,9 @@ An image attached to a chat is not a URL. If the client has file access, read th
 
 `referenceVideoUrls` on `generate_video` takes up to three public HTTPS clips (mp4/mov, up to
 200 MB each). The model borrows their motion, camera work, pacing or grade - never the people,
-the place or the product in them. Only `seedance-2-5`, `seedance`, `minimax`, `wan3`, `wan3-prime`, `wan`
-and `omni` accept clips (15 s per clip, `omni` 3 s); every other model refuses with
-`video_not_supported`. Bind each clip in the prompt the way the model's file says: `@Video1`
+the place or the product in them. Only `seedance-2-5`, `seedance`, `minimax`, `wan3`, `wan3-prime`, `wan`,
+`kling` (one clip, 3-15 s, Kling 3.0 Omni: `@video_1`, native audio off) and `omni` accept clips (15 s per
+clip, `omni` 3 s); every other model refuses with `video_not_supported`. Bind each clip in the prompt the way the model's file says: `@Video1`
 on Seedance, `Video 1` on Wan, `reference video 1` on MiniMax, `<VIDEO_REF_0>` on Omni - an
 unbound clip is ignored. A clip this account generated earlier (`list_generations`) is a valid
 URL, which makes "do it again with this motion" a one-call job.
@@ -48,6 +48,14 @@ rejection, the way the providers' own guides put it: "@Image1 controls only the 
 materials and label - do not copy its background, lighting or angle"; "@Video1 sets only the camera
 path, the framing and the cuts - do not copy its figures, surfaces or colours". An image and a
 video never do the same job.
+
+`imageRole` on `generate_video` says what a SINGLE photo is for: `reference` - it shows the hero, the
+place or the product and the model builds its own first frame (`seedance-2-5`, `seedance`, `veo*`,
+`minimax`, `wan*`, `omni`, `kling`); `start_frame` - the photo is the literal opening frame the clip grows
+out of; `auto` (default) - start frame, except next to a clip or a brand asset, where it is a reference.
+Models without a reference mode (`runway`, `happyhorse`, `grok`) keep the start frame and warn. Two or
+more photos are always references. Say which one you mean: a product shot you want animated is a start
+frame; a photo of a place you want the clip to be set in is a reference.
 
 `kling-motion` is the exception: it REQUIRES exactly one clip of a person performing the motion
 (3-30 s, one person, single take, no cuts) and exactly one reference image of the character,

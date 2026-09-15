@@ -9,7 +9,7 @@
       "name": "mira",
       "description": "Generate images and video on Mira AI: playbook skills for UGC, product, ads, cinematic, explainer and stylised media, plus model and craft knowledge.",
       "source": ".",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": {
         "name": "Global AI Group, Inc."
       },
