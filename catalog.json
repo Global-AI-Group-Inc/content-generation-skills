@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.2.29",
+  "snapshot": "0.3.0",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -214,7 +214,13 @@
       "entry": "SKILL.md",
       "entryBytes": 4776,
       "hasNotice": false,
-      "sections": {}
+      "sections": {
+        "prompting": {
+          "file": "references/prompting.md",
+          "bytes": 2428,
+          "title": "Writing for a mesh generator"
+        }
+      }
     },
     "mira-ads": {
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-ads",
@@ -242,12 +248,12 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 9553,
+      "entryBytes": 9668,
       "hasNotice": false,
       "sections": {
         "blockout": {
           "file": "references/blockout.md",
-          "bytes": 21846,
+          "bytes": 23652,
           "title": "Blockout rules and helpers"
         }
       }
@@ -258,7 +264,7 @@
       "attribution": "",
       "summary": "Film-grade mood pieces on Mira AI: one strong image, motivated light, real optics, a grade",
       "entry": "SKILL.md",
-      "entryBytes": 4191,
+      "entryBytes": 4385,
       "hasNotice": false,
       "sections": {}
     },
@@ -266,19 +272,19 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-craft",
       "license": "MIT",
       "attribution": "",
-      "summary": "The camera, light, look, rhythm, time and continuity banks Mira's prompt pipeline is built on, generated from the live registry: 58 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity doctrine",
+      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 61 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
       "entry": "SKILL.md",
-      "entryBytes": 2269,
+      "entryBytes": 2456,
       "hasNotice": false,
       "sections": {
         "camera": {
           "file": "references/camera.md",
-          "bytes": 18942,
+          "bytes": 19053,
           "title": "Camera"
         },
         "continuity": {
           "file": "references/continuity.md",
-          "bytes": 8078,
+          "bytes": 9802,
           "title": "Continuity, count and cause"
         },
         "light": {
@@ -290,6 +296,11 @@
           "file": "references/look.md",
           "bytes": 9663,
           "title": "Look"
+        },
+        "motion": {
+          "file": "references/motion.md",
+          "bytes": 15576,
+          "title": "Physics, motion and materials"
         },
         "rhythm": {
           "file": "references/rhythm.md",
@@ -319,7 +330,7 @@
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 3689,
+          "bytes": 4148,
           "title": "References, locks and failure handling"
         },
         "playbooks": {
@@ -370,7 +381,7 @@
         },
         "materiality": {
           "file": "references/materiality.md",
-          "bytes": 3945,
+          "bytes": 7367,
           "title": "Materials and surfaces"
         },
         "models": {
@@ -401,7 +412,7 @@
       "attribution": "",
       "summary": "Product-as-hero visuals on Mira AI: studio packshots, lifestyle scenes with the product in use, hands holding it, marketplace cards",
       "entry": "SKILL.md",
-      "entryBytes": 4559,
+      "entryBytes": 4662,
       "hasNotice": false,
       "sections": {}
     },
@@ -429,14 +440,14 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "Which of Mira's fourteen video models to pick and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 2.7 and 3.0, Grok Imagine",
+      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
       "entry": "SKILL.md",
-      "entryBytes": 4502,
+      "entryBytes": 4647,
       "hasNotice": false,
       "sections": {
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
-          "bytes": 5810,
+          "bytes": 5832,
           "title": "HappyHorse 1.1 (happyhorse)"
         },
         "models/kling-motion": {
@@ -451,12 +462,12 @@
         },
         "models/minimax": {
           "file": "references/models/minimax.md",
-          "bytes": 7402,
+          "bytes": 7754,
           "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 4980,
+          "bytes": 5332,
           "title": "Google Gemini Omni Flash (omni)"
         },
         "models/runway": {
@@ -466,32 +477,32 @@
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 8842,
+          "bytes": 9170,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
           "file": "references/models/veo-lite.md",
-          "bytes": 5074,
+          "bytes": 5154,
           "title": "Google Veo 3.1 Lite (veo-lite)"
         },
         "models/veo-quality": {
           "file": "references/models/veo-quality.md",
-          "bytes": 5126,
+          "bytes": 5206,
           "title": "Google Veo 3.1 Quality (veo-quality)"
         },
         "models/veo": {
           "file": "references/models/veo.md",
-          "bytes": 5001,
+          "bytes": 5081,
           "title": "Google Veo 3.1 Fast (veo)"
         },
         "models/wan3-prime": {
           "file": "references/models/wan3-prime.md",
-          "bytes": 7590,
+          "bytes": 7942,
           "title": "Wan 3.0 Prime (wan3-prime)"
         },
         "models/wan3": {
           "file": "references/models/wan3.md",
-          "bytes": 7509,
+          "bytes": 7861,
           "title": "Wan 3.0 (wan3)"
         },
         "selection": {
@@ -501,12 +512,12 @@
         },
         "textures": {
           "file": "references/textures.md",
-          "bytes": 9579,
+          "bytes": 9788,
           "title": "Textures: writing the surfaces of a real place"
         },
         "universal-rules": {
           "file": "references/universal-rules.md",
-          "bytes": 4714,
+          "bytes": 6508,
           "title": "Universal rules"
         }
       }

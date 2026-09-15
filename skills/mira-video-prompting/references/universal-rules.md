@@ -32,8 +32,8 @@ do not regenerate at it. Say so when a reveal happens, or the character changes 
 Every visible change has a cause in the same sentence. A glass tips because a hand knocked it;
 something grows in frame because the camera came closer. Uncaused change renders as a glitch.
 
-Machines move by their mechanism: wheels roll, suspension leans, a lowrider's body lifts on its
-hydraulics while the wheels hang, then slams down. Nothing mechanical bounces as one rigid block.
+Machines move by their mechanism, animals by a named gait, thrown things along an arc: U12 has
+the rule per class of mover.
 
 ## U6. Camera
 
@@ -87,3 +87,29 @@ Hands are where video models break: fingers fuse, multiply or melt into what the
   hand work in a medium shot is where fingers fuse.
 - Never name fingers, and never put hands in a negative ("no extra fingers"): naming them draws
   the model's attention to them.
+
+## U12. Physics: force, contact, mechanism
+
+Physics is written as an event, never as an epithet: "realistic physics", "natural motion" say
+nothing to a model. Write the sequence - approach, contact, transfer of force, recovery - and the
+cause before the reaction ("the cup tips only after his elbow hits it, strikes the counter, the
+coffee spreads; then she looks down").
+
+- Every moving body gets ONE clause with its mechanism or gait and the contact: a person
+  transfers weight heel-first, arms swinging opposite the legs, and builds up to a run over a
+  second; an animal moves in a named gait (walk, trot, canter, gallop, wing-beat, glide), hooves
+  or paws striking and throwing the ground; a vehicle leads with its nose, wheels rolling with
+  the rims blurred, the nose dipping under braking, the body leaning out of a turn on its
+  suspension; a robot moves one joint at a time with the mass lagging; a thrown thing flies an
+  arc, bounces losing height and stops. Say which part moves and what holds the rest.
+- Secondary motion in layers with a delay: hair, cloth, a strap follow the body a beat behind,
+  catch air on a turn and settle under gravity; dust, spray and steam are thrown by the action
+  and fall back. One wind moves hair, fabric and grass in one direction.
+- Mass and friction read in time: heavy things start and stop over more frames; contact points
+  compress; nothing floats, slides or passes through a solid.
+- Liquids and particles end in a stated state: a pour narrows, splashes, pools and stops; nothing
+  flows uphill; steam only from its source.
+- The restraint is the lens's, not the actor's: a slow camera never means a slow subject.
+
+The bank per class of mover and per material is in mira-craft, `references/motion.md`. A clause
+of physics survives every length cut: the pipeline protects it the way it protects the action.

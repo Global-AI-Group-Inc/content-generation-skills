@@ -39,8 +39,9 @@ The set is clean and controlled, a seamless studio surface or a real but tidy en
 depth behind the product. Light is designed: one soft key with a visible source direction, a hard
 edge light from behind to carve the outline, controlled speculars on glass, metal and gloss, and a
 believable contact shadow under the object. Focus is shallow enough to separate the product from
-the background and deep enough that the whole label is sharp. Movement, if any, is slow and
-mechanical, a glide or a turntable turn, with the product held large and centred while it runs.
+the background and deep enough that the whole label is sharp. Movement, if any, belongs to the
+camera or a turntable - a glide or a turn at a measured pace - with the product held large and
+centred while it runs; a hand that enters moves at real speed and sets the product down with weight.
 Hands, when present, hold the product naturally and do not cover the label. Leave the frame calm
 around the product so a line of type could sit beside it. Write the final prompt in English. Do
 not invent brand names, logos or text; the user's own label copy is reproduced word for word.

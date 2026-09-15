@@ -32,15 +32,17 @@ a product. The piece is meant to be felt before it is understood.
 
 ## Doctrine
 
-This is a cinematic piece: one strong composed image per beat, and few beats. Light is motivated
+This is a cinematic piece: every beat is one strong composed image, and the beats come at the
+story's real pace. Light is motivated
 and directional, a single source with a visible reason in the scene, deep shadow around it, haze
 or dust in the air catching it, a hard edge from behind separating the subject from the
 background. Optics have character: shallow depth of field, a wide-screen feel with gentle flare
 and soft falloff at the edges, 35mm photographic realism in skin, fabric and surfaces. Colour is
 graded as one decision, warm filmic tones or a cool-and-warm split, applied consistently across
 the whole piece. The camera moves for one reason, to follow the subject or to reveal, and moves
-slow; most of the energy lives in the subject and the light, not in the lens. Sound and silence
-are part of the frame. Write the final prompt in English. Do not name film titles, directors or
+with restraint - the restraint is the lens's, not the actors': people, hands, cloth and vehicles
+keep real-time speed and real weight, and slow motion appears only when asked for, once, named as
+such. Sound and silence are part of the frame. Write the final prompt in English. Do not name film titles, directors or
 third-party brands; state the visual facts they would stand for. Do not invent on-screen text.
 
 ## Interview
@@ -54,7 +56,7 @@ third-party brands; state the visual facts they would stand for. Do not invent o
   - `product` A product: The product as an object of desire in an atmospheric setting, still exact in shape and label.
   - `place` A place: Architecture or landscape with a small human figure for scale, the light doing the storytelling.
 - **take** How is it shot? (default: one)
-  - `one` One unbroken take: A single continuous shot with one move and one reveal.
+  - `one` One unbroken take: A single continuous shot with one move and one reveal, the action inside it at full speed.
   - `sequence` A cut sequence: Three to five composed shots that build to one final image.
 
 ## Hint

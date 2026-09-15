@@ -68,7 +68,9 @@ texture and a STATE, and the state has a cause.
 
 - **Skin is never even.** Visible pores and fine lines at close range, a natural shine on the
   forehead and nose, colour that varies (redder at the cheeks and knuckles, veins at the wrist).
-  Never flawless, poreless, porcelain, airbrushed, waxy, doll-like, perfect skin.
+  Never flawless, poreless, porcelain, airbrushed, waxy, doll-like, perfect skin. When a real photo
+  of the person is attached, do not re-describe that face's skin or hair (the photo carries it and
+  words drag it toward plastic); write only its STATE and cause - wet, sweaty, dusty, cold.
 - **Every state has a cause and stays.** Wet from the rain, sweat from the run, dust from the
   blast, red from the cold: name what did it, and keep it in every later shot until something
   changes it (hair stays wet until it dries or is towelled; mud does not vanish between cuts).
