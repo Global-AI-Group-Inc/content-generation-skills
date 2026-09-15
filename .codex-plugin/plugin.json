@@ -1,0 +1,6 @@
+{
+  "name": "mira",
+  "version": "0.1.0",
+  "description": "Mira AI skills: playbooks and prompting knowledge for image and video generation through the Mira MCP server.",
+  "skills": "./skills"
+}
