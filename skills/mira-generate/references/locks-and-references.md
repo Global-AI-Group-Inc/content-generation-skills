@@ -52,8 +52,9 @@ video never do the same job.
 `imageRole` on `generate_video` says what a SINGLE photo is for: `reference` - it shows the hero, the
 place or the product and the model builds its own first frame (`seedance-2-5`, `seedance`, `veo*`,
 `minimax`, `wan*`, `omni`, `kling`); `start_frame` - the photo is the literal opening frame the clip grows
-out of; `auto` (default) - start frame, except next to a clip or a brand asset, where it is a reference.
-Models without a reference mode (`runway`, `happyhorse`, `grok`) keep the start frame and warn. Two or
+out of; `auto` (default) - a reference on every model that has the mode, a start frame on `runway`,
+`happyhorse`, `grok`. So when the user wants THIS photo animated (a product shot coming alive, a
+live cover), pass `start_frame` explicitly. Two or
 more photos are always references. Say which one you mean: a product shot you want animated is a start
 frame; a photo of a place you want the clip to be set in is a reference.
 

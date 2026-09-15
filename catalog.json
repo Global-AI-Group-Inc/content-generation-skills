@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.3.1",
+  "snapshot": "0.3.2",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -330,7 +330,7 @@
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 4915,
+          "bytes": 4955,
           "title": "References, locks and failure handling"
         },
         "playbooks": {
