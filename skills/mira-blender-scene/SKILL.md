@@ -88,7 +88,7 @@ returns the clip URL and `warnings` about parts the model would copy literally -
 The clip is neutral clay and figures' gestures hold still while they travel; `look="ids"` paints
 each figure a flat label colour, `freezeFigures=false` keeps keyed motion (exact choreography only);
 never `look="scene"`. The tool stops without recording while extras, a crowd, plants, set dressing, a
-field of look-alike blocks away from the cameras, a bouncing vehicle or scene colours remain: fix them (`force=true` only when the user insists). Pass the URL in `referenceVideoUrls` of `generate_video` (`seedance-2-5`, `minimax`, `wan3`, `wan3-prime`)
+field of look-alike blocks away from the cameras, a bouncing vehicle or scene colours remain: fix them (`force=true` only when the user insists). Pass the URL in `referenceVideoUrls` of `generate_video` (`seedance-2-5`, `minimax`, `wan3`, `wan3-prime`, `kling`)
 with `ratio: "16:9"`. Prompt: SUBJECT (who, wearing what), LOCATION (materials, colours, light, the surroundings, crowd, plants and props the blockout leaves out),
 CAMERA REFERENCE (the clay clip gives the camera path, the framing, the cuts and where people
 stand; its figures are stand-ins), then one SHOT per shot with the timecodes from the result's

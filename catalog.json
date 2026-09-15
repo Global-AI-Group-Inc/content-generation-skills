@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.3.0",
+  "snapshot": "0.3.1",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -248,7 +248,7 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 9668,
+      "entryBytes": 9677,
       "hasNotice": false,
       "sections": {
         "blockout": {
@@ -330,7 +330,7 @@
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 4148,
+          "bytes": 4915,
           "title": "References, locks and failure handling"
         },
         "playbooks": {
@@ -457,7 +457,7 @@
         },
         "models/kling": {
           "file": "references/models/kling.md",
-          "bytes": 5848,
+          "bytes": 8254,
           "title": "Kling 3.0 (kling)"
         },
         "models/minimax": {
@@ -507,7 +507,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 4807,
+          "bytes": 4785,
           "title": "Selecting the model"
         },
         "textures": {
