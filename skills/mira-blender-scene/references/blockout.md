@@ -15,16 +15,16 @@ flat colours came back as a racing video game, with lollipop trees and a plastic
 | People with a job | `stand_in()` below: the heroes and the few extras whose action the story needs; one smooth body, a nose for facing, the right height and build | costumes, hair, hats, gloves, props in hands, flat colours that mirror the prompt |
 | Crowd, extras | not built: the prompt writes the crowd as a mass ("packed grandstands waving flags"); a `Crowd` collection from an older scene is left out near each shot's camera | extras as stand-ins - they come back as wooden mannequins |
 | People lifted, carried or thrown | `stand_in(pose="limp")`: held by its middle, limbs and head hanging below it; at most half a turn, slow | a straight figure spinning in the air - it comes back as a diver or a gymnast |
-| Animals, creatures | simple volumes with thickness (body, head, legs as cylinders); an animated one flexed (below) | fins, wings or ears as one flat polygon; a rigid body gliding along its path |
-| Palms, trees, bushes | not built: the prompt writes the vegetation; a trunk only when someone touches the tree | ball-on-a-stick trees or blade leaves (they come back exactly like that) |
+| Animals, creatures | `creature()` below (kind animal / bird / insect / creature sets `mira_class`, so the prompt chain names the gait); an animated one flexed (below) | fins, wings or ears as one flat polygon; a rigid body gliding along its path; a textured model |
+| Palms, trees, bushes | never built, not even a trunk: the prompt writes the vegetation and what the hero does with a tree | ball-on-a-stick trees, poles for trunks, blade leaves (they come back exactly like that); `blender_playblast` stops on any plant |
 | Vehicles | `vehicle()` below: one object in real size, boxes and wheels, clay like everything else (the prompt names the colour); it rolls on its wheels, and a hop, bounce or rock is written in the prompt | keyed hops or bounces (a rigid box that jumps comes back as a toy on a spring); mirrors, lights, a halo or a steering wheel; a textured model when a box would do |
 | Roads, tracks, yards | a slightly raised ribbon with low curbs, so the layout reads in clay; lane marks or posts only where speed must read | a bare plane (size and speed become guesses), colour as the only cue |
 | Surroundings: houses and blocks beyond the route, a hillside town, a skyline | not built: the prompt writes them and a photo in `referenceImageUrls` shows them; when a drone needs the relief, one terrain mass (a slope, a few big terraces) without separate houses | a field of look-alike boxes (a hillside of box houses on a grid came back as a toy town of identical cubes) |
 | Furniture | the characteristic silhouette (a chesterfield's rolled arms, a chaise's curved back) | smooth boxes for iconic pieces, colour as the only cue |
 | Paintings, screens, posters | a neutral canvas in its frame | flat saturated panels (they stay flat panels) |
-| Props | only the ones the story handles, at real size (a feather is 25 cm, not a metre) | set dressing (cones, bottles, signs, benches): the prompt adds it |
+| Props, handled objects | none: the ball, the drink, the phone, the bat and what the hero does with them live in the prompt, written as approach, contact, transfer of force, recovery; a surface the hero stands, sits or leans on is route and is built | anything under 0.6 m, built or keyed (the model copies its shape and its path as choreography); set dressing (cones, bottles, signs, benches); `blender_playblast` stops on them |
 | Walls, facades | only the ones the action runs along or the camera passes close: broken into rough floors, windows and doors, no two alike | blank flat walls (they come back as giant windows) |
-| Rock, bark, ground | smooth-shaded volumes | Displace, noise, dense flat-shaded faces (they come back as a blocky pattern) |
+| Rock, bark, ground | the ground and a boulder the hero climbs as smooth-shaded route masses over 1.2 m | pebbles, stones and rocks for dressing (the prompt writes them; `blender_playblast` stops on them); Displace, noise, dense flat-shaded faces (they come back as a blocky pattern) |
 
 **Colour.** `blender_playblast` paints the clip in neutral clay, vehicles too: flat paint came back
 as toy cars and a plastic nose, so the prompt names every colour. `look="ids"` gives each figure a
@@ -38,8 +38,12 @@ model also copies HOW a figure travels: one at full speed on its first frame, or
 a few frames, comes back as a sprinter off the blocks. People react first, stagger their starts,
 build up to 3.5-5 m/s over a second or so and slow into turns - `run_path()` below keys exactly that.
 
-**Leave it out, write it in.** Crowds, extras, plants, set dressing and the surroundings beyond the
-route stay out of the scene. The prompt writes them where they belong - "packed grandstands waving
+**Leave it out, write it in.** Crowds, extras, plants, rocks, set dressing, every handled object and
+any textured or generated model stay out of the scene: the playblast is a staging guide - camera,
+cuts, the route, the heroes as stand-ins, the vehicles that carry them - and the prompt adds the
+reality: what the hero holds and does with it, with its physics (approach, contact, transfer of
+force, recovery), gestures, faces, outfits, the crowd, the plants, the props, the materials. The
+surroundings beyond the route stay out too. The prompt writes them where they belong - "packed grandstands waving
 flags, marshals in orange at their posts, pine woods on the hills, a dense town up the hillside with
 every house a different height and colour" - and the model draws them as real footage. Keep
 `stand_in()` figures for the heroes and the few extras with an action the story needs; build a tree
@@ -94,9 +98,21 @@ figure's pose, place, facing and position per shot. Write the prompt in this ord
 - CAMERA REFERENCE - "@Video1 is a clay blockout: follow its camera path, framing and N hard cuts
   exactly; its figures are stand-ins, not the look."
 - SHOT 1 - 0.00 to 1.83: what happens in that shot. One SHOT per shot, the timecodes from `facts`.
+- ACTION inside each shot - what the hero does with which object, as approach, contact, transfer of
+  force, recovery ("he takes the ball on the instep, lets it drop, flicks it up with the toe, it
+  bounces off the top step and he catches it on the chest"); the object exists only here, so name it,
+  its size and where it starts. Use `facts` for the numbers: a runner's top speed, a car braking from
+  17 to 0 m/s over 1.3 s (the nose dips), a body 0.6 s in the air (it hangs from where the force holds
+  it). The result's `clause` is the sentence block to carry with the clip.
 
 Attach a photo of the hero or the product with the clip (`referenceImageUrls`) when it must be
 recognisable: the photo sets who, the clip sets where and how the camera moves.
+
+## Helpers
+
+`stand_in()`, `run_path()`, `vehicle()` and `creature()` are built into the add-on since 0.10.0 and
+are already defined in every `blender_execute_python` call (`rig.py`); the sources below are for
+older add-ons and for reading what they do.
 
 ## stand_in()
 

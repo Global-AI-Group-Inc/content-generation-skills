@@ -61,10 +61,11 @@ surfaces are smooth-shaded volumes, never Displace or noise; big walls get rough
 Read `references/blockout.md` before the first build: the rules per object and the helpers.
 Before the prompt read `references/textures.md` of mira-video-prompting: surfaces, wear and light are the prompt's job.
 
-**Generated models only where a primitive cannot say it** (a signature prop): `generate_3d`
-(mira-3d), `blender_import_generation`, place with code; ask before the first one (≈4–50 credits).
-A textured model is copied as it looks: for a person, prefer a `stand_in()` plus a reference photo.
-A rigged character arrives with its clips as muted NLA tracks, the first one active.
+**Generated models never go into the playblast.** A textured mesh is copied as it looks and
+`blender_playblast` stops on it; the clip gets a `stand_in()` or a `vehicle()` box plus a reference
+photo in `referenceImageUrls`. `generate_3d` (mira-3d) and `blender_import_generation` are for the
+user's own scene, a product or a look-dev pass - ask before the first one (≈4–50 credits) and keep
+the result out of the reference clip. A rigged character arrives with its clips as muted NLA tracks.
 
 **Light like a set.** One key (`SUN` 3–5 W/m² or a large `AREA` 200–1000 W), a fill at a quarter of
 its energy, a rim to separate the subject; a dark neutral world colour so the viewport reads.

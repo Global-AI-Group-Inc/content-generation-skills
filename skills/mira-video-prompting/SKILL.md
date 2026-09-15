@@ -1,9 +1,9 @@
 ---
 name: mira-video-prompting
 description: >-
-  Which of Mira's fourteen video models to pick and how each one treats a prompt: Seedance 2.5,
-  Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3,
-  HappyHorse, Wan 2.7 and 3.0, Grok Imagine. Use it before any generate_video call on Mira, when the
+  Which of Mira's video models to pick (the live list is in references/selection.md) and how each
+  one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality),
+  Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0. Use it before any generate_video call on Mira, when the
   user asks "which model", "how long can it be", "does it have sound", "промпт для видео", or pastes
   a video prompt to improve. NOT for stills (mira-image-prompting) or for the camera and light banks
   themselves (mira-craft).
@@ -14,7 +14,7 @@ metadata:
 
 # Mira video prompting
 
-Thirteen models, one prompt pipeline. The pipeline projects your prose into each model's native
+One prompt pipeline for every model in references/selection.md. The pipeline projects your prose into each model's native
 format, so you never write model syntax. What you do decide is the model, and the facts the
 prompt must carry. Read this router, then exactly one model file.
 
@@ -55,7 +55,8 @@ that model renders badly.
 Read [references/universal-rules.md](references/universal-rules.md) once per session. The short
 version: prose in English; subject, then action, then camera, then lens and framing, then light;
 count every entity; give every object a carrier and a state after it leaves; every visible change
-has a named cause; one move per shot with a start and an end; pace words from one ladder; no
+has a named cause; every moving body gets its mechanism or gait with the contact and what follows
+(U12); one move per shot with a start and an end; pace words from one ladder for the lens only; no
 adverbs of softness; no layout words such as overlay or safe zone, the model draws them as
 objects; spoken lines word for word in quotes; on-screen text exactly or not at all; hands act
 with the whole body, one contact between people per shot, idle hands at rest and never clasped.

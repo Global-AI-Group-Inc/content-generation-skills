@@ -40,9 +40,14 @@ unbound clip is ignored. A clip this account generated earlier (`list_generation
 URL, which makes "do it again with this motion" a one-call job.
 
 Seedance (ModelArk) screens reference clips the way it screens photos: a clip that shows a
-real-looking person is refused before billing (`moderation_blocked`). Give `seedance-2-5`
-clips of products, places, hands and objects; for human motion take `minimax`, `wan3` (or `wan3-prime`),
-`omni` or `kling-motion`.
+real-looking person who is not the account's avatar is refused before billing
+(`moderation_blocked`). Blockout playblasts, capsule or mannequin figures, stylised characters and
+the account's own avatars pass. For a real stranger's motion take `minimax`, `wan3` (or
+`wan3-prime`), `omni` or `kling-motion`. Give every reference ONE narrow job with an explicit
+rejection, the way the providers' own guides put it: "@Image1 controls only the product's shape,
+materials and label - do not copy its background, lighting or angle"; "@Video1 sets only the camera
+path, the framing and the cuts - do not copy its figures, surfaces or colours". An image and a
+video never do the same job.
 
 `kling-motion` is the exception: it REQUIRES exactly one clip of a person performing the motion
 (3-30 s, one person, single take, no cuts) and exactly one reference image of the character,
