@@ -6,12 +6,13 @@
 |---|---|
 | seconds | 5 / 10 / 15 / 30 |
 | output | 720p |
-| reference images | 4 |
+| reference images | 30 |
 | audio | yes |
 | prompt budget | 6000 chars |
 | extend | yes |
-| last frame | no |
-| reference clips | up to 3, 15 s each |
+| last frame | yes |
+| reference clips | up to 10, 30 s each |
+| reference audio | up to 10, bound as @AudioN; needs at least one photo or clip alongside |
 
 ## When to pick it
 

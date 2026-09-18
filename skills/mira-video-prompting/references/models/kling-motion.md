@@ -12,6 +12,7 @@
 | extend | no |
 | last frame | no |
 | reference clips | exactly 1 driving clip, 3-30 s (required); output length = clip length |
+| reference audio | no |
 
 ## When to pick it
 

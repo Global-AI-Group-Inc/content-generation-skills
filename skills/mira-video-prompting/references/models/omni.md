@@ -12,6 +12,7 @@
 | extend | yes |
 | last frame | no |
 | reference clips | up to 3, 3 s each |
+| reference audio | no |
 
 ## When to pick it
 

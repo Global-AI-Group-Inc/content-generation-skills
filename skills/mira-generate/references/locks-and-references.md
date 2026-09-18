@@ -28,13 +28,37 @@ addresses are refused.
 An image attached to a chat is not a URL. If the client has file access, read the file and call
 `upload_reference_image` with its bytes; if it does not, ask the user for a link.
 
+## Keyframe anchors
+
+`startImageUrl` and `endImageUrl` on `generate_video` are the clip's literal FIRST frame and the
+frame it must land on. This is how shots chain without a visible seam: the end frame of one shot
+becomes the start frame of the next.
+
+They are a SEPARATE MODE at the provider, not two more references. With a pair attached you may
+not pass `referenceImageUrls`, `referenceVideoUrls`, `referenceAudioUrls`, `imageRole`,
+`avatarId`, `studioId` or `productId` in the same call - ModelArk answers *"first/last frame
+content cannot be mixed with reference media content"*, and the platform refuses the call before
+a single credit is spent rather than letting you pay for a request the provider will reject. Make
+two calls when you need both: one to build the frame, one to animate it.
+
+`endImageUrl` needs `startImageUrl` - a clip cannot land on a frame without starting from one -
+and only `seedance-2-5`, `kling` and `minimax` accept a target end frame. `list_models` reports
+`supports_last_frame` per model; everything else refuses with `end_frame_not_supported`.
+
+The end frame is a strong directional guide, not a pixel-perfect constraint: the clip moves
+towards it and the final rendered frame may differ slightly. Build the second frame by EDITING
+the first (`generate_image` on it) rather than writing a fresh prompt, or the model spends the
+shot reconciling two different rooms.
+
 ## Video references
 
-`referenceVideoUrls` on `generate_video` takes up to three public HTTPS clips (mp4/mov, up to
+`referenceVideoUrls` on `generate_video` takes public HTTPS clips (mp4/mov, up to
 200 MB each). The model borrows their motion, camera work, pacing or grade - never the people,
 the place or the product in them. Only `seedance-2-5`, `seedance`, `minimax`, `wan3`, `wan3-prime`, `wan`,
-`kling` (one clip, 3-15 s, Kling 3.0 Omni: `@video_1`, native audio off) and `omni` accept clips (15 s per
-clip, `omni` 3 s); every other model refuses with `video_not_supported`. Bind each clip in the prompt the way the model's file says: `@Video1`
+`kling` (one clip, 3-15 s, Kling 3.0 Omni: `@video_1`, native audio off) and `omni` accept clips;
+every other model refuses with `video_not_supported`. How many and how long differs per model -
+`seedance-2-5` takes ten of up to 30 s, `omni` three of 3 s - so read `max_videos` and
+`video_ref_max_seconds` from `list_models` instead of assuming three. Bind each clip in the prompt the way the model's file says: `@Video1`
 on Seedance, `Video 1` on Wan, `reference video 1` on MiniMax, `<VIDEO_REF_0>` on Omni - an
 unbound clip is ignored. A clip this account generated earlier (`list_generations`) is a valid
 URL, which makes "do it again with this motion" a one-call job.
@@ -62,6 +86,25 @@ frame; a photo of a place you want the clip to be set in is a reference.
 (3-30 s, one person, single take, no cuts) and exactly one reference image of the character,
 and the output is as long as the clip. The prompt only dresses the scene - wardrobe, setting,
 mood - never the motion or the camera.
+
+## Audio references
+
+`referenceAudioUrls` on `generate_video` takes tracks (mp3/wav) the model borrows a voice, timbre
+or rhythm from. Only `seedance-2-5` takes them today (up to ten), and the provider needs at least
+one photo or clip attached alongside - audio on its own is refused
+(`audio_requires_visual_reference`). Bind each in the prompt as `@Audio1`, the same way clips are
+bound: an unbound track is ignored.
+
+## References beside a continuation
+
+`extend_video` takes `referenceImageUrls`, `referenceVideoUrls` and `referenceAudioUrls` too, on
+the models that accept references beside a continuation (`seedance-2-5`; `omni` and Veo continue
+from the footage alone and refuse them rather than dropping them silently).
+
+The numbering shifts by one: the source clip itself is `@Video1`, so your clips start at
+`@Video2`, and one fewer fits than on a fresh render. Their seconds count towards the provider's
+total video budget TOGETHER with the source, so a long source leaves little room - trim the
+references rather than sending more of them.
 
 ## Seeds
 
