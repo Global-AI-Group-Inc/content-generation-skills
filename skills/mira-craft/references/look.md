@@ -57,6 +57,8 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 - **`gate_weave`** — a barely perceptible gate weave, as if projected
 - **`clean_digital`** — clean digital capture with no grain
 - **`shutter_drag`** — slow-shutter motion smear - moving subjects trail painterly streaks while static elements stay sharp, often with a flash-frozen core
+- **`dirty_lens`** — the front element itself is dirty - dust, a smear of grease, spots of rain - so every bright source blooms into streaks and the grime stays locked to the frame while the scene moves behind it
+- **`lens_crack`** — a crack across the front element splitting highlights into shards and throwing a fracture line over the image - like the dirt, it belongs to the frame and never to the scene
 
 ### Social aesthetics
 
@@ -83,3 +85,5 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 - **`infrared_falsecolor`** — infrared false-color: foliage turned vivid crimson-pink, skies deep cyan, skin porcelain - reality re-colored, surreal editorial
 - **`webcam_screenrec`** — low-bitrate webcam framing with compression artifacts, mild banding and an awkward centered eyeline - relatable real-call authenticity
 - **`found_footage`** — deliberately imperfect first-person camera: footstep bob, hurried reframes, flashlight beams reacting naturally - this-really-happened immersion
+- **`datamosh`** — compression breaking down on purpose: blocks of the previous frame smear into the next, colour blooms into squares and movement drags pixels behind it - the glitch-art seam between two beats, never a whole clip
+- **`glowshift`** — the colour channels drift apart and bloom - highlights leak a coloured halo that lags the motion by a frame - a hazy hallucinatory shimmer laid over an otherwise normal image

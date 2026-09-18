@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.3.2",
+  "snapshot": "0.3.3",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -272,14 +272,14 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-craft",
       "license": "MIT",
       "attribution": "",
-      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 61 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
+      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 67 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
       "entry": "SKILL.md",
       "entryBytes": 2456,
       "hasNotice": false,
       "sections": {
         "camera": {
           "file": "references/camera.md",
-          "bytes": 19053,
+          "bytes": 21058,
           "title": "Camera"
         },
         "continuity": {
@@ -294,12 +294,12 @@
         },
         "look": {
           "file": "references/look.md",
-          "bytes": 9663,
+          "bytes": 10504,
           "title": "Look"
         },
         "motion": {
           "file": "references/motion.md",
-          "bytes": 15576,
+          "bytes": 17510,
           "title": "Physics, motion and materials"
         },
         "rhythm": {
