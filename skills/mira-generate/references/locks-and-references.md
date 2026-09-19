@@ -41,9 +41,16 @@ content cannot be mixed with reference media content"*, and the platform refuses
 a single credit is spent rather than letting you pay for a request the provider will reject. Make
 two calls when you need both: one to build the frame, one to animate it.
 
-`endImageUrl` needs `startImageUrl` - a clip cannot land on a frame without starting from one -
-and only `seedance-2-5`, `kling` and `minimax` accept a target end frame. `list_models` reports
-`supports_last_frame` per model; everything else refuses with `end_frame_not_supported`.
+A target end frame is accepted by `seedance-2-5`, `kling`, `minimax`, `omni` and the whole Veo
+family; `list_models` reports `supports_last_frame` per model, and everything else refuses with
+`end_frame_not_supported`. On most of them `endImageUrl` needs `startImageUrl` alongside it - a
+clip cannot land on a frame without starting from one. `minimax` is the exception: it takes an
+end frame ALONE, and the clip then starts wherever the model likes and simply has to land there.
+`list_models` flags that as `supports_last_frame_only`.
+
+Each family carries the anchors differently, which matters only when something goes wrong:
+`seedance-2-5` and `wan3` send them as separate content roles, Veo as a `lastFrame` field, and
+`omni` as `<FIRST_FRAME>` / `<LAST_FRAME>` tags inside the prompt.
 
 The end frame is a strong directional guide, not a pixel-perfect constraint: the clip moves
 towards it and the final rendered frame may differ slightly. Build the second frame by EDITING
@@ -55,9 +62,11 @@ shot reconciling two different rooms.
 `referenceVideoUrls` on `generate_video` takes public HTTPS clips (mp4/mov, up to
 200 MB each). The model borrows their motion, camera work, pacing or grade - never the people,
 the place or the product in them. Only `seedance-2-5`, `seedance`, `minimax`, `wan3`, `wan3-prime`, `wan`,
-`kling` (one clip, 3-15 s, Kling 3.0 Omni: `@video_1`, native audio off) and `omni` accept clips;
+`kling` (one clip, 3-10 s, Kling 3.0 Omni: `@video_1`, native audio off) accept clips; `omni`
+does NOT - its video port is closed on our key;
 every other model refuses with `video_not_supported`. How many and how long differs per model -
-`seedance-2-5` takes ten of up to 30 s, `omni` three of 3 s - so read `max_videos` and
+`seedance-2-5` takes ten of up to 30 s, `wan3` five of 15 s, `kling` one of 3-10 s - so read
+`max_videos`, `video_ref_max_seconds`, `video_ref_min_seconds` and
 `video_ref_max_seconds` from `list_models` instead of assuming three. Bind each clip in the prompt the way the model's file says: `@Video1`
 on Seedance, `Video 1` on Wan, `reference video 1` on MiniMax, `<VIDEO_REF_0>` on Omni - an
 unbound clip is ignored. A clip this account generated earlier (`list_generations`) is a valid
@@ -90,7 +99,8 @@ mood - never the motion or the camera.
 ## Audio references
 
 `referenceAudioUrls` on `generate_video` takes tracks (mp3/wav) the model borrows a voice, timbre
-or rhythm from. Only `seedance-2-5` takes them today (up to ten), and the provider needs at least
+or rhythm from. `seedance-2-5` takes up to ten and `wan3`/`wan3-prime` up to five; `list_models`
+reports `max_audios` per model, and everything else refuses. The provider needs at least
 one photo or clip attached alongside - audio on its own is refused
 (`audio_requires_visual_reference`). Bind each in the prompt as `@Audio1`, the same way clips are
 bound: an unbound track is ignored.
@@ -98,8 +108,10 @@ bound: an unbound track is ignored.
 ## References beside a continuation
 
 `extend_video` takes `referenceImageUrls`, `referenceVideoUrls` and `referenceAudioUrls` too, on
-the models that accept references beside a continuation (`seedance-2-5`; `omni` and Veo continue
-from the footage alone and refuse them rather than dropping them silently).
+the models that accept references beside a continuation. `seedance-2-5` takes photos, clips and
+audio; `omni` takes PHOTOS beside its continuation (a photo attached to an extend turn really is
+used - a car photo put the car in the continuation) but no clips; Veo continues from the footage
+alone and refuses references rather than dropping them silently.
 
 The numbering shifts by one: the source clip itself is `@Video1`, so your clips start at
 `@Video2`, and one fewer fits than on a fresh render. Their seconds count towards the provider's

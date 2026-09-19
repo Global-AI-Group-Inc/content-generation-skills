@@ -6,7 +6,7 @@
 |---|---|
 | seconds | 5 / 10 / 15 |
 | output | 1080p |
-| reference images | 4 |
+| reference images | 1 |
 | audio | yes |
 | prompt budget | 400 chars |
 | extend | no |
@@ -16,7 +16,7 @@
 
 ## When to pick it
 
-dialogue-first with 7-language lip-sync and up to 9 character references; single-beat clips and exotic vertical ratios; briefs must stay tiny
+dialogue-first with 7-language lip-sync; single-beat clips and exotic vertical ratios; briefs must stay tiny; ONE photo only - the nine-reference route exists but is not paid on our key
 
 ## How it reads a prompt
 

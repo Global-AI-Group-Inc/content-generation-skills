@@ -9,15 +9,15 @@ table it points at.
 |---|---|---|---|---|---|---|
 | `seedance-2-5` | ByteDance Seedance 2.5 | 5 / 10 / 15 / 30 | 720p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
-| `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 4 native | yes | 2500 |
+| `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
 | `veo` | Google Veo 3.1 Fast | 8 | 1080p | up to 3 native | yes | 3000 |
 | `veo-lite` | Google Veo 3.1 Lite | 8 | 1080p | up to 3 native | yes | 3000 |
 | `veo-quality` | Google Veo 3.1 Quality | 8 | 1080p | up to 3 native | yes | 3000 |
-| `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 4 native | yes | 3000 |
-| `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 4 native | yes | 7000 |
-| `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 4 native | yes | 400 |
-| `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 4 native | yes | 8000 |
-| `wan3-prime` | Wan 3.0 Prime | 5 / 10 / 15 / 30 | 1080p | up to 4 native | yes | 8000 |
+| `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 6 native | yes | 3000 |
+| `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 7000 |
+| `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
+| `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
+| `wan3-prime` | Wan 3.0 Prime | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
 | `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
 
 ## What each model is for
@@ -28,11 +28,11 @@ table it points at.
 - **`veo`** — premium cinematography with native synchronized audio at a fair price; fixed 8s; keep to 1-2 subjects; attaching references locks the clip to 8s
 - **`veo-lite`** — the cheap Veo: same 8s audio clips at a fraction of the price, but NO reference images - drafts, b-roll, volume runs
 - **`veo-quality`** — the flagship Veo for hero clips: top cinematic realism at ~3x the Fast price - finals only, never drafts. ONE UNBROKEN TAKE: it cannot cut, so a brief with cuts, a chase or a launch stride is not its brief even when it is the hero
-- **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, chooses its own 3-10s length (you cannot pin the duration)
+- **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, chooses its own 3-10s length (you cannot pin the duration); up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 - **`minimax`** — the purpose model for SPEECH plus legible/Cyrillic in-frame text - the only one holding both; millisecond-precise shot timing; 4-15s; NOT a general default
-- **`happyhorse`** — dialogue-first with 7-language lip-sync and up to 9 character references; single-beat clips and exotic vertical ratios; briefs must stay tiny
-- **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 4 photo refs; 2-30s; 1080p
-- **`wan3-prime`** — the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 4 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
+- **`happyhorse`** — dialogue-first with 7-language lip-sync; single-beat clips and exotic vertical ratios; briefs must stay tiny; ONE photo only - the nine-reference route exists but is not paid on our key
+- **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
+- **`wan3-prime`** — the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 10 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
 - **`kling-motion`** — motion transfer: ONE photo of a character + ONE driving video (3-30 s, one person, single take) - the character in the photo performs the motion of the video; output length = video length; 1080p; keeps the clip's original sound. The only model that copies choreography exactly. Needs both inputs - refuse without a video
 
 Withdrawn from the lineup (still in the registry for old jobs and pricing): `seedance`, `wan`, `grok`. Do not pick them.

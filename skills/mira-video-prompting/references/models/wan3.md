@@ -6,17 +6,17 @@
 |---|---|
 | seconds | 5 / 10 / 15 / 30 |
 | output | 1080p |
-| reference images | 4 |
+| reference images | 10 |
 | audio | yes |
 | prompt budget | 8000 chars |
 | extend | no |
-| last frame | no |
-| reference clips | up to 3, 15 s each |
-| reference audio | no |
+| last frame | yes |
+| reference clips | up to 5, 15 s each |
+| reference audio | up to 5, bound as @AudioN; needs at least one photo or clip alongside |
 
 ## When to pick it
 
-the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 4 photo refs; 2-30s; 1080p
+the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
 
 ## How it reads a prompt
 

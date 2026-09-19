@@ -6,7 +6,7 @@
 |---|---|
 | seconds | 5 / 10 / 15 |
 | output | 1080p |
-| reference images | 4 |
+| reference images | 9 |
 | audio | yes |
 | prompt budget | 7000 chars |
 | extend | no |

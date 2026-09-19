@@ -6,12 +6,12 @@
 |---|---|
 | seconds | 5 / 10 / 15 |
 | output | 1080p |
-| reference images | 4 |
+| reference images | 7 |
 | audio | yes |
 | prompt budget | 2500 chars |
 | extend | no |
 | last frame | yes |
-| reference clips | up to 1, 15 s each |
+| reference clips | up to 1, 10 s each |
 | reference audio | no |
 
 ## When to pick it

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.3.4",
+  "snapshot": "0.3.5",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -330,7 +330,7 @@
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 4955,
+          "bytes": 8462,
           "title": "References, locks and failure handling"
         },
         "playbooks": {
@@ -447,67 +447,67 @@
       "sections": {
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
-          "bytes": 5832,
+          "bytes": 5901,
           "title": "HappyHorse 1.1 (happyhorse)"
         },
         "models/kling-motion": {
           "file": "references/models/kling-motion.md",
-          "bytes": 2157,
+          "bytes": 2182,
           "title": "kling-motion (kling-motion)"
         },
         "models/kling": {
           "file": "references/models/kling.md",
-          "bytes": 8254,
+          "bytes": 8279,
           "title": "Kling 3.0 (kling)"
         },
         "models/minimax": {
           "file": "references/models/minimax.md",
-          "bytes": 7754,
+          "bytes": 7779,
           "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 5332,
+          "bytes": 5071,
           "title": "Google Gemini Omni Flash (omni)"
         },
         "models/runway": {
           "file": "references/models/runway.md",
-          "bytes": 5443,
+          "bytes": 5468,
           "title": "Runway Gen-4.5 (runway)"
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9170,
+          "bytes": 9266,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
           "file": "references/models/veo-lite.md",
-          "bytes": 5154,
+          "bytes": 5180,
           "title": "Google Veo 3.1 Lite (veo-lite)"
         },
         "models/veo-quality": {
           "file": "references/models/veo-quality.md",
-          "bytes": 5206,
+          "bytes": 5232,
           "title": "Google Veo 3.1 Quality (veo-quality)"
         },
         "models/veo": {
           "file": "references/models/veo.md",
-          "bytes": 5081,
+          "bytes": 5107,
           "title": "Google Veo 3.1 Fast (veo)"
         },
         "models/wan3-prime": {
           "file": "references/models/wan3-prime.md",
-          "bytes": 7942,
+          "bytes": 8037,
           "title": "Wan 3.0 Prime (wan3-prime)"
         },
         "models/wan3": {
           "file": "references/models/wan3.md",
-          "bytes": 7861,
+          "bytes": 7956,
           "title": "Wan 3.0 (wan3)"
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 4785,
+          "bytes": 4947,
           "title": "Selecting the model"
         },
         "textures": {

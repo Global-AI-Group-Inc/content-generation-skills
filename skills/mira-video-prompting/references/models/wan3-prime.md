@@ -6,17 +6,17 @@
 |---|---|
 | seconds | 5 / 10 / 15 / 30 |
 | output | 1080p |
-| reference images | 4 |
+| reference images | 10 |
 | audio | yes |
 | prompt budget | 8000 chars |
 | extend | no |
-| last frame | no |
-| reference clips | up to 3, 15 s each |
-| reference audio | no |
+| last frame | yes |
+| reference clips | up to 5, 15 s each |
+| reference audio | up to 5, bound as @AudioN; needs at least one photo or clip alongside |
 
 ## When to pick it
 
-the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 4 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
+the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 10 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
 
 ## How it reads a prompt
 
