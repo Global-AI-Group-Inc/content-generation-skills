@@ -3,8 +3,8 @@
 ![Mira skills: content generation skills for AI agents](assets/cover.png)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-0FA188.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-14CCA2.svg)](./VERSION)
-[![Skills](https://img.shields.io/badge/skills-13-66EDC8.svg)](#what-is-inside)
+[![Version](https://img.shields.io/badge/version-0.4.0-14CCA2.svg)](./VERSION)
+[![Skills](https://img.shields.io/badge/skills-16-66EDC8.svg)](#what-is-inside)
 [![Agent Skills](https://img.shields.io/badge/agentskills.io-compatible-0FA188.svg)](https://agentskills.io)
 [![check](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml/badge.svg)](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml)
 
@@ -32,6 +32,7 @@ Then connect the MCP server in your agent. The page at [mira.mybots.pro/mcp](htt
 | Skill | Kind | What it does |
 |---|---|---|
 | `mira-blender-scene` | core | Build and shoot scenes in the user's own Blender through the `blender_*` tools: blockout in metres, lights, camera, keyframes, generated assets, playblast → video model. |
+| `mira-after-effects` | core | Build motion pieces in the user's own After Effects through the `adobe_*` tools: plates, overlays, templates, type, transitions, sound, grade, render; reads a private element bank when one exists. |
 | `mira-generate` | core | Drive the Mira MCP tools: connect, pick a model, attach brand assets, generate, wait, extend, upscale, build 3D and rig it. Explains what the pipeline keeps and what it fills in. |
 | `mira-video-prompting` | knowledge | Which of the fourteen video models to pick and what each one actually does with a prompt. One reference file per recommended model. |
 | `mira-image-prompting` | knowledge | The image models and the craft banks for stills: light, optics, composition, grade, materials, and the words that hurt. |
