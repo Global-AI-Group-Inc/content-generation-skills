@@ -4,9 +4,14 @@
 
 `list_brand_assets` returns three kinds of asset with ids:
 
-- **avatar**: a person. Pass `avatarId`. The platform injects the canonical photos and an
-  appearance passport (CHARACTER LOCK). Identity never changes: face, hair, build, age, marks.
-  Clothes and the render medium may change; say so in the prompt when they should.
+- **avatar**: a recurring character - a person (`kind: human`) or a designed mascot
+  (`kind: mascot`, which keeps its own render style in every scene). Pass `avatarId`. The platform
+  injects the canonical shots and an appearance passport (CHARACTER LOCK). Identity never changes:
+  face, hair, build, age, marks. Clothes, and the medium of a human avatar, may change; say so in
+  the prompt when they should. Avatars are created by the user in the Mira app (Avatars section);
+  there is no tool for it, so point the user there when they have none. The character sheet (the
+  2×3 collage) is attached by the platform itself; never pass it as a reference URL, a grid in the
+  input turns into a split frame.
 - **location** (`studioId`): a place. The platform injects its reference and a scene passport
   (SCENE LOCK). Keep its signage and lettering in frame; they are the user's own, not third-party
   brands.
@@ -22,7 +27,9 @@ the platform already did.
 `referenceImageUrls` takes up to eight public HTTPS URLs. One image on a video call turns it
 into image-to-video with that frame as the start. Several images are merged into one start frame
 on most models; `seedance-2-5` takes them natively and is the only family where an attached
-avatar reaches the model as an identity rather than a rebuilt frame. Private and loopback
+avatar reaches the model as an identity rather than a rebuilt frame - when the avatar is
+registered in the platform's asset library. An unregistered avatar built from real photos is
+rebuilt into one composed start frame on Seedance. Private and loopback
 addresses are refused.
 
 An image attached to a chat is not a URL. If the client has file access, read the file and call
