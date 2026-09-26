@@ -2,15 +2,16 @@
 name: mira-after-effects
 description: >-
   Build motion pieces inside the user's own After Effects through the Mira MCP: read the project,
-  mark the beat of the music, write ExtendScript that adds plates, overlays, templates, type,
-  transitions, sound and a grade, check contact sheets, render on the user's machine. Use it when the user says "build this in After
+  mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth,
+  velocity-matched transitions, expressions, grade) or ExtendScript, add plates, overlays,
+  templates and sound, check contact sheets, render on the user's machine. Use it when the user says "build this in After
   Effects", "собери ролик в афтере", "промо в After Effects", "make a motion reel", "add grain and
   a LUT", or when adobe_status reports a connected After Effects. Requires the Mira for Adobe
   panel with the bridge switched on. NOT for generating clips (mira-generate) or Blender scenes
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Mira After Effects
@@ -25,6 +26,9 @@ The user's After Effects is your compositor. The tools that reach it:
 - `adobe_command` — typed steps without a script: `set_keyframes` with ease, `add_marker`,
   `read_markers`, `precompose`, `set_parent`, `set_time`, `set_work_area`, `open_comp`,
   `create_composition`, `add_text_layer`, `add_solid_layer`, `apply_effect`, `set_track_matte`.
+- `adobe_apply_recipe` — the Mira Motion Kit: entrances and exits, kinetic type, keys with named
+  eases, beat punches, transitions, a 3D camera with parallax, expressions, procedural effects, a
+  grade and a frame check, each as one undo step. In scripts the same functions are the global `MK`.
 - `adobe_beat_markers` — tempo, beat grid, downbeats, drops and sections of the music layer, written
   as `mira:*` markers.
 - `adobe_export_frame` (one frame, at the playhead or at `time`) and `adobe_contact_sheet` (up to 12
@@ -73,6 +77,12 @@ projects for type and mockups, one LUT for the whole piece. Two sources, in this
 Without either, build with stock effects and the user's own footage and say so. Never invent
 element ids or file paths.
 
+**Kit first, raw keys last.** Motion that looks designed comes from curves, stagger, depth and
+cuts that carry speed, not from linear position keys. Reach for `adobe_apply_recipe` (or `MK.*` in
+a script) before hand-written keyframes: `text_animate` for type, `parallax` plus one `camera` move
+for depth, `transition` on the cuts, `expression bounce` after landings, `grade` over the piece and
+`check` before the render. The catalogue, eases and patterns are in `references/motion-kit.md`.
+
 **Scripts are ES3.** `adobe_execute_script` takes at most 40 000 characters and times out at 180 s
 (the script keeps running in the app; later calls wait their turn); it returns `result` and what the
 script printed. Prefer `adobe_command` for single steps. The rules that break scripts (string plus object, the LUT dialog, 0-based
@@ -97,8 +107,9 @@ cut-0.2 / cut / cut+0.2). After the render: look at it before you show it.
 ## Workflow
 
 `adobe_status` → `adobe_get_project` → reference and brand → `adobe_beat_markers` → three
-storyboard variants, the user picks one → stills per scene, `adobe_contact_sheet` → animation,
-elements placed with `adobe_place_element` → contact sheets → `adobe_render` →
+storyboard variants, the user picks one → stills per scene, `adobe_contact_sheet` → animation
+with the Kit, elements placed with `adobe_place_element` → `check` recipe and contact sheets →
+`adobe_render` →
 `adobe_render_status` → the user's notes, applied as named changes. Details are in
 `references/workflow.md`.
 
@@ -118,7 +129,9 @@ Ask only what the brief leaves open, one question at a time:
 - Grain and vignette on the whole piece, one LUT, footage pre-graded before import.
 - Every cut on a beat with a transition clip and a sound under it.
 - Two typefaces at most; type never enters onto an empty frame.
-- Text layers checked for overlap and out-of-frame at 0.5 s steps.
+- The `check` recipe returns no issues for the target platform (text in frame, no overlap, clear
+  of the platform's UI).
+- Named eases, at most two per scene; the entrance longer than the exit.
 - A still of every scene approved before anything moves.
 - Rendered file looked at as a contact sheet before it is shown.
 

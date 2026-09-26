@@ -3,7 +3,7 @@
 ![Mira skills: content generation skills for AI agents](assets/cover.png)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-0FA188.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.4.2-14CCA2.svg)](./VERSION)
+[![Version](https://img.shields.io/badge/version-0.4.3-14CCA2.svg)](./VERSION)
 [![Skills](https://img.shields.io/badge/skills-16-66EDC8.svg)](#what-is-inside)
 [![Agent Skills](https://img.shields.io/badge/agentskills.io-compatible-0FA188.svg)](https://agentskills.io)
 [![check](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml/badge.svg)](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml)

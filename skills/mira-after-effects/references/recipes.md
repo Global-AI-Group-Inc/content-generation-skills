@@ -1,6 +1,8 @@
 # ExtendScript recipes for the bridge
 
-Everything below runs through `adobe_execute_script`. Keep each call under 40 000 characters;
+Everything below runs through `adobe_execute_script`. For animation, the Motion Kit
+(`references/motion-kit.md`) is already loaded as the global `MK`; the recipes here are for
+what it does not cover: imports, templates, overlays, sound. Keep each call under 40 000 characters;
 put libraries in files and load them with `$.evalFile(new File("/abs/path/lib.jsx"))`. The call
 returns only what you assign to `result`; anything else goes to a log file you read afterwards.
 
@@ -12,6 +14,9 @@ returns only what you assign to `result`; anything else goes to a log file you r
 - Never `addProperty("ADBE Apply Color LUT")` from a script: it opens a file dialog that blocks
   the host and the bridge until someone clicks Cancel. Apply LUTs with `applyPreset` on a
   hand-saved `.ffx` (the LUT elements of the library are exactly that).
+- No ternary inside the first branch of another ternary (`a ? (b ? 1 : 2) : 3`): the host's
+  parser stops After Effects with a modal "Expected: :" dialog that also blocks the bridge. Use
+  if/else.
 - `app.effects` is 0-based. `comp.layer(i)` and `folder.item(i)` are 1-based.
 - The host script is ES3: no `JSON`, no `Array.map`, no trailing commas, no regex literal with
   `/` inside a character class (`/[\\/]/` not `/[\/]/`). Ship indexes as object literals.

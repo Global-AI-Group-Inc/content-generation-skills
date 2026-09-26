@@ -20,12 +20,15 @@
    and show `adobe_contact_sheet` at one moment per scene. Fix the storyboard here: it costs seconds.
 7. **Animate scene by scene.** Library elements go in with `adobe_place_element` (templates with
    `texts`, `controls` and `media`; a luma wipe at the cut with the incoming layer starting a little
-   before it; a whoosh 0.3-0.5 s before a cut, a riser 1-2 s before a drop). Single steps go through
-   `adobe_command` (`set_keyframes` with ease, `set_parent`, `precompose`, `add_marker`); whole
-   scenes through `adobe_execute_script`. Plates first, then the subject, then overlays, then the
-   grade.
+   before it; a whoosh 0.3-0.5 s before a cut, a riser 1-2 s before a drop). Motion comes from the
+   Kit (`adobe_apply_recipe`, or `MK.*` inside a script): `text_animate` for type, `parallax` and
+   one `camera` move for depth, `transition` on the cuts, `keys` with named eases, `punch` on the
+   bars. Structural steps go through `adobe_command` (`set_parent`, `precompose`, `add_marker`);
+   whole scenes through `adobe_execute_script` with `MK.scene`. Plates first, then the subject,
+   then overlays, then the grade.
 8. **Check.** After every scene: `adobe_contact_sheet` at its key times (a transition at cut-0.2 /
-   cut / cut+0.2) and a bounding-box lint over the text layers. Fix before moving on.
+   cut / cut+0.2) and the `check` recipe with the target `platform` (text out of frame, text on
+   text, text under the platform's UI). Fix before moving on.
 9. **Render.** `adobe_render` with the platform `preset` (reels, tiktok, shorts, youtube, master)
    and `upload: true` when the file should land in the Mira library; poll `adobe_render_status`
    with `waitSeconds`. A saved project renders in the background (the user keeps working); unsaved
@@ -38,8 +41,8 @@
 | "slow every zoom to 0.7x" | stretch the scale keys of every zoom by 1/0.7, keep their start |
 | "hard cut here" | remove the transition at that marker, cut on the grid value |
 | "hold it" / "hold N frames" | move the next scene's in-point by N frames, re-snap to the next beat |
-| "push in on the button" | scale 100 → 110-115 % toward the button's centre over one bar, ease in |
-| "whip to the next shot" | a directional blur + position offset across 4-6 frames on the cut |
+| "push in on the button" | `camera` `push` over one bar, or scale 100 → 110-115 % toward the button's centre |
+| "whip to the next shot" | `transition` style `whip` on the cut, `dur` 0.2-0.3 s |
 | "match cut" | align the shape or motion of the outgoing and incoming shot on the cut frame |
 | "punchier" | shorter entrances (0.25-0.35 s), stronger ease out, one more cut per bar |
 | "calmer" | fewer cuts (one per bar or two), longer holds, gentle ease, no shake |
