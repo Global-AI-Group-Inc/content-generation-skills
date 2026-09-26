@@ -11,7 +11,7 @@ returns only what you assign to `result`; anything else goes to a log file you r
   `e.message`, `d.getTime()`.
 - Never `addProperty("ADBE Apply Color LUT")` from a script: it opens a file dialog that blocks
   the host and the bridge until someone clicks Cancel. Apply LUTs with `applyPreset` on a
-  hand-saved `.ffx`, or grade the footage with ffmpeg `lut3d` before import.
+  hand-saved `.ffx` (the LUT elements of the library are exactly that).
 - `app.effects` is 0-based. `comp.layer(i)` and `folder.item(i)` are 1-based.
 - The host script is ES3: no `JSON`, no `Array.map`, no trailing commas, no regex literal with
   `/` inside a character class (`/[\\/]/` not `/[\/]/`). Ship indexes as object literals.
@@ -73,8 +73,8 @@ Light leak or film burn: an overlay whose full-cover frame (`hit`) sits on the c
 
 ## Sound
 
-`layer.startTime = t - hit` where `hit` is the transient measured with ffmpeg (peak RMS over
-20 ms windows). Levels: `layer.property("ADBE Audio Group").property("ADBE Audio Levels")`
+`layer.startTime = t - hit` where `hit` is the element's transient (`adobe_place_element` does
+this for sound effects). Levels: `layer.property("ADBE Audio Group").property("ADBE Audio Levels")`
 takes decibels.
 
 ## Stock-effect grade
@@ -85,11 +85,23 @@ pixels for chromatic aberration. Names differ from the menu: check `app.effects[
 
 ## Beat grid
 
-`function beatGrid(bpm, offset) { var d = 60 / bpm; return { beat: d, b: function (k) { return offset + d * k; } }; }`
-Measure `offset` from the kicks of the decoded audio, not from a timestamp someone wrote down.
+`function beatGrid(offset, beatSeconds) { return { beat: beatSeconds, b: function (k) { return offset + beatSeconds * k; } }; }`
+Take `grid_offset` and `beat_seconds` from `adobe_beat_markers` on the music layer (they are in
+composition time already), not from a timestamp someone wrote down. Its `mira:bar N` / `mira:drop`
+markers can also be read back with `adobe_command read_markers`.
 
 ## Verify
 
-Export frames at the key times (`comp.saveFrameToPng(t, File)` or `adobe_export_frame`), run a
-bounding-box lint over text layers every half second (out of frame, overlapping), render with
-`aerender`, then look at a contact sheet (`ffmpeg -vf "fps=2,tile=6x5"`) before calling it done.
+Look at the key times with `adobe_contact_sheet` (up to 12 frames on one image; some compositions
+with heavy effects skip a frame, reported in `missing`), run a bounding-box lint over text layers
+every half second (out of frame, overlapping), render with `adobe_render`, then look at a contact
+sheet of the rendered range before calling it done.
+
+## Typed commands
+
+`adobe_command set_keyframes {layer, property, keys:[{time, value, ease}]}` sets several keys in one
+undo step; `property` is a name, a match name or a path (`Transform/Position`); `ease` is `linear`,
+`hold`, `ease`, `in` (arrive slowly at this key — what CSS calls ease-out on the move before it),
+`out` (leave this key slowly) or `{in, out}` influence in percent. `precompose {layers, name}`,
+`set_parent {layer, parent}` (null clears), `add_marker {time, comment, duration}`, `set_time`,
+`set_work_area`, `open_comp` round it out; every mutating command is one undo step.

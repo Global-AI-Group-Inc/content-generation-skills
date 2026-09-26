@@ -56,6 +56,34 @@ footage plays inside the device; the device moves, not the footage.
 One hero per shot. At most three moving things per second. One transition family per piece.
 If a scene needs a second texture or a third font to work, the scene is wrong, not the toolbox.
 
+## 9. Against the default look
+
+What every generated motion piece does by default, and what to do instead:
+
+- Centred text on a full-frame gradient with fades → a plate with depth, type anchored to an edge
+  or a grid, entrances that are verbs (slide, mask reveal, slam) and a real transition on the cut.
+- Full-frame linear gradients on dark → they band in H.264; use a textured plate or a radial glow.
+- Inter, Roboto, Poppins, the same weight everywhere → a display face with character and a quiet
+  text face; contrast in weight (300 against 800-900) and tight tracking on the big lines.
+- Every move with the same ease → at most two eases per scene; entrances longer than exits
+  (≈0.4 s in, 0.25 s out); the slowest scene about three times the pace of the fastest.
+- A scene that builds and then just sits → build, breathe, resolve (≈30 / 40 / 30 % of the scene).
+- Motion blur on everything → only on the snaps (whips, slams, zooms), never on text being read.
+- A picture dropped in flat → tilt it in perspective, give it a slow push (100 → 104 %) or put it
+  in a device frame.
+
+## 10. Platforms
+
+| Platform | Frame | Keep clear | Length |
+|---|---|---|---|
+| Reels | 1080×1920 | bottom ~20 % (caption, buttons), right ~12 % (actions), top ~10 % | hook in the first 1-2 s |
+| TikTok | 1080×1920 | bottom ~20 %, right ~15 %, top ~8 % | hook in the first 1-2 s, loop the end into the start |
+| Shorts | 1080×1920 | bottom ~15 %, right ~12 % | hook in the first 2 s |
+| YouTube | 1920×1080 | lower third while the player bar shows, top-right corner | title card in the first 5 s |
+
+Loudness about -14 LUFS integrated with the peaks under -1 dBTP; the voice sits above the music.
+`adobe_render` takes the platform as `preset` and reports a composition of the wrong shape.
+
 ## Check before rendering
 
 - Five planes in the busiest scene, three in the quietest.
@@ -63,3 +91,4 @@ If a scene needs a second texture or a third font to work, the scene is wrong, n
 - Every cut on a beat with a sound under it.
 - Two typefaces, no more; type never enters onto an empty frame.
 - Something glows in every scene.
+- Nothing from the default look (section 9); nothing important in the platform's UI zones (section 10).

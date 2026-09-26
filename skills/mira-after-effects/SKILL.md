@@ -2,28 +2,42 @@
 name: mira-after-effects
 description: >-
   Build motion pieces inside the user's own After Effects through the Mira MCP: read the project,
-  write ExtendScript that adds plates, overlays, templates, type, transitions, sound and a grade,
-  check frames, render and finish with ffmpeg. Use it when the user says "build this in After
+  mark the beat of the music, write ExtendScript that adds plates, overlays, templates, type,
+  transitions, sound and a grade, check contact sheets, render on the user's machine. Use it when the user says "build this in After
   Effects", "собери ролик в афтере", "промо в After Effects", "make a motion reel", "add grain and
   a LUT", or when adobe_status reports a connected After Effects. Requires the Mira for Adobe
   panel with the bridge switched on. NOT for generating clips (mira-generate) or Blender scenes
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Mira After Effects
 
-The user's After Effects is your compositor. Eight tools reach it: `adobe_status` (is it there,
-which app, what is open), `adobe_get_project` (compositions and layers as data),
-`adobe_execute_script` (ExtendScript, the way you change anything), `adobe_export_frame` (the
-frame under the playhead), `adobe_import_generation` (a finished Mira generation as a layer),
-`adobe_place_element` and `adobe_install_fonts` (an element from the Mira Elements library, placed
-or installed by the panel) and `adobe_command` (a few typed commands: create a composition, add a
-text or solid layer, set a keyframe, apply an effect, set a track matte). Everything runs on the user's machine and shows up
-in the panel's log, so work like a careful colleague at their desk: look first, build in small
-steps, show frames, never delete what you did not make.
+The user's After Effects is your compositor. The tools that reach it:
+
+- `adobe_status` — is it there, which app, what is open, what the panel is `busy` with, running renders.
+- `adobe_get_project`, `adobe_command list_layers` — compositions and layers as data (type, in/out,
+  3D, parent, blend, track matte, effects, markers).
+- `adobe_execute_script` — ExtendScript, the way you build anything; `$.writeln` / `print()` come back
+  as `output`.
+- `adobe_command` — typed steps without a script: `set_keyframes` with ease, `add_marker`,
+  `read_markers`, `precompose`, `set_parent`, `set_time`, `set_work_area`, `open_comp`,
+  `create_composition`, `add_text_layer`, `add_solid_layer`, `apply_effect`, `set_track_matte`.
+- `adobe_beat_markers` — tempo, beat grid, downbeats, drops and sections of the music layer, written
+  as `mira:*` markers.
+- `adobe_export_frame` (one frame, at the playhead or at `time`) and `adobe_contact_sheet` (up to 12
+  frames on one image with timecodes).
+- `adobe_import_generation` — a finished Mira generation as a layer (a remove-background result
+  lands with its matte).
+- `adobe_place_element` and `adobe_install_fonts` — an element from the Mira Elements library.
+- `adobe_render`, `adobe_render_status`, `adobe_render_cancel` — an MP4 of a composition, rendered
+  on the user's machine, optionally uploaded to the Mira library.
+
+Everything runs on the user's machine and shows up in the panel's log, so work like a careful
+colleague at their desk: look first, build in small steps, show frames, never delete what you did
+not make.
 
 ## When to use
 
@@ -38,17 +52,20 @@ panel (Bridge MCP → Connect) and stop. Do not retry in a loop.
 
 **Flat comes from primitives.** Solids, text and position keys never look filmed. Every scene
 needs a plate, a texture, a subject, something in front and a grade over all of it; see
-`references/doctrine.md` for the eight rules and the pre-render check.
+`references/doctrine.md` for the ten rules (the last two: against the default look, platforms) and the pre-render check.
 
 **Elements, not effects menus.** Rich pieces are assembled from footage: gradient plates, grain
 and halftone overlays, light leaks and wipes on the cuts, whooshes and hits under them, template
 projects for type and mockups, one LUT for the whole piece. Two sources, in this order:
 
 - The **Mira Elements library**, available to every user: `list_elements` (kinds overlay,
-  background, transition, lut, sfx, template, font; all Mira originals), `get_element` for a
-  template's texts and controls, then `adobe_place_element` to drop it into the active
-  composition at a time, and `adobe_install_fonts` for the open-licence fonts a template needs.
-  The panel downloads the file, so nothing else is required from the user.
+  background, transition, lut, preset, sfx, template, font), `get_element` for a template's texts,
+  controls and placeholders, then `adobe_place_element` to drop it into the active composition at
+  a time. Templates take `texts`, `controls` and `media` (a generation id or https link per
+  placeholder such as "Media 1" or "Logo"); a luma wipe becomes the track matte that reveals the
+  layer starting at `time` (or `options.incoming`); an animation preset goes on `options.layer`;
+  the variant closest to the composition's shape is picked. The panel downloads the files and
+  installs the fonts, so nothing else is required from the user.
 - A **private bank** on the user's machine, when `$AE_LIBRARY/bank/BANK.md` exists (default
   `~/AE-Library`): the layout is in `references/bank-schema.md`, it is used through
   `adobe_execute_script` and its recipes.
@@ -56,25 +73,33 @@ projects for type and mockups, one LUT for the whole piece. Two sources, in this
 Without either, build with stock effects and the user's own footage and say so. Never invent
 element ids or file paths.
 
-**Scripts are ES3 and run blind.** `adobe_execute_script` takes at most 40 000 characters, returns
-only the `result` variable and times out at 180 s; libraries load with `$.evalFile`, progress goes
-to a log file. The rules that break scripts (string plus object, the LUT dialog, 0-based
+**Scripts are ES3.** `adobe_execute_script` takes at most 40 000 characters and times out at 180 s
+(the script keeps running in the app; later calls wait their turn); it returns `result` and what the
+script printed. Prefer `adobe_command` for single steps. The rules that break scripts (string plus object, the LUT dialog, 0-based
 `app.effects`, expressions on Source Text, opacity through parents, time remap loops) are in
 `references/recipes.md`. Read it before the first script.
 
-**Everything on the beat.** Measure the tempo and the first kick from the decoded audio; scene
-boundaries, cuts, sound hits and type entrances are grid values. A cut off the grid is a bug.
+**Everything on the beat.** `adobe_beat_markers` on the music layer gives the grid (beat k at
+`grid_offset + k * beat_seconds`), the downbeats and the drops as markers. Scene boundaries, cuts,
+sound hits and type entrances are grid values; a cut off the grid is a bug. When the tempo reads
+as a half, double or triplet feel, pass `bpmHint` (the BPM the track was made at) or one of the
+returned `alternatives`.
 
-**Verify with frames, not with faith.** After every scene: a bounding-box lint over text layers
-and an exported frame at the key times. After the render: a contact sheet with timecodes, and
-details cropped at full size. Only then show the result.
+**A reference, not a default.** Without one, motion defaults to centred text on a gradient with
+fades, and every piece looks the same. Ask for one or two reference videos, name what to copy
+(pace, type, transitions) and hold to it. The anti-default rules are in `references/doctrine.md`.
+
+**Stills before motion, frames before faith.** Build each scene as a still first and show
+`adobe_contact_sheet` at one moment per scene: fixing a storyboard costs seconds, fixing a render
+costs minutes. After animating: a contact sheet at the key times of each scene (a transition at
+cut-0.2 / cut / cut+0.2). After the render: look at it before you show it.
 
 ## Workflow
 
-`adobe_status` → `adobe_get_project` → `list_elements` and, if present, the bank → beat grid →
-shot list (one line per scene, shown to the user) → one script per scene, elements placed with
-`adobe_place_element` or the bank recipes → lint + frames → `aerender` → ffmpeg finish (WAV
-audio, optional LUT blend, loudness, faststart) → contact sheet. Details and commands are in
+`adobe_status` → `adobe_get_project` → reference and brand → `adobe_beat_markers` → three
+storyboard variants, the user picks one → stills per scene, `adobe_contact_sheet` → animation,
+elements placed with `adobe_place_element` → contact sheets → `adobe_render` →
+`adobe_render_status` → the user's notes, applied as named changes. Details are in
 `references/workflow.md`.
 
 ## Interview
@@ -82,9 +107,9 @@ audio, optional LUT blend, loudness, faststart) → contact sheet. Details and c
 Ask only what the brief leaves open, one question at a time:
 
 1. Format and length: 9:16 or 16:9, seconds, fps.
-2. The track, or none; where the drop is if they know.
+2. The track, or none; its BPM if they know it.
 3. What must appear exactly: words, logo files, footage, brand colours and typefaces.
-4. Mood in one line: which reference they liked and why.
+4. One or two reference videos, and what in them to copy.
 5. Whether to build into the open project or a new one, and where to save.
 
 ## Checklist
@@ -94,12 +119,14 @@ Ask only what the brief leaves open, one question at a time:
 - Every cut on a beat with a transition clip and a sound under it.
 - Two typefaces at most; type never enters onto an empty frame.
 - Text layers checked for overlap and out-of-frame at 0.5 s steps.
+- A still of every scene approved before anything moves.
 - Rendered file looked at as a contact sheet before it is shown.
 
 ## Do not
 
 Do not run destructive scripts (removing items, overwriting files, `app.newProject()`) without
-asking. Do not add `Apply Color LUT` from a script. Do not build for more than 40 000 characters
-in one call or wait on a call past 180 s; batch and log instead. Do not ship third-party pack
+asking. Do not add `Apply Color LUT` from a script (it opens a dialog that hangs the app); a LUT is
+a `.ffx` element. Do not build for more than 40 000 characters in one call; batch instead. Do not
+pass `save_project` to `adobe_render` without asking: it saves the user's project. Do not ship third-party pack
 names or local paths in anything public. Do not spend generation credits from this skill; footage
 comes from the user, the bank or a `mira-generate` call they approved.

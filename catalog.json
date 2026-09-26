@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.4.1",
+  "snapshot": "0.4.2",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -236,9 +236,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-after-effects",
       "license": "MIT",
       "attribution": "",
-      "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, write ExtendScript that adds plates, overlays, templates, type, transitions, sound and a grade, check frames, render and finish with ffmpeg",
+      "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, write ExtendScript that adds plates, overlays, templates, type, transitions, sound and a grade, check contact sheets",
       "entry": "SKILL.md",
-      "entryBytes": 5969,
+      "entryBytes": 7904,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -248,17 +248,17 @@
         },
         "doctrine": {
           "file": "references/doctrine.md",
-          "bytes": 3224,
+          "bytes": 5129,
           "title": "Why a scripted motion piece looks flat, and what makes it rich"
         },
         "recipes": {
           "file": "references/recipes.md",
-          "bytes": 4734,
+          "bytes": 5572,
           "title": "ExtendScript recipes for the bridge"
         },
         "workflow": {
           "file": "references/workflow.md",
-          "bytes": 1945,
+          "bytes": 3732,
           "title": "Workflow: from a brief to a rendered motion piece"
         }
       }
@@ -356,7 +356,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 10617,
+      "entryBytes": 11460,
       "hasNotice": false,
       "sections": {
         "locks-and-references": {

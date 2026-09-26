@@ -51,14 +51,16 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `blender_import_generation` | no | Put a finished `generate_3d` / `rig_3d` result into the user's scene at the 3D cursor. |
 | `ask_mira` / `mira_history` / `list_mira_dialogs` | yes (2 per reply) | Talk to Mira, the platform's own creative agent, in the user's dialogs: a brief, a look, a scene idea, or the whole task — she starts generations herself and they come back as cards. |
 | `blender_playblast` | no | Render the user's viewport animation to a 720p clip, uploaded to their library; its URL goes into `referenceVideoUrls`. Bind it to camera, framing and rough placement, not the figures' exact gestures; Clay and frozen gestures by default (`look`, `freezeFigures`); build people with `stand_in()` (mira-blender-scene). Keep ranges under 30 s. |
-| `adobe_status` | no | Whether the user's After Effects or Premiere Pro (Mira panel, bridge on) is reachable; app, version, open project, active composition. Call it before any other `adobe_*` tool. |
+| `adobe_status` | no | Whether the user's After Effects or Premiere Pro (Mira panel, bridge on) is reachable; app, version, open project, active composition, what the panel is busy with, running renders. Call it before any other `adobe_*` tool. |
 | `adobe_get_project` | no | Compositions or sequences with size, fps and duration, the active one with its layers, the playhead. |
-| `adobe_execute_script` | no | Run ExtendScript in the user's app (up to 40 000 characters, 180 s): build and edit compositions, layers, keyframes, effects, imports. Returns only the `result` variable; log to a file for the rest. |
-| `adobe_export_frame` | no | The frame under the playhead as a PNG: check a shot, or use it as a reference image. |
+| `adobe_execute_script` | no | Run ExtendScript in the user's app (up to 40 000 characters, 180 s): build and edit compositions, layers, keyframes, effects, imports. Returns the `result` variable and what the script printed (`$.writeln`, `print()`). |
+| `adobe_export_frame` / `adobe_contact_sheet` | no | One frame (at the playhead or at `time`) as a PNG, or up to 12 frames at given times on one image with timecodes: check shots and transitions, or use a frame as a reference image. |
+| `adobe_beat_markers` | no | Tempo, beat grid, downbeats, drops and sections of the music layer, written as `mira:*` markers; the grid comes back as `grid_offset + k * beat_seconds`. |
+| `adobe_render` / `adobe_render_status` / `adobe_render_cancel` | no | An MP4 of a composition rendered on the user's machine (background aerender for a saved project), with a platform preset check; optionally uploaded to the Mira library. |
 | `adobe_import_generation` | no | A finished Mira generation placed into the project or the active composition. |
 | `list_elements` / `get_element` | no | The Mira Elements library for After Effects and Premiere: overlays, backgrounds, transitions, LUTs, sounds, templates, open-licence fonts, with ids, previews and apply recipes. |
-| `adobe_place_element` / `adobe_install_fonts` | no | An element placed into the active composition at a time (the panel downloads it and installs the fonts a template needs), or fonts installed on their own. |
-| `adobe_command` | no | A few typed commands (create composition, add text or solid layer, set keyframe, apply effect, set track matte) when one fits better than raw script. |
+| `adobe_place_element` / `adobe_install_fonts` | no | An element placed into the active composition at a time (the panel downloads it and installs the fonts a template needs; templates take texts, controls and `media` for their placeholders; luma wipes reveal the incoming layer), or fonts installed on their own. |
+| `adobe_command` | no | Typed commands when one fits better than raw script: list_layers, set_keyframes with ease, add/read markers, precompose, set_parent, set_time, set_work_area, open_comp, create_composition, add text or solid layer, apply effect, set track matte. |
 
 ## Blender
 
@@ -66,7 +68,7 @@ When `blender_status` says connected, the user's own Blender is your canvas: rea
 
 ## After Effects
 
-When `adobe_status` says connected, the user's After Effects (or Premiere Pro) is your compositor: read the project with `adobe_get_project`, change it with `adobe_execute_script` in small steps, look at `adobe_export_frame` after each, and place finished generations with `adobe_import_generation`. Building a whole motion piece (plates, overlays, templates, type, transitions, sound, grade, render) is the job of mira-after-effects; read it first. Not connected → tell the user how to switch the bridge on in the Mira panel and stop; do not retry in a loop.
+When `adobe_status` says connected, the user's After Effects (or Premiere Pro) is your compositor: read the project with `adobe_get_project`, change it with `adobe_execute_script` in small steps, look at `adobe_contact_sheet` after each, place finished generations with `adobe_import_generation`, and render with `adobe_render`. Building a whole motion piece (plates, overlays, templates, type, transitions, sound, grade, render) is the job of mira-after-effects; read it first. Not connected → tell the user how to switch the bridge on in the Mira panel and stop; do not retry in a loop.
 
 ## Workflow
 
