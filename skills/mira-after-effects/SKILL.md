@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Mira After Effects
@@ -25,8 +25,9 @@ The user's After Effects is your compositor. The tools that reach it:
   as `output`.
 - `adobe_command` — typed steps without a script (`set_keyframes` with ease, markers, `precompose`,
   `set_parent`, `set_time`, `set_work_area`, `open_comp`, `set_track_matte` and the rest it lists).
-- `adobe_apply_recipe` — the Mira Motion Kit, one undo step per recipe: kinetic type, named eases,
-  transitions, camera and parallax, expressions, effects, grade, captions, safe zone, frame check.
+- `adobe_apply_recipe` — the Mira Motion Kit (one undo step each): type, eases, transitions, camera,
+  expressions, effects, grade, captions, safe zone, check, and tricks — text behind the subject, video
+  in letters, pixel break, counter, split-flap, chart, 3D models, the Blender camera, variants.
   In scripts the same functions are the global `MK`.
 - `adobe_reference` — a reference video measured: cuts, shot lengths, pace, palette, a brief and a
   sheet of every shot; `makeRef` also builds a REF composition with cut markers.

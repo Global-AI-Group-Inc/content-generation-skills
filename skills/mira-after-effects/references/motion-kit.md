@@ -36,6 +36,35 @@ layer object; times are seconds in composition time; colours are `#rrggbb`.
 | `brand` | none | The brand kit the user saved in the panel, or null |
 | `check` | `times` (default every 0.5 s), `platform` (reels, tiktok, shorts, youtube), `margin` | Issues as data: `out_of_frame`, `text_overlap`, `platform_ui_zone` |
 
+## Tricks
+
+| Recipe | Params | What it does |
+|---|---|---|
+| `text_behind` | `layer`, `matte` (a `remove_background` luma matte layer) or a `layer` that already has its matte, `mode`, `background`, `text`, `font`, `size`, `y`, `animate`, `t` | The title sits between the subject and the background |
+| `video_in_text` | `layer` (footage), `text`, `font`, `size`, `dim` (0-60), `outline` | The footage plays inside big letters, fitted to the width, with a dimmed blurred copy around them |
+| `pixel_break` | `layer`, `t` (the drop), `from` (blocks across, 12), `steps` (3), `dur` (0.6), `reverse` | Big pixels stepping 12 → 24 → 48 → 96 → full resolution on `t` |
+| `counter` | `from`, `to`, `t0`, `t1`, `ease`, `decimals`, `prefix`, `suffix`, `separator` | A number that counts; any size (the slider holds progress) |
+| `split_flap` | `text`, `t`, `stagger`, `flip`, `rate`, `charset`, `font`, `plate` | An airport board: each character flips and lands in turn |
+| `bar_chart` | `data: [{label, value, color}]`, `t0`, `dur`, `stagger`, `x`, `y`, `w`, `h`, `suffix` | Bars grow with their values counting at the tips |
+| `line_trace` | `points: [[x, y], ...]`, `t0`, `t1`, `color`, `width`, `glow`, `head`, `jitter` | A route that draws itself with a glowing head riding its tip |
+| `model3d` | `path` (.glb / .gltf / .obj) or `layer`, `x`, `y`, `width` (share of the frame), `scale`, `spin` | A 3D model (a `generate_3d` result) standing in the composition; switches it to Advanced 3D |
+| `blender_camera` | `frames: [{frame, loc, matrix or rot, lens}]`, `fps`, `sensor`, `fit`, `scale`, `points` | The Blender camera as an AE camera, exact to the pixel, plus 3D nulls at Blender points |
+| `variants` | `formats`, `texts: {"Layer": ["hook A", "hook B"]}`, `fit` cover or blur | A composition per format and per hook, ready for `adobe_render` |
+
+**Text behind the subject.** Run `remove_background` on the clip, import the result with
+`adobe_import_generation` (it lands with its matte), then `text_behind` on that layer: the Kit adds a
+full copy under the title. The title reads best big, in the upper third, entering with `mask_up`.
+
+**3D.** A `generate_3d` result is a .glb: download it through `adobe_import_generation`
+(destination project) and pass that layer to `model3d`, or give the file path. Most models stand on
+their origin, so `y` is where the feet are. Put the Kit's `camera` rig on the composition for depth.
+
+**Blender to After Effects.** A blockout's camera carried over with `blender_camera` makes type and
+UI cards stick to the AI render of that blockout's playblast. In Blender: `bpy.ops.mira.export_camera_ae()`
+writes the JSON (the camera per frame, lens, sensor fit, the selected objects as points); the same
+dict comes from `camera_for_after_effects(scene, camera, start, end, objects)` in the add-on's `ops`
+module. Make the composition the render's size and fps; lens shift is not carried over.
+
 ## Brand
 
 When the user saved a brand in the panel's Brand screen, every recipe takes `"brand:primary"`,
@@ -121,5 +150,7 @@ result = MK.check(c, {platform: "reels"});
   depth on a contact sheet.
 - `chromatic` adds three adjustment layers on top; `particles` and `noise_bg` add their own layers.
 - `grade` `lut` wants a `.ffx` preset (a LUT element), never Apply Color LUT.
+- A 3D model draws only on the Advanced 3D renderer (match name "ADBE Calder"); "ADBE Advanced 3d" is,
+  despite the name, Classic 3D.
 - A script with a ternary inside a ternary's first branch (`a ? (b ? 1 : 2) : 3`) stops After
   Effects with a modal "Expected: :" dialog. Write if/else.

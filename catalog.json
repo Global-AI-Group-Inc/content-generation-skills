@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.4.4",
+  "snapshot": "0.4.5",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -238,7 +238,7 @@
       "attribution": "",
       "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth, velocity-matched transitions, expressions, grade) or E",
       "entry": "SKILL.md",
-      "entryBytes": 9302,
+      "entryBytes": 9406,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -253,7 +253,7 @@
         },
         "motion-kit": {
           "file": "references/motion-kit.md",
-          "bytes": 9431,
+          "bytes": 12498,
           "title": "Mira Motion Kit"
         },
         "recipes": {
@@ -284,7 +284,7 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 9677,
+      "entryBytes": 10080,
       "hasNotice": false,
       "sections": {
         "blockout": {

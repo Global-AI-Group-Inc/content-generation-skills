@@ -95,6 +95,11 @@ stand; its figures are stand-ins), then one SHOT per shot with the timecodes fro
 `facts` (cuts = cameras bound to timeline markers, see `references/blockout.md`). Never ask for
 "the framing at each moment". Quote `estimate_cost` first.
 
+**Type on the render comes from the same camera.** When the clip goes on in After Effects, send the
+camera over: `bpy.ops.mira.export_camera_ae()` (Mira for Blender 0.10.1+, JSON next to the .blend) or
+return `camera_for_after_effects(...)` from `bl_ext.user_default.mybots_mira.ops` and pass it to
+`adobe_apply_recipe` `blender_camera` — exact to the pixel, with 3D nulls at the objects you select.
+
 **Small steps, verified.** One `blender_execute_python` per logical step (walls, seats, lights,
 camera, keys), each under 3 minutes, each followed by a screenshot when the result is visual.
 Print what you created (`print(obj.name, obj.dimensions[:])`) so the tool output confirms it. On

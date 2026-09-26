@@ -1,6 +1,6 @@
 {
   "name": "mira",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Mira AI skills: playbooks and prompting knowledge for image and video generation through the Mira MCP server.",
   "author": {
     "name": "Global AI Group, Inc.",
