@@ -3,10 +3,13 @@
 1. **Look first.** `adobe_status` (host, version, bridge on, `busy`), `adobe_get_project` and
    `adobe_command list_layers` (what is open, the active comp, its layers). Never build into a
    project the user is editing without saying so; offer a new composition.
-2. **Reference and brand.** Ask for one or two reference videos and name what to copy: the pace
-   (shots per 10 s), the type (weight, case, size, how it enters), the transitions, the palette.
-   Take the brand: logo files, colours, two typefaces, real product screenshots. Without these the
-   piece defaults to centred text on a gradient with fades.
+2. **Reference and brand.** Ask for one or two reference videos and run `adobe_reference` on each
+   (a file, an https link, or a layer; `makeRef: true` when the user wants it beside the work):
+   keep its `avg_shot`, `cuts_per_10s`, palette and the sheet of shots, and name what to copy — the
+   pace, the type (weight, case, size, how it enters), the transitions, the palette. Take the brand:
+   the `brand` recipe returns what the user saved in the panel (colours, two typefaces, logo); ask
+   for the rest (product screenshots). Without these the piece defaults to centred text on a
+   gradient with fades.
 3. **Read what is available.** `list_elements` (backgrounds, overlays, transitions, LUT presets,
    sounds, templates with placeholders, fonts) and, if `$AE_LIBRARY/bank/BANK.md` exists, the bank.
    Look at the previews of what you intend to use. Never invent ids or paths.
@@ -29,7 +32,8 @@
 8. **Check.** After every scene: `adobe_contact_sheet` at its key times (a transition at cut-0.2 /
    cut / cut+0.2) and the `check` recipe with the target `platform` (text out of frame, text on
    text, text under the platform's UI). Fix before moving on.
-9. **Render.** `adobe_render` with the platform `preset` (reels, tiktok, shorts, youtube, master)
+9. **Render.** Before it, `safe_zone` for the platform while you check (a guide layer, never
+   rendered) and `check` with the same `platform`. Then `adobe_render` with the platform `preset` (reels, tiktok, shorts, youtube, master)
    and `upload: true` when the file should land in the Mira library; poll `adobe_render_status`
    with `waitSeconds`. A saved project renders in the background (the user keeps working); unsaved
    changes render inside After Effects, which is busy until it finishes. Loudness comes from the

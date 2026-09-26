@@ -31,7 +31,25 @@ layer object; times are seconds in composition time; colours are `#rrggbb`.
 | `grade` | `grain` (0-100), `vignette` (0-100), `exposure, contrast, saturation` (100 = unchanged), `vibrance, temperature, faded, tint, tintOpacity, lut` (.ffx path), `t0, t1` | One adjustment layer on top: Lumetri tone and vignette, Grain Implant, an overlay tint, a LUT preset |
 | `scene` | `name, w, h, fps, dur, bg, parent, at, rebuild` | A scene composition in "Mira Scenes". Calling it again clears and rebuilds it. A composition the Kit did not make is refused |
 | `beats` | none | `{offset, beat, bpm, bars, beats, drops}` from the `mira:` markers |
+| `captions` | `cues: [{s, e, text, words: [{t, s, e}]}]`, `style: {font, size, color, highlight, stroke, strokeWidth, box, boxColor, boxOpacity, position, platform, animation}`, `replace` | Word-timed captions: one text layer per cue, each word animated on its own time (pop, rise, reveal, karaoke, highlight), a plate that follows the text, kept clear of the platform's UI; earlier Mira captions are replaced |
+| `safe_zone` | `platform` (reels, tiktok, shorts, youtube), `remove` | A guide layer that never renders, shading the platform's top bar, captions area and side buttons |
+| `brand` | none | The brand kit the user saved in the panel, or null |
 | `check` | `times` (default every 0.5 s), `platform` (reels, tiktok, shorts, youtube), `margin` | Issues as data: `out_of_frame`, `text_overlap`, `platform_ui_zone` |
+
+## Brand
+
+When the user saved a brand in the panel's Brand screen, every recipe takes `"brand:primary"`,
+`"brand:accent"`, `"brand:text"`, `"brand:background"` wherever a colour goes and `"brand:display"`,
+`"brand:body"` wherever a font goes. `text` without a font uses the display face and the brand's text
+colour. `brand` returns the kit (null when none is saved); do not invent brand values.
+
+## Captions
+
+Split the transcript's words (`transcribe_video` → words with `t, s, e` in seconds) into cues of 2-3
+words for punchy social captions or 6-8 for subtitles, breaking on sentence ends and long pauses, and
+add the source's start in the composition to every time. Break long cues into two balanced lines with
+`\r`. `animation` `pop` or `highlight` for Reels-style captions, `karaoke` for lyrics, `none` for
+documentary subtitles. `platform` keeps them above the app's buttons.
 
 ## Eases
 

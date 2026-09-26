@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Mira After Effects
@@ -23,18 +23,16 @@ The user's After Effects is your compositor. The tools that reach it:
   3D, parent, blend, track matte, effects, markers).
 - `adobe_execute_script` — ExtendScript, the way you build anything; `$.writeln` / `print()` come back
   as `output`.
-- `adobe_command` — typed steps without a script: `set_keyframes` with ease, `add_marker`,
-  `read_markers`, `precompose`, `set_parent`, `set_time`, `set_work_area`, `open_comp`,
-  `create_composition`, `add_text_layer`, `add_solid_layer`, `apply_effect`, `set_track_matte`.
-- `adobe_apply_recipe` — the Mira Motion Kit: entrances and exits, kinetic type, keys with named
-  eases, beat punches, transitions, a 3D camera with parallax, expressions, procedural effects, a
-  grade and a frame check, each as one undo step. In scripts the same functions are the global `MK`.
-- `adobe_beat_markers` — tempo, beat grid, downbeats, drops and sections of the music layer, written
-  as `mira:*` markers.
-- `adobe_export_frame` (one frame, at the playhead or at `time`) and `adobe_contact_sheet` (up to 12
-  frames on one image with timecodes).
-- `adobe_import_generation` — a finished Mira generation as a layer (a remove-background result
-  lands with its matte).
+- `adobe_command` — typed steps without a script (`set_keyframes` with ease, markers, `precompose`,
+  `set_parent`, `set_time`, `set_work_area`, `open_comp`, `set_track_matte` and the rest it lists).
+- `adobe_apply_recipe` — the Mira Motion Kit, one undo step per recipe: kinetic type, named eases,
+  transitions, camera and parallax, expressions, effects, grade, captions, safe zone, frame check.
+  In scripts the same functions are the global `MK`.
+- `adobe_reference` — a reference video measured: cuts, shot lengths, pace, palette, a brief and a
+  sheet of every shot; `makeRef` also builds a REF composition with cut markers.
+- `adobe_beat_markers` — tempo, beat grid, downbeats, drops and sections, as `mira:*` markers.
+- `adobe_export_frame` (one frame) and `adobe_contact_sheet` (up to 12 frames with timecodes).
+- `adobe_import_generation` — a finished Mira generation as a layer (with its matte, if any).
 - `adobe_place_element` and `adobe_install_fonts` — an element from the Mira Elements library.
 - `adobe_render`, `adobe_render_status`, `adobe_render_cancel` — an MP4 of a composition, rendered
   on the user's machine, optionally uploaded to the Mira library.
@@ -96,8 +94,13 @@ as a half, double or triplet feel, pass `bpmHint` (the BPM the track was made at
 returned `alternatives`.
 
 **A reference, not a default.** Without one, motion defaults to centred text on a gradient with
-fades, and every piece looks the same. Ask for one or two reference videos, name what to copy
-(pace, type, transitions) and hold to it. The anti-default rules are in `references/doctrine.md`.
+fades, and every piece looks the same. Ask for one or two reference videos and measure them with
+`adobe_reference`: match its average shot length and cuts per 10 s, take its palette, look at the
+sheet of shots for framing and type. Name what you copy (pace, type, transitions) and hold to it.
+The anti-default rules are in `references/doctrine.md`.
+
+**The brand is already there.** A brand saved in the panel works in every recipe as `"brand:accent"` (colours)
+and `"brand:display"` (fonts); see `references/motion-kit.md`.
 
 **Stills before motion, frames before faith.** Build each scene as a still first and show
 `adobe_contact_sheet` at one moment per scene: fixing a storyboard costs seconds, fixing a render
@@ -106,7 +109,7 @@ cut-0.2 / cut / cut+0.2). After the render: look at it before you show it.
 
 ## Workflow
 
-`adobe_status` → `adobe_get_project` → reference and brand → `adobe_beat_markers` → three
+`adobe_status` → `adobe_get_project` → `adobe_reference` and the brand → `adobe_beat_markers` → three
 storyboard variants, the user picks one → stills per scene, `adobe_contact_sheet` → animation
 with the Kit, elements placed with `adobe_place_element` → `check` recipe and contact sheets →
 `adobe_render` →
@@ -129,8 +132,8 @@ Ask only what the brief leaves open, one question at a time:
 - Grain and vignette on the whole piece, one LUT, footage pre-graded before import.
 - Every cut on a beat with a transition clip and a sound under it.
 - Two typefaces at most; type never enters onto an empty frame.
-- The `check` recipe returns no issues for the target platform (text in frame, no overlap, clear
-  of the platform's UI).
+- `check` finds no issues for the target platform; a `safe_zone` guide stays in while you build.
+- Captions word-timed (`captions` recipe); the pace close to the reference's average shot.
 - Named eases, at most two per scene; the entrance longer than the exit.
 - A still of every scene approved before anything moves.
 - Rendered file looked at as a contact sheet before it is shown.

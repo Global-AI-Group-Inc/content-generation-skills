@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.4.3",
+  "snapshot": "0.4.4",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -238,7 +238,7 @@
       "attribution": "",
       "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth, velocity-matched transitions, expressions, grade) or E",
       "entry": "SKILL.md",
-      "entryBytes": 8931,
+      "entryBytes": 9302,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -253,7 +253,7 @@
         },
         "motion-kit": {
           "file": "references/motion-kit.md",
-          "bytes": 7890,
+          "bytes": 9431,
           "title": "Mira Motion Kit"
         },
         "recipes": {
@@ -263,7 +263,7 @@
         },
         "workflow": {
           "file": "references/workflow.md",
-          "bytes": 4020,
+          "bytes": 4415,
           "title": "Workflow: from a brief to a rendered motion piece"
         }
       }
