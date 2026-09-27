@@ -3,12 +3,12 @@
 ![Mira skills: content generation skills for AI agents](assets/cover.png)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-0FA188.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.4.6-14CCA2.svg)](./VERSION)
-[![Skills](https://img.shields.io/badge/skills-16-66EDC8.svg)](#what-is-inside)
+[![Version](https://img.shields.io/badge/version-0.5.0-14CCA2.svg)](./VERSION)
+[![Skills](https://img.shields.io/badge/skills-17-66EDC8.svg)](#what-is-inside)
 [![Agent Skills](https://img.shields.io/badge/agentskills.io-compatible-0FA188.svg)](https://agentskills.io)
 [![check](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml/badge.svg)](https://github.com/Global-AI-Group-Inc/content-generation-skills/actions/workflows/check.yml)
 
-Skills for AI agents that generate images, video and 3D on [Mira AI](https://mira.mybots.pro). Ten of them are playbooks: UGC, product, ads, cinematic, explainer, anime, illustration, 3D toon, pixel art, 3D model. Pass a playbook id as the `skill` parameter of `generate_video`, `generate_image` or `generate_3d` and the platform's prompt pipeline applies the genre's doctrine itself. Five are knowledge: how to drive the Mira MCP server, how the fourteen video models differ, how the image models differ, the camera, light, look, rhythm and continuity banks the pipeline is built on, and how to build and shoot scenes in the user's own Blender through the bridge tools.
+Skills for AI agents that generate images, video, audio and 3D on [Mira AI](https://mira.mybots.pro). Ten of them are playbooks: UGC, product, ads, cinematic, explainer, anime, illustration, 3D toon, pixel art, 3D model. Pass a playbook id as the `skill` parameter of `generate_video`, `generate_image` or `generate_3d` and the platform's prompt pipeline applies the genre's doctrine itself. The other seven are knowledge: how to drive the Mira MCP server, how to make voice, music, sound effects, dubbing and captions, how the fourteen video models differ, how the image models differ, the camera, light, look, rhythm and continuity banks the pipeline is built on, and how to build scenes in the user's own Blender and motion pieces in their After Effects through the bridge tools.
 
 Works with Claude Code, Codex, Cursor and any agent that reads `SKILL.md` files. Generation runs through the Mira MCP server at `https://mcp.mybots.pro/mcp`, signs in with your Mira account and spends your own credits. No API keys.
 
@@ -34,6 +34,7 @@ Then connect the MCP server in your agent. The page at [mira.mybots.pro/mcp](htt
 | `mira-blender-scene` | core | Build and shoot scenes in the user's own Blender through the `blender_*` tools: blockout in metres, lights, camera, keyframes, generated assets, playblast → video model. |
 | `mira-after-effects` | core | Build motion pieces in the user's own After Effects through the `adobe_*` tools: plates, overlays, templates, type, transitions, sound, grade, render; reads a private element bank when one exists. |
 | `mira-generate` | core | Drive the Mira MCP tools: connect, pick a model, attach brand assets, generate, wait, extend, upscale, build 3D and rig it. Explains what the pipeline keeps and what it fills in. |
+| `mira-audio` | core | Voice, music and sound through the audio tools: text to speech with emotion tags, dialogue, music timed in bars, soundtracks written to the clip, sound effects, voiceover, captions, dubbing, clean audio, stems, voice design. |
 | `mira-video-prompting` | knowledge | Which of the fourteen video models to pick and what each one actually does with a prompt. One reference file per recommended model. |
 | `mira-image-prompting` | knowledge | The image models and the craft banks for stills: light, optics, composition, grade, materials, and the words that hurt. |
 | `mira-craft` | knowledge | The camera, light, look, rhythm and continuity banks the pipeline reads. Generated from the live registry. |

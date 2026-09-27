@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.4.6",
+  "snapshot": "0.5.0",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -278,6 +278,52 @@
       "hasNotice": false,
       "sections": {}
     },
+    "mira-audio": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-audio",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Voice, music and sound on Mira AI through its MCP server: text to speech with emotion tags in 70+ languages, multi-voice dialogue, music timed to the cut, a soundtrack the model writes by watching the clip, sound effects, voiceover and capt",
+      "entry": "SKILL.md",
+      "entryBytes": 8253,
+      "hasNotice": false,
+      "sections": {
+        "dialogue": {
+          "file": "references/dialogue.md",
+          "bytes": 3200,
+          "title": "Dialogue"
+        },
+        "dub-captions": {
+          "file": "references/dub-captions.md",
+          "bytes": 5915,
+          "title": "Dubbing, captions and transcripts"
+        },
+        "mix": {
+          "file": "references/mix.md",
+          "bytes": 7006,
+          "title": "Soundtrack, voiceover and the mix"
+        },
+        "music": {
+          "file": "references/music.md",
+          "bytes": 8293,
+          "title": "Music"
+        },
+        "sfx": {
+          "file": "references/sfx.md",
+          "bytes": 3045,
+          "title": "Sound effects"
+        },
+        "speech": {
+          "file": "references/speech.md",
+          "bytes": 7633,
+          "title": "Speech"
+        },
+        "voices": {
+          "file": "references/voices.md",
+          "bytes": 5822,
+          "title": "Voices"
+        }
+      }
+    },
     "mira-blender-scene": {
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-blender-scene",
       "license": "MIT",
@@ -361,13 +407,18 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 12079,
+      "entryBytes": 14945,
       "hasNotice": false,
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
           "bytes": 10261,
           "title": "References, locks and failure handling"
+        },
+        "media-ops": {
+          "file": "references/media-ops.md",
+          "bytes": 5264,
+          "title": "Clip operations"
         },
         "playbooks": {
           "file": "references/playbooks.md",

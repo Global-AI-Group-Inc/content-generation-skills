@@ -6,7 +6,8 @@ description: >-
   extend or upscale a clip. Use it whenever the user wants to "generate", "make a video", "make an
   image", "animate this photo", "create an ad", "сгенерируй", "сделай видео", "сделай картинку" and
   a Mira MCP server is connected or can be. Chain with mira-video-prompting and mira-image-prompting
-  for what to write, and with the mira-* playbooks for the genre. NOT for prompting theory on its own.
+  for what to write, and with the mira-* playbooks for the genre. NOT for prompting theory on its own,
+  and not for voice, music, sound effects, dubbing or captions (mira-audio).
 license: MIT
 metadata:
   version: "0.1.0"
@@ -37,14 +38,26 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `create_upload` | no | A one-time PUT URL for files that do not fit base64: a clip for `referenceVideoUrls` or a GLB/FBX mesh for `rig_3d` (up to 200 MB). PUT the raw bytes, then use `value.url` or `value.id`. |
 | `generate_image` | yes | Stills. Returns a generation id at once. |
 | `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. `draft=true` on `seedance-2-5` renders a cheap 480p take to try an idea. |
-| `list_generations` | no | The account's recent generations (kind image / video / model3d) with ids, URLs and poster URLs — to find an earlier clip to extend, a 3D model to rig or import, a video to reference. |
+| `list_generations` | no | The account's recent generations with ids, URLs and poster URLs: image / video / model3d by default, `audio`, `transcript` or `analysis` only when asked for by kind. To find an earlier clip to extend, a 3D model to rig, a source for a clip operation. |
 | `get_generation` / `wait_for_generation` | no | Status and the result. `wait_for_generation` blocks up to ~50 s and may need several calls. |
 | `extend_video` | yes | Native continuation of a clip the account already made. `direction="backward"` (seedance-2-5) adds what happens before the first frame. |
 | `finalize_draft` | yes | Re-renders a 480p draft as the same take in 1080p, within 7 days of the draft. |
 | `upscale_video` | yes | 720p to 1080p on a finished clip (Topaz). Not for drafts: finalize them instead. |
 | `generate_3d` | yes | One object as a 3D model from text or up to four photos (fal.ai: `hunyuan-3.1`, `meshy-7`, `trellis-2`, `rodin-fast`). Result files (GLB plus other formats) come back in `files`. Playbook: `3d`. |
 | `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`) or a mesh uploaded through `create_upload` (`libraryItemId`), plus animation clips by preset id (Meshy). |
-| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`), `finalize`, model3d (quality/pbr/rig/animations) or rig. Quote it before a costly call. |
+| `list_effects` | no | Ready-made effect presets (cakeify, figurine, age progression...) for the `effect` parameter of `generate_image` / `generate_video`, with what each needs attached. Only when the user names an effect. |
+| `modify_video` | yes | The same clip with one thing changed: lighting, weather, time of day, backdrop, or a free restyle. Up to 15 s. |
+| `reframe_video` / `remove_background` | yes | A new aspect ratio with the new canvas filled (up to 15 s); a clean key without a green screen, with a luma matte or a ProRes alpha (up to 30 s). |
+| `motion_control` / `recast_video` | yes | The character in a photo performs the motion of a clip; the person in a clip swapped for the character in a photo, performance and camera kept. Up to 30 s. |
+| `lipsync_video` | yes | The mouth in a clip re-animated to a new track from `generate_audio` or an upload. Up to 60 s. |
+| `marketing_brief` | yes | Script, shot list, a ready `generate_video` prompt, caption, hashtags and voiceover text for a product clip, returned in the same call. |
+| `generate_audio` / `plan_music` | yes / no | Speech, multi-voice dialogue, sound effects and music; `plan_music` drafts a free section plan for music timed to the cut. |
+| `list_voices` / `design_voice` / `save_voice` / `delete_voice` | design only | The platform's voices and the user's own; a new voice from a description, kept or removed. |
+| `add_soundtrack` / `voiceover_video` / `add_captions` | yes | On a finished clip: music the model writes by watching it; a spoken script over the ducked original; burned subtitles plus an SRT. |
+| `translate_video` / `change_voice` | yes | The clip's speech dubbed into another language, lip sync optional (up to 180 s); the same performance in another voice (up to 120 s). |
+| `isolate_voice` / `separate_stems` | yes | Speech cleaned of noise, music and echo; a track or a clip's sound split into 2 or 6 stems. |
+| `transcribe_video` / `analyze_transcript` | yes / partly | A word-timed transcript and SRT with speakers (up to 30 min); silence cuts and multicam splits (free), the best short clips, SEO, chapters. |
+| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. |
 | `get_credit_balance` | no | What the user can afford. |
 | `blender_status` | no | Whether the user's Blender (Mira add-on, "Connect agents" on) is reachable; version, file, frame range, selection. Call it before any other `blender_*` tool. |
 | `blender_get_scene` / `blender_screenshot` | no | See what the user sees: objects with transforms and dimensions, cameras, lights; a viewport or camera capture returned inline. |
@@ -62,6 +75,16 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `list_elements` / `get_element` | no | The Mira Elements library for After Effects and Premiere: overlays, backgrounds, transitions, LUTs, sounds, templates, open-licence fonts, with ids, previews and apply recipes. |
 | `adobe_place_element` / `adobe_install_fonts` | no | An element placed into the active composition at a time (the panel downloads it and installs the fonts a template needs; templates take texts, controls and `media` for their placeholders; luma wipes reveal the incoming layer), or fonts installed on their own. |
 | `adobe_command` | no | Typed commands when one fits better than raw script: list_layers, set_keyframes with ease, add/read markers, precompose, set_parent, set_time, set_work_area, open_comp, create_composition, add text or solid layer, apply effect, set track matte. |
+
+Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or
+`libraryItemId` (a file sent through `create_upload`). Limits, parameters and outputs of the clip
+operations: [references/media-ops.md](references/media-ops.md).
+
+## Sound
+
+Voice, music, sound effects, dubbing, captions and voices have their own skill: read mira-audio
+before `generate_audio` or any tool that changes a clip's sound. Finish the picture first, then
+add the voice, the music and the captions to it.
 
 ## Blender
 
