@@ -10,6 +10,7 @@
 | audio | yes |
 | prompt budget | 8000 chars |
 | extend | no |
+| draft | no |
 | last frame | yes |
 | reference clips | up to 5, 15 s each |
 | reference audio | up to 5, bound as @AudioN; needs at least one photo or clip alongside |

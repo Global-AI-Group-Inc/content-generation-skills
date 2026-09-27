@@ -36,14 +36,15 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `upload_reference_image` | no | A local image becomes a reference URL (base64, up to 8 MB). Only clients with file access can do this. |
 | `create_upload` | no | A one-time PUT URL for files that do not fit base64: a clip for `referenceVideoUrls` or a GLB/FBX mesh for `rig_3d` (up to 200 MB). PUT the raw bytes, then use `value.url` or `value.id`. |
 | `generate_image` | yes | Stills. Returns a generation id at once. |
-| `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. |
+| `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. `draft=true` on `seedance-2-5` renders a cheap 480p take to try an idea. |
 | `list_generations` | no | The account's recent generations (kind image / video / model3d) with ids, URLs and poster URLs — to find an earlier clip to extend, a 3D model to rig or import, a video to reference. |
 | `get_generation` / `wait_for_generation` | no | Status and the result. `wait_for_generation` blocks up to ~50 s and may need several calls. |
-| `extend_video` | yes | Native continuation of a clip the account already made. |
-| `upscale_video` | yes | 720p to 1080p on a finished clip. |
+| `extend_video` | yes | Native continuation of a clip the account already made. `direction="backward"` (seedance-2-5) adds what happens before the first frame. |
+| `finalize_draft` | yes | Re-renders a 480p draft as the same take in 1080p, within 7 days of the draft. |
+| `upscale_video` | yes | 720p to 1080p on a finished clip (Topaz). Not for drafts: finalize them instead. |
 | `generate_3d` | yes | One object as a 3D model from text or up to four photos (fal.ai: `hunyuan-3.1`, `meshy-7`, `trellis-2`, `rodin-fast`). Result files (GLB plus other formats) come back in `files`. Playbook: `3d`. |
 | `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`) or a mesh uploaded through `create_upload` (`libraryItemId`), plus animation clips by preset id (Meshy). |
-| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration/resolution), model3d (quality/pbr/rig/animations) or rig. Quote it before a costly call. |
+| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`), `finalize`, model3d (quality/pbr/rig/animations) or rig. Quote it before a costly call. |
 | `get_credit_balance` | no | What the user can afford. |
 | `blender_status` | no | Whether the user's Blender (Mira add-on, "Connect agents" on) is reachable; version, file, frame range, selection. Call it before any other `blender_*` tool. |
 | `blender_get_scene` / `blender_screenshot` | no | See what the user sees: objects with transforms and dimensions, cameras, lights; a viewport or camera capture returned inline. |
@@ -110,7 +111,10 @@ models several times a draft model.
 ## Chaining
 
 `upload_reference_image` → `generate_image` → `generate_video` from that image → `extend_video`
-→ `upscale_video`. For 3D: `generate_image` (clean object on a neutral background) → `generate_3d`
+→ `upscale_video`. To explore on `seedance-2-5`: two or three `generate_video` calls with
+`draft=true` (480p, about 18 credits per 5 s) → the user picks one → `finalize_draft` renders that
+same take in 1080p → `extend_video` in either direction continues the final in 1080p. A draft is
+never extended or upscaled. For 3D: `generate_image` (clean object on a neutral background) → `generate_3d`
 from that image → `rig_3d` on the result. A generation id from any step is a valid input to the next.
 From a DCC tool such as Blender: export the selection as GLB → `create_upload` (kind `model3d`) → `rig_3d`
 with `libraryItemId`; a viewport playblast → `create_upload` (kind `video`) → `generate_video` with that URL

@@ -10,6 +10,7 @@
 | audio | yes |
 | prompt budget | 400 chars |
 | extend | no |
+| draft | no |
 | last frame | no |
 | reference clips | no |
 | reference audio | no |

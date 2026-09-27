@@ -125,6 +125,24 @@ The numbering shifts by one: the source clip itself is `@Video1`, so your clips 
 total video budget TOGETHER with the source, so a long source leaves little room - trim the
 references rather than sending more of them.
 
+## Continuing backward
+
+`extend_video` with `direction="backward"` (`seedance-2-5` only) writes a prequel: the new segment
+is stitched IN FRONT of the clip. The source is still `@Video1`, but now it is where the new shot
+must end, not where it starts. Write the moments before the clip opens and land on its first frame:
+the same subjects, poses and framing at the instant the clip begins. Do not describe what the clip
+itself shows. The price and the steps are the same as forward; `list_models` reports
+`extend_directions` per model, and a forward-only model refuses rather than extending the wrong way.
+
+## Drafts and finals
+
+`generate_video` with `draft=true` on `seedance-2-5` renders a 480p take for a fraction of the price.
+Iterate on drafts, then `finalize_draft` the one the user picks: the provider re-renders THAT take in
+1080p with the same seed, prompt, references and sound. It is a new render, not an upscale, so fine
+texture, tiny text and crowds can shift slightly. A draft can be finalized once, within 7 days, and
+cannot be extended or upscaled; a 1080p final extends in 1080p at the 1080p price. Drafts do not
+combine with keyframe anchors (`startImageUrl`/`endImageUrl`).
+
 ## Seeds
 
 Most models ignore the seed. Reuse it together with a lightly edited prompt for a close

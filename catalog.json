@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.4.5",
+  "snapshot": "0.4.6",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -361,12 +361,12 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 11460,
+      "entryBytes": 12079,
       "hasNotice": false,
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 9067,
+          "bytes": 10261,
           "title": "References, locks and failure handling"
         },
         "playbooks": {
@@ -483,67 +483,67 @@
       "sections": {
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
-          "bytes": 5901,
+          "bytes": 5916,
           "title": "HappyHorse 1.1 (happyhorse)"
         },
         "models/kling-motion": {
           "file": "references/models/kling-motion.md",
-          "bytes": 2182,
+          "bytes": 2197,
           "title": "kling-motion (kling-motion)"
         },
         "models/kling": {
           "file": "references/models/kling.md",
-          "bytes": 8279,
+          "bytes": 8294,
           "title": "Kling 3.0 (kling)"
         },
         "models/minimax": {
           "file": "references/models/minimax.md",
-          "bytes": 7779,
+          "bytes": 7794,
           "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 5071,
+          "bytes": 5090,
           "title": "Google Gemini Omni Flash (omni)"
         },
         "models/runway": {
           "file": "references/models/runway.md",
-          "bytes": 5468,
+          "bytes": 5483,
           "title": "Runway Gen-4.5 (runway)"
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9266,
+          "bytes": 9436,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
           "file": "references/models/veo-lite.md",
-          "bytes": 5180,
+          "bytes": 5195,
           "title": "Google Veo 3.1 Lite (veo-lite)"
         },
         "models/veo-quality": {
           "file": "references/models/veo-quality.md",
-          "bytes": 5232,
+          "bytes": 5251,
           "title": "Google Veo 3.1 Quality (veo-quality)"
         },
         "models/veo": {
           "file": "references/models/veo.md",
-          "bytes": 5107,
+          "bytes": 5126,
           "title": "Google Veo 3.1 Fast (veo)"
         },
         "models/wan3-prime": {
           "file": "references/models/wan3-prime.md",
-          "bytes": 8037,
+          "bytes": 8052,
           "title": "Wan 3.0 Prime (wan3-prime)"
         },
         "models/wan3": {
           "file": "references/models/wan3.md",
-          "bytes": 7956,
+          "bytes": 7971,
           "title": "Wan 3.0 (wan3)"
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 4947,
+          "bytes": 4980,
           "title": "Selecting the model"
         },
         "textures": {

@@ -9,7 +9,8 @@
 | reference images | 3 |
 | audio | yes |
 | prompt budget | 3000 chars |
-| extend | yes |
+| extend | forward |
+| draft | no |
 | last frame | yes |
 | reference clips | no |
 | reference audio | no |

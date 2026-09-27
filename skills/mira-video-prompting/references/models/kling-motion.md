@@ -10,6 +10,7 @@
 | audio | yes |
 | prompt budget | 2500 chars |
 | extend | no |
+| draft | no |
 | last frame | no |
 | reference clips | exactly 1 driving clip, 3-30 s (required); output length = clip length |
 | reference audio | no |
