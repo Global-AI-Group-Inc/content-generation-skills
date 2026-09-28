@@ -27,10 +27,15 @@ the platform already did.
 `referenceImageUrls` takes up to eight public HTTPS URLs. One image on a video call turns it
 into image-to-video with that frame as the start. Several images are merged into one start frame
 on most models; `seedance-2-5` takes them natively and is the only family where an attached
-avatar reaches the model as an identity rather than a rebuilt frame - when the avatar is
-registered in the platform's asset library. An unregistered avatar built from real photos is
-rebuilt into one composed start frame on Seedance. Private and loopback
-addresses are refused.
+avatar or photo of a person reaches the model as an identity rather than a rebuilt frame.
+Seedance screens every photo for real-looking faces before billing. When it refuses one, the
+platform registers the refused photos in its private asset library for the length of that one
+render, sends the same take again with them as assets, and deletes them as soon as the render
+ends - the face stays the one in the photo, and nothing is needed from you: the call simply
+takes a little longer. Only avatar, uploaded and library photos go this way; a
+stylised request (`style` anime, render3d or pixel, or a drawn medium in the prompt) is redrawn
+into one composed start frame instead, because an asset would drag the clip back to photoreal.
+Private and loopback addresses are refused.
 
 An image attached to a chat is not a URL. If the client has file access, read the file and call
 `upload_reference_image` with its bytes; if it does not, ask the user for a link.
@@ -157,8 +162,12 @@ variation; a model change discards it.
 
 - 401 on `tools/call`: the sign-in was not completed. Ask the user to finish it in the browser.
 - `out_of_credits`: say so plainly and stop. Do not retry with a cheaper model unasked.
-- `moderation_blocked`: the provider refused the input. Real faces on some models are re-routed
-  automatically; if it still fails, describe the person instead of attaching the photo.
+- `moderation_blocked`: the provider refused the input. A refused face on `seedance-2-5` has already
+  been retried once as a temporary asset and, failing that, as a composed start frame; a
+  refusal after both means the photo will not pass -
+  describe the person instead of attaching it. Do not resubmit the identical call in a loop:
+  the face screen is not deterministic, but a second identical call costs the user the wait
+  again. A refusal on reference CLIPS is final: see above.
 - `still_running` from `wait_for_generation`: call it again. Video routinely needs three or four
   calls.
 - An unknown model id does not error; it falls back to the registry default. Check with

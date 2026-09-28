@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.1",
+  "snapshot": "0.6.2",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -417,7 +417,7 @@
         },
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 10620,
+          "bytes": 11423,
           "title": "References, locks and failure handling"
         },
         "media-ops": {
@@ -534,7 +534,7 @@
       "attribution": "",
       "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
       "entry": "SKILL.md",
-      "entryBytes": 4647,
+      "entryBytes": 4668,
       "hasNotice": false,
       "sections": {
         "models/happyhorse": {

@@ -27,7 +27,7 @@ Name the ONE thing that decides the clip. If any of these is true, take the mode
 | a person speaking on camera, or legible in-frame text, or Cyrillic | `minimax` |
 | several ordered camera moves and timed beats in one prompt, forceful camera work | `runway` |
 | convincing human anatomy and physics, sport, cloth, water | `kling` |
-| 10, 15 or 30 seconds, heavy referencing, an attached avatar as identity | `seedance-2-5` |
+| 10, 15 or 30 seconds, heavy referencing, an attached avatar or photo of a person as identity | `seedance-2-5` |
 | an edit of a clip that already exists | `omni` |
 | a 30 second story in one continuous take with one cast | `wan3`; `wan3-prime` when the user is waiting (same model, about ten times faster) |
 | multi-language lip-sync with many character references | `happyhorse` |
