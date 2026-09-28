@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.5.1",
+  "snapshot": "0.6.0",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -407,9 +407,14 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 15145,
+      "entryBytes": 15781,
       "hasNotice": false,
       "sections": {
+        "guides": {
+          "file": "references/guides.md",
+          "bytes": 2656,
+          "title": "Community guides"
+        },
         "locks-and-references": {
           "file": "references/locks-and-references.md",
           "bytes": 10620,
