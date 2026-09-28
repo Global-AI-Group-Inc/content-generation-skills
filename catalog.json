@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.5.0",
+  "snapshot": "0.5.1",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -407,12 +407,12 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 14945,
+      "entryBytes": 15145,
       "hasNotice": false,
       "sections": {
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 10261,
+          "bytes": 10620,
           "title": "References, locks and failure handling"
         },
         "media-ops": {
@@ -564,7 +564,7 @@
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9436,
+          "bytes": 9458,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
@@ -594,7 +594,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 4980,
+          "bytes": 5002,
           "title": "Selecting the model"
         },
         "textures": {

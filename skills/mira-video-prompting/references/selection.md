@@ -7,7 +7,7 @@ table it points at.
 
 | key | model | seconds | output | references | audio | prompt budget |
 |---|---|---|---|---|---|---|
-| `seedance-2-5` | ByteDance Seedance 2.5 | 5 / 10 / 15 / 30 | 720p (480p draft, finalized to 1080p) | up to 30 native | yes | 6000 |
+| `seedance-2-5` | ByteDance Seedance 2.5 | 5 / 10 / 15 / 30 | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
 | `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
 | `veo` | Google Veo 3.1 Fast | 8 | 1080p | up to 3 native | yes | 3000 |

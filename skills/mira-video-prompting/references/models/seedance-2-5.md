@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | seconds | 5 / 10 / 15 / 30 |
-| output | 720p (480p draft, finalized to 1080p) |
+| output | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p |
 | reference images | 30 |
 | audio | yes |
 | prompt budget | 6000 chars |

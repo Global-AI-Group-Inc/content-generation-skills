@@ -143,6 +143,11 @@ texture, tiny text and crowds can shift slightly. A draft can be finalized once,
 cannot be extended or upscaled; a 1080p final extends in 1080p at the 1080p price. Drafts do not
 combine with keyframe anchors (`startImageUrl`/`endImageUrl`).
 
+When the user already knows the shot, skip the drafts: `quality="hd"` renders `seedance-2-5`
+straight to 1080p at the same 1080p price a final costs (about 100 credits per 5 s). Drafting
+first pays off only when there are several takes to choose from. `list_models` reports
+`supports_hd`; models that render 1080p anyway (Kling, Veo, Wan) need no parameter.
+
 ## Seeds
 
 Most models ignore the seed. Reuse it together with a lightly edited prompt for a close

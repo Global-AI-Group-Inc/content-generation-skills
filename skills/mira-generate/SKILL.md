@@ -37,7 +37,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `upload_reference_image` | no | A local image becomes a reference URL (base64, up to 8 MB). Only clients with file access can do this. |
 | `create_upload` | no | A one-time PUT URL for files that do not fit base64: a clip for `referenceVideoUrls` or a GLB/FBX mesh for `rig_3d` (up to 200 MB). PUT the raw bytes, then use `value.url` or `value.id`. |
 | `generate_image` | yes | Stills. Returns a generation id at once. |
-| `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. `draft=true` on `seedance-2-5` renders a cheap 480p take to try an idea. |
+| `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. `draft=true` on `seedance-2-5` renders a cheap 480p take to try an idea; `quality="hd"` renders straight to 1080p. |
 | `list_generations` | no | The account's recent generations with ids, URLs and poster URLs: image / video / model3d by default, `audio`, `transcript` or `analysis` only when asked for by kind. To find an earlier clip to extend, a 3D model to rig, a source for a clip operation. |
 | `get_generation` / `wait_for_generation` | no | Status and the result. `wait_for_generation` blocks up to ~50 s and may need several calls. |
 | `extend_video` | yes | Native continuation of a clip the account already made. `direction="backward"` (seedance-2-5) adds what happens before the first frame. |
@@ -57,7 +57,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `translate_video` / `change_voice` | yes | The clip's speech dubbed into another language, lip sync optional (up to 180 s); the same performance in another voice (up to 120 s). |
 | `isolate_voice` / `separate_stems` | yes | Speech cleaned of noise, music and echo; a track or a clip's sound split into 2 or 6 stems. |
 | `transcribe_video` / `analyze_transcript` | yes / partly | A word-timed transcript and SRT with speakers (up to 30 min); silence cuts and multicam splits (free), the best short clips, SEO, chapters. |
-| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. |
+| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. |
 | `get_credit_balance` | no | What the user can afford. |
 | `blender_status` | no | Whether the user's Blender (Mira add-on, "Connect agents" on) is reachable; version, file, frame range, selection. Call it before any other `blender_*` tool. |
 | `blender_get_scene` / `blender_screenshot` | no | See what the user sees: objects with transforms and dimensions, cameras, lights; a viewport or camera capture returned inline. |
@@ -137,7 +137,8 @@ models several times a draft model.
 → `upscale_video`. To explore on `seedance-2-5`: two or three `generate_video` calls with
 `draft=true` (480p, about 18 credits per 5 s) → the user picks one → `finalize_draft` renders that
 same take in 1080p → `extend_video` in either direction continues the final in 1080p. A draft is
-never extended or upscaled. For 3D: `generate_image` (clean object on a neutral background) → `generate_3d`
+never extended or upscaled. When the shot is already clear, skip the drafts: `quality="hd"` renders
+straight to 1080p (about 100 credits per 5 s instead of 41 for 720p). For 3D: `generate_image` (clean object on a neutral background) → `generate_3d`
 from that image → `rig_3d` on the result. A generation id from any step is a valid input to the next.
 From a DCC tool such as Blender: export the selection as GLB → `create_upload` (kind `model3d`) → `rig_3d`
 with `libraryItemId`; a viewport playblast → `create_upload` (kind `video`) → `generate_video` with that URL
