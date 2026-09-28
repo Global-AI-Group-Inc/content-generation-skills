@@ -45,7 +45,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `upscale_video` | yes | 720p to 1080p on a finished clip (Topaz). Not for drafts: finalize them instead. |
 | `generate_3d` | yes | One object as a 3D model from text or up to four photos (fal.ai: `hunyuan-3.1`, `meshy-7`, `trellis-2`, `rodin-fast`). Result files (GLB plus other formats) come back in `files`. Playbook: `3d`. |
 | `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`) or a mesh uploaded through `create_upload` (`libraryItemId`), plus animation clips by preset id (Meshy). |
-| `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes (a draft only: the user publishes it). [references/guides.md](references/guides.md). |
+| `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` / `list_my_mira_guides` / `update_mira_guide` / `publish_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes (media, galleries, comparisons, uploads, video embeds, the tools they used); edit their own guides; publish only when they explicitly ask. [references/guides.md](references/guides.md). |
 | `list_effects` | no | Ready-made effect presets (cakeify, figurine, age progression...) for the `effect` parameter of `generate_image` / `generate_video`, with what each needs attached. Only when the user names an effect. |
 | `modify_video` | yes | The same clip with one thing changed: lighting, weather, time of day, backdrop, or a free restyle. Up to 15 s. |
 | `reframe_video` / `remove_background` | yes | A new aspect ratio with the new canvas filled (up to 15 s); a clean key without a green screen, with a luma matte or a ProRes alpha (up to 30 s). |
@@ -114,7 +114,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
    narrate polling.
 6. Iterate with the same seed and a lightly edited prompt for a close variation; change the model
    only when the brief needs a capability the current one lacks.
-7. The user likes a result: offer `draft_mira_guide` to share it as a community guide (a draft; they publish it).
+7. The user likes a result: offer `draft_mira_guide` to share it as a community guide (a draft; publish only when they ask).
 
 ## What the pipeline does with your prompt
 
