@@ -127,6 +127,7 @@ Defaults: 24 fps, 5 s, 16:9, 50 mm, three-point light, blockout under `Blockout`
 - [ ] Playblast through the camera in clay, 3–10 s; warnings fixed; prompt describes the finished world.
 - [ ] Prompt gives the 2-3 big surfaces their wear and the light that shows it; no smooth, clean or render words.
 - [ ] Final `blender_screenshot` and the clip URL shown to the user.
+- [ ] The user likes the clip: offer once to write it up as a community guide (`draft_mira_guide`; the blockout and the clip as a before/after, tools `blender`, `mira-blender`).
 
 ## Do not
 

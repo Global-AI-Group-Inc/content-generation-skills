@@ -23,8 +23,16 @@ Read the closest match with `get_mira_guide(slug)`.
 
 ## After a result: offer a draft
 
-When the user is happy with a result, offer to turn it into a guide, and call `draft_mira_guide`
-only after they agree. It creates a draft and returns its `id` and the editor link.
+When the user is happy with a finished result, offer to turn it into a guide, and call
+`draft_mira_guide` only after they agree. It creates a draft and returns its `id` and the editor link.
+
+- When to offer: after a result they like, or after the last step of a longer job (a clip made from
+  a Blender blockout, an extension, an upscale, a voiceover, an After Effects render). The Mira MCP
+  marks such results with `guide_hint`.
+- How: once per conversation, in one short sentence, after showing the result. Say what they get: a
+  public page with their result, the exact recipe and a Repeat button, a draft until they publish.
+- When not to: drafts and retakes they are about to replace, results they did not like, or after
+  they have said no. Never create the draft without their yes.
 
 - `title`: 8-90 characters in the user's language, saying what the reader will be able to make.
 - `summary`: one or two sentences for the card. `skill`: the playbook the results were made with.

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.2",
+  "snapshot": "0.6.3",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -238,7 +238,7 @@
       "attribution": "",
       "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth, velocity-matched transitions, expressions, grade) or E",
       "entry": "SKILL.md",
-      "entryBytes": 9406,
+      "entryBytes": 9542,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -330,7 +330,7 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 10080,
+      "entryBytes": 10258,
       "hasNotice": false,
       "sections": {
         "blockout": {
@@ -407,12 +407,12 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 15961,
+      "entryBytes": 16141,
       "hasNotice": false,
       "sections": {
         "guides": {
           "file": "references/guides.md",
-          "bytes": 6551,
+          "bytes": 7160,
           "title": "Community guides"
         },
         "locks-and-references": {

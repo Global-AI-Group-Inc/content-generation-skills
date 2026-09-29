@@ -114,7 +114,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
    narrate polling.
 6. Iterate with the same seed and a lightly edited prompt for a close variation; change the model
    only when the brief needs a capability the current one lacks.
-7. The user likes a result: offer `draft_mira_guide` to share it as a community guide (a draft; publish only when they ask).
+7. A finished result the user is happy with (or the last step of a longer job: extend, upscale, voiceover, blockout to clip): offer once, in one sentence, to write it up as a community guide with `draft_mira_guide` (a draft; publish only when they ask). Not for drafts or retakes; never again after a no.
 
 ## What the pipeline does with your prompt
 
