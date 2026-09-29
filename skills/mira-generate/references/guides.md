@@ -2,8 +2,9 @@
 
 Community guides live at [mira.mybots.pro/guides](https://mira.mybots.pro/guides). Mira users write
 them about a result of their own: what they wanted, the steps they took, and for every image or clip
-the recipe behind it (model, prompt, ratio, duration, resolution, seed, the credits it cost). Users
-write them, not the platform, and they are not the playbooks of `list_skills` / `get_skill`.
+the recipe behind it (model, prompt, ratio, duration, resolution, seed, the credits it cost, the
+references the author chose to share). Users write them, not the platform, and they are not the
+playbooks of `list_skills` / `get_skill`.
 
 ## Before a prompt: search
 
@@ -20,6 +21,38 @@ Read the closest match with `get_mira_guide(slug)`.
 - Leave the seed out unless you repeat the author's prompt word for word on the same model; most
   models ignore it anyway.
 - Nothing close: write the prompt yourself with mira-video-prompting or mira-image-prompting.
+
+## Repeat a guide
+
+When the user wants the guide's result itself, not an adaptation: "repeat this" with a guide link,
+or the Mira MCP prompt `repeat_guide` (in Claude Code `/mcp__mira__repeat_guide <slug>`, where `mira`
+is the name the server was added under; the "Repeat in Claude" button on a guide page asks for the
+same in words).
+
+1. `get_mira_guide(slug)`. Sum it up in 3-6 lines: the result, the author's steps, each recipe
+   (model, ratio, duration, credits). Several results with recipes: ask which one to repeat.
+2. `estimate_cost` for that recipe. Tell the user the price and wait for their yes.
+3. Generate with the recipe as it is: the same model, the prompt word for word, the ratio, the
+   duration, the seed when set, `skill` = the guide's skill. Pass the refs the author shared:
+   `ref_image_urls` as `referenceImageUrls`, `ref_video_urls` as `referenceVideoUrls`. Pass
+   `guideId` = `guide_id` and `guideBlockId` = the `block_id` of the block the recipe sits in: the
+   author is credited for the repeat, and their shared Blender playblast is read as a blockout, as it
+   was for them.
+4. `wait_for_generation`, then show the result with the guide's URL.
+
+Recipe fields that change the plan:
+
+- `ref_video_kinds` has `blockout`: that clip is the author's Blender playblast, always shared.
+  Reuse it by default. Offer the other way once: the user builds their own scene in Blender with the
+  Mira add-on (`blender_status` first, then mira-blender-scene) and you pass their playblast instead.
+- `upscale: "topaz"`: the page shows a Topaz upscale; the recipe is the source clip. After the
+  repeat, offer `upscale_video` on the new clip (about `upscale_credits`).
+- `extended: true`: the clip continues another one, and the recipe is only that step. Say so
+  before spending: repeating it does not rebuild the clip it continues.
+- `prompt_kind: "authored"`: the author's prompt went to the model as written. Keep it verbatim;
+  the Mira MCP sends every prompt that way.
+- The prompt names a reference (`@Image2`, `@Video1`) with no URL in the recipe: the author kept it
+  private. Ask the user for their own, or tell them the repeat will differ there.
 
 ## After a result: offer a draft
 
@@ -58,8 +91,9 @@ When the user is happy with a finished result, offer to turn it into a guide, an
   a file the user uploaded with `upload_reference_image` or `create_upload` (kind `image`). Never a
   picture from the web. `media` takes a generation, `image` an upload, galleries and comparisons either.
 - At least one `media` block. The platform attaches the recipe of every generation itself: do not
-  restate its settings by hand. `shareRefs: true` also publishes that generation's reference images;
-  set it only when the user agrees, since their photos become public.
+  restate its settings by hand. `shareRefs: true` also publishes that generation's reference images
+  and clips; set it only when the user agrees, since their photos become public. A Blender blockout
+  playblast is published with the recipe either way: without it the recipe cannot be repeated.
 - Text takes `**bold**`, `*italic*`, `` `code` ``, `[links](https://...)` and `- ` or `1. ` lists.
 
 ## Made with: the tools

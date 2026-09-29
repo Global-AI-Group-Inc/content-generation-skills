@@ -109,7 +109,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
    word for word, on-screen text exactly. Then the one or two craft decisions you actually care
    about. Leave the rest. For model-specific rules read the model file in `mira-video-prompting`
    or `mira-image-prompting`.
-   An effect or look you have not made on Mira: `search_mira_guides` first, adapt a recipe, credit the guide.
+   An effect or look you have not made on Mira: `search_mira_guides` first, adapt a recipe, credit the guide. To repeat a guide as is (a guide link, the `repeat_guide` prompt), follow "Repeat a guide" in [references/guides.md](references/guides.md).
 5. Call the generate tool, then `wait_for_generation` until it is done. Show the URL. Do not
    narrate polling.
 6. Iterate with the same seed and a lightly edited prompt for a close variation; change the model
