@@ -1,7 +1,7 @@
 # Dialogue
 
 `generate_audio` kind `dialogue`: several voices take turns in one mp3, performed together on
-Eleven v3, so the timing between turns sounds like a conversation rather than clips glued in a
+Eleven v4, so the timing between turns sounds like a conversation rather than clips glued in a
 row. For a podcast intro, a two-voice radio ad, a sketch, an interview, a customer exchange.
 
 ## The call

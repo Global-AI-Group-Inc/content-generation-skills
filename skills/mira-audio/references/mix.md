@@ -39,12 +39,12 @@ add_soundtrack {"sourceGenerationId": "<clip>",
 
 ## Voiceover on a clip
 
-`voiceover_video` writes the script as speech (v3 or Flash, speech.md), places it on the clip at
+`voiceover_video` writes the script as speech (v4 or Turbo, speech.md), places it on the clip at
 `startSeconds` and mixes it with the clip's own sound. Clips up to 300 s.
 
 ```
 voiceover_video {"sourceGenerationId": "<clip>", "voiceId": "<id from list_voices>",
-  "model": "v3", "language": "en", "startSeconds": 0.5, "original": "duck",
+  "model": "v4", "language": "en", "startSeconds": 0.5, "original": "duck",
   "script": "Meet the lightest shoe we have ever made. Seven ounces. Zero compromise.",
   "captions": true, "captionStyle": "bold"}
 ```
@@ -54,13 +54,13 @@ voiceover_video {"sourceGenerationId": "<clip>", "voiceId": "<id from list_voice
   sound is quiet ambience.
 - `captions: true` burns subtitles aligned to the script's exact words and adds an SRT.
   `captionStyle`: `clean` (small, low, for 16:9) or `bold` (large and higher, for vertical
-  shorts). With captions on, keep audio tags and `<break>` tags out of the script: they are
+  shorts). With captions on, keep audio tags out of the script: they are
   aligned as words and can show up in the subtitles. Direct the delivery with punctuation.
 - Empty `voiceId` means the default voice.
 - The result is the clip with the voice; the voice alone is in `files[]` with role `voiceover`,
   the subtitles with role `srt`.
-- Price: `estimate_cost {"kind": "voiceover", "model": "v3", "chars": 72, "sourceSeconds": 10}` with
-  the script's length and the clip's; model `"v3+captions"` or `"flash+captions"` prices the subtitles too.
+- Price: `estimate_cost {"kind": "voiceover", "model": "v4", "chars": 72, "sourceSeconds": 10}` with
+  the script's length and the clip's; model `"v4+captions"` or `"turbo+captions"` prices the subtitles too.
 
 ### Timing the script
 

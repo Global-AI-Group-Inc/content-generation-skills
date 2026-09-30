@@ -12,13 +12,13 @@ description: >-
   After Effects (mira-after-effects).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Mira audio
 
 Every sound on Mira comes from ElevenLabs models behind the same MCP server that makes the
-pictures: Eleven v3 and Flash for speech, text-to-dialogue, Music v2.5, the sound-effects model,
+pictures: Eleven v4 and v4 Turbo for speech, text-to-dialogue, Music v2.5, the sound-effects model,
 the voice changer and the voice isolator, dubbing, and Scribe v2 for transcripts. A tool that
 makes something returns a generation id at once and `wait_for_generation` brings the result: a
 track is an mp3 in `urls[0]`, an operation on a clip is a new clip, and stems, captions and
@@ -124,7 +124,7 @@ estimate_cost {"kind": "stems", "model": "6", "sourceSeconds": 180}
 
 | Code | What to do |
 |---|---|
-| `text_too_long` | Split at paragraph ends: v3 takes 5000 characters a call, flash 20000, a dialogue 2000. |
+| `text_too_long` | Split at paragraph ends: v4 takes 10000 characters a call, turbo 20000, a dialogue 2000. |
 | `source_too_long` | The source is over the tool's limit in the Sources table: trim it and send the part. |
 | `music_prompt_rejected` | An artist, a song or known lyrics were recognised. Take the suggested prompt or describe the sound. |
 | `composition_invalid` | A section is outside 3-120 s or over 30 lines, or there are more than 30 sections. |
