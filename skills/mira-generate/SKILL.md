@@ -46,6 +46,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `generate_3d` | yes | One object as a 3D model from text or up to four photos (fal.ai: `hunyuan-3.1`, `meshy-7`, `trellis-2`, `rodin-fast`). Result files (GLB plus other formats) come back in `files`. Playbook: `3d`. |
 | `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`) or a mesh uploaded through `create_upload` (`libraryItemId`), plus animation clips by preset id (Meshy). |
 | `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` / `list_my_mira_guides` / `update_mira_guide` / `publish_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes (media, galleries, comparisons, uploads, video embeds, the tools they used); edit their own guides; publish only when they explicitly ask. [references/guides.md](references/guides.md). |
+| `list_direct_presets` / `direct_video` | `direct_video` yes | Direct presets: the user answers a short questionnaire (short film, music video, product or UGC ad, brand film, real-estate tour, micro drama, explainer, trailer, social post, ad remake) and the preset directs ONE clip up to 30 s - you write no prompt. Offer one when the user wants such a piece and brings no prompt. [references/direct-presets.md](references/direct-presets.md). |
 | `list_effects` | no | Ready-made effect presets (cakeify, figurine, age progression...) for the `effect` parameter of `generate_image` / `generate_video`, with what each needs attached. Only when the user names an effect. |
 | `modify_video` | yes | The same clip with one thing changed: lighting, weather, time of day, backdrop, or a free restyle. Up to 15 s. |
 | `reframe_video` / `remove_background` | yes | A new aspect ratio with the new canvas filled (up to 15 s); a clean key without a green screen, with a luma matte or a ProRes alpha (up to 30 s). |
@@ -77,9 +78,8 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `adobe_place_element` / `adobe_install_fonts` | no | An element placed into the active composition at a time (the panel downloads it and installs the fonts a template needs; templates take texts, controls and `media` for their placeholders; luma wipes reveal the incoming layer), or fonts installed on their own. |
 | `adobe_command` | no | Typed commands when one fits better than raw script: list_layers, set_keyframes with ease, add/read markers, precompose, set_parent, set_time, set_work_area, open_comp, create_composition, add text or solid layer, apply effect, set track matte. |
 
-Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or
-`libraryItemId` (a file sent through `create_upload`). Limits, parameters and outputs of the clip
-operations: [references/media-ops.md](references/media-ops.md).
+Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or `libraryItemId`
+(a file sent through `create_upload`). Limits, parameters and outputs: [references/media-ops.md](references/media-ops.md).
 
 ## Sound
 

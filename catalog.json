@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.5",
+  "snapshot": "0.6.6",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -407,9 +407,14 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 16281,
+      "entryBytes": 16704,
       "hasNotice": false,
       "sections": {
+        "direct-presets": {
+          "file": "references/direct-presets.md",
+          "bytes": 3646,
+          "title": "Direct presets (\"Direct Your Video\")"
+        },
         "guides": {
           "file": "references/guides.md",
           "bytes": 9498,
