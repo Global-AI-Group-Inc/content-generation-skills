@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: ads
     image_style: banner
-    models: [runway, omni, minimax, kling, gpt-image-2.5-flare, gpt-image-2.5-sunburst, nano-banana-pro, gpt-image-2, muse-image]
+    models: [runway, omni, minimax, kling, kling-turbo, gpt-image-2.5-flare, gpt-image-2.5-sunburst, nano-banana-pro, gpt-image-2, muse-image, ideogram-4.5]
     order: 30
     icon: megaphone
 ---
@@ -63,11 +63,13 @@ The product, the one promise, and the exact headline if there is one.
 
 For video, `runway` executes several ordered moves and timed beats in one prompt; `omni` cuts on
 its own and is cheapest for volume; `minimax` when someone speaks or text must be legible in
-frame; `kling` for human action and physics. For a banner, `gpt-image-2.5-flare` renders legible
+frame; `kling` for human action and physics, `kling-turbo` for cheaper single-take variants of
+it. For a banner, `gpt-image-2.5-flare` renders legible
 text in any language at the exact ratio; `gpt-image-2.5-sunburst` (premium) for the polished
 campaign key visual; `nano-banana-pro` for one design in several languages; `gpt-image-2` when
 the layout is complex and there is no text; `muse-image` (1 credit) for cheap drafts and a visual
-that must show a real, recognisable place or product.
+that must show a real, recognisable place or product; `ideogram-4.5` when the headline and its
+type layout ARE the banner.
 
 ## Checklist
 

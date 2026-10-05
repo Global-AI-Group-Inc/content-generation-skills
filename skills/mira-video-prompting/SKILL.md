@@ -2,7 +2,7 @@
 name: mira-video-prompting
 description: >-
   Which of Mira's video models to pick (the live list is in references/selection.md) and how each
-  one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality),
+  one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality),
   Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0. Use it before any generate_video call on Mira, when the
   user asks "which model", "how long can it be", "does it have sound", "промпт для видео", or pastes
   a video prompt to improve. NOT for stills (mira-image-prompting) or for the camera and light banks
@@ -27,6 +27,7 @@ Name the ONE thing that decides the clip. If any of these is true, take the mode
 | a person speaking on camera, or legible in-frame text, or Cyrillic | `minimax` |
 | several ordered camera moves and timed beats in one prompt, forceful camera work | `runway` |
 | convincing human anatomy and physics, sport, cloth, water | `kling` |
+| the same, as one quick single take from text or one start frame, cheaper | `kling-turbo` |
 | 10, 15 or 30 seconds, heavy referencing, an attached avatar or photo of a person as identity | `seedance-2-5` |
 | an edit of a clip that already exists | `omni` |
 | a 30 second story in one continuous take with one cast | `wan3`; `wan3-prime` when the user is waiting (same model, about ten times faster) |

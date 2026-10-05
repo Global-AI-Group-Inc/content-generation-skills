@@ -2,7 +2,7 @@
 name: mira-image-prompting
 description: >-
   How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K
-  and 5 Pro, Muse Image, Flux. Which model holds text, which keeps a product identical across a series, how the craft
+  and 5 Pro, Muse Image, Ideogram 4.5, Flux. Which model holds text, which keeps a product identical across a series, how the craft
   banks for light, optics, composition, grade and materials are used, and the words that make an
   image worse. Use it before any generate_image call on Mira, or when the user says "image prompt",
   "промпт для картинки", "нарисуй", "сгенерируй картинку", poster, packshot, banner, cover. NOT for
@@ -30,8 +30,9 @@ Name the ONE thing that decides the image:
 | the same product or person across several images | `seedream-4` |
 | premium photoreal at true 2K: skin, fabric, glass, metal that must look photographed | `seedream-5-pro` (4 credits) |
 | a real, specific place, landmark or product that must be recognisable; cheap drafts | `muse-image` (1 credit) |
+| a poster, cover, label or layout where the lettering IS the design | `ideogram-4.5` (6 credits) |
 | print-grade detail, a large-format hero | `seedream-4k` |
-| an exact tall ratio (9:16, 4:5) that must come back exactly | `gpt-image-2.5-flare`, `nano-banana-pro`, `seedream-5-pro` or `seedream-4` |
+| an exact tall ratio (9:16, 4:5) that must come back exactly | `gpt-image-2.5-flare`, `nano-banana-pro`, `seedream-5-pro`, `ideogram-4.5` or `seedream-4` |
 | fast drafts and mood exploration, no text | `flux` |
 | everything else: a detailed commercial brief, packshots, materials, skin | `gpt-image-2` |
 

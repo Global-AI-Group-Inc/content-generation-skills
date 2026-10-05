@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.6",
+  "snapshot": "0.6.7",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -59,11 +59,13 @@
         "omni",
         "minimax",
         "kling",
+        "kling-turbo",
         "gpt-image-2.5-flare",
         "gpt-image-2.5-sunburst",
         "nano-banana-pro",
         "gpt-image-2",
-        "muse-image"
+        "muse-image",
+        "ideogram-4.5"
       ],
       "order": 30,
       "icon": "megaphone",
@@ -228,7 +230,7 @@
       "attribution": "",
       "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
       "entry": "SKILL.md",
-      "entryBytes": 4229,
+      "entryBytes": 4379,
       "hasNotice": false,
       "sections": {}
     },
@@ -451,9 +453,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-image-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K and 5 Pro, Muse Image, Flux",
+      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
       "entry": "SKILL.md",
-      "entryBytes": 3719,
+      "entryBytes": 3849,
       "hasNotice": false,
       "sections": {
         "composition": {
@@ -483,7 +485,7 @@
         },
         "models": {
           "file": "references/models.md",
-          "bytes": 3967,
+          "bytes": 4721,
           "title": "Image models on Mira"
         },
         "optics": {
@@ -537,9 +539,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0, Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
+      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHor",
       "entry": "SKILL.md",
-      "entryBytes": 4668,
+      "entryBytes": 4773,
       "hasNotice": false,
       "sections": {
         "models/happyhorse": {
@@ -551,6 +553,11 @@
           "file": "references/models/kling-motion.md",
           "bytes": 2197,
           "title": "kling-motion (kling-motion)"
+        },
+        "models/kling-turbo": {
+          "file": "references/models/kling-turbo.md",
+          "bytes": 2001,
+          "title": "Kling 3.0 Turbo (kling-turbo)"
         },
         "models/kling": {
           "file": "references/models/kling.md",
@@ -604,7 +611,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5002,
+          "bytes": 5313,
           "title": "Selecting the model"
         },
         "textures": {

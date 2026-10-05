@@ -1,7 +1,8 @@
 # Image models on Mira
 
-Nine models, one pipeline. Every model costs three credits per image except Muse Image at one,
-Seedream 5 Pro at four and the premium tier at eight: Nano Banana Pro and GPT Image 2.5 Sunburst.
+Ten models, one pipeline. Every model costs three credits per image except Muse Image at one,
+Seedream 5 Pro at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
+Image 2.5 Sunburst.
 Pick the pricier ones only when their strengths are needed.
 
 ## gpt-image-2
@@ -65,6 +66,17 @@ them from memory. Holds the requested ratio and sizes the canvas itself. Good fo
 must show something real and specific, and for cheap drafts and variations. Keep on-image text
 short.
 
+## ideogram-4.5
+
+Ideogram's typography and graphic-design model, six credits. Posters, covers, packaging, signage,
+logos and editorial layouts where the lettering is the design. Open with the medium and the
+layout zones, give every word that must appear in double quotes with its placement, size, case,
+weight and type character, then describe the picture under the type. The brief is rendered
+exactly as written - nothing rewrites it - so say everything explicitly. Holds the exact ratio.
+With photos attached it edits the FIRST one (add a headline, swap a label, restyle the
+background) and takes the rest as references. Latin and short Cyrillic lines render cleanly; for
+long Cyrillic copy take gpt-image-2.5-flare.
+
 ## flux
 
 The fastest. Quick drafts, mood exploration, variations the user will iterate on. Its in-image
@@ -73,5 +85,5 @@ text is the weakest of the lineup; never pick it for copy. Returns 2:3 for tall 
 ## The rule that outranks the rest
 
 Aspect ratio overrides everything above. When the ratio must be exact, pick gpt-image-2.5-flare,
-gpt-image-2.5-sunburst, nano-banana-pro, muse-image or a seedream model. Leave the model empty only if nothing
+gpt-image-2.5-sunburst, nano-banana-pro, muse-image, ideogram-4.5 or a seedream model. Leave the model empty only if nothing
 fits; it then falls back to gpt-image-2.

@@ -10,6 +10,7 @@ table it points at.
 | `seedance-2-5` | ByteDance Seedance 2.5 | 5 / 10 / 15 / 30 | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
 | `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
+| `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
 | `veo` | Google Veo 3.1 Fast | 8 | 1080p | up to 3 native | yes | 3000 |
 | `veo-lite` | Google Veo 3.1 Lite | 8 | 1080p | up to 3 native | yes | 3000 |
 | `veo-quality` | Google Veo 3.1 Quality | 8 | 1080p | up to 3 native | yes | 3000 |
@@ -25,6 +26,7 @@ table it points at.
 - **`seedance-2-5`** — the long-form specialist: up to 30s, heavy referencing (storyboards, keyframe chains, video edit/extend); pricier than any Veo tier - reach for it only when length or reference volume decides the clip. ALSO the camera-trick model WITH audio: in live runs (2026-09-06) it executed every phased single-take trick as written - a top-down crash dive, a full 360 orbit returning to the start, a whip pan fusing two locations, a dolly zoom, a camera struck and falling while it records, a locked day-night cycle, a pass through a mirror into a new place - where Runway smeared or split half of them and Kling stopped short of the move; when the MOVE is the concept and the clip needs sound, this is the key
 - **`runway`** — Gen-4.5, text-to-video AND image-to-video: the sequencing specialist - executes several ordered camera moves and timed beats inside ONE prompt, and takes forceful camera work (sweeping arcs, crash zooms, whip pans) the others smear; weak on fine motor detail; NO audio; 720p; 5/10s
 - **`kling`** — best human anatomy and physics (sport, cloth, water), legible in-frame text, native audio with multi-speaker dialogue and accents; 3-15s; 1080p output
+- **`kling-turbo`** — the faster, cheaper Kling 3.0: ONE continuous take from text or a single start frame, native audio always on; 3-15s; 1080p; no reference photos, clips, end frames or multi-shot - for those use kling
 - **`veo`** — premium cinematography with native synchronized audio at a fair price; fixed 8s; keep to 1-2 subjects; attaching references locks the clip to 8s
 - **`veo-lite`** — the cheap Veo: same 8s audio clips at a fraction of the price, but NO reference images - drafts, b-roll, volume runs
 - **`veo-quality`** — the flagship Veo for hero clips: top cinematic realism at ~3x the Fast price - finals only, never drafts. ONE UNBROKEN TAKE: it cannot cut, so a brief with cuts, a chase or a launch stride is not its brief even when it is the hero
