@@ -15,6 +15,22 @@ generate_audio {"kind": "sfx", "durationSeconds": 20, "loop": true,
 - `loop: true` makes the end flow back into the start without a click, for ambience beds and
   engine idles under a longer scene.
 - Price: `estimate_cost {"kind": "audio", "model": "sfx", "durationSeconds": 2}`.
+- `model: "kling"` renders the same prompt with Kling Audio instead: 3 to 10 seconds, one flat
+  price per sound, no loop. Price: `estimate_cost {"kind": "audio", "model": "sfx_kling"}`.
+
+## Sound for a clip that has none
+
+`add_sound_effects` watches an existing clip (3 to 20 s) and generates the sounds of what happens
+on screen - steps, engines, doors, splashes, a crowd - in sync with the action, then mixes them
+in: `mix` (default, alongside the clip's own sound), `under` (the clip's speech stays on top) or
+`replace`. `description` names the sounds you want, `bgmPrompt` adds background music, both
+optional; `asmr` asks for close, detailed sound. The picture is not re-rendered; files[] also
+carries the generated track (role `foley`). Best on silent clips. Price: one flat call,
+`estimate_cost {"kind": "foley", "sourceSeconds": <clip length>}`.
+
+```
+add_sound_effects {"sourceGenerationId": "<silent clip>", "description": "boots on wet asphalt, a car door, distant traffic"}
+```
 
 ## Writing the prompt
 

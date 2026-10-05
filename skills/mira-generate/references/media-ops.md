@@ -16,7 +16,8 @@ Sound (voice, music, effects, dubbing, captions, stems, transcripts) is in mira-
 | `remove_background` | 30 s | `rembg` |
 | `motion_control` | 30 s (`orientation: "video"`), 10 s (`"image"`) | `motion_control` |
 | `recast_video` | 30 s | `recast` |
-| `lipsync_video` | 60 s | `lipsync` (model `lipsync-2` or `lipsync-2-pro`) |
+| `lipsync_video` | 60 s | `lipsync` (model `lipsync-2`, `lipsync-2-pro` or `kling`) |
+| `avatar_video` | the voice track: 2 to 300 s | `avatar` (model `pro` or `std`, `sourceSeconds` = the audio length) |
 
 ## modify_video
 
@@ -75,9 +76,29 @@ alternative (mira-video-prompting).
 
 The mouth of the speaker in a clip re-animated to a new track: an audio generation
 (`audioGenerationId`, from `generate_audio`) or an uploaded track (`audioLibraryItemId`).
-`model` `lipsync-2` (default) or `lipsync-2-pro` for close-ups. `syncMode` when the lengths
-differ: `cut_off` (default), `loop`, `bounce`, `silence`, `remap`. Writing the speech and the
-voice is in mira-audio.
+`model` `lipsync-2` (default), `lipsync-2-pro` for close-ups, or `kling` - the cheapest, which
+lays the track once from the start and trims to the shorter of the two, so it takes only
+`syncMode` `cut_off`. `syncMode` when the lengths differ: `cut_off` (default), `loop`, `bounce`,
+`silence`, `remap`. Writing the speech and the voice is in mira-audio.
+
+## avatar_video
+
+A still portrait that speaks or sings a voice track (Kling AI Avatar v2): lips, face, head and
+shoulders move with the audio, and the clip is exactly as long as the track. Needs no clip at
+all - the source is the AUDIO: `audioGenerationId` (a `generate_audio` kind `speech` result) or
+`audioLibraryItemId` (a track from `create_upload` kind `audio`), 2 to 300 s, plus
+`characterImageUrl` with one clearly visible face, front or three-quarter. `mode` `pro`
+(default, sharper) or `std` (half the price); `prompt` optionally steers expression and mood.
+The price runs per second of audio, so a long track adds up: quote `estimate_cost {"kind":
+"avatar", "model": "pro", "sourceSeconds": <audio length>}` first. Only animate people the
+user has the right to animate.
+
+```
+avatar_video {"characterImageUrl": "<https portrait>", "audioGenerationId": "<speech generation>", "mode": "pro"}
+```
+
+When a clip of the person already exists and only the words change, `lipsync_video` is the
+cheaper road.
 
 ## list_effects
 

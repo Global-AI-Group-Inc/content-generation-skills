@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.7",
+  "snapshot": "0.6.8",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -286,7 +286,7 @@
       "attribution": "",
       "summary": "Voice, music and sound on Mira AI through its MCP server: text to speech with emotion tags in 70+ languages, multi-voice dialogue, music timed to the cut, a soundtrack the model writes by watching the clip, sound effects, voiceover and capt",
       "entry": "SKILL.md",
-      "entryBytes": 8257,
+      "entryBytes": 8369,
       "hasNotice": false,
       "sections": {
         "dialogue": {
@@ -311,7 +311,7 @@
         },
         "sfx": {
           "file": "references/sfx.md",
-          "bytes": 3045,
+          "bytes": 4035,
           "title": "Sound effects"
         },
         "speech": {
@@ -429,7 +429,7 @@
         },
         "media-ops": {
           "file": "references/media-ops.md",
-          "bytes": 5264,
+          "bytes": 6544,
           "title": "Clip operations"
         },
         "playbooks": {

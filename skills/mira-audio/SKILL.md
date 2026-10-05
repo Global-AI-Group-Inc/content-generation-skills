@@ -32,6 +32,7 @@ transcripts arrive as files in `files[]`, each with a `role`.
 | two or more people talking: a podcast, a sketch, an interview | `generate_audio` kind `dialogue` | [dialogue.md](references/dialogue.md) |
 | music with a structure, lyrics or hits on given seconds | `plan_music` → `generate_audio` kind `music` | [music.md](references/music.md) |
 | a sound effect or an ambience bed | `generate_audio` kind `sfx` | [sfx.md](references/sfx.md) |
+| the sounds of what happens on screen, for a silent clip | `add_sound_effects` | [sfx.md](references/sfx.md) |
 | music for a clip that already exists | `add_soundtrack` | [mix.md](references/mix.md) |
 | a voice over a finished clip, captions optional | `voiceover_video` | [mix.md](references/mix.md) |
 | speech without the noise, music and echo around it | `isolate_voice` | [mix.md](references/mix.md) |
