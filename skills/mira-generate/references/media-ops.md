@@ -76,7 +76,8 @@ recast_video {"libraryItemId": "<uploaded clip>", "characterImageUrl": "<https i
 
 The character image is a Mira image or an upload (`upload_reference_image`), or pass `bloggerId`
 for the user's AI Blogger. For a blogger, `blogger_motion` (modes `motion` and `recast`) adds
-presets and a spoken line on top (ai-blogger.md). For "this character repeats that motion"
+presets and a spoken line on top (ai-blogger.md). Several people at once, a clip up to 30 s, or a
+person together with the place or a product: Miracle (miracle.md). For "this character repeats that motion"
 inside a fresh render, `generate_video` with `kling-motion` is the alternative
 (mira-video-prompting).
 
@@ -85,7 +86,8 @@ inside a fresh render, `generate_video` with `kling-motion` is the alternative
 One element of a clip replaced from photos while everything else, the sound included, stays:
 `target` is `outfit`, `product`, `location` or `text`; `imageUrls` holds 1 to 4 clean photos of
 the new object (uploads or Mira images); `prompt` names what to replace and with what. Any clip
-works, with or without a person in it; 3 to 10 s.
+works, with or without a person in it; 3 to 10 s. Longer clips or several objects at once: Miracle
+(miracle.md).
 
 ```
 swap_object {"sourceGenerationId": "<clip>", "target": "product", "imageUrls": ["<https photo of the new bottle>"], "prompt": "replace the energy drink can in her hand with the green glass bottle from the photo, label facing the camera"}

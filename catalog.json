@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.11",
+  "snapshot": "0.6.12",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -409,7 +409,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 17334,
+      "entryBytes": 17753,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -434,8 +434,13 @@
         },
         "media-ops": {
           "file": "references/media-ops.md",
-          "bytes": 8056,
+          "bytes": 8234,
           "title": "Clip operations"
+        },
+        "miracle": {
+          "file": "references/miracle.md",
+          "bytes": 4946,
+          "title": "Miracle"
         },
         "playbooks": {
           "file": "references/playbooks.md",
