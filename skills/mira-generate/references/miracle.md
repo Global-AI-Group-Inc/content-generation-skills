@@ -4,9 +4,19 @@ Miracle changes anything in a clip while every move stays: put the user, a frien
 in place of the people in a video, or swap an outfit, a product, the place or a sign. The camera,
 the timing and the sound stay as in the original. The name stays "Miracle" in every language.
 
-It works on clips of 3 to 30 s. A clip longer than 10 s is cut into parts of up to 10 s (at scene
-cuts where it has them), each part is rendered on its own and the parts are joined back under the
-original sound. A run takes about 5 to 8 minutes.
+It works on clips of 3 to 30 s, on one of two engines; `miracle_analyze` says which ones a clip can
+use and what each costs:
+
+- **One pass** (Seedance 2.5 video edit): the whole 4-30 s clip in a single render, up to 30 photos,
+  about 5 minutes. Offered when the clip is one the platform rendered on that engine in the last 29
+  days, or when there are no people in it. It does not take photos of real people: AI Bloggers,
+  products, outfits, places and signs only.
+- **In parts** (Kling 3.0 Omni): a clip longer than 10 s is cut into parts of up to 10 s (at scene
+  cuts where it has them), each part is rendered on its own and the parts are joined back under the
+  original sound. Up to 4 photos per part, real people's photos allowed, about 5-8 minutes.
+
+`engine` on `miracle` is `auto` (default: one pass when the clip and the cast allow it), `kling` or
+`seedance`. A photo of a real person in the cast always means in parts.
 
 ## Tools
 
@@ -14,8 +24,8 @@ original sound. A run takes about 5 to 8 minutes.
 |---|---|---|
 | `list_miracle_presets` | free | The motion library by `shelf`: `preset` (platform clips with fictional people, each already analysed), `community`, `hero`. |
 | `miracle_analyze` | free | Reads a clip: the parts, every person with a position and a description, the objects that can be swapped, the price. Lives 24 hours. |
-| `miracle` | 6 per second of the clip | The run itself, on an analysis. |
-| `estimate_cost` | free | kind `miracle`, `sourceSeconds` = the clip length. |
+| `miracle` | per second of the clip, by engine | The run itself, on an analysis. In parts: 6 per second; one pass: 10 per second (720p). |
+| `estimate_cost` | free | kind `miracle`, `sourceSeconds` = the clip length, `model` = `kling` or `seedance`. |
 
 ## Two modes
 
@@ -33,8 +43,8 @@ original sound. A run takes about 5 to 8 minutes.
    `libraryItemId`). 3 to 30 s.
 2. `miracle_analyze` with that source. Show the user what was found, in their language and in
    plain words: "1 · on the left - young man in a dark grey cardigan; 2 · on the right - ...",
-   the objects, the length, the number of parts and the price. A person seen only in some parts
-   is marked with those parts.
+   the objects, the length and the price of each engine it offers (one pass or in parts). A person
+   seen only in some parts is marked with those parts.
 3. Ask who becomes whom and what changes. For each person: keep, a saved AI Blogger
    (`bloggerId` from `list_brand_assets`) or a photo (`photoUrl`: `upload_reference_image` or a
    Mira image). People not listed stay as they are.
@@ -53,9 +63,11 @@ miracle {"analysisId": "<...>", "mode": "swap",
 
 ## Rules
 
-- At most 4 photos go into one part of the clip: the people visible in that part, the new place
-  and the swapped objects. The analysis says which parts each person is in; a person who is not
-  in a part does not count there. Over the limit is refused (`miracle_too_many_images`).
+- In parts, at most 4 photos go into one part of the clip: the people visible in that part, the
+  new place and the swapped objects; a person who is not in a part does not count there. In one
+  pass the limit is 30 photos for the whole clip. Over the limit is refused
+  (`miracle_too_many_images`); asking for one pass where the clip or the cast does not allow it is
+  refused too (`miracle_engine_unavailable`).
 - `swaps[].target`: `outfit`, `product` or `location` with 1 to 4 `imageUrls`; `text` with the
   new lettering in `text` (up to 80 characters). `objectId` comes from the analysis; a swap
   without it applies to every part.
@@ -76,6 +88,8 @@ miracle {"analysisId": "<...>", "mode": "swap",
 
 - One person into one 3-10 s clip, no analysis needed: `recast_video` or `blogger_motion` (mode
   `recast`) is enough.
+- A clip with cuts, several people or many references (a cast of AI Bloggers, a product and a new
+  place): Miracle in one pass keeps every cut in a single render.
 - A blogger repeating a dance from a preset: `blogger_motion` (mode `motion`) keeps the blogger's
   framing and adds a spoken line.
 - Several people, a clip up to 30 s, or a person plus a place or product at once: Miracle.
