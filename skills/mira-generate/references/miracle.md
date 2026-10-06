@@ -8,15 +8,16 @@ It works on clips of 3 to 30 s, on one of two engines; `miracle_analyze` says wh
 use and what each costs:
 
 - **One pass** (Seedance 2.5 video edit): the whole 4-30 s clip in a single render, up to 30 photos,
-  about 5 minutes. Offered when the clip is one the platform rendered on that engine in the last 29
-  days, or when there are no people in it. It does not take photos of real people: AI Bloggers,
-  products, outfits, places and signs only.
+  about 5 minutes. Offered for any clip of 4-30 s when the platform has it switched on; a clip or a
+  photo the engine refuses for a real face is retried automatically, and only if that fails does the
+  run go in parts (the price difference comes back).
 - **In parts** (Kling 3.0 Omni): a clip longer than 10 s is cut into parts of up to 10 s (at scene
   cuts where it has them), each part is rendered on its own and the parts are joined back under the
   original sound. Up to 4 photos per part, real people's photos allowed, about 5-8 minutes.
 
 `engine` on `miracle` is `auto` (default: one pass when the clip and the cast allow it), `kling` or
-`seedance`. A photo of a real person in the cast always means in parts.
+`seedance`. Whether one pass takes photos of real people is in the analysis (`real_person_photos` of
+that engine); when it does not, a real person's photo sends the run in parts.
 
 ## Tools
 
