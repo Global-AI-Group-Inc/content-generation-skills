@@ -26,19 +26,25 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
 ## Build one
 
 1. `list_blogger_traits`. Ask what the character is for (brand host, mascot, persona), then the
-   few traits the user cares about. Do not walk through 21 sections.
+   few traits the user cares about. Do not walk through 23 sections.
 2. `create_blogger_draft` with `traits` as `{sectionId: [optionIds]}`:
    - `character_type`: `average` (a believable everyday person), `bold` (exaggerated, meme-ready),
-     `extreme` (caricature), or a creature: `cat`, `dog`, `frog`, `bird`, `insect`, `rodent`.
-   - `render`: `photoreal`, `game_cg`, `cartoon_2d`, `anime`, `pixel_art`. A photoreal person may
+     `extreme` (caricature), or a creature: `cat`, `dog`, `frog`, `bird`, `insect`, `rodent`,
+     `fox`, `bear`, `panda`, `bunny`.
+   - `render`: `photoreal`, `game_cg`, `cartoon_2d`, `anime`, `pixel_art`, `clay`, `comic`,
+     `vinyl_toy`. A photoreal person may
      be shown in another medium later; any other render, and every creature, keeps its own style
      in every scene.
    - `character_type`, `gender`, `age` and `render` are required; left out, they fall back to
      `average`, `female`, `adult`, `photoreal`. Set them anyway. With face photos, `gender` and
      `age` left out follow the photos instead of those defaults.
-   - One option per section, except `features` (up to 3), `distinctive` (up to 2) and
-     `accessories` (up to 3). `ethnicity`, `skin_color`, `head_shape`, `neck`, `eye_shape`,
-     `features` and `facial_hair` are for people only; `coat_color` is for creatures only.
+   - One option per section, except `features` (up to 3), `distinctive` (up to 2), `makeup`
+     (up to 2) and `accessories` (up to 3). `ethnicity`, `skin_color`, `head_shape`, `neck`,
+     `eye_shape`, `features`, `facial_hair` and `makeup` are for people only; `coat_color` is for
+     creatures only.
+   - `style` is the outfit (24 looks, from `business` to `y2k`, `kpop_stage`, `rave`,
+     `harajuku`); `palette` recolours it (`neon`, `pastel`, `candy`, `primary`, `sunset`,
+     `metallic`, `all_black`...). Hair colours include `split_dye`, `ombre`, `rainbow`.
    - `description` (up to 400 characters) describes the character in words, instead of tiles or
      on top of them. `randomize: true` fills the sections you left out at random.
    - `photoUrls`: 1-4 photos of ONE person (`photoUrl` takes a single one); more angles keep the
@@ -68,6 +74,11 @@ in motion before paying for the save.
   `cartoon_2d` or `game_cg`. `photoreal` gives a realistic animal standing like a person.
 - Anime or pixel creator: `anime` or `pixel_art` with a saturated hair colour and one accessory
   (`headphones`, `glasses`): small sizes still read.
+- Bright trend creator: `average` or `bold`, a loud `style` (`y2k`, `rave`, `harajuku`,
+  `kpop_stage`) with a `neon` or `candy` `palette`, `split_dye` or `rainbow` hair and one `makeup`
+  (`neon_liner`, `glass_skin`). One loud axis is enough when the rest stays simple.
+- Toy mascot: a creature (`panda`, `bunny`, `fox`) in `vinyl_toy` or `clay`, a `pastel` palette:
+  reads as merch on any background.
 
 Fewer picks read stronger. Every feature, mark and accessory has to reappear in every future
 clip, so choose the ones the user wants forever. The style is only the default outfit: scenes may
