@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: anime
     image_style: anime
-    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro]
+    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
     order: 60
     icon: sparkles
 ---

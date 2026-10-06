@@ -15,7 +15,7 @@ metadata:
     kind: both
     video_style: ugc
     image_style: ugc
-    models: [minimax, omni, seedance-2-5, kling, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, muse-image]
+    models: [minimax, omni, seedance-2-5, kling, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1, muse-image]
     order: 10
     icon: smartphone
 ---

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.13",
+  "snapshot": "0.6.14",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -19,6 +19,7 @@
         "gpt-image-2",
         "gpt-image-2.5-flare",
         "nano-banana-pro",
+        "nano-banana-2.1",
         "muse-image"
       ],
       "order": 10,
@@ -63,6 +64,7 @@
         "gpt-image-2.5-flare",
         "gpt-image-2.5-sunburst",
         "nano-banana-pro",
+        "nano-banana-2.1",
         "gpt-image-2",
         "muse-image",
         "ideogram-4.5"
@@ -125,7 +127,8 @@
         "omni",
         "gpt-image-2",
         "gpt-image-2.5-flare",
-        "nano-banana-pro"
+        "nano-banana-pro",
+        "nano-banana-2.1"
       ],
       "order": 60,
       "icon": "sparkles",
@@ -162,7 +165,8 @@
         "omni",
         "gpt-image-2",
         "gpt-image-2.5-flare",
-        "nano-banana-pro"
+        "nano-banana-pro",
+        "nano-banana-2.1"
       ],
       "order": 80,
       "icon": "box",
@@ -181,7 +185,8 @@
         "seedance-2-5",
         "gpt-image-2",
         "gpt-image-2.5-flare",
-        "nano-banana-pro"
+        "nano-banana-pro",
+        "nano-banana-2.1"
       ],
       "order": 90,
       "icon": "grid-2x2",
@@ -230,7 +235,7 @@
       "attribution": "",
       "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
       "entry": "SKILL.md",
-      "entryBytes": 4379,
+      "entryBytes": 4528,
       "hasNotice": false,
       "sections": {}
     },
@@ -276,7 +281,7 @@
       "attribution": "",
       "summary": "Hand-drawn anime on Mira AI: cel-shaded characters, painted backgrounds, drawn camera, not footage",
       "entry": "SKILL.md",
-      "entryBytes": 3773,
+      "entryBytes": 3790,
       "hasNotice": false,
       "sections": {}
     },
@@ -463,9 +468,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-image-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
+      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro and 2.1, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
       "entry": "SKILL.md",
-      "entryBytes": 3849,
+      "entryBytes": 4046,
       "hasNotice": false,
       "sections": {
         "composition": {
@@ -495,7 +500,7 @@
         },
         "models": {
           "file": "references/models.md",
-          "bytes": 4721,
+          "bytes": 5587,
           "title": "Image models on Mira"
         },
         "optics": {
@@ -511,7 +516,7 @@
       "attribution": "",
       "summary": "Pixel art on Mira AI: sprites on a visible grid, a limited palette, stair-stepped edges, motion in held frames",
       "entry": "SKILL.md",
-      "entryBytes": 3490,
+      "entryBytes": 3507,
       "hasNotice": false,
       "sections": {}
     },
@@ -531,7 +536,7 @@
       "attribution": "",
       "summary": "Stylised 3D animation and CGI key visuals on Mira AI: the look of a modern animated feature, appealing simplified shapes, designed studio light, bouncy timing",
       "entry": "SKILL.md",
-      "entryBytes": 3603,
+      "entryBytes": 3620,
       "hasNotice": false,
       "sections": {}
     },
@@ -541,7 +546,7 @@
       "attribution": "",
       "summary": "Creator-style clips and photos on Mira AI: phone-shot, handheld, someone talking to the camera, a review, an unboxing, a how-to, a testimonial",
       "entry": "SKILL.md",
-      "entryBytes": 5230,
+      "entryBytes": 5247,
       "hasNotice": false,
       "sections": {}
     },

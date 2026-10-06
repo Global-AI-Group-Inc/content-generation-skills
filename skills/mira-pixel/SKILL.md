@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: pixel
     image_style: pixel
-    models: [omni, seedance-2-5, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro]
+    models: [omni, seedance-2-5, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
     order: 90
     icon: grid-2x2
 ---

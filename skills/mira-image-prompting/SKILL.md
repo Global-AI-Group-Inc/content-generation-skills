@@ -1,7 +1,7 @@
 ---
 name: mira-image-prompting
 description: >-
-  How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro, Seedream 4, 4K
+  How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro and 2.1, Seedream 4, 4K
   and 5 Pro, Muse Image, Ideogram 4.5, Flux. Which model holds text, which keeps a product identical across a series, how the craft
   banks for light, optics, composition, grade and materials are used, and the words that make an
   image worse. Use it before any generate_image call on Mira, or when the user says "image prompt",
@@ -25,14 +25,15 @@ Name the ONE thing that decides the image:
 
 | The image needs | Model |
 |---|---|
-| text in frame, any language, Cyrillic | `gpt-image-2.5-flare` (or `nano-banana-pro`) |
+| text in frame, any language, Cyrillic | `gpt-image-2.5-flare` (or `nano-banana-2.1`, `nano-banana-pro`) |
 | a polished campaign visual or a faithful edit of the user's photo, inspected closely | `gpt-image-2.5-sunburst` (premium) |
 | the same product or person across several images | `seedream-4` |
 | premium photoreal at true 2K: skin, fabric, glass, metal that must look photographed | `seedream-5-pro` (4 credits) |
 | a real, specific place, landmark or product that must be recognisable; cheap drafts | `muse-image` (1 credit) |
 | a poster, cover, label or layout where the lettering IS the design | `ideogram-4.5` (6 credits) |
+| a panoramic banner, header or strip (21:9, 4:1, 8:1) or a tall scroll (1:4, 1:8) | `nano-banana-2.1` (4 credits, the only model with these ratios) |
 | print-grade detail, a large-format hero | `seedream-4k` |
-| an exact tall ratio (9:16, 4:5) that must come back exactly | `gpt-image-2.5-flare`, `nano-banana-pro`, `seedream-5-pro`, `ideogram-4.5` or `seedream-4` |
+| an exact tall ratio (9:16, 4:5) that must come back exactly | `gpt-image-2.5-flare`, `nano-banana-2.1`, `nano-banana-pro`, `seedream-5-pro`, `ideogram-4.5` or `seedream-4` |
 | fast drafts and mood exploration, no text | `flux` |
 | everything else: a detailed commercial brief, packshots, materials, skin | `gpt-image-2` |
 

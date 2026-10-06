@@ -1,7 +1,7 @@
 # Image models on Mira
 
-Ten models, one pipeline. Every model costs three credits per image except Muse Image at one,
-Seedream 5 Pro at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
+Eleven models, one pipeline. Every model costs three credits per image except Muse Image at one,
+Seedream 5 Pro and Nano Banana 2.1 at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
 Image 2.5 Sunburst.
 Pick the pricier ones only when their strengths are needed.
 
@@ -35,6 +35,17 @@ Legible in-image text in any language and the only model to trust with Cyrillic.
 prices, offers, packaging copy, posters, infographics, diagrams. One design that must exist in
 several languages. Many reference photos blended while several people stay recognisable. Honours
 tall ratios. Premium price.
+
+## nano-banana-2.1
+
+Google's newer, faster Nano Banana, four credits - half the premium price. Sharp, legible text
+in any language including Cyrillic, infographics, diagrams and layouts with several text blocks;
+put every word in double quotes with its place and look, and write prose rather than tags. The
+only model with the panoramic ratios 21:9, 4:1 and 8:1 (wide banners, site headers, strips) and
+1:4 and 1:8 (tall scrolls, skyscraper banners); describe a panorama along its long side - what
+sits left, centre and right - so it reads as one continuous scene. Holds every ratio exactly.
+Takes up to four reference photos. For the hardest multi-person blends and maximum polish,
+nano-banana-pro is still the pick.
 
 ## seedream-4
 
@@ -85,5 +96,7 @@ text is the weakest of the lineup; never pick it for copy. Returns 2:3 for tall 
 ## The rule that outranks the rest
 
 Aspect ratio overrides everything above. When the ratio must be exact, pick gpt-image-2.5-flare,
-gpt-image-2.5-sunburst, nano-banana-pro, muse-image, ideogram-4.5 or a seedream model. Leave the model empty only if nothing
+gpt-image-2.5-sunburst, nano-banana-pro, nano-banana-2.1, muse-image, ideogram-4.5 or a seedream model.
+The panoramic 21:9, 4:1, 8:1, 1:4 and 1:8 exist only on nano-banana-2.1; any other model renders
+them 1:1. Leave the model empty only if nothing
 fits; it then falls back to gpt-image-2.

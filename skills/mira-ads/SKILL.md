@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: ads
     image_style: banner
-    models: [runway, omni, minimax, kling, kling-turbo, gpt-image-2.5-flare, gpt-image-2.5-sunburst, nano-banana-pro, gpt-image-2, muse-image, ideogram-4.5]
+    models: [runway, omni, minimax, kling, kling-turbo, gpt-image-2.5-flare, gpt-image-2.5-sunburst, nano-banana-pro, nano-banana-2.1, gpt-image-2, muse-image, ideogram-4.5]
     order: 30
     icon: megaphone
 ---
@@ -69,7 +69,8 @@ text in any language at the exact ratio; `gpt-image-2.5-sunburst` (premium) for 
 campaign key visual; `nano-banana-pro` for one design in several languages; `gpt-image-2` when
 the layout is complex and there is no text; `muse-image` (1 credit) for cheap drafts and a visual
 that must show a real, recognisable place or product; `ideogram-4.5` when the headline and its
-type layout ARE the banner.
+type layout ARE the banner; `nano-banana-2.1` (4 credits) for a wide 21:9, 4:1 or 8:1 header
+or a tall 1:4 / 1:8 skyscraper - the only model with those ratios.
 
 ## Checklist
 

@@ -15,7 +15,7 @@ metadata:
     kind: both
     video_style: toon3d
     image_style: render3d
-    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro]
+    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
     order: 80
     icon: box
 ---
