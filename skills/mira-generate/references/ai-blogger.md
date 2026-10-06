@@ -34,14 +34,17 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
      be shown in another medium later; any other render, and every creature, keeps its own style
      in every scene.
    - `character_type`, `gender`, `age` and `render` are required; left out, they fall back to
-     `average`, `female`, `adult`, `photoreal`. Set them anyway.
+     `average`, `female`, `adult`, `photoreal`. Set them anyway. With face photos, `gender` and
+     `age` left out follow the photos instead of those defaults.
    - One option per section, except `features` (up to 3), `distinctive` (up to 2) and
      `accessories` (up to 3). `ethnicity`, `skin_color`, `head_shape`, `neck`, `eye_shape`,
      `features` and `facial_hair` are for people only; `coat_color` is for creatures only.
    - `description` (up to 400 characters) describes the character in words, instead of tiles or
      on top of them. `randomize: true` fills the sections you left out at random.
-   - `photoUrl`: a real face photo. Only the face geometry and skin tone are taken from it, and
-     only with `character_type` `average`: `bold`/`extreme` are refused
+   - `photoUrls`: 1-4 photos of ONE person (`photoUrl` takes a single one); more angles keep the
+     face closer. The face comes from them, and gender, age and hair too unless the traits name
+     them. Still pass `gender` as seen in the photos: `save_blogger` matches the voice to it.
+     Only with `character_type` `average`: `bold`/`extreme` are refused
      (`trait_photo_caricature`), a creature type too (`trait_not_applicable`). Only the user's own
      face or one they have consent for; never a public figure.
    - `styleReferenceUrl`: a photo whose outfit the character wears. Clothes only.
