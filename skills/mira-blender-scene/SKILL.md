@@ -136,4 +136,4 @@ Defaults: 24 fps, 5 s, 16:9, 50 mm, three-point light, blockout under `Blockout`
 - Do not dress stand-ins: a figure that already looks like the outfit you describe stays a mannequin.
 - Do not build crowds, plants or set dressing: whatever you build comes back looking the way it was built.
 - Do not build the neighbourhood: a field of look-alike houses comes back as a toy town of identical boxes; build the route and write the rest.
-- Capsule figures are fine in a Seedance playblast; only a photoreal non-avatar person is refused.
+- Capsule figures are fine in a Seedance playblast; only a photoreal person who is not one of the user's AI Bloggers is refused.

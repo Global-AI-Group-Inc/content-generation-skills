@@ -19,8 +19,8 @@ need something no preset covers, use `generate_video` instead.
    cares. Choice fields take an option id, or the user's own words where the field is `custom`.
 3. Quote the price for the chosen length and get a yes.
 4. `direct_video` with `preset`, `answers` ({fieldId: answer}), and as the preset needs:
-   - `characters`: each ONE of `avatarId` (a ready avatar from `list_brand_assets`), `imageUrl` or
-     `description`, plus an optional role `name`;
+   - `characters`: each ONE of `bloggerId` (a saved AI Blogger from `list_brand_assets`; the older
+     `avatarId` still works), `imageUrl` or `description`, plus an optional role `name`;
    - `images`: `{field, url}` per photo, several photos of one field as several entries in the user's
      order (a property tour follows it);
    - `songUrl` and `songStart` (music video): the clip is cut to the song from that second and the

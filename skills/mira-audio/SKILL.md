@@ -43,6 +43,7 @@ transcripts arrive as files in `files[]`, each with a `role`.
 | a transcript, a silence cut, short clips, chapters | `transcribe_video` → `analyze_transcript` | [dub-captions.md](references/dub-captions.md) |
 | the same performance in another voice | `change_voice` | [voices.md](references/voices.md) |
 | a voice that does not exist yet | `design_voice` → `save_voice` | [voices.md](references/voices.md) |
+| the user's AI Blogger saying a script, or its voice changed | `blogger_speak`, `set_blogger_voice` (mira-generate) | [voices.md](references/voices.md) |
 
 One file per job. Do not load all seven for one track.
 
@@ -87,7 +88,9 @@ estimate_cost {"kind": "stems", "model": "6", "sourceSeconds": 180}
 
 1. Name the job from the table. Say in one sentence what you will make and that it spends credits.
 2. When the user cares who speaks, call `list_voices` with filters and offer two or three voices
-   by name with their preview links. Otherwise leave `voiceId` empty for the default voice.
+   by name with their preview links. Otherwise leave `voiceId` empty for the default voice. When
+   the speaker is the user's AI Blogger, pass `bloggerId` and leave `voiceId` empty: its pinned
+   voice speaks.
 3. Write for the medium: text for the ear (speech.md), genre, tempo and instruments for music
    (music.md), a source in a space for an effect (sfx.md).
 4. Quote with `estimate_cost` before anything long: minutes of music, pages of text, a long dub.
@@ -99,7 +102,8 @@ estimate_cost {"kind": "stems", "model": "6", "sourceSeconds": 180}
 - Ad with a voice and music: `generate_video` → `voiceover_video` (original `duck`, `captions`
   on) → `add_soundtrack` with mix `under`, so the music dips under the new voice.
 - Talking character: `generate_audio` speech → `lipsync_video` with `audioGenerationId` on a
-  clip where the face is large and frontal.
+  clip where the face is large and frontal. The user's AI Blogger: `blogger_speak` does script,
+  voice and portrait in one call.
 - Dub a creator clip: `isolate_voice` if the room is noisy → `translate_video` (`lipsync` for
   close-ups) → `add_captions` in the target language.
 - Cut the picture to the music: `plan_music` → `generate_audio` music → the track's URL in

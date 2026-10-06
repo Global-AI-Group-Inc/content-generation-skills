@@ -68,6 +68,30 @@ More descriptions that work:
 - "A small mischievous forest creature, high-pitched, squeaky and quick, giggles between words,
   a slight lisp. A cartoon voice for a children's animation."
 
+## An AI Blogger's voice
+
+An AI Blogger (the user's persistent character, mira-generate) carries one pinned voice. Saving
+the blogger designs it from the traits - gender, age, type, render, species - and returns three
+previews in the chosen language; the accent is not taken from ethnicity, so for an accent pin a
+library voice or design one yourself.
+
+```
+set_blogger_voice {"bloggerId": "<blogger>", "generatedVoiceId": "<the preview the user picked>"}
+set_blogger_voice {"bloggerId": "<blogger>", "voiceId": "<id from list_voices>"}
+```
+
+- `generatedVoiceId` keeps one of the auto previews, `voiceId` pins any voice from `list_voices`,
+  `auto` designs three fresh previews (a small flat fee; the first design came with the save),
+  `clear` unpins. Previews expire after 24 hours, like any design.
+- An auto voice has its own slot: it does not count towards the five designed voices and is
+  deleted with the blogger. `voice_slots_exhausted` here too means the platform is full: pin a
+  library voice.
+- The pinned voice speaks in `blogger_speak`, in a spoken line of `blogger_motion`, and in
+  `generate_audio` and `voiceover_video` called with `bloggerId` and no `voiceId`. An explicit
+  `voiceId` always wins.
+- A blogger built on the user's real face speaks only text that passes the same moderation as a
+  clone of their voice.
+
 ## Delete a voice
 
 ```

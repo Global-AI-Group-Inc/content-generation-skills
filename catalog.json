@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.8",
+  "snapshot": "0.6.9",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -286,7 +286,7 @@
       "attribution": "",
       "summary": "Voice, music and sound on Mira AI through its MCP server: text to speech with emotion tags in 70+ languages, multi-voice dialogue, music timed to the cut, a soundtrack the model writes by watching the clip, sound effects, voiceover and capt",
       "entry": "SKILL.md",
-      "entryBytes": 8369,
+      "entryBytes": 8728,
       "hasNotice": false,
       "sections": {
         "dialogue": {
@@ -321,7 +321,7 @@
         },
         "voices": {
           "file": "references/voices.md",
-          "bytes": 5822,
+          "bytes": 7159,
           "title": "Voices"
         }
       }
@@ -332,7 +332,7 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 10258,
+      "entryBytes": 10288,
       "hasNotice": false,
       "sections": {
         "blockout": {
@@ -407,29 +407,34 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-generate",
       "license": "MIT",
       "attribution": "",
-      "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
+      "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 16704,
+      "entryBytes": 17334,
       "hasNotice": false,
       "sections": {
+        "ai-blogger": {
+          "file": "references/ai-blogger.md",
+          "bytes": 11241,
+          "title": "AI Blogger"
+        },
         "direct-presets": {
           "file": "references/direct-presets.md",
-          "bytes": 3646,
+          "bytes": 3685,
           "title": "Direct presets (\"Direct Your Video\")"
         },
         "guides": {
           "file": "references/guides.md",
-          "bytes": 9498,
+          "bytes": 9502,
           "title": "Community guides"
         },
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 11423,
+          "bytes": 11753,
           "title": "References, locks and failure handling"
         },
         "media-ops": {
           "file": "references/media-ops.md",
-          "bytes": 6544,
+          "bytes": 8056,
           "title": "Clip operations"
         },
         "playbooks": {
@@ -541,7 +546,7 @@
       "attribution": "",
       "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHor",
       "entry": "SKILL.md",
-      "entryBytes": 4773,
+      "entryBytes": 4838,
       "hasNotice": false,
       "sections": {
         "models/happyhorse": {
@@ -581,7 +586,7 @@
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9458,
+          "bytes": 9462,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {

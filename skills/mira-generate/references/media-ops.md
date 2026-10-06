@@ -9,15 +9,21 @@ source's length in `sourceSeconds`; never from memory.
 
 Sound (voice, music, effects, dubbing, captions, stems, transcripts) is in mira-audio.
 
+`motion_control`, `recast_video`, `lipsync_video` and `avatar_video` also take a `bloggerId`: the
+character frame comes from the user's AI Blogger, built from its canon for the clip's ratio, in
+place of `characterImageUrl`, and speech defaults to the blogger's pinned voice. The blogger's own
+tools (`blogger_motion`, `blogger_speak`) are in ai-blogger.md.
+
 | Tool | Longest source | `estimate_cost` kind |
 |---|---|---|
 | `modify_video` | 15 s | `modify` |
 | `reframe_video` | 15 s | `reframe` |
 | `remove_background` | 30 s | `rembg` |
 | `motion_control` | 30 s (`orientation: "video"`), 10 s (`"image"`) | `motion_control` |
-| `recast_video` | 30 s | `recast` |
+| `recast_video` | 3 to 10 s | `recast` |
 | `lipsync_video` | 60 s | `lipsync` (model `lipsync-2`, `lipsync-2-pro` or `kling`) |
 | `avatar_video` | the voice track: 2 to 300 s | `avatar` (model `pro` or `std`, `sourceSeconds` = the audio length) |
+| `swap_object` | 10 s (at least 3 s) | `swap` |
 
 ## modify_video
 
@@ -60,17 +66,30 @@ Two ways to put a new character into a performance:
   `orientation: "video"` keeps the clip's framing (up to 30 s), `"image"` the photo's (up to
   10 s). `keepSound` keeps the clip's sound (default true). `prompt` optionally dresses the scene.
 - `recast_video`: the person in the clip is swapped for the character in `characterImageUrl`,
-  while the performance, the camera and the background stay. `resolution` `480p`, `580p` or
-  `720p` (default).
+  while the performance, the camera, the background and the sound stay; the result is 1080p
+  (Kling 3.0 Omni) and `resolution` is ignored.
 
 ```
 motion_control {"sourceGenerationId": "<dance clip>", "characterImageUrl": "<https image of the character>", "orientation": "video"}
 recast_video {"libraryItemId": "<uploaded clip>", "characterImageUrl": "<https image of the character>"}
 ```
 
-The character image is a Mira image or an upload (`upload_reference_image`). For "this character
-repeats that motion" inside a fresh render, `generate_video` with `kling-motion` is the
-alternative (mira-video-prompting).
+The character image is a Mira image or an upload (`upload_reference_image`), or pass `bloggerId`
+for the user's AI Blogger. For a blogger, `blogger_motion` (modes `motion` and `recast`) adds
+presets and a spoken line on top (ai-blogger.md). For "this character repeats that motion"
+inside a fresh render, `generate_video` with `kling-motion` is the alternative
+(mira-video-prompting).
+
+## swap_object
+
+One element of a clip replaced from photos while everything else, the sound included, stays:
+`target` is `outfit`, `product`, `location` or `text`; `imageUrls` holds 1 to 4 clean photos of
+the new object (uploads or Mira images); `prompt` names what to replace and with what. Any clip
+works, with or without a person in it; 3 to 10 s.
+
+```
+swap_object {"sourceGenerationId": "<clip>", "target": "product", "imageUrls": ["<https photo of the new bottle>"], "prompt": "replace the energy drink can in her hand with the green glass bottle from the photo, label facing the camera"}
+```
 
 ## lipsync_video
 
@@ -83,22 +102,24 @@ lays the track once from the start and trims to the shorter of the two, so it ta
 
 ## avatar_video
 
-A still portrait that speaks or sings a voice track (Kling AI Avatar v2): lips, face, head and
-shoulders move with the audio, and the clip is exactly as long as the track. Needs no clip at
-all - the source is the AUDIO: `audioGenerationId` (a `generate_audio` kind `speech` result) or
-`audioLibraryItemId` (a track from `create_upload` kind `audio`), 2 to 300 s, plus
-`characterImageUrl` with one clearly visible face, front or three-quarter. `mode` `pro`
-(default, sharper) or `std` (half the price); `prompt` optionally steers expression and mood.
-The price runs per second of audio, so a long track adds up: quote `estimate_cost {"kind":
-"avatar", "model": "pro", "sourceSeconds": <audio length>}` first. Only animate people the
-user has the right to animate.
+Kling AI Avatar - talking portrait (works with a `bloggerId` too). The name is the model's: it is
+not the user's character, which is an AI Blogger. A still portrait that speaks or sings a voice
+track (Kling AI Avatar v2): lips, face, head and shoulders move with the audio, and the clip is
+exactly as long as the track. Needs no clip at all - the source is the AUDIO:
+`audioGenerationId` (a `generate_audio` kind `speech` result) or `audioLibraryItemId` (a track
+from `create_upload` kind `audio`), 2 to 300 s, plus `characterImageUrl` with one clearly visible
+face, front or three-quarter, or a `bloggerId`. `mode` `pro` (default, sharper) or `std` (half
+the price); `prompt` optionally steers expression and mood. The price runs per second of audio,
+so a long track adds up: quote `estimate_cost {"kind": "avatar", "model": "pro", "sourceSeconds":
+<audio length>}` first. Only animate people the user has the right to animate.
 
 ```
 avatar_video {"characterImageUrl": "<https portrait>", "audioGenerationId": "<speech generation>", "mode": "pro"}
 ```
 
 When a clip of the person already exists and only the words change, `lipsync_video` is the
-cheaper road.
+cheaper road. For the user's AI Blogger, `blogger_speak` runs the whole chain in one call: the
+script, the blogger's voice and the portrait (ai-blogger.md).
 
 ## list_effects
 

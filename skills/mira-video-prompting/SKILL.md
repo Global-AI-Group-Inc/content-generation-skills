@@ -28,11 +28,11 @@ Name the ONE thing that decides the clip. If any of these is true, take the mode
 | several ordered camera moves and timed beats in one prompt, forceful camera work | `runway` |
 | convincing human anatomy and physics, sport, cloth, water | `kling` |
 | the same, as one quick single take from text or one start frame, cheaper | `kling-turbo` |
-| 10, 15 or 30 seconds, heavy referencing, an attached avatar or photo of a person as identity | `seedance-2-5` |
+| 10, 15 or 30 seconds, heavy referencing, an attached AI Blogger or photo of a person as identity | `seedance-2-5` |
 | an edit of a clip that already exists | `omni` |
 | a 30 second story in one continuous take with one cast | `wan3`; `wan3-prime` when the user is waiting (same model, about ten times faster) |
 | multi-language lip-sync with many character references | `happyhorse` |
-| THIS character repeating the motion of THAT clip (a dance trend, a presenter's gesture) | `kling-motion` — one photo + one driving clip, output as long as the clip |
+| THIS character repeating the motion of THAT clip (a dance trend, a presenter's gesture) | `kling-motion` — one photo + one driving clip, output as long as the clip; for the user's AI Blogger, `blogger_motion` (mira-generate) |
 | a clip of your own whose motion, camera or grade to follow | `seedance-2-5`, `minimax`, `wan3` / `wan3-prime` or `omni` with `referenceVideoUrls` |
 
 If none of them is true, a simple short clip, the answer is one of two by what the clip is FOR:

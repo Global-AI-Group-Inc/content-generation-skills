@@ -2,7 +2,7 @@
 name: mira-generate
 description: >-
   Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the
-  user's avatar, location or product, write the prompt, pass a playbook skill, wait for the result,
+  user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result,
   extend or upscale a clip. Use it whenever the user wants to "generate", "make a video", "make an
   image", "animate this photo", "create an ad", "сгенерируй", "сделай видео", "сделай картинку" and
   a Mira MCP server is connected or can be. Chain with mira-video-prompting and mira-image-prompting
@@ -33,7 +33,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 |---|---|---|
 | `list_models` | no | Valid model ids, ratios, durations, resolutions. Call once per session. |
 | `list_skills` / `get_skill` | no | Playbook ids for the `skill` parameter and the knowledge skills, bundled with the server. |
-| `list_brand_assets` | no | The user's avatars, locations and products with their ids. |
+| `list_brand_assets` | no | The user's AI Bloggers, locations and products with their ids. |
 | `upload_reference_image` | no | A local image becomes a reference URL (base64, up to 8 MB). Only clients with file access can do this. |
 | `create_upload` | no | A one-time PUT URL for files that do not fit base64: a clip for `referenceVideoUrls` or a GLB/FBX mesh for `rig_3d` (up to 200 MB). PUT the raw bytes, then use `value.url` or `value.id`. |
 | `generate_image` | yes | Stills. Returns a generation id at once. |
@@ -47,6 +47,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`) or a mesh uploaded through `create_upload` (`libraryItemId`), plus animation clips by preset id (Meshy). |
 | `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` / `list_my_mira_guides` / `update_mira_guide` / `publish_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes (media, galleries, comparisons, uploads, video embeds, the tools they used); edit their own guides; publish only when they explicitly ask. [references/guides.md](references/guides.md). |
 | `list_direct_presets` / `direct_video` | `direct_video` yes | Direct presets: the user answers a short questionnaire (short film, music video, product or UGC ad, brand film, real-estate tour, micro drama, explainer, trailer, social post, ad remake) and the preset directs ONE clip up to 30 s - you write no prompt. Offer one when the user wants such a piece and brings no prompt. [references/direct-presets.md](references/direct-presets.md). |
+| `list_blogger_traits` / `create_blogger_draft` / `save_blogger` / `list_blogger_presets` / `blogger_motion` / `blogger_speak` / `set_blogger_voice` / `swap_object` | draft, save, motion, speak, swap | AI Bloggers, the user's persistent brand characters: build one from traits or words (a draft 8, the save 45 after a clear yes, with a voice), make it repeat a clip, take a person's place in one or speak a script in its voice; `swap_object` replaces one element of any clip from photos. `bloggerId` works on the generate, clip and audio tools. [references/ai-blogger.md](references/ai-blogger.md). |
 | `list_effects` | no | Ready-made effect presets (cakeify, figurine, age progression...) for the `effect` parameter of `generate_image` / `generate_video`, with what each needs attached. Only when the user names an effect. |
 | `modify_video` | yes | The same clip with one thing changed: lighting, weather, time of day, backdrop, or a free restyle. Up to 15 s. |
 | `reframe_video` / `remove_background` | yes | A new aspect ratio with the new canvas filled (up to 15 s); a clean key without a green screen, with a luma matte or a ProRes alpha (up to 30 s). |
@@ -78,8 +79,7 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `adobe_place_element` / `adobe_install_fonts` | no | An element placed into the active composition at a time (the panel downloads it and installs the fonts a template needs; templates take texts, controls and `media` for their placeholders; luma wipes reveal the incoming layer), or fonts installed on their own. |
 | `adobe_command` | no | Typed commands when one fits better than raw script: list_layers, set_keyframes with ease, add/read markers, precompose, set_parent, set_time, set_work_area, open_comp, create_composition, add text or solid layer, apply effect, set track matte. |
 
-Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or `libraryItemId`
-(a file sent through `create_upload`). Limits, parameters and outputs: [references/media-ops.md](references/media-ops.md).
+Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or `libraryItemId` (a file sent through `create_upload`). Limits, parameters and outputs: [references/media-ops.md](references/media-ops.md).
 
 ## Sound
 
@@ -99,7 +99,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
 
 1. Say which model you picked and that it spends credits. One sentence, before the call.
 2. If the user mentions a person, place or product of theirs, call `list_brand_assets` and pass
-   `avatarId`, `studioId` or `productId`. The platform injects the reference photos and the
+   `bloggerId` (their AI Blogger), `studioId` or `productId`. The platform injects the reference photos and the
    passport itself. Describe the character consistently with the passport; never redraw the face.
 3. Decide the playbook. A review, an unboxing, a creator talking to camera is `ugc`; a packshot is
    `product`; a hook-and-offer piece is `ads`; a mood piece is `cinematic`; a demo is `explainer`;

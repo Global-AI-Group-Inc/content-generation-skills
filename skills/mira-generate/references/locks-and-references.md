@@ -4,14 +4,15 @@
 
 `list_brand_assets` returns three kinds of asset with ids:
 
-- **avatar**: a recurring character - a person (`kind: human`) or a designed mascot
-  (`kind: mascot`, which keeps its own render style in every scene). Pass `avatarId`. The platform
-  injects the canonical shots and an appearance passport (CHARACTER LOCK). Identity never changes:
-  face, hair, build, age, marks. Clothes, and the medium of a human avatar, may change; say so in
-  the prompt when they should. Avatars are created by the user in the Mira app (Avatars section);
-  there is no tool for it, so point the user there when they have none. The character sheet (the
-  2×3 collage) is attached by the platform itself; never pass it as a reference URL, a grid in the
-  input turns into a split frame.
+- **AI Blogger**: the user's recurring character - a person (`kind: human`) or a designed
+  character or anthropomorphic animal (`kind: mascot`, which keeps its own render style in every
+  scene). Pass `bloggerId` (`avatarId` is the older name of the same parameter and still works).
+  The platform injects the canonical shots and an appearance passport (CHARACTER LOCK). Identity
+  never changes: face, hair, build, age, marks. Clothes, and the medium of a photoreal person, may
+  change; say so in the prompt when they should. A user with none can build one right here:
+  `create_blogger_draft` from traits or words, then `save_blogger` (ai-blogger.md); the AI Bloggers
+  section of the Mira app does the same. The character sheet (the 2×3 collage) is attached by the
+  platform itself; never pass it as a reference URL, a grid in the input turns into a split frame.
 - **location** (`studioId`): a place. The platform injects its reference and a scene passport
   (SCENE LOCK). Keep its signage and lettering in frame; they are the user's own, not third-party
   brands.
@@ -27,12 +28,12 @@ the platform already did.
 `referenceImageUrls` takes up to eight public HTTPS URLs. One image on a video call turns it
 into image-to-video with that frame as the start. Several images are merged into one start frame
 on most models; `seedance-2-5` takes them natively and is the only family where an attached
-avatar or photo of a person reaches the model as an identity rather than a rebuilt frame.
+AI Blogger or photo of a person reaches the model as an identity rather than a rebuilt frame.
 Seedance screens every photo for real-looking faces before billing. When it refuses one, the
 platform registers the refused photos in its private asset library for the length of that one
 render, sends the same take again with them as assets, and deletes them as soon as the render
 ends - the face stays the one in the photo, and nothing is needed from you: the call simply
-takes a little longer. Only avatar, uploaded and library photos go this way; a
+takes a little longer. Only AI Blogger, uploaded and library photos go this way; a
 stylised request (`style` anime, render3d or pixel, or a drawn medium in the prompt) is redrawn
 into one composed start frame instead, because an asset would drag the clip back to photoreal.
 Private and loopback addresses are refused.
@@ -48,7 +49,7 @@ becomes the start frame of the next.
 
 They are a SEPARATE MODE at the provider, not two more references. With a pair attached you may
 not pass `referenceImageUrls`, `referenceVideoUrls`, `referenceAudioUrls`, `imageRole`,
-`avatarId`, `studioId` or `productId` in the same call - ModelArk answers *"first/last frame
+`bloggerId`, `studioId` or `productId` in the same call - ModelArk answers *"first/last frame
 content cannot be mixed with reference media content"*, and the platform refuses the call before
 a single credit is spent rather than letting you pay for a request the provider will reject. Make
 two calls when you need both: one to build the frame, one to animate it.
@@ -85,9 +86,9 @@ unbound clip is ignored. A clip this account generated earlier (`list_generation
 URL, which makes "do it again with this motion" a one-call job.
 
 Seedance (ModelArk) screens reference clips the way it screens photos: a clip that shows a
-real-looking person who is not the account's avatar is refused before billing
+real-looking person who is not one of the account's AI Bloggers is refused before billing
 (`moderation_blocked`). Blockout playblasts, capsule or mannequin figures, stylised characters and
-the account's own avatars pass. For a real stranger's motion take `minimax`, `wan3` (or
+the account's own AI Bloggers pass. For a real stranger's motion take `minimax`, `wan3` (or
 `wan3-prime`), `omni` or `kling-motion`. Give every reference ONE narrow job with an explicit
 rejection, the way the providers' own guides put it: "@Image1 controls only the product's shape,
 materials and label - do not copy its background, lighting or angle"; "@Video1 sets only the camera
@@ -106,7 +107,8 @@ frame; a photo of a place you want the clip to be set in is a reference.
 `kling-motion` is the exception: it REQUIRES exactly one clip of a person performing the motion
 (3-30 s, one person, single take, no cuts) and exactly one reference image of the character,
 and the output is as long as the clip. The prompt only dresses the scene - wardrobe, setting,
-mood - never the motion or the camera.
+mood - never the motion or the camera. When the character is the user's AI Blogger, take
+`blogger_motion` instead: it builds the full-body frame for the clip's ratio (ai-blogger.md).
 
 ## Audio references
 
