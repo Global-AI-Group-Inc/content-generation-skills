@@ -30,7 +30,7 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
 2. `create_blogger_draft` with `traits` as `{sectionId: [optionIds]}`:
    - `character_type`: `average` (a believable everyday person), `bold` (exaggerated, meme-ready),
      `extreme` (caricature), or a creature: `cat`, `dog`, `frog`, `bird`, `insect`, `rodent`,
-     `fox`, `bear`, `panda`, `bunny`.
+     `fox`, `bear`, `panda`, `bunny`, `reptile`, `fish`, `alien`.
    - `render`: `photoreal`, `game_cg`, `cartoon_2d`, `anime`, `pixel_art`, `clay`, `comic`,
      `vinyl_toy`. A photoreal person may
      be shown in another medium later; any other render, and every creature, keeps its own style
@@ -133,8 +133,16 @@ through `create_upload` kind `video`).
   names what to replace and with what ("replace the black tote with the green leather backpack
   from the photos").
 
-Quote with `estimate_cost`: kind `blogger_motion` (`sourceSeconds`, plus `chars` for a line),
-`recast`, `swap`.
+`engine` picks the model for every mode: `kling` (default in the API, the table above) or
+`seedance` - Seedance 2.5 edits the whole clip in ONE pass: 4-30 s, the scene, the other people
+and every cut stay, 10 credits per second in any mode. It needs a saved `bloggerId` (a draft runs
+on Kling) and takes no `lineText`; when Seedance cannot take a clip, the run goes on Kling by
+itself. The web builder starts on Seedance. Prefer it for clips longer than 10 s, clips with cuts
+and scenes with other people around the performer; prefer Kling for exact choreography, a
+spoken line or `half` framing.
+
+Quote with `estimate_cost`: kind `blogger_motion` (`sourceSeconds`, plus `chars` for a line;
+`model` `seedance` for the one-pass engine), `recast`, `swap`.
 
 ## Speak
 

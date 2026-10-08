@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.16",
+  "snapshot": "0.6.17",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -419,7 +419,7 @@
       "sections": {
         "ai-blogger": {
           "file": "references/ai-blogger.md",
-          "bytes": 13312,
+          "bytes": 13982,
           "title": "AI Blogger"
         },
         "direct-presets": {
