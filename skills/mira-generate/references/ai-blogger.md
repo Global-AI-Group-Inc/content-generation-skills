@@ -16,7 +16,7 @@ Not to be confused with `avatar_video`: that is Kling AI Avatar, a talking-portr
 | `create_blogger_draft` | 8 | One draft image, 3:2: portrait and full body side by side on white, about a minute. Every edit and every reroll is a new draft. |
 | `save_blogger` | 45 | The draft becomes a blogger: the full set of angles, a character sheet, a live cover and a voice designed from the traits (3 previews). |
 | `list_blogger_presets` | free | Driving clips for Motion by `shelf`: `preset` (platform clips, each tagged with the modes it fits), `community`, `hero`. |
-| `blogger_motion` | per second | The blogger repeats a clip, takes the place of the person in it, or one object in it is swapped; optional spoken line. |
+| `blogger_motion` | per second | The quick form of the Miracle tab: the blogger repeats a clip, takes the place of the person in it, or one object in it is swapped; optional spoken line. Several people, styles and added people: [miracle.md](miracle.md). |
 | `blogger_speak` | per character + per second | A script spoken by the blogger in its own voice (Kling AI Avatar). |
 | `set_blogger_voice` | free; `auto` 3 | Pin a voice, pick one of the auto-voice previews, design fresh previews, or unpin. |
 | `swap_object` | 6 per second | One element of ANY clip replaced from photos; no blogger needed. |
@@ -104,11 +104,13 @@ change the clothes, never the face, hair, build or marks.
 - After three or four edits the face can drift. Go back to the draft the user liked and edit
   from that one.
 
-## Motion
+## Miracle tab (Motion)
 
-`blogger_motion {mode, bloggerId | draftId, presetId | sourceGenerationId | libraryItemId}`. The
-source is a preset from `list_blogger_presets` or a clip of the user's (a generation, or an upload
-through `create_upload` kind `video`).
+On the website Motion is now the Miracle tab of AI Bloggers; the presets are one library with
+Miracle. `blogger_motion {mode, bloggerId | draftId, presetId | sourceGenerationId | libraryItemId}`
+is its quick form for one blogger. The source is a preset from `list_blogger_presets` or a clip of
+the user's (a generation, or an upload through `create_upload` kind `video`). The table is the Kling
+engine; Seedance, the default, is below.
 
 | `mode` | What comes back | Source | Price |
 |---|---|---|---|
@@ -123,8 +125,8 @@ through `create_upload` kind `video`).
   for clips that show the person from the waist up. `recast` always uses the full body.
 - `prompt` dresses the scene: setting, wardrobe, mood. Never the motion, never the camera.
 - `keepSound` keeps the clip's own sound.
-- A spoken line (`motion` only): `lineText`, optionally `lineVoiceId`. After the motion the line is
-  spoken in the blogger's voice and lip-synced; the clip's own sound is dropped. It must fit
+- A spoken line (`motion`, and `recast` on Seedance): `lineText`, optionally `lineVoiceId`. After the
+  render the line is spoken in the blogger's voice and lip-synced; the clip's own sound is dropped. It must fit
   inside the clip, at about 2.5 words a second, or the call is refused before billing
   (`line_too_long`). The face has to be visible: `lipsync_no_face` returns the credits. A line adds
   the speech and 1 credit per second of lip sync.
@@ -133,16 +135,17 @@ through `create_upload` kind `video`).
   names what to replace and with what ("replace the black tote with the green leather backpack
   from the photos").
 
-`engine` picks the model for every mode: `kling` (default in the API, the table above) or
-`seedance` - Seedance 2.5 edits the whole clip in ONE pass: 4-30 s, the scene, the other people
-and every cut stay, 10 credits per second in any mode. It needs a saved `bloggerId` (a draft runs
-on Kling) and takes no `lineText`; when Seedance cannot take a clip, the run goes on Kling by
-itself. The web builder starts on Seedance. Prefer it for clips longer than 10 s, clips with cuts
-and scenes with other people around the performer; prefer Kling for exact choreography, a
-spoken line or `half` framing.
+`engine` picks the model for every mode: `seedance` (the default everywhere) - Seedance 2.5 edits
+the whole clip in ONE pass: 4-30 s, the scene, the other people and every cut stay, 720p, 10
+credits per second in any mode, a line on top as above. It needs a saved `bloggerId` (a draft runs
+on Kling); when Seedance cannot take a clip, the run goes on Kling by itself. `kling` is the table
+above, 1080p: in `motion` the blogger performs in their OWN frame and place (Motion Control, with
+`framing`). Prefer Seedance for clips longer than 10 s, clips with cuts and scenes with other
+people around the performer; prefer Kling for exact choreography on the blogger's own background
+or `half` framing.
 
 Quote with `estimate_cost`: kind `blogger_motion` (`sourceSeconds`, plus `chars` for a line;
-`model` `seedance` for the one-pass engine), `recast`, `swap`.
+`model` `seedance` or `kling`), `recast`, `swap`.
 
 ## Speak
 

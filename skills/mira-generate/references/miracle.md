@@ -1,22 +1,25 @@
 # Miracle
 
 Miracle changes anything in a clip while every move stays: put the user, a friend or an AI Blogger
-in place of the people in a video, or swap an outfit, a product, the place or a sign. The camera,
-the timing and the sound stay as in the original. The name stays "Miracle" in every language.
+in place of the people in a video, swap an outfit, a product, the place or a sign, redraw the whole
+clip in a style, add people who were not there, and let the blogger say a line at the end. The
+camera, the timing and the sound stay as in the original. On the website it is the Miracle tab of
+AI Bloggers (next to Builder and Speak). The name stays "Miracle" in every language.
 
 It works on clips of 3 to 30 s, on one of two engines; `miracle_analyze` says which ones a clip can
 use and what each costs:
 
-- **One pass** (Seedance 2.5 video edit): the whole 4-30 s clip in a single render, up to 30 photos,
-  about 5 minutes. Offered for any clip of 4-30 s when the platform has it switched on; a clip or a
-  photo the engine refuses for a real face is retried automatically, and only if that fails does the
-  run go in parts (the price difference comes back).
+- **One pass** (Seedance 2.5 video edit, the default): the whole 4-30 s clip in a single render,
+  720p, up to 30 photos, about 5 minutes. Offered for any clip of 4-30 s when the platform has it
+  switched on; a clip or a photo the engine refuses for a real face is retried automatically, and
+  only if that fails does the run go in parts (the price difference comes back). Styles and added
+  people exist only here.
 - **In parts** (Kling 3.0 Omni): a clip longer than 10 s is cut into parts of up to 10 s (at scene
   cuts where it has them), each part is rendered on its own and the parts are joined back under the
-  original sound. Up to 4 photos per part, real people's photos allowed, about 5-8 minutes.
+  original sound. 1080p, up to 4 photos per part, real people's photos allowed, about 5-8 minutes.
 
-`engine` on `miracle` is `auto` (default: one pass when the clip and the cast allow it), `kling` or
-`seedance`. Whether one pass takes photos of real people is in the analysis (`real_person_photos` of
+`engine` on `miracle` is `auto` (default: one pass when the clip and the cast allow it), `seedance`
+or `kling`. Whether one pass takes photos of real people is in the analysis (`real_person_photos` of
 that engine); when it does not, a real person's photo sends the run in parts.
 
 ## Tools
@@ -24,9 +27,9 @@ that engine); when it does not, a real person's photo sends the run in parts.
 | Tool | Credits | Use it for |
 |---|---|---|
 | `list_miracle_presets` | free | The motion library by `shelf`: `preset` (platform clips with fictional people, each already analysed), `community`, `hero`. |
-| `miracle_analyze` | free | Reads a clip: the parts, every person with a position and a description, the objects that can be swapped, the price. Lives 24 hours. |
-| `miracle` | per second of the clip, by engine | The run itself, on an analysis. In parts: 6 per second; one pass: 10 per second (720p). |
-| `estimate_cost` | free | kind `miracle`, `sourceSeconds` = the clip length, `model` = `kling` or `seedance`. |
+| `miracle_analyze` | free | Reads a clip: the parts, every person with a position and a description, the objects that can be swapped, the styles, the price. Lives 24 hours. |
+| `miracle` | per second of the clip, by engine | The run itself, on an analysis. One pass: 10 per second (720p); in parts: 6 per second (1080p). A line adds the speech and 1 per second of lip sync. |
+| `estimate_cost` | free | kind `miracle`, `sourceSeconds` = the clip length, `model` = `seedance` or `kling`, `chars` = the line. |
 
 ## Two modes
 
@@ -85,14 +88,38 @@ miracle {"analysisId": "<...>", "mode": "swap",
   video generation: `extend_video`, `upscale_video`, the sound tools and `draft_mira_guide` take
   it like any other clip.
 
+## Style, added people, a line
+
+- `style` redraws the whole clip, every move, cut and position kept: `anime`, `cartoon_3d`, `clay`,
+  `comic`, `watercolor`, `oil_painting`, `sketch`, `pixel_art`, `noir`, `retro_film` (the analysis
+  lists them). `styleImageUrl` takes the medium, palette and line work of an image instead (or on
+  top), never its people or place. It goes with `cast` and `addPeople` in the same pass.
+- `addPeople`: up to 2 people who were not in the clip, each `bloggerId` or `photoUrl` (a real
+  person's photo needs `consent`), a `position` (`left` ... `right`, `background`) and an `action`
+  ("dances along", "claps"). They get the same light and a believable size.
+- Both work only in one pass: with them a clip that cannot go one pass is refused
+  (`miracle_seedance_required`), and `engine: "kling"` is not allowed.
+- `lineText` (with optional `lineVoiceId`, `lineLanguage`): after the pass the blogger says the line in
+  their pinned voice, lip-synced; the clip's sound is dropped. It needs exactly one person in frame
+  after the edit (background extras do not count), that person a blogger or given `lineVoiceId`, and
+  a photoreal look (no style, or `noir` / `retro_film`), and it must fit the clip at about 2.5 words a
+  second. If the lip sync fails, the video comes without the line and that part of the price comes back.
+
+## Own background
+
+`performerBloggerId` (with `performerFraming` `full` or `half`) is the other way to use a clip: the
+blogger repeats its motion in their own frame and place (Kling 3.0 Motion Control) instead of being
+put into the clip's scene. Mode `transfer` only, without `cast`, `swaps`, a place, a style or added
+people; `lineText` works. `blogger_motion` with `engine: "kling"` does the same without an analysis.
+
 ## Miracle or another tool
 
 - One person into one 3-10 s clip, no analysis needed: `recast_video` or `blogger_motion` (mode
   `recast`) is enough.
 - A clip with cuts, several people or many references (a cast of AI Bloggers, a product and a new
   place): Miracle in one pass keeps every cut in a single render.
-- A blogger repeating a dance from a preset: `blogger_motion` (mode `motion`) keeps the blogger's
-  framing and adds a spoken line.
+- A blogger repeating a dance in their own frame: `performerBloggerId` here, or `blogger_motion`
+  with `engine: "kling"`.
 - Several people, a clip up to 30 s, or a person plus a place or product at once: Miracle.
 - One object in a clip up to 10 s: `swap_object` works too; Miracle does the same on longer clips
   and several objects.
