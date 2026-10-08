@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.19",
+  "snapshot": "0.6.20",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -546,7 +546,7 @@
       "attribution": "",
       "summary": "Find what is trending in AI video on TikTok and Instagram Reels right now and repeat it on Mira AI: trending sounds and hashtags with their share of AI-generated videos, top AI videos broken down into hook, shots, the named trend format, th",
       "entry": "SKILL.md",
-      "entryBytes": 4214,
+      "entryBytes": 4917,
       "hasNotice": false,
       "sections": {}
     },

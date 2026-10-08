@@ -11,13 +11,14 @@ description: >-
   (mira-video-prompting).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Mira trends
 
 Mira watches TikTok and Instagram Reels in the US every few days and keeps what is moving, with
-AI-generated video first. A video counts as AI when the platform labelled it (the creator's own AI
+AI-generated video first and creators' work around the AI tools in focus: tool hashtags (#higgsfield,
+#seedance, #klingai and the rest) and the Reels of the tools' own accounts and creator showcases. A video counts as AI when the platform labelled it (the creator's own AI
 label or the platform's detection) or when its tags and caption name an AI tool such as Sora, Veo,
 Kling, Seedance, Hailuo or Runway. Sounds and hashtags carry the share of AI videos among the ones
 collected, so an "AI trend" is a sound or a tag that AI creators are actually riding, not one
@@ -27,7 +28,7 @@ that merely mentions AI.
 
 | Tool | Spends credits | Use it for |
 |---|---|---|
-| `get_trends` | no | Trending sounds, hashtags and videos. `aiOnly` is true by default; `platform` is `tiktok`, `instagram` or empty. |
+| `get_trends` | no | Trending sounds, hashtags and videos. `aiOnly` is true by default; `platform` is `tiktok`, `instagram` or empty; `tool` narrows to one generator (`higgsfield`, `seedance`, `kling`, `veo`, `sora`, `hailuo`, `runway`, `pixverse`, `luma`, `krea`, `midjourney`). |
 | `get_trend_video` | no | One video from `get_trends` with its original sound, as a direct `video_url`. The first call takes up to a minute. |
 | `direct_video` | yes | Preset `ad-remake` with `videoUrl` = that `video_url` and `keepAudio=true` repeats the trend with its sound. |
 | `generate_video` | yes | A fresh clip in the trend's format, starting from `recreate_prompt`. |
@@ -42,6 +43,10 @@ that merely mentions AI.
 - On a video, `features` is the breakdown: `hook` (the first one or two seconds), `shots`, `pacing`,
   `ai_format` (the named trend, for example "talking baby podcast"), `likely_model`, `mira_model`,
   `duration_s` and `recreate_prompt`. Videos with a breakdown come first.
+- Only creators' work by default: a tool brand's own promo is hidden unless it credits a creator, so
+  what you see is what people actually make with the tool. Videos are at most 30 days old.
+- AI slop is filtered out: low quality (`quality` 1-10 from the frames), brainrot formats and inflated
+  views. `includeSlop=true` brings it back when the user asks what the junk looks like.
 - Data refreshes every four days. Say so when the user asks about something from this morning.
 
 ## Three ways to use a trend
