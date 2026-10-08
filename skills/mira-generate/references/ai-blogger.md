@@ -42,9 +42,13 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
      (up to 2) and `accessories` (up to 3). `ethnicity`, `skin_color`, `head_shape`, `neck`,
      `eye_shape`, `features`, `facial_hair` and `makeup` are for people only; `coat_color` is for
      creatures only.
-   - `style` is the outfit (24 looks, from `business` to `y2k`, `kpop_stage`, `rave`,
-     `harajuku`); `palette` recolours it (`neon`, `pastel`, `candy`, `primary`, `sunset`,
-     `metallic`, `all_black`...). Hair colours include `split_dye`, `ombre`, `rainbow`.
+   - `style` is the outfit (55 looks, from `business`, `tuxedo`, `workwear` and `scrubs` to
+     `y2k`, `kpop_stage`, `harajuku`, plus costumes such as `astronaut`, `knight` and `banana`);
+     `palette` recolours it (`neon`, `pastel`, `candy`, `primary`, `sunset`, `metallic`,
+     `all_black`...). Hair colours include `split_dye`, `ombre`, `rainbow`.
+   - Each section ends with a few playful, surreal options (hair made of `cloud`, `flames` or
+     `water`, a `mega_neck`, a `triple_stache`, a `halo`, a `rubber_duck` on the head). `list_blogger_traits` marks
+     them with group `wild`; use them when the user asks for something funny or impossible.
    - `description` (up to 400 characters) describes the character in words, instead of tiles or
      on top of them. `randomize: true` fills the sections you left out at random.
    - `photoUrls`: 1-4 photos of ONE person (`photoUrl` takes a single one); more angles keep the
@@ -79,6 +83,9 @@ in motion before paying for the save.
   (`neon_liner`, `glass_skin`). One loud axis is enough when the rest stays simple.
 - Toy mascot: a creature (`panda`, `bunny`, `fox`) in `vinyl_toy` or `clay`, a `pastel` palette:
   reads as merch on any background.
+- Surreal persona: `bold` or `average`, `photoreal`, one `wild` hairstyle (`cloud`,
+  `flower_bed`, `zero_gravity`) and one `wild` mark (`halo`, `raincloud`), the rest plain. The
+  impossible detail lands harder when everything around it looks real.
 
 Fewer picks read stronger. Every feature, mark and accessory has to reappear in every future
 clip, so choose the ones the user wants forever. The style is only the default outfit: scenes may
