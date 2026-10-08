@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.18",
+  "snapshot": "0.6.19",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -414,7 +414,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 17885,
+      "entryBytes": 18018,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -537,6 +537,16 @@
       "summary": "Stylised 3D animation and CGI key visuals on Mira AI: the look of a modern animated feature, appealing simplified shapes, designed studio light, bouncy timing",
       "entry": "SKILL.md",
       "entryBytes": 3620,
+      "hasNotice": false,
+      "sections": {}
+    },
+    "mira-trends": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-trends",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Find what is trending in AI video on TikTok and Instagram Reels right now and repeat it on Mira AI: trending sounds and hashtags with their share of AI-generated videos, top AI videos broken down into hook, shots, the named trend format, th",
+      "entry": "SKILL.md",
+      "entryBytes": 4214,
       "hasNotice": false,
       "sections": {}
     },

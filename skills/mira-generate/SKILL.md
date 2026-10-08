@@ -85,7 +85,7 @@ Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira 
 ## Sound
 
 Voice, music, sound effects, dubbing, captions and voices have their own skill: read mira-audio
-before `generate_audio` or any tool that changes a clip's sound. Finish the picture first, then add the voice, the music and the captions to it.
+before `generate_audio` or any tool that changes a clip's sound. Finish the picture first, then add the voice, the music and the captions to it. What to make next - trending AI videos and sounds from `get_trends`, and a trend repeated with its own sound - lives in mira-trends.
 
 ## Blender
 
