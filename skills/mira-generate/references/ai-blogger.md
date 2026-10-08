@@ -39,16 +39,20 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
      `average`, `female`, `adult`, `photoreal`. Set them anyway. With face photos, `gender` and
      `age` left out follow the photos instead of those defaults.
    - One option per section, except `features` (up to 3), `distinctive` (up to 2), `makeup`
-     (up to 2) and `accessories` (up to 3). `ethnicity`, `skin_color`, `head_shape`, `neck`,
-     `eye_shape`, `features`, `facial_hair` and `makeup` are for people only; `coat_color` is for
-     creatures only.
-   - `style` is the outfit (55 looks, from `business`, `tuxedo`, `workwear` and `scrubs` to
-     `y2k`, `kpop_stage`, `harajuku`, plus costumes such as `astronaut`, `knight` and `banana`);
-     `palette` recolours it (`neon`, `pastel`, `candy`, `primary`, `sunset`, `metallic`,
-     `all_black`...). Hair colours include `split_dye`, `ombre`, `rainbow`.
-   - Each section ends with a few playful, surreal options (hair made of `cloud`, `flames` or
-     `water`, a `mega_neck`, a `triple_stache`, a `halo`, a `rubber_duck` on the head). `list_blogger_traits` marks
-     them with group `wild`; use them when the user asks for something funny or impossible.
+     (up to 2), `skin_texture` (up to 2) and `accessories` (up to 3). `ethnicity`, `skin_color`,
+     `skin_texture`, `head_shape`, `neck`, `eye_shape`, `features`, `facial_hair` and `makeup`
+     are for people only; `coat_color` is for creatures only.
+   - `style` is the outfit (92 looks: `business`, `tuxedo`, `workwear`, `scrubs`, `y2k`,
+     `kpop_stage`, funny real ones such as `holiday_sweater`, `dad_holiday`, `mime`, costumes such
+     as `astronaut` and `banana`, and 24 national outfits marked group `national`: `kimono`,
+     `hanbok`, `sari`, `kilt`, `dashiki`, `chapan`...). `palette` recolours it (`neon`, `pastel`,
+     `candy`, `metallic`, `all_black`...). Hair colours include `split_dye`, `ombre`, `rainbow`.
+   - `skin_texture` sits next to the skin colour: real (`natural_pores`, `dewy`, `sunburn`,
+     `weathered`, `acne`) or surreal (`chrome`, `marble`, `zebra`, `starry`).
+   - Each section ends with a few playful, surreal options (hair made of `cloud` or `flames`, a
+     `cube` or `peanut` head, a `ball` body, `trex_arms`, a `mega_neck`, a `halo`, a
+     `rubber_duck` on the head). `list_blogger_traits` marks them with group `wild`; use them when
+     the user asks for something funny or impossible.
    - `description` (up to 400 characters) describes the character in words, instead of tiles or
      on top of them. `randomize: true` fills the sections you left out at random.
    - `photoUrls`: 1-4 photos of ONE person (`photoUrl` takes a single one); more angles keep the
