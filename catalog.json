@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.23",
+  "snapshot": "0.6.24",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -414,7 +414,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 18018,
+      "entryBytes": 18604,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -519,6 +519,22 @@
       "entryBytes": 3507,
       "hasNotice": false,
       "sections": {}
+    },
+    "mira-premiere": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-premiere",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Edit in the user's own Premiere Pro through the Mira MCP: read the timeline, cut talking footage on whole sentences from a transcript, take out silences, switch multicam angles by speaker, assemble a rough cut or a vertical reel from a cut ",
+      "entry": "SKILL.md",
+      "entryBytes": 7269,
+      "hasNotice": false,
+      "sections": {
+        "editing": {
+          "file": "references/editing.md",
+          "bytes": 4964,
+          "title": "Editing reference"
+        }
+      }
     },
     "mira-product": {
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-product",
