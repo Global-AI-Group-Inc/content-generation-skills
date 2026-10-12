@@ -10,7 +10,9 @@ A breath belongs to the line that follows it: cut before the inhale, never throu
 consonant at the start of a word (p, b, t, k) leave about 50 ms, or the attack is clipped.
 
 **Pauses.** Inside a thought 0.3–0.5 s, between blocks 0.6–1.0 s, after a comma 0.1–0.3 s; nothing
-over 1.2 s unless the pause is the point. Shorten long pauses down into these ranges; do not set
+over 1.2 s unless the pause is the point. Once the speech clips are laid, `recompact_audio` with
+`min_pause` 0.25 and `max_pause` 1.0 fixes ragged holes and rushed joins between clips in one pass
+(it never touches the pauses inside a clip: those come from the transcript cut). Shorten long pauses down into these ranges; do not set
 every pause to one length, or the speaker sounds like a metronome. `analyze_transcript clean_cut`
 with `minSilenceMs` 600–800 and `paddingMs` 100–150 finds the candidates; the words decide.
 
@@ -71,7 +73,10 @@ Climb this ladder and stop at the first rung that works:
 ## Sound
 
 - Music under speech sits 15–20 dB below the voice; ramp it down and up over 200–500 ms around each
-  line rather than switching.
+  line rather than switching. `music_bed` does this in one call (`duck_db` −15 to −20, ramps of
+  0.3 s); `duck_music` re-ducks a bed that is already there after the speech changed.
+- The music never decides the length: `music_bed` trims it to the last content clip and tiles a
+  short track with crossfades instead of stretching it.
 - Master loudness: about −10 to −12 LUFS for TikTok and Reels, −14 LUFS for YouTube and Shorts.
 - Lay the music only after the voice is locked; cut the music on its own phrases, not mid-bar.
 
@@ -87,6 +92,6 @@ Climb this ladder and stop at the first rung that works:
 
 - Captions: an .srt from `transcribe_video` or `add_captions` into `import_captions` (a caption track
   the user can restyle), or `add_captions` burned into the clip.
-- Titles and lower thirds: a Mira Elements template in After Effects, or the user's own .mogrt.
-  Never generate text as an image.
+- Titles and lower thirds: the user's own .mogrt with `import_mogrt` (it lists the text fields) and
+  `set_mogrt_text`, or a Mira Elements template in After Effects. Never generate text as an image.
 - Before placing a title, look at the frame it goes on.

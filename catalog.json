@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.27",
+  "snapshot": "0.6.28",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -531,12 +531,12 @@
       "attribution": "",
       "summary": "Edit in the user's own Premiere Pro through the Mira MCP: read the timeline, cut talking footage on whole sentences from a transcript, take out silences, switch multicam angles by speaker, assemble a rough cut or a vertical reel from a cut ",
       "entry": "SKILL.md",
-      "entryBytes": 7269,
+      "entryBytes": 7997,
       "hasNotice": false,
       "sections": {
         "editing": {
           "file": "references/editing.md",
-          "bytes": 4964,
+          "bytes": 5575,
           "title": "Editing reference"
         }
       }

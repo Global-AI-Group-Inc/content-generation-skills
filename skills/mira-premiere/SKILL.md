@@ -11,7 +11,7 @@ description: >-
   (mira-generate).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Mira Premiere
@@ -31,6 +31,12 @@ The user's Premiere Pro is the edit bay. The tools that reach it:
   - `switch_multicam {segments:[{s,e,track}]}` — inside each range only that video track stays on.
   - `add_markers`, `create_subclips`, `import_captions {path|url}`, `set_sequence_format`,
     `fit_all_video {punch?}`, `open_sequence`, `set_playhead`, `save_project`.
+  - Sound: `audio_gaps`, `recompact_audio {track, min_pause, max_pause}` (pauses clamped, picture
+    follows), `music_bed {url|path, track}` (trimmed, tiled, faded, ducked in one call),
+    `duck_music`, `set_audio_level`, `audio_fade`.
+  - Titles and delivery: `import_mogrt {url|path}` (returns its text fields), `set_mogrt_text`,
+    `export_sequence` (H.264 mp4 of the sequence, vertical when the sequence is).
+- `adobe_beat_markers {track, clip}` — tempo, bars and drops of the music clip as sequence markers.
 - `adobe_contact_sheet` (up to 12 frames with timecodes) and `adobe_export_frame` at `time`.
 - `adobe_import_generation` — a finished Mira generation (b-roll, music, a voice) into the project.
 - `adobe_place_element` — Mira Elements media and sounds (no templates in Premiere).
@@ -95,10 +101,13 @@ The numbers (air, pauses, fillers, pace, loudness, the transition ladder) are in
 5. Several cameras: `switch_multicam` with the speaker turns mapped to tracks; hold an angle at least
    two seconds unless the reaction is the point.
 6. `adobe_contact_sheet` at each cut (cut-0.2, cut, cut+0.2) and at the start; fix what jumps.
-7. B-roll and music with `adobe_import_generation`, then captions with `import_captions` (the .srt
-   from `transcribe_video` or `add_captions`), chapters with `add_markers`.
-8. `save_project` only when the user asks. Export stays with the user (File → Export → Media), or a
-   script when they ask for one; `adobe_render` is After Effects only.
+7. Speech pauses: `audio_gaps`, then `recompact_audio` (0.25-1.0 s by default). B-roll with
+   `adobe_import_generation`; montage cuts on the bars from `adobe_beat_markers`. Music last:
+   `music_bed` with the track (from `add_soundtrack` or `generate_audio`), ducked under the voice.
+   Titles with `import_mogrt` + `set_mogrt_text`, captions with `import_captions`, chapters with
+   `add_markers`.
+8. `export_sequence` when the user wants the file (saved to ~/Movies/Mira unless they name a path),
+   then look at it. `save_project` only when the user asks.
 
 ## Interview
 
