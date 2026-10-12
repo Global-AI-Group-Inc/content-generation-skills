@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.22",
+  "snapshot": "0.6.23",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -444,7 +444,7 @@
         },
         "miracle": {
           "file": "references/miracle.md",
-          "bytes": 9935,
+          "bytes": 9984,
           "title": "Miracle"
         },
         "playbooks": {

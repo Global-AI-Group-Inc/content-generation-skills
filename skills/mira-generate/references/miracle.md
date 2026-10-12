@@ -99,9 +99,10 @@ miracle {"analysisId": "<...>", "mode": "swap",
 - A small object can change shape (a sneaker into a bottle); a large moving one only changes its
   skin. A car swapped for a bus or a trolley comes back as the same car repainted: swap vehicles
   within their class.
-- When the place changes, the platform already names the cars and signs of the old place so they
-  do not survive. Anything else that must go - a lamp post, a parked scooter - goes into
-  `prompt` as "where the lamp post stood there is a palm tree".
+- When the place changes, the platform already names the cars, signs, street lamps and other
+  lights of the old place that the analysis found, so they do not survive. Anything else that must
+  go - a parked scooter, a bench - goes into `prompt` as "where the scooter stood there is a palm
+  tree".
 - If a product was not swapped in a run that also changed the people or the place, run a second
   `swap` on the result (the result is a regular generation) instead of re-rolling the whole run.
 
