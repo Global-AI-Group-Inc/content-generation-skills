@@ -386,3 +386,23 @@ Blender 4.4+ actions are layered: `action.fcurves` no longer exists - key with
 `obj.keyframe_insert`, read curves through the channelbag (`references/scripting.md`). Leave the default Bezier easing (it reads as a natural ease in/out). Look
 through the camera to check framing: `space.region_3d.view_perspective = "CAMERA"`. Smooth-shade
 what you build (`bpy.ops.object.shade_smooth()` or `polygon.use_smooth = True`).
+
+## camera_move()
+
+Built into agent scripts (add-on 0.13.0+). One move per shot, keyed over the scene's frame range
+unless `start` / `end` are given; it replaces an earlier `camera_move` on the same camera.
+
+```python
+camera_move("push_in", target="Hero")              # a third of the way in, easing to a stop
+camera_move("arc_left", target="Hero", size=45)    # degrees around a planted subject, fixed radius
+camera_move("zoom_in", size=(70, 30))              # field of view, from -> to; the camera never travels
+camera_move("dolly_zoom", target="Hero")           # travel and lens together, the subject keeps its size
+camera_move("tracking_side", target="Runner")      # rides beside a moving subject
+camera_move("rack_focus", size=("Glass", "Hero"))  # focus from the near object to the far one
+```
+
+Moves: push_in, dolly_in, dolly_out, truck_left, truck_right, pedestal_up, pedestal_down, crane_up,
+crane_down, slider_short, pan_left, pan_right, tilt_up, tilt_down, whip_pan, arc_left, arc_right,
+orbit_360, zoom_in, zoom_out, fast_zoom, crash_zoom, crash_zoom_out, dolly_zoom, rack_focus,
+tracking_side, tracking_reverse, follow_ots, handheld_raw, handheld_follow (shake on top of another
+move), locked_off, lazy_susan (turns the subject, not the camera).

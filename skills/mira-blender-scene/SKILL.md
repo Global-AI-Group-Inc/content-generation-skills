@@ -10,7 +10,7 @@ description: >-
   (mira-3d) or for video prompting theory (mira-video-prompting).
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Mira Blender scene
@@ -68,13 +68,18 @@ photo in `referenceImageUrls`. `generate_3d` (mira-3d) and `blender_import_gener
 user's own scene, a product or a look-dev pass - ask before the first one (≈4–50 credits) and keep
 the result out of the reference clip. A rigged character arrives with its clips as muted NLA tracks.
 
-**Light like a set.** One key (`SUN` 3–5 W/m² or a large `AREA` 200–1000 W), a fill at a quarter of
-its energy, a rim to separate the subject; a dark neutral world colour so the viewport reads.
+**Light like a set, after the camera.** Lock the camera first: light is placed relative to the frame.
+Then one role at a time, each for a reason: `LGT_key` (`SUN` 3–5 W/m² or a large `AREA` 200–1000 W,
+side or three-quarter, not flat frontal), `LGT_fill` one to three stops under it, `LGT_rim` from
+behind; a dark neutral world. The clip records clay under studio light, so the scene's light reaches
+the model as words: the playblast facts say where each light comes from, how high, soft and warm.
 
 **Camera is the shot.** Create `Cam_Main` (50 mm default; 35 mm for interiors, 85 mm for
-portraits), make it the scene camera (`scene.camera = cam`), aim it with a `TRACK_TO` constraint
-to an empty at the subject when the move is an orbit or a push-in. Frame with the rule of thirds
-and leave headroom; check through the camera (`blender_screenshot(throughCamera=true)`).
+portraits), make it the scene camera (`scene.camera = cam`), frame the start with the rule of thirds
+and headroom, then key ONE move per shot with `camera_move(name, target=..., size=...)` (add-on
+0.13.0+): the camera bank's moves built the way their guards say - a zoom never travels, an arc keeps
+its radius around a planted subject, a pan never slides. The facts then name the move and the prompt
+gets the bank's words for it. Check through the camera (`blender_screenshot(throughCamera=true)`).
 
 **Move people as blocks.** A figure travels and turns as one object (`location`, `rotation_euler`
 keys); gestures, talking and dancing are written in the prompt, not keyed. The camera move carries
