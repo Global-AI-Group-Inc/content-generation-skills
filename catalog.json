@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.29",
+  "snapshot": "0.6.30",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -342,13 +342,18 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 10288,
+      "entryBytes": 10534,
       "hasNotice": false,
       "sections": {
         "blockout": {
           "file": "references/blockout.md",
-          "bytes": 23652,
+          "bytes": 23716,
           "title": "Blockout rules and helpers"
+        },
+        "scripting": {
+          "file": "references/scripting.md",
+          "bytes": 3742,
+          "title": "Scripting the user's Blender: rules, traps, motion checks"
         }
       }
     },

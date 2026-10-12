@@ -10,16 +10,17 @@ description: >-
   (mira-3d) or for video prompting theory (mira-video-prompting).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Mira Blender scene
 
-The user's Blender is your canvas. Six tools reach it: `blender_status` (is it there, what is
+The user's Blender is your canvas. Seven tools reach it: `blender_status` (is it there, what is
 open), `blender_get_scene` (objects, cameras, lights as data), `blender_execute_python` (bpy code,
-the way you change anything), `blender_screenshot` (what the user sees), `blender_import_generation`
-(a finished 3D generation at the 3D cursor) and `blender_playblast` (the viewport animation as a
-clip, uploaded, ready for `referenceVideoUrls`). Everything runs on the user's machine with their
+the way you change anything), `blender_search_api` (the bpy API of their exact Blender version),
+`blender_screenshot` (what the user sees), `blender_import_generation` (a finished 3D generation at
+the 3D cursor) and `blender_playblast` (the viewport animation as a clip, uploaded, ready for
+`referenceVideoUrls`). Everything runs on the user's machine with their
 permissions, and every call shows up in their add-on log, so work the way a careful colleague
 would at their desk: look first, change in small steps, show the result, ask before spending.
 
@@ -103,7 +104,9 @@ return `camera_for_after_effects(...)` from `bl_ext.user_default.mybots_mira.ops
 **Small steps, verified.** One `blender_execute_python` per logical step (walls, seats, lights,
 camera, keys), each under 3 minutes, each followed by a screenshot when the result is visual.
 Print what you created (`print(obj.name, obj.dimensions[:])`) so the tool output confirms it. On
-an error, read the traceback, fix, rerun only the failed step; the user can Ctrl+Z what you did.
+an error, re-read the scene, fix, rerun only the failed step; the user can Ctrl+Z what you did.
+Never save unless asked; checkpoint copy before a broad change; a step you could not look at is
+blocked, not done. Rules, API traps and motion checks: `references/scripting.md`.
 
 ## Interview
 

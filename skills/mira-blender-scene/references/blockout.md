@@ -383,6 +383,6 @@ result = [o.name for o in root.children]
 ```
 
 Blender 4.4+ actions are layered: `action.fcurves` no longer exists - key with
-`obj.keyframe_insert`. Leave the default Bezier easing (it reads as a natural ease in/out). Look
+`obj.keyframe_insert`, read curves through the channelbag (`references/scripting.md`). Leave the default Bezier easing (it reads as a natural ease in/out). Look
 through the camera to check framing: `space.region_3d.view_perspective = "CAMERA"`. Smooth-shade
 what you build (`bpy.ops.object.shade_smooth()` or `polygon.use_smooth = True`).
