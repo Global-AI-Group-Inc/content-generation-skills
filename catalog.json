@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.33",
+  "snapshot": "0.6.34",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -347,7 +347,7 @@
       "sections": {
         "blockout": {
           "file": "references/blockout.md",
-          "bytes": 24979,
+          "bytes": 26022,
           "title": "Blockout rules and helpers"
         },
         "scripting": {

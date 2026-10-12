@@ -399,10 +399,25 @@ camera_move("zoom_in", size=(70, 30))              # field of view, from -> to; 
 camera_move("dolly_zoom", target="Hero")           # travel and lens together, the subject keeps its size
 camera_move("tracking_side", target="Runner")      # rides beside a moving subject
 camera_move("rack_focus", size=("Glass", "Hero"))  # focus from the near object to the far one
+camera_move("crash_zoom", at=101)                  # the snap starts on the beat (frame), not mid-shot
 ```
+
+`at` places a quick beat - the snap of fast_zoom / crash_zoom / crash_zoom_out, the smear of
+whip_pan, the pull of rack_focus - on its frame, so it lands on the action it answers.
 
 Moves: push_in, dolly_in, dolly_out, truck_left, truck_right, pedestal_up, pedestal_down, crane_up,
 crane_down, slider_short, pan_left, pan_right, tilt_up, tilt_down, whip_pan, arc_left, arc_right,
 orbit_360, zoom_in, zoom_out, fast_zoom, crash_zoom, crash_zoom_out, dolly_zoom, rack_focus,
 tracking_side, tracking_reverse, follow_ots, handheld_raw, handheld_follow (shake on top of another
 move), locked_off, lazy_susan (turns the subject, not the camera).
+
+## What the playblast measures per shot (add-on 0.14.0)
+
+The facts tell the prompt how each shot's camera really moves, whatever keyed it: locked off when it
+drifts less than 0.3 m and 3 degrees (a few centimetres of drift reads as a static frame - key a real
+move or none), the metres and degrees it travels and turns, every lens change of 15% or more with its
+speed (under half a second is a crash zoom), the shot size on the nearest stand-in, who enters the
+frame after the cut, and where each stand-in faces through the lens (its nose). Close-ups and extreme
+close-ups on a stand-in show a blank head: the prompt writes the face. The playblast warns when
+something stands between a camera and the target it aims at - the frame shows that thing instead.
+

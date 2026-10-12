@@ -10,7 +10,7 @@ description: >-
   (mira-3d) or for video prompting theory (mira-video-prompting).
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Mira Blender scene
