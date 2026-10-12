@@ -113,3 +113,24 @@ coffee spreads; then she looks down").
 
 The bank per class of mover and per material is in mira-craft, `references/motion.md`. A clause
 of physics survives every length cut: the pipeline protects it the way it protects the action.
+
+## U13. The camera in every beat
+
+The camera is a person standing somewhere, not a point floating in the scene. A global "handheld,
+35 mm" line sets the capture; every timed beat still says how THAT beat is filmed:
+
+- **Where it is and what it aims at.** Distance and side ("1.5 m behind her right shoulder",
+  "ahead of him, walking backwards", "low beside the front wheel") and which landmark stays
+  visible behind the subject. After a cut, say it again: the camera never teleports unexplained.
+- **The move, with its cause.** One move per beat (U6), started by something the camera can see
+  or hear. A telegraphed action - a raised arm, a turning head, a door opening - may be followed as
+  it starts. A surprise happens first and the camera reacts a fraction late with one small
+  imperfection (a flinch, a short overshoot, a quick correction), then settles readable. Never
+  stack them, and never let the lateness hide the contact itself.
+- **The ending frame.** Who stands where and what fills the frame when the beat ends. It is the
+  frame the next beat opens from; a beat that ends nowhere hands the model a free cut.
+
+The beat sentence, in order: framing, camera position, lens direction, move, the event that makes
+it reframe, the ending frame. "Medium handheld from 2 m behind and left of him, aimed past his
+shoulder at the far door; the door bursts open, the frame jolts and catches up a beat late, ending
+on a medium of the man in the doorway." "Static" is a valid choice; an unstated camera is not.

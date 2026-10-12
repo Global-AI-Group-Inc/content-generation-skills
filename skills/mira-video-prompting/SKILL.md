@@ -66,6 +66,11 @@ For any real place read [references/textures.md](references/textures.md): the tw
 surfaces that fill the frame get their wear and the light that shows it, at the scale the camera
 sees; never smooth, clean or render words - a surface left unsaid comes back as a game engine's.
 
+Every timed beat states where the camera stands, what the lens is aimed at, the move with its
+cause and the frame it ends on (U13). For a fight, a chase or any impact read
+[references/action.md](references/action.md): a beat budget, contact before consequence, one
+slowed hit, and two bodies kept apart on screen.
+
 ## Step 4. Check before you send
 
 - Does the first two seconds contain a hook: an action, a face, the product in motion?
@@ -74,6 +79,8 @@ sees; never smooth, clean or render words - a surface left unsaid comes back as 
   one-take model, a 1:1 on Veo or Omni)?
 - Did a bank key leak in (`push_in`, `rembrandt`)? Replace it with the described motion or light.
 - Do the big surfaces have wear and light, or would the model draw them clean (references/textures.md)?
+- Does every beat say where the camera is and what frame it ends on (U13)?
+- In a fight: within the beat budget, one slowed hit, the two bodies never merging (references/action.md)?
 
 ## Output
 

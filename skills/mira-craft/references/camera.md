@@ -74,6 +74,11 @@ MOTIVATION RULE: the camera moves for one of three reasons only - it FOLLOWS a m
 - **`earth_zoom_out`** — one continuous pull-back from a detail on the ground out through the street, the city, the cloud layer and the atmosphere until the whole planet sits in frame - each scale readable for a beat before the next one takes over
 - **`rap_flex_cam`** — a wide lens held close to the subject at chest height, swaying with them and rocking on the beat while the frame breathes slightly in and out - the music-video look that puts the viewer inside the crew rather than in front of it
 - **`paparazzi_flash`** — the camera jostles forward through a crowd toward the subject, reframing as bodies cross the lens, while flashes fire irregularly from around it and each burst freezes a fraction of the movement
+- **`ots_trap`** — the camera rides tight over the near fighter's shoulder with the opponent framed clear beyond the arm, air always kept between the two bodies, the lens never sliding into the zone where their outlines overlap - close-quarters fighting without two bodies merging into one
+- **`fight_profile_track`** — the camera holds a flat side-on profile of two fighters and slides left and right along the line between them, both full-body and separate in frame, every exchange read across the screen - the clearest grammar for a one-on-one duel
+- **`impact_ram`** — the camera lunges in to a hyper-close view of the one decisive blow at the instant of contact, the shock travelling through the body, then snaps straight back out to the wide - one blow only, never a whole exchange
+- **`ground_scale_proof`** — the camera stays on the ground at human eye height with people, cars or street furniture in the foreground while something enormous moves or collides far above them - size proved by a measured foreground reference, never by tilting up at the giant
+- **`fake_oner`** — one unbroken follow through a room or corridor of opponents, the camera jostled at each takedown and re-steadied, swinging to each new attacker as the hero turns, no visible cut - stamina and geography shown in a single take
 
 ### Move combos
 

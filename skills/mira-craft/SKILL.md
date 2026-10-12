@@ -2,7 +2,7 @@
 name: mira-craft
 description: >-
   The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is
-  built on, generated from the live registry: 67 camera moves, 36 lighting schemes, film stocks,
+  built on, generated from the live registry: 72 camera moves, 36 lighting schemes, film stocks,
   grades, lenses, hooks, cut patterns, the continuity doctrine, how 16 classes of mover move and
   what materials look like. Use it when you write a clip prompt for
   Mira yourself and want a camera move, a light or a look to be YOUR decision rather than the

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.20",
+  "snapshot": "0.6.21",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -361,14 +361,14 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-craft",
       "license": "MIT",
       "attribution": "",
-      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 67 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
+      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 72 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
       "entry": "SKILL.md",
       "entryBytes": 2456,
       "hasNotice": false,
       "sections": {
         "camera": {
           "file": "references/camera.md",
-          "bytes": 21058,
+          "bytes": 22378,
           "title": "Camera"
         },
         "continuity": {
@@ -566,9 +566,14 @@
       "attribution": "",
       "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHor",
       "entry": "SKILL.md",
-      "entryBytes": 4838,
+      "entryBytes": 5335,
       "hasNotice": false,
       "sections": {
+        "action": {
+          "file": "references/action.md",
+          "bytes": 4260,
+          "title": "Action: fights, chases, impacts"
+        },
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
           "bytes": 5916,
@@ -646,7 +651,7 @@
         },
         "universal-rules": {
           "file": "references/universal-rules.md",
-          "bytes": 6508,
+          "bytes": 8026,
           "title": "Universal rules"
         }
       }
