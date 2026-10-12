@@ -88,6 +88,31 @@ miracle {"analysisId": "<...>", "mode": "swap",
   video generation: `extend_video`, `upscale_video`, the sound tools and `draft_mira_guide` take
   it like any other clip.
 
+## What Miracle can and cannot change
+
+- The ground the motion touches stays: stairs, a ramp, a bench someone sits on, the shape of a
+  skatepark come back in the new place as the same shapes. Pick a new place that can host the
+  same path, or tell the user what will remain.
+- A swapped product takes the pose of its photo and the motion of the original object; it does
+  not gain a rotation the original never made. Shoot or pick the product photo at the angle the
+  original object shows most.
+- A small object can change shape (a sneaker into a bottle); a large moving one only changes its
+  skin. A car swapped for a bus or a trolley comes back as the same car repainted: swap vehicles
+  within their class.
+- When the place changes, the platform already names the cars and signs of the old place so they
+  do not survive. Anything else that must go - a lamp post, a parked scooter - goes into
+  `prompt` as "where the lamp post stood there is a palm tree".
+- If a product was not swapped in a run that also changed the people or the place, run a second
+  `swap` on the result (the result is a regular generation) instead of re-rolling the whole run.
+
+## Words for `prompt` that backfire
+
+The model reads words, not intent. "Cart" becomes a car - write "supermarket trolley". "Security
+guard", "staff" or "checkout" summon police. "Frozen" turns people into statues - write what they
+do instead. Any uniform or armband written without a plain colour and "no insignia of any kind"
+can come back with a symbol on it. A line in quotes summons subtitles; the platform adds the ban,
+so keep quotes for words that must really appear on a surface.
+
 ## Style, added people, a line
 
 - `style` redraws the whole clip, every move, cut and position kept: `anime`, `cartoon_3d`, `clay`,
