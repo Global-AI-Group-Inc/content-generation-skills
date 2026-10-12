@@ -37,6 +37,8 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 - **`cold_clinical`** — cold clinical grade - neutral whites with a faint cyan cast, clean and exact; medicine, labs, science-behind-the-product
 - **`bleached_matte`** — desaturated low-contrast grade with lifted matte blacks and chalky highlights, colors reduced to dusty pastels - understated editorial cool
 - **`crushed_noir`** — high-contrast grade with inky crushed blacks, controlled specular highlights and near-monochrome color discipline - predatory elegance
+- **`sodium_decay`** — sickly amber-green sodium street-lamp cast, crushed greenish blacks, grime in every surface - urban decay at night
+- **`naturalistic_clean`** — true-to-life colour with neutral whites, gentle contrast and honest skin - nothing stylised, as the eye saw it
 
 ### Lenses
 
@@ -49,6 +51,12 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 - **`split_diopter`** — two focal planes razor-sharp at once - extreme foreground and distant subject - divided by a soft vertical seam
 - **`tilt_shift_miniature`** — a narrow horizontal band of sharp focus with heavy blur above and below, making the real scene read as a toy diorama
 - **`telephoto_compression`** — long telephoto - background pulled tight against the subject, space flattened, creamy distant bokeh
+- **`swirl_bokeh_portrait`** — vintage portrait lens - out-of-focus lights swirl around the subject, edges soft and dreamy
+- **`seventies_prime`** — 1970s cinema prime - lower contrast, warm veiling flares, a gentle glow wide open
+- **`warm_cinema_prime`** — warm-rendering cinema prime - creamy skin, soft contrast, amber flares from practicals
+- **`compact_anamorphic`** — compact anamorphic - oval bokeh, thin horizontal blue streak flares, slight barrel at the edges
+- **`halation_diffusion`** — diffusion filter with halation - highlights bloom and bleed red-orange into the dark around them
+- **`creative_tilt`** — creative tilt lens - a tilted plane of focus keeps one diagonal slice of the frame sharp, the rest falls away
 
 ### Texture
 

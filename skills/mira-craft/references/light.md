@@ -41,3 +41,4 @@ LIGHTING - pick ONE scheme below, name the key source and its direction, and mak
 - **`police_wash`** — alternating red and blue washes sweeping the night scene from off-frame - instant urgency and street tension
 - **`blacklight_uv`** — ultraviolet glow making whites and fluorescent color blaze against near-black surroundings - playful club-lab energy
 - **`overcast_sky`** — even shadowless daylight under full cloud, colors muted and true, skin flattered - the quiet-luxury clean look
+- **`soft_cross`** — two large soft sources crossing from opposite sides at three-quarter angles, each wrapping one side of the face, a soft valley of shadow between - even, sculpted and flattering

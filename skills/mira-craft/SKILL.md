@@ -1,10 +1,11 @@
 ---
 name: mira-craft
 description: >-
-  The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is
-  built on, generated from the live registry: 78 camera moves, 36 lighting schemes, film stocks,
-  grades, lenses, hooks, cut patterns, the continuity doctrine, how 16 classes of mover move and
-  what materials look like. Use it when you write a clip prompt for
+  The camera, light, look, rhythm, time, continuity, physics and direction banks Mira's prompt
+  pipeline is built on, generated from the live registry: 78 camera moves, 37 lighting schemes, film
+  stocks, grades, lenses, camera styles, palettes, film genres, eras, hooks, cut patterns, the
+  continuity doctrine, how 16 classes of mover move and what materials look like. Use it when
+  you write a clip prompt for
   Mira yourself and want a camera move, a light or a look to be YOUR decision rather than the
   pipeline's: pick from the bank, write the description in words. Also answers "what camera
   moves exist", "lighting scheme for", "движение камеры", "схема света". NOT a prompting
@@ -39,5 +40,6 @@ Choose, do not collect. One item from every list describes a scene that cannot p
 | the hook, the cut pattern, pacing, composition, sound, a genre preset | [rhythm.md](references/rhythm.md) |
 | props, object counts, hands, occlusion, cause and effect, pace | [continuity.md](references/continuity.md) |
 | a gait, a mechanism, an impact, cloth, hair, a liquid, fire, a material | [motion.md](references/motion.md) |
+| a camera style, a camera body, focal length, aperture, a hex palette, a film genre, an era, a tempo | [direction.md](references/direction.md) |
 
-One file per decision. Do not load all six for one prompt.
+One file per decision. Do not load all seven for one prompt.

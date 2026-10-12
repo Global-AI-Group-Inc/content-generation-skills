@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.34",
+  "snapshot": "0.6.35",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -371,9 +371,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-craft",
       "license": "MIT",
       "attribution": "",
-      "summary": "The camera, light, look, rhythm, time, continuity and physics banks Mira's prompt pipeline is built on, generated from the live registry: 78 camera moves, 36 lighting schemes, film stocks, grades, lenses, hooks, cut patterns, the continuity",
+      "summary": "The camera, light, look, rhythm, time, continuity, physics and direction banks Mira's prompt pipeline is built on, generated from the live registry: 78 camera moves, 37 lighting schemes, film stocks, grades, lenses, camera styles, palettes,",
       "entry": "SKILL.md",
-      "entryBytes": 2456,
+      "entryBytes": 2661,
       "hasNotice": false,
       "sections": {
         "camera": {
@@ -386,14 +386,19 @@
           "bytes": 9802,
           "title": "Continuity, count and cause"
         },
+        "direction": {
+          "file": "references/direction.md",
+          "bytes": 11869,
+          "title": "Direction: camera style, camera body, optics, palette, genre, era, tempo"
+        },
         "light": {
           "file": "references/light.md",
-          "bytes": 5492,
+          "bytes": 5692,
           "title": "Light"
         },
         "look": {
           "file": "references/look.md",
-          "bytes": 10504,
+          "bytes": 11529,
           "title": "Look"
         },
         "motion": {
