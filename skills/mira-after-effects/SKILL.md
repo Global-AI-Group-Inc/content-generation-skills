@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.5.2"
+  version: "0.6.0"
 ---
 
 # Mira After Effects
@@ -55,7 +55,7 @@ panel (Bridge MCP → Connect) and stop. Do not retry in a loop.
 
 **Flat comes from primitives.** Solids, text and position keys never look filmed. Every scene
 needs a plate, a texture, a subject, something in front and a grade over all of it; see
-`references/doctrine.md` for the ten rules (the last two: against the default look, platforms) and the pre-render check.
+`references/doctrine.md` for the ten rules and the pre-render check, `references/depth.md` for real depth.
 
 **Elements, not effects menus.** Rich pieces are assembled from footage: gradient plates, grain
 and halftone overlays, light leaks and wipes on the cuts, whooshes and hits under them, template
@@ -80,7 +80,7 @@ element ids or file paths.
 cuts that carry speed, not from linear position keys. Reach for `adobe_apply_recipe` (or `MK.*` in
 a script) before hand-written keyframes: `text_animate` for type, `parallax` plus one `camera` move
 for depth, `transition` on the cuts, `expression bounce` after landings, `grade` over the piece and
-`check` before the render. The catalogue, eases and patterns are in `references/motion-kit.md`.
+`check` before the render. Catalogue, eases, motion grammar and patterns: `references/motion-kit.md`.
 
 **Scripts are ES3.** `adobe_execute_script` takes at most 40 000 characters and times out at 180 s
 (the script keeps running in the app; later calls wait their turn); it returns `result` and what the

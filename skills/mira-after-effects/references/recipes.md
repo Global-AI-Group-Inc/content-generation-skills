@@ -33,6 +33,22 @@ returns only what you assign to `result`; anything else goes to a log file you r
 - Globals from every `$.evalFile` share one scope: prefix library internals, never reuse a
   helper name for a variable.
 - Write logs and frames inside the project folder; `/tmp` works on macOS but is not portable.
+- A timed-out call is an unknown state, not a failure: the script may have finished. Read the
+  project (`adobe_get_project`, `list_layers`) before retrying, or the change lands twice.
+- Address effects by match name (`ADBE Gaussian Blur 2`), not by index or display name: indices
+  shift and display names are localised.
+- Masks cut the layer's source before its effects run, so a glow or blur on a masked layer spills
+  past the rounded corner. Precompose the layer, put the effect on the precomp and the mask in the
+  parent.
+- Before its first key a property holds the first key's value. A reveal that starts at opacity 0
+  needs that 0 key at (or before) the layer's in-point, or the layer pops in fully visible. Check the
+  frame before a reveal, the last frame before a cut and the first frame after it.
+- Blurs on a layer smaller than the frame fade at its edges unless Repeat Edge Pixels is on. Drop
+  Shadow's opacity property runs 0-255 in scripts, not 0-100.
+- Heavy scenes: more than about ten layers animating at once, Source Text or mask paths keyed,
+  `wiggle` or `sampleImage` on many layers. Precompose finished clusters, animate transforms
+  rather than text or mask shapes, key one parameter per effect, and keep sampling expressions
+  inside precomps.
 
 ## Import footage once
 

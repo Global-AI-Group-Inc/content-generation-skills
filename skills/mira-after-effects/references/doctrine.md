@@ -13,7 +13,8 @@ video, never a flat colour on its own. The front plane is a light leak, dust, a 
 foreground shape with heavy blur. Scale contrast does the rest: one giant word against one small
 caption, one huge mockup against a row of tiny chips. Parallax comes free from a 3D camera with
 a slow push and layers at different Z, or from position keys that move background and subject at
-different speeds.
+different speeds. How far apart the planes move, how much haze each gets, push-ins, grounding
+shadows and the speed budget for motion blur are in `references/depth.md`.
 
 ## 2. Texture: grain, halftone, dirt
 

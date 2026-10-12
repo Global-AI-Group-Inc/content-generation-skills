@@ -103,6 +103,42 @@ the way it moves on the web.
 
 At most two eases per scene. The entrance is longer than the exit.
 
+## Motion grammar
+
+**Two kinds of ease.** Temporal ease is how speed changes over time; spatial ease is the shape of
+the path. A move with a good curve that still looks robotic usually has a straight, kinked path:
+fix the path (curved bezier handles on Position), not the influence.
+
+**The ease says what the move means.** Something arriving, appearing or agreeing decelerates
+(`out`, `snappy`). Something leaving or being dismissed accelerates (`in`). Something that moves
+information from one place to another eases both ends (`ease`). `linear` is for mechanical things
+(a conveyor, a ticker, a spinning seal), never for the hero.
+
+**Properties are orchestrated, not fired together.** Pick one relationship per element: locked
+(everything on the same curve), lead and follow (position leads, rotation follows by 2-4 frames),
+primary and secondary (scale carries the move, opacity only supports it), or opacity first and
+settle later (it is visible before it lands). Overshoot goes on one property at most. The richest
+motion belongs to the focal element only; supporting elements move plainly. In kinetic type,
+name the roles: the anchor word holds, support words enter plainly, the active word moves most.
+
+**Stagger by index.** Delay = start + i x step, with a step of 50-100 ms (30-150 ms is the readable
+range: under it reads as one block, over it the eye waits). Keep the whole cascade under about 2 s.
+Cascade from the centre outward or from the edges in when the layout is symmetric, not only in
+layer order. For a seamless loop, start the cascade at a negative time so the loop point lands
+mid-motion.
+
+**Data moves by its own logic.** Bars grow from their base, a line draws left to right, a pie
+sweeps clockwise from twelve, labels appear after the number they belong to has settled. Serious
+data never bounces.
+
+**Overshoot is for panels.** Cards, modals and buttons may pass their target and settle back; text
+and small chrome settle without a bounce. A round seal or badge rotates continuously at constant
+speed.
+
+**Review frames.** For every move look at four frames: at rest, at peak speed, as it starts to
+settle, at the end. The middle frame alone should tell what is happening. The last 10-20 % of the
+move is deliberate (a settle you chose), not numerical drift. A loop's seam is invisible.
+
 ## Patterns
 
 **Depth in one scene.** Background, midground, subject and a foreground element. Run `parallax`

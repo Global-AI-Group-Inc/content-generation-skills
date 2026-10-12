@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.26",
+  "snapshot": "0.6.27",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -245,7 +245,7 @@
       "attribution": "",
       "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth, velocity-matched transitions, expressions, grade) or E",
       "entry": "SKILL.md",
-      "entryBytes": 9639,
+      "entryBytes": 9631,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -253,19 +253,24 @@
           "bytes": 2947,
           "title": "A private element bank for After Effects"
         },
+        "depth": {
+          "file": "references/depth.md",
+          "bytes": 4415,
+          "title": "Depth: making a stack of flat layers read as space"
+        },
         "doctrine": {
           "file": "references/doctrine.md",
-          "bytes": 5129,
+          "bytes": 5280,
           "title": "Why a scripted motion piece looks flat, and what makes it rich"
         },
         "motion-kit": {
           "file": "references/motion-kit.md",
-          "bytes": 13751,
+          "bytes": 16064,
           "title": "Mira Motion Kit"
         },
         "recipes": {
           "file": "references/recipes.md",
-          "bytes": 5954,
+          "bytes": 7227,
           "title": "ExtendScript recipes for the bridge"
         },
         "workflow": {
