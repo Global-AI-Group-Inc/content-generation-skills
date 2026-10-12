@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.5.1"
+  version: "0.5.2"
 ---
 
 # Mira After Effects
@@ -32,7 +32,7 @@ The user's After Effects is your compositor. The tools that reach it:
 - `adobe_reference` — a reference video measured: cuts, shot lengths, pace, palette, a brief and a
   sheet of every shot; `makeRef` also builds a REF composition with cut markers.
 - `adobe_beat_markers` — tempo, beat grid, downbeats, drops and sections, as `mira:*` markers.
-- `adobe_export_frame` (one frame) and `adobe_contact_sheet` (up to 12 frames with timecodes).
+- `adobe_export_frame`, `adobe_contact_sheet` (12 frames); a design or still to match: `adobe_measure_reference`, `adobe_audit_frame` (ΔE).
 - `adobe_import_generation` — a finished Mira generation as a layer (with its matte, if any).
 - `adobe_place_element` and `adobe_install_fonts` — an element from the Mira Elements library.
 - `adobe_render`, `adobe_render_status`, `adobe_render_cancel` — an MP4 of a composition, rendered

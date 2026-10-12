@@ -21,6 +21,14 @@
    Why — each true to the reference and the brand. The user picks one; do not build before that.
 6. **Stills per scene.** Build every scene as a still (layers placed, type set, no animation yet)
    and show `adobe_contact_sheet` at one moment per scene. Fix the storyboard here: it costs seconds.
+   When a scene must match a design, a screenshot or a still, measure it, do not eyeball it:
+   `adobe_measure_reference` with `size` first, then `swatch` on flat areas, `gradient` along fills,
+   `radius` on rounded boxes, `fontsize` on each line of type and `crop` where an edge is unclear.
+   Scale every position, radius and size by composition width / reference width. The reference is
+   a measuring source, never an asset: do not cut pieces out of it, rebuild them as layers. Then
+   `adobe_audit_frame` with the same reference at the still's time: fix the numbered worst cells
+   (their box is in frame pixels, with the reference colour beside yours) and audit again until it
+   passes. The audit sees colour and layout only; read the text on its image yourself.
 7. **Animate scene by scene.** Library elements go in with `adobe_place_element` (templates with
    `texts`, `controls` and `media`; a luma wipe at the cut with the incoming layer starting a little
    before it; a whoosh 0.3-0.5 s before a cut, a riser 1-2 s before a drop). Motion comes from the
