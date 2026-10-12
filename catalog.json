@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.30",
+  "snapshot": "0.6.31",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -378,7 +378,7 @@
       "sections": {
         "camera": {
           "file": "references/camera.md",
-          "bytes": 22378,
+          "bytes": 28480,
           "title": "Camera"
         },
         "continuity": {
