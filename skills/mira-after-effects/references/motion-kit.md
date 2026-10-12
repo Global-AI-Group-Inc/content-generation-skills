@@ -34,7 +34,9 @@ layer object; times are seconds in composition time; colours are `#rrggbb`.
 | `captions` | `cues: [{s, e, text, words: [{t, s, e}]}]`, `style: {font, size, color, highlight, stroke, strokeWidth, box, boxColor, boxOpacity, position, platform, animation}`, `replace` | Word-timed captions: one text layer per cue, each word animated on its own time (pop, rise, reveal, karaoke, highlight), a plate that follows the text, kept clear of the platform's UI; earlier Mira captions are replaced |
 | `safe_zone` | `platform` (reels, tiktok, shorts, youtube), `remove` | A guide layer that never renders, shading the platform's top bar, captions area and side buttons |
 | `brand` | none | The brand kit the user saved in the panel, or null |
-| `check` | `times` (default every 0.5 s), `platform` (reels, tiktok, shorts, youtube), `margin` | Issues as data: `out_of_frame`, `text_overlap`, `platform_ui_zone` |
+| `ease_repair` | `policy` (repair, report), `motionBlur` (default true), `recurse` (default true) | Keys still moving mechanically (linear, or the untouched F9 easy ease at 33 %) get Kit curves: `snappy` on an entrance, `in` on an exit, `ease` between two holds. Curves you shaped, HOLD keys and expressions are left alone; repaired layers that move get motion blur. `report` only counts |
+| `motion_audit` | `samplesPerSecond` (4), `recurse` (default true), `fastPx` (1200), `simultaneous` (0.03 s), `dragging` (0.15 s) | Per layer: travel, scale, rotation, fade and the frame its move starts. Issues: `static` (nothing moves), `linear_keys`, `simultaneous` (three or more entrances on one frame), `stagger_slow` (a cascade whose steps drag), `no_motion_blur` (a fast move without blur) |
+| `check` | `times` (default every 0.5 s), `platform` (reels, tiktok, shorts, youtube), `margin`, `motion` (default true) | Issues as data: `out_of_frame`, `text_overlap`, `platform_ui_zone`, and the `motion_audit` issues |
 
 ## Tricks
 
@@ -121,8 +123,9 @@ decelerates (`out`): the speed peaks on the cut. Add the whoosh 0.3-0.5 s before
 for a stop-motion feel.
 
 **Finish.** `fx noise_bg` or a plate under everything, `fx glow` on the one bright thing, `grade`
-with grain 20-30 and vignette 15-25 over all of it, then `check` with the target `platform` and
-fix every issue before `adobe_render`.
+with grain 20-30 and vignette 15-25 over all of it, then `ease_repair` (it only touches keys nobody
+shaped), then `check` with the target `platform` and fix every issue before `adobe_render`. A cascade
+reads best with 30-150 ms between entrances: under that it looks simultaneous, over it the eye waits.
 
 ## Script API
 
@@ -131,7 +134,8 @@ The global `MK` exposes: `comp(ref)`, `layer(comp, ref)`, `property(layer, path)
 `P/S/O/R/A(layer)` (position, scale, opacity, rotation, anchor), `EASE`, `keys(prop, pairs, ease)`,
 `enter`, `exit`, `textAnimate`, `punch`, `cameraRig`, `cameraMove`, `parallax`, `transition`,
 `expression(prop, o)`, `fx(comp, layer, o)`, `grade`, `scene`, `beats`, `grid(offset, beat)` (`.b(k)`,
-`.bar(n, sub)`, `.snap(t)`), `check`, `apply(name, params)`, `recipes()`, `version`.
+`.bar(n, sub)`, `.snap(t)`), `check`, `easeRepair(comp, o)`, `motionAudit(comp, o)`, `apply(name, params)`,
+`recipes()`, `version`.
 
 ```js
 var c = MK.scene("S2", {w: 1080, h: 1920, fps: 30, dur: 4, bg: "#0b0d12"});
@@ -148,6 +152,8 @@ result = MK.check(c, {platform: "reels"});
 - `transition` needs both layers in the same composition; it trims their in and out points.
 - `check` measures 2D bounds; it does not project through the 3D camera, so recheck scenes with
   depth on a contact sheet.
+- `motion_audit` samples transforms only: an effect-only move (a light sweep, a blur ramp) is not
+  counted, and an Advanced 3D camera move shows as motion of the camera, not of the layers.
 - `chromatic` adds three adjustment layers on top; `particles` and `noise_bg` add their own layers.
 - `grade` `lut` wants a `.ffx` preset (a LUT element), never Apply Color LUT.
 - A 3D model draws only on the Advanced 3D renderer (match name "ADBE Calder"); "ADBE Advanced 3d" is,

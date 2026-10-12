@@ -31,9 +31,11 @@
    then overlays, then the grade.
 8. **Check.** After every scene: `adobe_contact_sheet` at its key times (a transition at cut-0.2 /
    cut / cut+0.2) and the `check` recipe with the target `platform` (text out of frame, text on
-   text, text under the platform's UI). Fix before moving on.
-9. **Render.** Before it, `safe_zone` for the platform while you check (a guide layer, never
-   rendered) and `check` with the same `platform`. Then `adobe_render` with the platform `preset` (reels, tiktok, shorts, youtube, master)
+   text, text under the platform's UI, and motion that reads as robotic: nothing moving, linear
+   keys, entrances on one frame, a cascade that drags, fast moves without blur). Fix before moving on.
+9. **Render.** Before it, `ease_repair` once over the main composition (only keys nobody shaped
+   change; it reports how many it eased and kept), `safe_zone` for the platform while you check (a
+   guide layer, never rendered) and `check` with the same `platform`. Then `adobe_render` with the platform `preset` (reels, tiktok, shorts, youtube, master)
    and `upload: true` when the file should land in the Mira library; poll `adobe_render_status`
    with `waitSeconds`. A saved project renders in the background (the user keeps working); unsaved
    changes render inside After Effects, which is busy until it finishes. Loudness comes from the

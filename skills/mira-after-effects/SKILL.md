@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Mira After Effects
@@ -112,7 +112,7 @@ cut-0.2 / cut / cut+0.2). After the render: look at it before you show it.
 
 `adobe_status` → `adobe_get_project` → `adobe_reference` and the brand → `adobe_beat_markers` → three
 storyboard variants, the user picks one → stills per scene, `adobe_contact_sheet` → animation
-with the Kit, elements placed with `adobe_place_element` → `check` recipe and contact sheets →
+with the Kit, elements placed with `adobe_place_element` → `ease_repair`, `check` recipe and contact sheets →
 `adobe_render` → `adobe_render_status` → the user's notes, applied as named changes → once they like the
 render, offer once to write it up as a community guide (`draft_mira_guide`, tools `after-effects`, `mira-adobe`).
 Details are in `references/workflow.md`.
@@ -135,7 +135,7 @@ Ask only what the brief leaves open, one question at a time:
 - Two typefaces at most; type never enters onto an empty frame.
 - `check` finds no issues for the target platform; a `safe_zone` guide stays in while you build.
 - Captions word-timed (`captions` recipe); the pace close to the reference's average shot.
-- Named eases, at most two per scene; the entrance longer than the exit.
+- Named eases (two per scene at most), entrance longer than exit, no linear keys, entrances 30-150 ms apart.
 - A still of every scene approved before anything moves.
 - Rendered file looked at as a contact sheet before it is shown.
 
