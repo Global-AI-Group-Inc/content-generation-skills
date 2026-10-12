@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.28",
+  "snapshot": "0.6.29",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -255,7 +255,7 @@
         },
         "depth": {
           "file": "references/depth.md",
-          "bytes": 4415,
+          "bytes": 4620,
           "title": "Depth: making a stack of flat layers read as space"
         },
         "doctrine": {
@@ -265,7 +265,7 @@
         },
         "motion-kit": {
           "file": "references/motion-kit.md",
-          "bytes": 16064,
+          "bytes": 16915,
           "title": "Mira Motion Kit"
         },
         "recipes": {

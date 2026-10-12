@@ -32,8 +32,8 @@ of 20-30 % of the zoom does the same thing honestly.
 - Equal thin haze layers between planes (about 15 % each) add up to the right falloff on their own;
   there is no need to compute it.
 - Lift the blacks of the far planes a little: distance never has true black.
-- Desaturate with distance in steps, for example 0, -15, -30, -50 from front to back (`grade` with
-  `saturation` on each plane's precomp).
+- Desaturate with distance in steps, for example 0, -15, -30, -50 from front to back.
+- The `atmosphere` recipe does all of this in one call: `layers` nearest first, `step` 0.15.
 
 ## Depth from a single still
 
@@ -52,6 +52,7 @@ Objects that should touch something need two shadows, not one:
 
 - A contact shadow right under the object: tight (2-4 px blur), about 20 % opacity.
 - An ambient shadow: wide (8-16 px blur), about 12 %.
+- The `double_shadow` recipe lays both; on a busy floor raise the opacities until they read.
 
 Lay a floor in perspective with CC Power Pin, not Corner Pin, so the texture keeps its perspective.
 Light on a floor falls off: about a quarter darker for every doubling of distance from the source.
@@ -67,7 +68,8 @@ Light on a floor falls off: about a quarter darker for every doubling of distanc
 ## Making the planes belong together
 
 - Light wrap on the subject: a blurred copy of the background behind it, Screen at 70-75 %, masked to
-  a 5-10 px rim, so the background's light spills over its edge.
+  a 5-10 px rim, so the background's light spills over its edge (`light_wrap`; for keyed footage pass
+  the matte layer and `mode` luma).
 - One grain pass over the whole stack (`grade` with `grain`), never a different grain per plane.
 - One lens for the whole scene: one field of view, and chromatic aberration only in the corners,
   about 0.5-0.75 % of the width (`fx chromatic` on the final adjustment layer).

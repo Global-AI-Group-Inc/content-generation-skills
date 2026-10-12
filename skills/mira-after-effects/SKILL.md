@@ -11,7 +11,7 @@ description: >-
   (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.6.0"
+  version: "0.6.1"
 ---
 
 # Mira After Effects
