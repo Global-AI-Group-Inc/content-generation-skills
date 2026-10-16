@@ -61,8 +61,8 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `translate_video` / `change_voice` | yes | The clip's speech dubbed into another language, lip sync optional (up to 180 s); the same performance in another voice (up to 120 s). |
 | `isolate_voice` / `separate_stems` | yes | Speech cleaned of noise, music and echo; a track or a clip's sound split into 2 or 6 stems. |
 | `transcribe_video` / `analyze_transcript` | yes / partly | A word-timed transcript and SRT with speakers (up to 30 min); silence cuts and multicam splits (free), the best short clips, SEO, chapters. |
-| `estimate_cost` | no | Credits a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. |
-| `get_credit_balance` | no | What the user can afford. |
+| `estimate_cost` / `get_credit_balance` | no | Credits a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. The balance says what the user can afford. |
+| `film_list_projects` / `film_get_project` / `film_list_elements` / `film_list_assets` / `film_move_assets` / `film_update_brief` / `film_add_comment` | no | AI Film Studio team projects: read the brief and the cast, then render into the project with `filmProjectId` + `elementIds` on `generate_image` / `generate_video` (the workspace owner pays); sort takes, write the brief, leave notes. [references/film-studio.md](references/film-studio.md). |
 | `blender_status` | no | Whether the user's Blender (Mira add-on, "Connect agents" on) is reachable; version, file, frame range, selection. Call it before any other `blender_*` tool. |
 | `blender_get_scene` / `blender_screenshot` | no | See what the user sees: objects with transforms and dimensions, cameras, lights; a viewport or camera capture returned inline. |
 | `blender_execute_python` | no | Run bpy code in the user's Blender and get its output back: build blockouts, place lights and cameras, keyframe. Small steps, check with a screenshot. |
@@ -98,7 +98,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
 ## Workflow
 
 1. Say which model you picked and that it spends credits. One sentence, before the call.
-2. If the user mentions a person, place or product of theirs, call `list_brand_assets` and pass
+2. A team film project? Follow [references/film-studio.md](references/film-studio.md). If the user mentions a person, place or product of theirs, call `list_brand_assets` and pass
    `bloggerId` (their AI Blogger), `studioId` or `productId`. The platform injects the reference photos and the
    passport itself. Describe the character consistently with the passport; never redraw the face.
 3. Decide the playbook. A review, an unboxing, a creator talking to camera is `ugc`; a packshot is
