@@ -429,7 +429,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 19646,
+      "entryBytes": 19441,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
