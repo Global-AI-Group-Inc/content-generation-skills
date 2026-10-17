@@ -24,6 +24,7 @@ tools (`blogger_motion`, `blogger_speak`) are in ai-blogger.md.
 | `lipsync_video` | 60 s | `lipsync` (model `lipsync-2`, `lipsync-2-pro` or `kling`) |
 | `avatar_video` | the voice track: 2 to 300 s | `avatar` (model `pro` or `std`, `sourceSeconds` = the audio length) |
 | `swap_object` | 10 s (at least 3 s) | `swap` |
+| `draw_edit_video` | 4 to 30 s | `draw_edit` (model = resolution `480p`, `720p` or `1080p`) |
 
 ## modify_video
 
@@ -91,6 +92,23 @@ works, with or without a person in it; 3 to 10 s. Longer clips or several object
 
 ```
 swap_object {"sourceGenerationId": "<clip>", "target": "product", "imageUrls": ["<https photo of the new bottle>"], "prompt": "replace the energy drink can in her hand with the green glass bottle from the photo, label facing the camera"}
+```
+
+## draw_edit_video
+
+Draw to Edit: the user marks on ONE frame of the clip WHERE to change (circles, arrows,
+scribbles, short notes) and says WHAT to change; Seedance 2.5 edit changes only that area across
+the whole clip and keeps people, motion, camera, timing and the clip's sound. The marks only point
+at the area - they never appear in the result. Pass the marked frame as `frameImageUrl`, or the
+drawing alone as `overlayImageUrl` (a transparent PNG the size of the frame) and Mira lays it over
+the frame at `frameSeconds`; both must be uploaded to Mira first. You cannot draw: ask the user
+for the marked frame, or describe the area in words in `prompt` on a clean frame. `prompt` starts
+with a verb (replace, remove, add, change); `referenceImageUrl` optionally shows the new look;
+`resolution` `480p`, `720p` (default) or `1080p`. Uploaded clips with real people may be refused by
+the model (`moderation_blocked`, refunded).
+
+```
+draw_edit_video {"sourceGenerationId": "<clip>", "frameSeconds": 2.4, "frameImageUrl": "<https frame with a red circle around the cup>", "prompt": "Replace the paper cup in the circled area with a glass of orange juice"}
 ```
 
 ## lipsync_video
