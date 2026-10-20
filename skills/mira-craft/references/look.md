@@ -1,25 +1,26 @@
 <!-- generated from the registry by comfy_study/comfy_video/build_skills.py; edit the registry, not this file -->
 # Look
 
-LOOK - build the image from four named choices below (one film stock, one grade, one lens, one texture) and write them into the prompt as plain description, never as labels. Describe the tone curve in film language: lifted shadows with softly rolled-off highlights for a filmic low-contrast look, or crushed inky blacks for high-contrast drama. Name the light by its setup and direction - a single soft key from a large window with deep falloff, a low-key scene motivated by one warm practical lamp, golden-hour backlight through haze - and get colour from warm light set against cool shadow rather than from saturation. Never stack two film stocks in one prompt, and across clips that belong to one set repeat the same grade wording verbatim. These words must NOT appear in the prompt you write, because each of them pushes current models toward the plastic over-saturated look we are escaping: vibrant, vivid, highly saturated, HDR, ultra-realistic, 4k, 8k. That is a list of words you must not USE - never write the ban itself into the prompt and never phrase it as a negation. These names are labels for CHOOSING, never text for the prompt: write the described look in plain English words and never emit a bare label like teal_orange.
+LOOK - build the image from four named choices below (one film stock, one grade, one lens, one texture) and write them into the prompt as plain description, never as labels. A stock is written as what it does to colour, contrast, grain and highlights - never as a manufacturer or product name, never as a film gauge such as 35mm, 16mm or Super 8, and never as 'shot on film': video models draw those words literally, as a film-strip border with lettering burned into the picture. Describe the tone curve in film language: lifted shadows with softly rolled-off highlights for a filmic low-contrast look, or crushed inky blacks for high-contrast drama. Name the light by its setup and direction - a single soft key from a large window with deep falloff, a low-key scene motivated by one warm practical lamp, golden-hour backlight through haze - and get colour from warm light set against cool shadow rather than from saturation. Never stack two film stocks in one prompt, and across clips that belong to one set repeat the same grade wording verbatim. These words must NOT appear in the prompt you write, because each of them pushes current models toward the plastic over-saturated look we are escaping: vibrant, vivid, highly saturated, HDR, ultra-realistic, 4k, 8k. That is a list of words you must not USE - never write the ban itself into the prompt and never phrase it as a negation. These names are labels for CHOOSING, never text for the prompt: write the described look in plain English words and never emit a bare label like teal_orange.
 
-HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the model does not know LUT names, it knows what they do. 'bleach bypass' alone is weak; 'bleach bypass look, desaturated, crushed blacks, silver metallic highlights' lands. Grain or halation almost always helps photoreal work.
+HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the model does not know LUT names, it knows what they do. 'bleach bypass' alone is weak; 'bleach bypass look, desaturated, crushed blacks, silver metallic highlights' lands. Never name a film manufacturer or product (Kodak, Portra, Vision3, Fuji, CineStill, Ektachrome, Ilford, Polaroid, Technicolor), a film gauge (35mm, 16mm, Super 8) or 'shot on film': video models render those words as a film-strip border with lettering burned into the picture. Grain or halation, described as texture, almost always helps photoreal work.
 
 ### Film stocks
 
-- **`portra_400`** — Kodak Portra 400 emulation - warm, gentle, flattering skin tones and soft contrast
-- **`vision3_500t`** — Kodak Vision3 500T - clean but organic, holds its highlights, shadows sit slightly cool
-- **`eterna`** — Fujifilm Eterna - muted, desaturated, low contrast, indie-cinema restraint
-- **`cinestill_800t`** — CineStill 800T - tungsten-balanced night with visible halation blooming around every light
-- **`technicolor_3strip`** — three-strip Technicolor - punchy saturated reds and cyans, vintage Hollywood
+- **`portra_400`** — warm portrait-negative look - gentle, flattering skin tones, soft contrast and creamy highlights
+- **`vision3_500t`** — tungsten motion-picture-negative look - clean but organic, holds its highlights, shadows sit slightly cool
+- **`eterna`** — muted cinema-negative look - desaturated, low contrast, indie-cinema restraint
+- **`cinestill_800t`** — tungsten-balanced night look with red-orange halation blooming around every light
+- **`technicolor_3strip`** — three-strip dye-transfer colour - punchy saturated reds and cyans, vintage Hollywood
 - **`bleach_bypass`** — bleach-bypass process - desaturated, silver retained, crushed contrast, gritty
-- **`ektachrome`** — Ektachrome slide-film look - punchy saturated color, clean blues, crisp contrast; retro documentary and travel
-- **`kodachrome`** — Kodachrome look - rich reds, deep contrast, vintage reportage color of the 60s-70s
-- **`fuji_400h`** — Fuji 400H look - cool airy greens, lifted pastel highlights; wedding-lifestyle freshness
-- **`ilford_hp5`** — Ilford HP5 black and white - pronounced grain, documentary honesty
-- **`super8`** — Super 8 home-movie stock - heavy grain, light leaks, unstable frame edges, saturated fade; a memory, not a recording
-- **`sixteen_mm`** — 16mm small-gauge film - pronounced organic grain, gentle gate weave, slightly lifted blacks and softly halated highlights; indie warmth and authenticity
-- **`polaroid_instant`** — instant-film look - soft low-contrast image in a square frame feel, milky shadows, slightly shifted pastel color and a warm chemical vignette; tactile nostalgia
+- **`ektachrome`** — slide-film colour - punchy saturated colour, clean blues, crisp contrast; retro documentary and travel
+- **`kodachrome`** — vintage reportage colour of the 60s-70s - rich reds, deep contrast, dense saturated primaries
+- **`fuji_400h`** — airy pastel-negative look - cool airy greens, lifted pastel highlights; wedding-lifestyle freshness
+- **`ilford_hp5`** — grainy documentary black and white - pronounced grain, full tonal range, documentary honesty
+- **`super8`** — home-movie memory look - heavy grain, warm light leaks, a gently breathing image, saturated fade; a memory, not a recording
+- **`sixteen_mm`** — small-gauge indie look - pronounced organic grain, a faint breathing weave, slightly lifted blacks and softly halated highlights; indie warmth and authenticity
+- **`polaroid_instant`** — instant-photo colour - soft low-contrast image, milky shadows, slightly shifted pastel color and a warm chemical vignette; tactile nostalgia
+- **`digital_clean`** — clean digital cinema capture - neutral, accurate colour, smooth highlight roll-off and no grain; the honest choice when the subject must look true
 
 ### Grades
 
@@ -42,7 +43,7 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 
 ### Lenses
 
-- **`anamorphic_35`** — shot on 35mm anamorphic - shallow depth of field, oval bokeh, subtle horizontal flares
+- **`anamorphic_35`** — 35mm anamorphic lens - shallow depth of field, oval bokeh, subtle horizontal flares
 - **`vintage_spherical`** — vintage spherical prime - gentle edge softness and slight chromatic aberration
 - **`clean_modern`** — clean modern lens - even sharpness edge to edge and natural depth of field
 - **`macro_100`** — 100mm macro - extremely shallow focus with the subject filling the frame
@@ -60,7 +61,7 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 
 ### Texture
 
-- **`fine_grain`** — fine 35mm film grain
+- **`fine_grain`** — fine, even organic grain
 - **`halation`** — organic halation blooming around the brightest highlights
 - **`gate_weave`** — a barely perceptible gate weave, as if projected
 - **`clean_digital`** — clean digital capture with no grain
@@ -78,7 +79,7 @@ HOW TO ASK FOR A LOOK: name the look PLUS two or three physical traits - the mod
 - **`digicam_2000s`** — early-2000s compact digicam: harsh on-camera flash, blown highlights, slight noise - found-in-the-archive party energy
 - **`film_burn`** — film burn and light leaks sweeping warm orange across the frame - an emotional seam between beats
 - **`halation_glow`** — halation: a warm red-orange bloom hugging every bright light source - instant film soul for night frames
-- **`grain_overlay`** — fine 16mm-style grain over the whole image - the cheapest cure for plastic-looking synthetic footage
+- **`grain_overlay`** — fine organic grain over the whole image - the cheapest cure for plastic-looking synthetic footage
 - **`anamorphic_flare`** — anamorphic character: horizontal blue flares, oval bokeh, gentle edge distortion - use sparingly in vertical frames
 - **`instagram_polished`** — bright airy aspirational grade: lifted shadows, warm highlights, high clarity
 - **`tiktok_punchy`** — punchy phone-native grade: high saturation, crisp contrast, slightly cool - built to read on a small bright screen

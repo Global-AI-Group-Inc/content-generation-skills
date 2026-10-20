@@ -20,10 +20,10 @@ USER DIRECTION is binding: the user chose these in the composer. Every pick is a
 - **`s35_digital`** — Studio Digital S35: a modern Super 35 digital cinema camera: clean high-dynamic-range image, natural skin, fine noise instead of grain
 - **`large_format_digital`** — Large Format Digital: a large-format digital cinema camera: wide field of view with shallow depth, smooth roll-off, very clean and dimensional
 - **`modular_8k`** — Modular 8K Digital: a modular 8K digital camera: razor resolution, crisp micro-detail, punchy commercial look
-- **`film_35mm`** — 35mm Film: a 35mm motion-picture film camera: organic grain, soft highlight roll-off, rich colour separation
-- **`film_65mm`** — 65/70mm Film: a 65mm large-format film camera: enormous resolution and depth, epic scale, fine grain
-- **`film_16mm`** — 16mm Film: a 16mm film camera: visible grain, softer resolution, documentary or indie texture
-- **`film_8mm`** — 8mm Film: an 8mm home-movie camera: heavy grain, gate weave, soft faded colour, light leaks at the edges
+- **`film_35mm`** — 35mm Film: a classic motion-picture film camera: organic grain, soft highlight roll-off, rich colour separation
+- **`film_65mm`** — 65/70mm Film: a large-format motion-picture camera: enormous resolution and depth, epic scale, very fine grain
+- **`film_16mm`** — 16mm Film: a small documentary film camera: visible grain, softer resolution, documentary or indie texture
+- **`film_8mm`** — 8mm Film: a home-movie camera: heavy grain, a gently breathing image, soft faded colour and warm light leaks
 - **`dv_camcorder`** — DV Camcorder: a 2000s DV camcorder: interlaced video look, clipped highlights, sharpened edges, small sensor depth
 
 ### Focal lengths
@@ -76,7 +76,7 @@ USER DIRECTION is binding: the user chose these in the composer. Every pick is a
 
 ### Eras
 
-- **`1960s`** — 1960s: set in the 1960s: period cars with chrome bumpers, rotary phones, mid-century furniture, tailored suits and shift dresses; image with soft film grain, warm saturated Kodachrome-like colour
+- **`1960s`** — 1960s: set in the 1960s: period cars with chrome bumpers, rotary phones, mid-century furniture, tailored suits and shift dresses; image with soft film grain, warm saturated reportage colour with rich reds
 - **`1970s`** — 1970s: set in the 1970s: muscle cars, wood panelling, flared trousers and wide collars, smoky rooms; image with heavy grain, warm brown and orange tones, zoom-lens look
 - **`1980s`** — 1980s: set in the 1980s: boxy cars, neon signage, CRT televisions, big hair and shoulder pads; image with saturated colour, haze and bloom, slightly soft
 - **`1990s`** — 1990s: set in the 1990s: early mobile phones and pagers, grunge and baggy streetwear, beige computers; image with film grain or camcorder look, muted greens

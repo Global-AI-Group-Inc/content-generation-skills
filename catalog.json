@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.39",
+  "snapshot": "0.6.40",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -388,7 +388,7 @@
         },
         "direction": {
           "file": "references/direction.md",
-          "bytes": 11869,
+          "bytes": 11908,
           "title": "Direction: camera style, camera body, optics, palette, genre, era, tempo"
         },
         "light": {
@@ -398,7 +398,7 @@
         },
         "look": {
           "file": "references/look.md",
-          "bytes": 11529,
+          "bytes": 12376,
           "title": "Look"
         },
         "motion": {
