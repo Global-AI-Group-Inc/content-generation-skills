@@ -11,6 +11,13 @@ and patchy verges reads as broadcast footage. Texture is what makes a clip look 
 
 - **Every large surface gets a history.** Where it is driven, walked, rained on, sun-bleached,
   patched, stained, chipped. One clause of use and age per surface says more than three adjectives.
+- **Age matches the place.** Weather and damage belong outdoors and in working places: a road, a
+  track, a yard, a workshop, a market. A home, an office, a shop, a cafe or a hotel that someone
+  looks after is kept: walls painted and in good repair, floors intact, and its life shows in the
+  things in it - a folded throw, a mug, books, a plant, a charger cable - and at most in a soft
+  sheen where hands go. Peeling, patched, cracked, stained or water-marked walls only when the brief
+  asks for a run-down place: video models draw those words literally, and "a plaster wall with
+  small patched spots" behind a creator came back as an abandoned flat.
 - **Write the scale the camera sees.** A wide or aerial shot reads texture as variation across the
   surface (a darker racing line, patchy grass, faded paint); a chase or mid shot reads wear and dirt
   (chipped kerb paint, dust on the barrier); an onboard or close shot reads the grain itself
@@ -28,6 +35,7 @@ and patchy verges reads as broadcast footage. Texture is what makes a clip look 
 - **Never the words of a render.** Smooth, clean, pristine, perfect, flawless, sleek, glossy,
   ultra-detailed, hyperreal, 8k, PBR, CGI, render: each pulls the image toward a game engine.
   Keep "glossy" only for a finish that is really glossy (fresh paint on a car), never for the world.
+  For a kept room the answer is not "clean" but what it is: "painted walls in good repair".
 - **Surface texture is not film texture.** Grain, halation and lens dirt belong to the look
   (mira-craft); they do not replace a single word about the surfaces in front of the lens.
 
@@ -42,6 +50,8 @@ and patchy verges reads as broadcast footage. Texture is what makes a clip look 
 | Gravel, sand, dirt | a lighter band with raked lines or wind ripples | tracks and footprints, darker damp patches | loose stones of mixed size, dust lifting in the wind |
 | Water | wind texture on the surface, darker gusts, glare in a sun path | chop, foam lines, reflections broken by ripples | droplets, surface tension at an edge, bits floating |
 | Buildings, facades | weathered tone, darker rain streaks from sills, different window reflections | peeling paint, grime at street level, signs with wear | brick or render texture, cracked sealant, dust on glass |
+| Home and work interiors (walls, floors) | walls in one even paint colour in good repair, a rug, shelves and framed prints give the variation | a wooden floor with its grain and a soft sheen along the walking line, a folded throw, a mug and books on the shelf | the weave of the sofa, wood grain, a fingerprint on glass |
+| Furniture, worktops | the colours and shapes of the pieces, a few things on every surface | a soft sheen where hands rest, a ring from a mug, a few crumbs by the toaster | the grain, the weave, a hairline scratch on the tabletop |
 | Built-up surroundings (a town, a hillside of houses) | every building a different height, colour and roofline, set at odd angles, tanks, dishes and aerials on the roofs, haze with distance | mismatched windows and doors, an unfinished top floor, patched render beside bare brick | only the facades the camera passes: brick, render, rust streaks under rebar |
 | Metal (rails, fences, vehicles) | the colour of the finish with a dull or bright sheen | scratches, dirt spray behind wheels, dull where handled | brushed grain, chipped edges, fingerprints and dust |
 | Fabric (flags, banners, clothes) | how it moves in the wind, faded colours | creases, stitched seams, sagging where tied | weave, pilling, frayed edges |

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.38",
+  "snapshot": "0.6.39",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -403,12 +403,12 @@
         },
         "motion": {
           "file": "references/motion.md",
-          "bytes": 17510,
+          "bytes": 18336,
           "title": "Physics, motion and materials"
         },
         "rhythm": {
           "file": "references/rhythm.md",
-          "bytes": 7857,
+          "bytes": 7942,
           "title": "Rhythm and sound"
         }
       }
@@ -515,7 +515,7 @@
         },
         "materiality": {
           "file": "references/materiality.md",
-          "bytes": 7367,
+          "bytes": 8153,
           "title": "Materials and surfaces"
         },
         "models": {
@@ -592,7 +592,7 @@
       "attribution": "",
       "summary": "Creator-style clips and photos on Mira AI: phone-shot, handheld, someone talking to the camera, a review, an unboxing, a how-to, a testimonial",
       "entry": "SKILL.md",
-      "entryBytes": 5247,
+      "entryBytes": 5713,
       "hasNotice": false,
       "sections": {}
     },
@@ -682,7 +682,7 @@
         },
         "textures": {
           "file": "references/textures.md",
-          "bytes": 9788,
+          "bytes": 11092,
           "title": "Textures: writing the surfaces of a real place"
         },
         "universal-rules": {

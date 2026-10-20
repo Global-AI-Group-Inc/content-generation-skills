@@ -36,15 +36,16 @@ people's phone videos and not stand out as paid.
 
 This is authentic user-generated content: a real customer's casual smartphone clip, never a studio
 ad. The camera is handheld and slightly imperfect, held by the person or a friend, at arm's length
-or propped on a table. The setting is everyday and lived-in: a kitchen, a bathroom shelf, a car seat,
-a desk with clutter in the background. Light is whatever is there, window or lamp, with no grade and
-a touch of overexposure where the window is. Skin keeps real texture; nothing is retouched. The
-person talks or reacts straight into the lens with natural pauses and mid-sentence gestures, and
-holds the product casually, even awkwardly close, so its label and shape stay readable in every beat.
-One honest benefit, said or shown, not a list. Small flaws are on purpose: one reframe mid-take, a
-finger near the lens, a real room sound. Write the final prompt in English. Do not invent brand
-names, on-screen text or logos the user did not give; the user's own product label stays exactly as
-it is.
+or propped on a table. The setting is an ordinary, well-kept place the person really uses: a
+kitchen, a bathroom shelf, a car seat, a desk, with painted walls in good repair and a little
+everyday clutter in the background - a mug, a charger cable, a few books. Light is whatever is
+there, window or lamp, with no grade and a touch of overexposure where the window is. Skin keeps
+real texture; nothing is retouched. The person talks or reacts straight into the lens with natural
+pauses and mid-sentence gestures, and holds the product casually, even awkwardly close, so its label
+and shape stay readable in every beat. One honest benefit, said or shown, not a list. Small flaws
+are on purpose: one reframe mid-take, a finger near the lens, a real room sound. Write the final
+prompt in English. Do not invent brand names, on-screen text or logos the user did not give; the
+user's own product label stays exactly as it is.
 
 ## Interview
 
@@ -83,9 +84,13 @@ in a real, recognisable place.
 - One benefit. If you wrote a list, cut it to the one the person would actually say.
 - Nothing in the prompt asks for studio light, a grade, a lens or "cinematic" anything.
 - The person is a customer, not a model. Say what they are doing, not how attractive they are.
+- The room is ordinary and looked after: its life shows in the things in it, not in damage.
 
 ## Do not
 
 Do not write "professional", "high quality" or "4K": those words push the render toward an ad.
 Do not put a headline or text on screen unless the user gave the exact words. Do not describe
-the room as clean or minimal; UGC lives in real rooms.
+the room as minimal, spotless or styled like a showroom; UGC lives in real rooms. Do not age the
+room either: no peeling, patched, stained, cracked or worn walls and floors unless the user asked
+for a run-down place. Video models draw those words literally, and a living room comes back as an
+abandoned flat.
