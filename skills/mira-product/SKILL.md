@@ -78,6 +78,14 @@ and fabric must read as photographed; `seedream-4` keeps one product consistent 
 - One key light with a direction, one edge light, one shadow. Not three of each.
 - The label is fully in frame and in focus in the final beat.
 
+## Inside AI Marketing Studio
+
+In a campaign (`filmProjectId` with `projectType: "marketing"`), the product comes from the brand
+library as an `elementId`: its passport and packshots ride along, so describe it as the passport
+says. Take a Product shot or Marketplace style from `mkt_list_styles` and keep `brandMode` at
+`accents`. For other placements prefer `mkt_adapt` with `crop` (free); `recompose` re-renders the
+frame and is priced. Details: mira-generate, references/marketing-studio.md.
+
 ## Do not
 
 Do not restyle the product to look "better". Do not add fake awards, badges or claims. Do not

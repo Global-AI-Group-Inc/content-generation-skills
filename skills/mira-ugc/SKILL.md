@@ -86,6 +86,14 @@ in a real, recognisable place.
 - The person is a customer, not a model. Say what they are doing, not how attractive they are.
 - The room is ordinary and looked after: its life shows in the things in it, not in damage.
 
+## Inside AI Marketing Studio
+
+In a campaign (`filmProjectId` with `projectType: "marketing"`), take a UGC or TikTok style from
+`mkt_list_styles`, keep `brandMode` `off` so the clip looks native to the feed, and cast talent from
+the brand library by `elementId` instead of `bloggerId`. The first beat is a catalog `hookId` or your
+own `hookText`. Test two to four hooks with `mkt_create_variants` (dry run first) before adapting the
+winner to other placements. Details: mira-generate, references/marketing-studio.md.
+
 ## Do not
 
 Do not write "professional", "high quality" or "4K": those words push the render toward an ad.

@@ -79,6 +79,15 @@ or a tall 1:4 / 1:8 skyscraper - the only model with those ratios.
 - The closing frame is static, the product sharp, and it holds.
 - Text appears only if the user typed it, and then character for character.
 
+## Inside AI Marketing Studio
+
+In a campaign (`filmProjectId` with `projectType: "marketing"`), the brand is added by the platform:
+use `brandMode` `accents`, or `lock` for a video where the brand palette is the look. Take the
+headline and the offer word for word from the brief's `message` and `offer`; never write the logo
+or hex codes into the prompt, the team places the logo in Editor. Test hooks or offers with
+`mkt_create_variants`, then `mkt_adapt` the winner to every placement of the docket, both dry run
+first. Details: mira-generate, references/marketing-studio.md.
+
 ## Do not
 
 Do not write "epic", "stunning" or "high energy": name the action instead. Do not stack more than

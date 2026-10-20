@@ -62,7 +62,8 @@ returns 401, the user has to finish the sign-in in the browser window the client
 | `isolate_voice` / `separate_stems` | yes | Speech cleaned of noise, music and echo; a track or a clip's sound split into 2 or 6 stems. |
 | `transcribe_video` / `analyze_transcript` | yes / partly | A word-timed transcript and SRT with speakers (up to 30 min); silence cuts and multicam splits (free), the best short clips, SEO, chapters. |
 | `estimate_cost` / `get_credit_balance` | no | Credits a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. The balance says what the user can afford. |
-| `film_list_projects` / `film_get_project` / `film_list_elements` / `film_list_assets` / `film_move_assets` / `film_update_brief` / `film_add_comment` | no | AI Film Studio team projects: read the brief and the cast, then render into the project with `filmProjectId` + `elementIds` on `generate_image` / `generate_video` (the workspace owner pays); sort takes, write the brief, leave notes. [references/film-studio.md](references/film-studio.md). |
+| `film_list_projects` / `film_get_project` / `film_list_elements` / `film_list_assets` / `film_move_assets` / `film_update_brief` / `film_add_comment` | no | AI Film Studio team projects and AI Marketing Studio campaigns (`projectType: "marketing"`): read the brief and the cast, then render into the project with `filmProjectId` + `elementIds` on `generate_image` / `generate_video` (the workspace owner pays); sort takes, write the brief, leave notes. [references/film-studio.md](references/film-studio.md). |
+| `mkt_get_brand` / `mkt_list_styles` / `mkt_list_channels` / `mkt_create_variants` / `mkt_adapt` / `mkt_localize` / `mkt_draft_post` / `mkt_script` / `mkt_script_generate` | variants, adapt, localize, scripts | A campaign's brand kit, the composer catalog (`styleId`, `hookId`, `settingId`, `placementId`), A/B variant sets, placements and dubs (always `dryRun` first, then a yes), post drafts. [references/marketing-studio.md](references/marketing-studio.md). |
 | `blender_status` | no | Whether the user's Blender (Mira add-on, "Connect agents" on) is reachable; version, file, frame range, selection. Call it before any other `blender_*` tool. |
 | `blender_get_scene` / `blender_screenshot` | no | See what the user sees: objects with transforms and dimensions, cameras, lights; a viewport or camera capture returned inline. |
 | `blender_execute_python` | no | Run bpy code in the user's Blender and get its output back: build blockouts, place lights and cameras, keyframe. Small steps, check with a screenshot. |
@@ -98,7 +99,7 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
 ## Workflow
 
 1. Say which model you picked and that it spends credits. One sentence, before the call.
-2. A team film project? Follow [references/film-studio.md](references/film-studio.md). If the user mentions a person, place or product of theirs, call `list_brand_assets` and pass
+2. A team film project or a campaign? Follow [references/film-studio.md](references/film-studio.md) or [references/marketing-studio.md](references/marketing-studio.md). If the user mentions a person, place or product of theirs, call `list_brand_assets` and pass
    `bloggerId` (their AI Blogger), `studioId` or `productId`. The platform injects the reference photos and the
    passport itself. Describe the character consistently with the passport; never redraw the face.
 3. Decide the playbook. A review, an unboxing, a creator talking to camera is `ugc`; a packshot is
@@ -145,5 +146,4 @@ straight to 1080p (about 100 credits per 5 s instead of 41 for 720p). For 3D: `g
 from that image → `rig_3d` on the result. A generation id from any step is a valid input to the next.
 From a DCC tool such as Blender: export the selection as GLB → `create_upload` (kind `model3d`) → `rig_3d`
 with `libraryItemId`; a viewport playblast → `create_upload` (kind `video`) → `generate_video` with that URL
-in `referenceVideoUrls`. Details and failure handling:
-[references/locks-and-references.md](references/locks-and-references.md).
+in `referenceVideoUrls`. Details and failure handling: [references/locks-and-references.md](references/locks-and-references.md).

@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.6.40",
+  "snapshot": "0.7.0",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -235,7 +235,7 @@
       "attribution": "",
       "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
       "entry": "SKILL.md",
-      "entryBytes": 4528,
+      "entryBytes": 5107,
       "hasNotice": false,
       "sections": {}
     },
@@ -429,7 +429,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 19441,
+      "entryBytes": 20050,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -456,6 +456,11 @@
           "file": "references/locks-and-references.md",
           "bytes": 11753,
           "title": "References, locks and failure handling"
+        },
+        "marketing-studio": {
+          "file": "references/marketing-studio.md",
+          "bytes": 5740,
+          "title": "AI Marketing Studio campaigns"
         },
         "media-ops": {
           "file": "references/media-ops.md",
@@ -562,7 +567,7 @@
       "attribution": "",
       "summary": "Product-as-hero visuals on Mira AI: studio packshots, lifestyle scenes with the product in use, hands holding it, marketplace cards",
       "entry": "SKILL.md",
-      "entryBytes": 4662,
+      "entryBytes": 5158,
       "hasNotice": false,
       "sections": {}
     },
@@ -592,7 +597,7 @@
       "attribution": "",
       "summary": "Creator-style clips and photos on Mira AI: phone-shot, handheld, someone talking to the camera, a review, an unboxing, a how-to, a testimonial",
       "entry": "SKILL.md",
-      "entryBytes": 5713,
+      "entryBytes": 6231,
       "hasNotice": false,
       "sections": {}
     },
