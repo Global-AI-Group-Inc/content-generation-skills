@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: cinematic
     image_style: cinematic
-    models: [veo-quality, veo, seedance-2-5, runway, gpt-image-2, gpt-image-2.5-sunburst, seedream-5-pro, seedream-4]
+    models: [kling, seedance-2-5, runway, gpt-image-2, gpt-image-2.5-sunburst, seedream-5-pro, seedream-4]
     order: 40
     icon: clapperboard
 ---
@@ -65,8 +65,7 @@ The one image you want people to remember, and where the light in it comes from.
 
 ## Model picks
 
-For a single unbroken hero take, `veo-quality`; it cannot cut, so keep it to one shot. `veo` for
-the same look at a fair price. For a sequence with cuts or a longer piece, `seedance-2-5`; for
+For a single hero take with photoreal people, physics and native sound, `kling` in 1080p. For a sequence with cuts or a longer piece, `seedance-2-5`; for
 forceful camera work in a sequence, `runway`. For stills, `gpt-image-2` for photoreal skin and
 materials, `gpt-image-2.5-sunburst` (premium) for the film-still hero frame inspected closely,
 `seedream-5-pro` for photographic skin and materials at true 2K on the exact ratio, `seedream-4`

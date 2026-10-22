@@ -2,7 +2,7 @@
 name: mira-video-prompting
 description: >-
   Which of Mira's video models to pick (the live list is in references/selection.md) and how each
-  one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality),
+  one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo),
   Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0. Use it before any generate_video call on Mira, when the
   user asks "which model", "how long can it be", "does it have sound", "промпт для видео", or pastes
   a video prompt to improve. NOT for stills (mira-image-prompting) or for the camera and light banks
@@ -37,9 +37,9 @@ Name the ONE thing that decides the clip. If any of these is true, take the mode
 
 If none of them is true, a simple short clip, the answer is one of two by what the clip is FOR:
 `omni` as the working default, cheapest, it cuts on its own and renders on-frame text well, but
-you cannot pin its duration and it takes no 1:1; `veo-quality` when the clip is the hero, one
-unbroken take at roughly four times the price, finals only. `veo` and `veo-lite` are the fair and
-the cheap Veo for eight second audio clips. Price is the last tie-breaker, never the first
+you cannot pin its duration and it takes no 1:1; `kling` when the clip is the hero and photoreal
+people, physics and native sound are the point, in 1080p at roughly twice the price, finals only.
+The Veo keys are withdrawn (Google retired Veo 3.1 on 2026-10-22). Price is the last tie-breaker, never the first
 filter, and repeating the same model out of habit is the most common routing failure.
 
 Full facts per model, generated from the live registry:
@@ -76,7 +76,7 @@ slowed hit, and two bodies kept apart on screen.
 - Does the first two seconds contain a hook: an action, a face, the product in motion?
 - Is there exactly one thing the clip proves?
 - Would the model file object to anything you wrote (speech on a silent model, a cut on a
-  one-take model, a 1:1 on Veo or Omni)?
+  one-take model, a 1:1 on Omni)?
 - Did a bank key leak in (`push_in`, `rembrandt`)? Replace it with the described motion or light.
 - Do the big surfaces have wear and light, or would the model draw them clean (references/textures.md)?
 - Does every beat say where the camera is and what frame it ends on (U13)?

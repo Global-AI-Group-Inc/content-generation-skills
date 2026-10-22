@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.0",
+  "snapshot": "0.7.1",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -37,7 +37,6 @@
       "models": [
         "seedance-2-5",
         "kling",
-        "veo",
         "gpt-image-2",
         "gpt-image-2.5-sunburst",
         "seedream-5-pro",
@@ -82,8 +81,7 @@
       "video_style": "cinematic",
       "image_style": "cinematic",
       "models": [
-        "veo-quality",
-        "veo",
+        "kling",
         "seedance-2-5",
         "runway",
         "gpt-image-2",
@@ -363,7 +361,7 @@
       "attribution": "",
       "summary": "Film-grade mood pieces on Mira AI: one strong image, motivated light, real optics, a grade",
       "entry": "SKILL.md",
-      "entryBytes": 4385,
+      "entryBytes": 4336,
       "hasNotice": false,
       "sections": {}
     },
@@ -567,7 +565,7 @@
       "attribution": "",
       "summary": "Product-as-hero visuals on Mira AI: studio packshots, lifestyle scenes with the product in use, hands holding it, marketplace cards",
       "entry": "SKILL.md",
-      "entryBytes": 5158,
+      "entryBytes": 5123,
       "hasNotice": false,
       "sections": {}
     },
@@ -605,9 +603,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Veo 3.1 (Fast, Lite, Quality), Gemini Omni Flash, MiniMax H3, HappyHor",
+      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
       "entry": "SKILL.md",
-      "entryBytes": 5335,
+      "entryBytes": 5323,
       "hasNotice": false,
       "sections": {
         "action": {
@@ -682,7 +680,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5313,
+          "bytes": 4555,
           "title": "Selecting the model"
         },
         "textures": {
