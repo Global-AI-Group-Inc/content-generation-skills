@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.1",
+  "snapshot": "0.7.2",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -233,7 +233,7 @@
       "attribution": "",
       "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
       "entry": "SKILL.md",
-      "entryBytes": 5107,
+      "entryBytes": 5468,
       "hasNotice": false,
       "sections": {}
     },
@@ -427,7 +427,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 20050,
+      "entryBytes": 20671,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -474,6 +474,11 @@
           "file": "references/playbooks.md",
           "bytes": 1847,
           "title": "Choosing a playbook"
+        },
+        "social-publishing": {
+          "file": "references/social-publishing.md",
+          "bytes": 4488,
+          "title": "Posting to Instagram and Threads, with auto-replies"
         }
       }
     },
@@ -595,7 +600,7 @@
       "attribution": "",
       "summary": "Creator-style clips and photos on Mira AI: phone-shot, handheld, someone talking to the camera, a review, an unboxing, a how-to, a testimonial",
       "entry": "SKILL.md",
-      "entryBytes": 6231,
+      "entryBytes": 6592,
       "hasNotice": false,
       "sections": {}
     },

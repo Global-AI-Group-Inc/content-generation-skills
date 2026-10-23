@@ -88,6 +88,13 @@ or hex codes into the prompt, the team places the logo in Editor. Test hooks or 
 `mkt_create_variants`, then `mkt_adapt` the winner to every placement of the docket, both dry run
 first. Details: mira-generate, references/marketing-studio.md.
 
+## Posting it
+
+To post the result to the user's own Instagram or Threads, follow mira-generate,
+references/social-publishing.md: make the media in the placement's ratio, keep the hook in the
+first 125 characters of the caption, and pair a "comment WORD" call with a keyword auto-reply
+that sends the link by DM. Check first, publish only after the user's yes.
+
 ## Do not
 
 Do not write "epic", "stunning" or "high energy": name the action instead. Do not stack more than

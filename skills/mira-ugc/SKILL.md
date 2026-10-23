@@ -86,6 +86,13 @@ in a real, recognisable place.
 - The person is a customer, not a model. Say what they are doing, not how attractive they are.
 - The room is ordinary and looked after: its life shows in the things in it, not in damage.
 
+## Posting it
+
+To post the result to the user's own Instagram or Threads, follow mira-generate,
+references/social-publishing.md: make the media in the placement's ratio, keep the hook in the
+first 125 characters of the caption, and pair a "comment WORD" call with a keyword auto-reply
+that sends the link by DM. Check first, publish only after the user's yes.
+
 ## Inside AI Marketing Studio
 
 In a campaign (`filmProjectId` with `projectType: "marketing"`), take a UGC or TikTok style from
