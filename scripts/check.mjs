@@ -156,7 +156,7 @@ process.exit(errors ? 1 : 0);
 // shipped skills name only tools the /chatgpt endpoint serves, the listing sells nothing, exactly
 // five positive and three negative review cases. Needs ajv (npm ci).
 async function checkChatgptPackage() {
-  const { buildPackage, loadConfig } = await import("./build-chatgpt-plugin.mjs");
+  const { buildPackage, loadConfig, renameRe } = await import("./build-chatgpt-plugin.mjs");
   const P = (m) => fail(`chatgpt: ${m}`);
   let pkg, cfg;
   try { cfg = loadConfig(); pkg = buildPackage(); } catch (e) { P(`build failed: ${e.message}`); return; }
@@ -204,6 +204,15 @@ async function checkChatgptPackage() {
       const lines = text.split("\n").length;
       if (lines > MAX_ROUTER_LINES) P(`${path}: ${lines} lines, limit ${MAX_ROUTER_LINES}`);
       if (/[а-яё]/i.test(fm.body)) P(`${path}: Cyrillic in the body`);
+    }
+  }
+  // renamed tools: the endpoint knows only the new name, so no shipped file may call the old one
+  for (const [from, to] of Object.entries(tools.renamed ?? {})) {
+    if (allowed.has(from) || !allowed.has(to)) P(`chatgpt-tools.json must list '${to}', not '${from}'`);
+    for (const [path, data] of files) {
+      if (!/\.(md|csv|txt|ya?ml|json)$/.test(path)) continue;
+      const lines = data.toString("utf8").split("\n").flatMap((l, i) => (renameRe(from).test(l) ? [i + 1] : []));
+      if (lines.length) P(`${path}: tool '${from}' on line ${lines.join(", ")}; /chatgpt calls it '${to}'`);
     }
   }
   // the package is English only: no Cyrillic anywhere in it, manifests included

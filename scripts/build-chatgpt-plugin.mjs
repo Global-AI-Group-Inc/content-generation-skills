@@ -53,6 +53,11 @@ function stripCyrillicTriggers(text) {
   return fm + text.slice(m[0].length);
 }
 
+// A tool the /chatgpt endpoint exposes under another name (miracle -> replace_in_video). Renames the
+// bare lowercase word only, as the server does in its own descriptions: not "Miracle", not miracle_*,
+// not a file name (miracle.md), and not the estimate_cost kind value, which keeps the old name.
+export const renameRe = (from) => new RegExp(`(?<![\\w/.-])(?<!kind \`)${from}(?![\\w./-])`, "g");
+
 export function loadConfig() {
   return {
     tools: readJson(join(SRC, "chatgpt-tools.json")),
@@ -101,6 +106,10 @@ export function buildPackage() {
 
   if (rewrites.stripCyrillicTriggers)
     for (const [rel, data] of files) if (rel.endsWith("/SKILL.md")) files.set(rel, Buffer.from(stripCyrillicTriggers(data.toString("utf8")), "utf8"));
+
+  for (const [from, to] of Object.entries(tools.renamed ?? {}))
+    for (const [rel, data] of files)
+      if (/\.(md|csv|txt|ya?ml|json)$/.test(rel)) files.set(rel, Buffer.from(data.toString("utf8").replace(renameRe(from), to), "utf8"));
 
   // version follows the repo; key order keeps $schema and name first
   const { $schema, name, ...rest } = pluginSrc;

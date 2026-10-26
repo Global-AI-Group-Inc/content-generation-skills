@@ -1,5 +1,5 @@
 {
-  "about": "Tools served by https://mcp.mybots.pro/chatgpt, the endpoint of the ChatGPT/Codex plugin. The same list lives in mybots.mcp (ChatGptToolset.Default): change both together. `excluded` is every other tool of the main /mcp endpoint (plus the repeat_guide prompt); check.mjs fails when a shipped skill names one of them.",
+  "about": "Tools served by https://mcp.mybots.pro/chatgpt, the endpoint of the ChatGPT/Codex plugin. The same list lives in mybots.mcp (ChatGptToolset.Default): change both together. `excluded` is every other tool of the main /mcp endpoint (plus the repeat_guide prompt); check.mjs fails when a shipped skill names one of them. `renamed`: tools /chatgpt exposes under another name than /mcp; the build renames them in the shipped skills.",
   "endpoint": "https://mcp.mybots.pro/chatgpt",
   "tools": [
     "generate_image", "generate_video", "direct_video", "extend_video", "upscale_video",
@@ -15,7 +15,7 @@
     "marketing_brief",
     "list_blogger_traits", "list_blogger_presets", "create_blogger_draft", "save_blogger",
     "blogger_motion", "blogger_speak", "swap_object", "set_blogger_voice",
-    "miracle_analyze", "miracle", "list_miracle_presets",
+    "miracle_analyze", "replace_in_video", "list_miracle_presets",
     "search_mira_guides", "get_mira_guide", "list_my_mira_guides", "draft_mira_guide", "update_mira_guide",
     "publish_mira_guide",
     "list_skills", "get_skill", "list_elements", "get_element",
@@ -38,6 +38,7 @@
     "adobe_import_generation", "adobe_place_element", "adobe_install_fonts", "adobe_command",
     "adobe_apply_recipe", "adobe_audit_frame", "adobe_measure_reference", "adobe_reference"
   ],
+  "renamed": { "miracle": "replace_in_video" },
   "excludedPrefixes": ["blender_", "adobe_"],
   "excludedSkills": ["mira-blender-scene", "mira-after-effects", "mira-premiere", "mira-trends"]
 }
