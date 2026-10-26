@@ -1,0 +1,14 @@
+{
+  "name": "content-generation-skills",
+  "private": true,
+  "type": "module",
+  "description": "Lint and packaging for the Mira skills. The skills themselves need none of this.",
+  "license": "MIT",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build:chatgpt": "node scripts/build-chatgpt-plugin.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  }
+}

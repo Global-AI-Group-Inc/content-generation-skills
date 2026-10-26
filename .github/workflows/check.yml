@@ -6,6 +6,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
       - run: node scripts/check.mjs
       - run: node scripts/build-catalog.mjs --check
+      - run: node scripts/build-chatgpt-plugin.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mira-chatgpt
+          path: dist/mira-chatgpt.zip
+          if-no-files-found: error

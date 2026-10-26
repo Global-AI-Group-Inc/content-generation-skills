@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "mira": {
+      "type": "streamable-http",
+      "url": "https://mcp.mybots.pro/chatgpt",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": { "mode": "cimd" },
+            "resource": "https://mcp.mybots.pro/chatgpt",
+            "baseScopes": ["mcp"]
+          }
+        }
+      }
+    }
+  }
+}

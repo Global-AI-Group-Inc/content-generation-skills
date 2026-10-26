@@ -1,0 +1,134 @@
+{
+  "about": "How the ChatGPT/Codex package differs from the repo skills. The /chatgpt endpoint serves only the tools in chatgpt-tools.json: no Blender or Adobe bridges, no social publishing, no ask_mira, no 3D, no raw uploads (chat attachments arrive through the client), no guide publishing, no voice deletion. Every `find` must match the source exactly once, so the build fails as soon as a source edit makes a rewrite stale. `override` files replace a source file whole; `sha256` is the source they were written against, and check.mjs fails when the source moves on without them.",
+  "drop": [
+    "skills/mira-generate/references/social-publishing.md"
+  ],
+  "override": {
+    "skills/mira-generate/SKILL.md": {
+      "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
+      "sha256": "d2080a1da499d91f8338d1a8e314f964f129dba3e0cf49d15caf4f64e8f08f6e"
+    }
+  },
+  "rewrite": [
+    {
+      "file": "skills/mira-audio/SKILL.md",
+      "find": "  NOT for the picture itself (mira-generate) or for laying sound on a timeline in the user's\n  After Effects (mira-after-effects).",
+      "replace": "  NOT for the picture itself (mira-generate)."
+    },
+    {
+      "file": "skills/mira-audio/SKILL.md",
+      "find": "`libraryItemId` for a file the user brings (`create_upload` kind `video` or `audio`, PUT the\nbytes, use the returned id).",
+      "replace": "`libraryItemId` for a file the user attached to the chat."
+    },
+    {
+      "file": "skills/mira-audio/SKILL.md",
+      "find": "`save_voice` and `delete_voice` do not.",
+      "replace": "and `save_voice` do not."
+    },
+    {
+      "file": "skills/mira-audio/SKILL.md",
+      "find": "Everything that makes or changes sound spends credits; `list_voices`, `plan_music`,\n",
+      "replace": "Everything that makes or changes sound spends credits; `list_voices`, `plan_music`\n"
+    },
+    {
+      "file": "skills/mira-audio/SKILL.md",
+      "find": "- `delete_voice` is permanent. Ask before calling it.\n",
+      "replace": "- Removing a voice is done by the user on the website, not here.\n"
+    },
+    {
+      "file": "skills/mira-audio/references/voices.md",
+      "section": "## Delete a voice",
+      "replace": "## Delete a voice\n\nThe user removes their own voices on the website. A removed voice keeps the audio already made\nwith it, but new calls with it fail with `voice_not_found`.\n"
+    },
+    {
+      "file": "skills/mira-audio/references/dialogue.md",
+      "find": "it plays under a clip in an editor or in the user's After\nEffects (mira-after-effects).",
+      "replace": "it plays under a clip in the user's own editor."
+    },
+    {
+      "file": "skills/mira-audio/references/sfx.md",
+      "find": "Stack effects on a timeline in the user's After Effects (mira-after-effects covers sound layers and\nwhere their transient goes) or in their own editor.",
+      "replace": "Stack effects on a timeline in the user's own editor, with each transient on its cut."
+    },
+    {
+      "file": "skills/mira-audio/references/music.md",
+      "find": "In the user's After Effects,\n`adobe_beat_markers` measures the real grid (mira-after-effects).",
+      "replace": "The user's editor can measure the real\ngrid with its own beat detection."
+    },
+    {
+      "file": "skills/mira-generate/references/ai-blogger.md",
+      "find": "(a generation, or an upload through `create_upload` kind `video`)",
+      "replace": "(a generation, or a clip they attached to the chat)"
+    },
+    {
+      "file": "skills/mira-generate/references/ai-blogger.md",
+      "find": "`extend_video`, `generate_3d`, `direct_video`",
+      "replace": "`extend_video`, `direct_video`"
+    },
+    {
+      "file": "skills/mira-generate/references/direct-presets.md",
+      "find": "`upload_reference_image` or `create_upload` (kind `audio` for a\nsong, `video` for an ad clip)",
+      "replace": "`upload_reference_image` or a file they attached to the chat (a\nsong, an ad clip)"
+    },
+    {
+      "file": "skills/mira-generate/references/film-studio.md",
+      "find": "| `film_move_assets` | Takes into a folder, or back to the root with an empty `folderId`. Editor role. |\n| `film_update_brief` | Markdown into one brief section: `context`, `narrative`, `visuals`, `production`, `status`, `resources`, `notes`. Appends by default; `append=false` replaces the section, only when the user asked to rewrite it. Editor role. |\n| `film_add_comment` | A note for the team on a take (`asset`), an `element` or the `brief`. Only when the user asks. |\n\nWrite a story or a script into `narrative`, the look and its references into `visuals`, and shot\nlists or the schedule into `production`. Use plain Markdown: headings, lists, tables, no emoji.",
+      "replace": "\nHere the project is read-only: sorting takes into folders, editing the brief and leaving notes for\nthe team happen in the studio. Write a story, a script or a shot list in your reply as plain\nMarkdown, ready for the user to paste into the brief."
+    },
+    {
+      "file": "skills/mira-generate/references/marketing-studio.md",
+      "find": "Write strategy into the brief with `film_update_brief`: the audience into `audience`, the one promise\ninto `message`, the offer into `offer`, legal lines and must-haves into `mandatories`, scripts and\nhooks into `creative`.",
+      "replace": "The brief is edited in the studio. Write strategy in your reply under the brief's sections: the\naudience (`audience`), the one promise (`message`), the offer (`offer`), legal lines and must-haves\n(`mandatories`), scripts and hooks (`creative`), so the user can paste it in."
+    },
+    {
+      "file": "skills/mira-generate/references/media-ops.md",
+      "find": "`subjectPrompt` says what to keep when the frame has several candidates. In After Effects,\n`adobe_import_generation` places the matte as the clip's track matte.",
+      "replace": "`subjectPrompt` says what to keep when the frame has several candidates. In an editor, the matte\ngoes on the clip as its track matte."
+    },
+    {
+      "file": "skills/mira-generate/references/media-ops.md",
+      "find": "a track\nfrom `create_upload` kind `audio`)",
+      "replace": "a track\nthe user attached to the chat)"
+    },
+    {
+      "file": "skills/mira-generate/references/media-ops.md",
+      "find": "for a file sent through `create_upload` (kind `video`, or `audio` for a track).",
+      "replace": "for a clip or a track the user attached to the chat."
+    },
+    {
+      "file": "skills/mira-generate/references/miracle.md",
+      "find": "or a file sent through `create_upload` (kind `video`, then\n   `libraryItemId`).",
+      "replace": "or a clip the user attached to the chat\n   (`libraryItemId`)."
+    },
+    {
+      "file": "skills/mira-generate/references/guides.md",
+      "find": "When the user wants the guide's result itself, not an adaptation: \"repeat this\" with a guide link,\nor the Mira MCP prompt `repeat_guide` (in Claude Code `/mcp__mira__repeat_guide <slug>`, where `mira`\nis the name the server was added under; the \"Repeat in Claude\" button on a guide page asks for the\nsame in words).",
+      "replace": "When the user wants the guide's result itself, not an adaptation: \"repeat this\" with a guide link\nor the guide's name."
+    },
+    {
+      "file": "skills/mira-generate/references/guides.md",
+      "find": "Reuse it by default. Offer the other way once: the user builds their own scene in Blender with the\n  Mira add-on (`blender_status` first, then mira-blender-scene) and you pass their playblast instead.",
+      "replace": "Reuse it as it is."
+    },
+    {
+      "file": "skills/mira-generate/references/guides.md",
+      "find": "`upload_reference_image` or `create_upload` (kind `image`)",
+      "replace": "`upload_reference_image` or attached to the chat"
+    },
+    {
+      "file": "skills/mira-generate/references/guides.md",
+      "section": "## Publishing",
+      "replace": "## Publishing\n\nGuides are published by the user in the guide editor on the website, never from here. When a draft\nor an edit is ready, give them the editor link and say that Publish is there. Publishing is public:\nthe guide appears under their nickname and search engines index it.\n\nPublishing needs a public nickname, a title of 8-90 characters and at least one `media` block with\nthe user's own generation. A guide holds up to 60 blocks, 20 media items, 15 links and 20 000\ncharacters of text; captions up to 300.\n"
+    },
+    {
+      "file": "skills/mira-ads/SKILL.md",
+      "section": "## Posting it",
+      "replace": "## Posting it\n\nThe user posts the result themselves. Make the media in the placement's ratio, keep the hook in the\nfirst 125 characters of the caption, and pair a \"comment WORD\" call with the keyword the user's\nauto-reply listens for.\n"
+    },
+    {
+      "file": "skills/mira-ugc/SKILL.md",
+      "section": "## Posting it",
+      "replace": "## Posting it\n\nThe user posts the result themselves. Make the media in the placement's ratio, keep the hook in the\nfirst 125 characters of the caption, and pair a \"comment WORD\" call with the keyword the user's\nauto-reply listens for.\n"
+    }
+  ]
+}

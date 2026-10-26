@@ -1,0 +1,41 @@
+{
+  "about": "Tools served by https://mcp.mybots.pro/chatgpt, the endpoint of the ChatGPT/Codex plugin. The same list lives in mybots.mcp (ChatGptToolset.Default): change both together. `excluded` is every other tool of the main /mcp endpoint; check.mjs fails when a shipped skill names one of them.",
+  "endpoint": "https://mcp.mybots.pro/chatgpt",
+  "tools": [
+    "generate_image", "generate_video", "direct_video", "extend_video", "upscale_video",
+    "finalize_draft", "reframe_video", "remove_background", "upload_reference_image",
+    "get_generation", "wait_for_generation",
+    "list_models", "list_effects", "list_direct_presets", "get_credit_balance", "list_generations",
+    "estimate_cost", "list_brand_assets", "get_trends", "get_trend_video",
+    "modify_video", "motion_control", "lipsync_video", "avatar_video", "recast_video", "draw_edit_video",
+    "generate_audio", "add_soundtrack", "add_sound_effects", "voiceover_video", "add_captions",
+    "isolate_voice", "separate_stems", "design_voice", "save_voice", "change_voice",
+    "translate_video", "transcribe_video", "analyze_transcript", "plan_music", "list_voices",
+    "marketing_brief",
+    "list_blogger_traits", "list_blogger_presets", "create_blogger_draft", "save_blogger",
+    "blogger_motion", "blogger_speak", "swap_object", "set_blogger_voice",
+    "miracle_analyze", "miracle", "list_miracle_presets",
+    "search_mira_guides", "get_mira_guide", "list_my_mira_guides", "draft_mira_guide", "update_mira_guide",
+    "list_skills", "get_skill", "list_elements", "get_element",
+    "mkt_get_brand", "mkt_list_styles", "mkt_list_channels", "mkt_create_variants", "mkt_adapt",
+    "mkt_localize", "mkt_draft_post", "mkt_script", "mkt_script_generate",
+    "film_list_projects", "film_get_project", "film_list_elements", "film_list_assets"
+  ],
+  "excluded": [
+    "ask_mira", "mira_history", "list_mira_dialogs",
+    "create_upload", "generate_3d", "rig_3d",
+    "publish_mira_guide", "repeat_guide", "delete_voice", "list_bloggers",
+    "film_move_assets", "film_update_brief", "film_add_comment",
+    "list_social_accounts", "check_social_post", "publish_social_post", "list_social_posts",
+    "get_social_post", "cancel_social_post",
+    "list_comment_hooks", "save_comment_hook", "toggle_comment_hook", "delete_comment_hook", "get_comment_hook_log",
+    "blender_status", "blender_get_scene", "blender_screenshot", "blender_execute_python",
+    "blender_import_generation", "blender_playblast", "blender_search_api",
+    "adobe_status", "adobe_get_project", "adobe_execute_script", "adobe_export_frame", "adobe_contact_sheet",
+    "adobe_beat_markers", "adobe_render", "adobe_render_status", "adobe_render_cancel",
+    "adobe_import_generation", "adobe_place_element", "adobe_install_fonts", "adobe_command",
+    "adobe_apply_recipe", "adobe_audit_frame", "adobe_measure_reference", "adobe_reference"
+  ],
+  "excludedPrefixes": ["blender_", "adobe_", "social_"],
+  "excludedSkills": ["mira-blender-scene", "mira-after-effects", "mira-premiere", "mira-3d"]
+}
