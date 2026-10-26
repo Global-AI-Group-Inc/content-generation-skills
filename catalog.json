@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.4",
+  "snapshot": "0.7.5",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -620,7 +620,7 @@
         },
         "models/capricornus-1": {
           "file": "references/models/capricornus-1.md",
-          "bytes": 9566,
+          "bytes": 9546,
           "title": "Capricornus 1 (Mira) (capricornus-1)"
         },
         "models/happyhorse": {
@@ -690,7 +690,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5365,
+          "bytes": 5334,
           "title": "Selecting the model"
         },
         "textures": {
