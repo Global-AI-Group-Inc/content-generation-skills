@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.3",
+  "snapshot": "0.7.4",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -618,10 +618,10 @@
           "bytes": 4260,
           "title": "Action: fights, chases, impacts"
         },
-        "models/capricornus-cine-1": {
-          "file": "references/models/capricornus-cine-1.md",
-          "bytes": 9684,
-          "title": "Capricornus Cine 1 (Mira, stealth) (capricornus-cine-1)"
+        "models/capricornus-1": {
+          "file": "references/models/capricornus-1.md",
+          "bytes": 9566,
+          "title": "Capricornus 1 (Mira) (capricornus-1)"
         },
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
@@ -690,7 +690,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5424,
+          "bytes": 5365,
           "title": "Selecting the model"
         },
         "textures": {
