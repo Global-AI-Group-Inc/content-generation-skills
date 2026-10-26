@@ -34,8 +34,23 @@ function replaceSection(text, heading, replacement, where) {
   let end = lines.findIndex((l, i) => i > start && /^#{1,2} /.test(l));
   if (end < 0) end = lines.length;
   const tail = lines.slice(end);
-  const body = replacement.replace(/\n*$/, "\n");
-  return [...lines.slice(0, start), ...body.split("\n").slice(0, -1), ...(tail.length ? ["", ...tail] : [""])].join("\n");
+  const body = replacement.trim() ? replacement.replace(/\n*$/, "\n").split("\n").slice(0, -1) : [];
+  const head = lines.slice(0, start);
+  if (!body.length) while (head.length && !head[head.length - 1].trim()) head.pop(); // dropped: no double blank line
+  return [...head, ...body, ...(tail.length ? ["", ...tail] : [""])].join("\n");
+}
+
+// The package is English only. Skill descriptions carry trigger phrases in other languages as quoted
+// items of a list ("dubbing", "озвучка", "субтитры"); drop the Cyrillic items and the comma before each.
+const CYRILLIC = /[А-Яа-яЁё]/;
+function stripCyrillicTriggers(text) {
+  const m = text.match(/^---\n[\s\S]*?\n---\n/);
+  if (!m) return text;
+  const MARK = "\u0000";
+  let fm = m[0].replace(/"[^"\n]*(?:\n[^"\n]*)?"/g, (q) => (CYRILLIC.test(q) ? MARK : q));
+  const withComma = new RegExp(`,\\s*${MARK}`), bare = new RegExp(`${MARK}\\s*,?[ \\t]*`);
+  while (fm.includes(MARK)) fm = withComma.test(fm) ? fm.replace(withComma, "") : fm.replace(bare, "");
+  return fm + text.slice(m[0].length);
 }
 
 export function loadConfig() {
@@ -83,6 +98,9 @@ export function buildPackage() {
     }
     files.set(r.file, Buffer.from(text, "utf8"));
   }
+
+  if (rewrites.stripCyrillicTriggers)
+    for (const [rel, data] of files) if (rel.endsWith("/SKILL.md")) files.set(rel, Buffer.from(stripCyrillicTriggers(data.toString("utf8")), "utf8"));
 
   // version follows the repo; key order keeps $schema and name first
   const { $schema, name, ...rest } = pluginSrc;

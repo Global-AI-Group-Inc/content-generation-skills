@@ -1,8 +1,6 @@
 {
-  "about": "How the ChatGPT/Codex package differs from the repo skills. The /chatgpt endpoint serves only the tools in chatgpt-tools.json: no Blender or Adobe bridges, no social publishing, no ask_mira, no 3D, no raw uploads (chat attachments arrive through the client), no guide publishing, no voice deletion. Every `find` must match the source exactly once, so the build fails as soon as a source edit makes a rewrite stale. `override` files replace a source file whole; `sha256` is the source they were written against, and check.mjs fails when the source moves on without them.",
-  "drop": [
-    "skills/mira-generate/references/social-publishing.md"
-  ],
+  "about": "How the ChatGPT/Codex package differs from the repo skills. The /chatgpt endpoint serves only the tools in chatgpt-tools.json: no Blender or Adobe bridges, no ask_mira, no trends, no raw uploads (chat attachments arrive through the client). The package is English only: `stripCyrillicTriggers` drops the quoted non-English trigger phrases from every shipped SKILL.md description, and rewrites cover the rest. Every `find` must match the source exactly once, so the build fails as soon as a source edit makes a rewrite stale. `override` files replace a source file whole; `sha256` is the source they were written against, and check.mjs fails when the source moves on without them.",
+  "drop": [],
   "override": {
     "skills/mira-generate/SKILL.md": {
       "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
@@ -19,26 +17,6 @@
       "file": "skills/mira-audio/SKILL.md",
       "find": "`libraryItemId` for a file the user brings (`create_upload` kind `video` or `audio`, PUT the\nbytes, use the returned id).",
       "replace": "`libraryItemId` for a file the user attached to the chat."
-    },
-    {
-      "file": "skills/mira-audio/SKILL.md",
-      "find": "`save_voice` and `delete_voice` do not.",
-      "replace": "and `save_voice` do not."
-    },
-    {
-      "file": "skills/mira-audio/SKILL.md",
-      "find": "Everything that makes or changes sound spends credits; `list_voices`, `plan_music`,\n",
-      "replace": "Everything that makes or changes sound spends credits; `list_voices`, `plan_music`\n"
-    },
-    {
-      "file": "skills/mira-audio/SKILL.md",
-      "find": "- `delete_voice` is permanent. Ask before calling it.\n",
-      "replace": "- Removing a voice is done by the user on the website, not here.\n"
-    },
-    {
-      "file": "skills/mira-audio/references/voices.md",
-      "section": "## Delete a voice",
-      "replace": "## Delete a voice\n\nThe user removes their own voices on the website. A removed voice keeps the audio already made\nwith it, but new calls with it fail with `voice_not_found`.\n"
     },
     {
       "file": "skills/mira-audio/references/dialogue.md",
@@ -61,24 +39,9 @@
       "replace": "(a generation, or a clip they attached to the chat)"
     },
     {
-      "file": "skills/mira-generate/references/ai-blogger.md",
-      "find": "`extend_video`, `generate_3d`, `direct_video`",
-      "replace": "`extend_video`, `direct_video`"
-    },
-    {
       "file": "skills/mira-generate/references/direct-presets.md",
       "find": "`upload_reference_image` or `create_upload` (kind `audio` for a\nsong, `video` for an ad clip)",
       "replace": "`upload_reference_image` or a file they attached to the chat (a\nsong, an ad clip)"
-    },
-    {
-      "file": "skills/mira-generate/references/film-studio.md",
-      "find": "| `film_move_assets` | Takes into a folder, or back to the root with an empty `folderId`. Editor role. |\n| `film_update_brief` | Markdown into one brief section: `context`, `narrative`, `visuals`, `production`, `status`, `resources`, `notes`. Appends by default; `append=false` replaces the section, only when the user asked to rewrite it. Editor role. |\n| `film_add_comment` | A note for the team on a take (`asset`), an `element` or the `brief`. Only when the user asks. |\n\nWrite a story or a script into `narrative`, the look and its references into `visuals`, and shot\nlists or the schedule into `production`. Use plain Markdown: headings, lists, tables, no emoji.",
-      "replace": "\nHere the project is read-only: sorting takes into folders, editing the brief and leaving notes for\nthe team happen in the studio. Write a story, a script or a shot list in your reply as plain\nMarkdown, ready for the user to paste into the brief."
-    },
-    {
-      "file": "skills/mira-generate/references/marketing-studio.md",
-      "find": "Write strategy into the brief with `film_update_brief`: the audience into `audience`, the one promise\ninto `message`, the offer into `offer`, legal lines and must-haves into `mandatories`, scripts and\nhooks into `creative`.",
-      "replace": "The brief is edited in the studio. Write strategy in your reply under the brief's sections: the\naudience (`audience`), the one promise (`message`), the offer (`offer`), legal lines and must-haves\n(`mandatories`), scripts and hooks (`creative`), so the user can paste it in."
     },
     {
       "file": "skills/mira-generate/references/media-ops.md",
@@ -116,19 +79,25 @@
       "replace": "`upload_reference_image` or attached to the chat"
     },
     {
-      "file": "skills/mira-generate/references/guides.md",
-      "section": "## Publishing",
-      "replace": "## Publishing\n\nGuides are published by the user in the guide editor on the website, never from here. When a draft\nor an edit is ready, give them the editor link and say that Publish is there. Publishing is public:\nthe guide appears under their nickname and search engines index it.\n\nPublishing needs a public nickname, a title of 8-90 characters and at least one `media` block with\nthe user's own generation. A guide holds up to 60 blocks, 20 media items, 15 links and 20 000\ncharacters of text; captions up to 300.\n"
+      "file": "skills/mira-generate/references/marketing-studio.md",
+      "section": "## Trends",
+      "replace": ""
     },
     {
-      "file": "skills/mira-ads/SKILL.md",
-      "section": "## Posting it",
-      "replace": "## Posting it\n\nThe user posts the result themselves. Make the media in the placement's ratio, keep the hook in the\nfirst 125 characters of the caption, and pair a \"comment WORD\" call with the keyword the user's\nauto-reply listens for.\n"
+      "file": "skills/mira-3d/SKILL.md",
+      "find": "whichever model made it, and on a mesh the user already has: from\nBlender or another DCC tool, export the character as GLB, `create_upload` it (kind `model3d`) and\ncall `rig_3d` with the returned `libraryItemId`.",
+      "replace": "whichever model made it."
     },
     {
-      "file": "skills/mira-ugc/SKILL.md",
-      "section": "## Posting it",
-      "replace": "## Posting it\n\nThe user posts the result themselves. Make the media in the placement's ratio, keep the hook in the\nfirst 125 characters of the caption, and pair a \"comment WORD\" call with the keyword the user's\nauto-reply listens for.\n"
+      "file": "skills/mira-3d/references/prompting.md",
+      "section": "## In a Blender scene",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-video-prompting/references/models/minimax.md",
+      "find": "A label reading \"СКИДКА 30%\" on the front of the jar.",
+      "replace": "A label reading \"SOLDES 30%\" on the front of the jar."
     }
-  ]
+  ],
+  "stripCyrillicTriggers": true
 }

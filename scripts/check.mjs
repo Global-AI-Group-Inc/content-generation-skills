@@ -206,6 +206,12 @@ async function checkChatgptPackage() {
       if (/[а-яё]/i.test(fm.body)) P(`${path}: Cyrillic in the body`);
     }
   }
+  // the package is English only: no Cyrillic anywhere in it, manifests included
+  for (const [path, data] of files) {
+    if (/\.(png|jpe?g|webp|gif)$/i.test(path)) continue;
+    const lines = data.toString("utf8").split("\n").flatMap((l, i) => (/[\u0400-\u04FF]/.test(l) ? [i + 1] : []));
+    if (lines.length) P(`${path}: Cyrillic on line ${lines.slice(0, 5).join(", ")}${lines.length > 5 ? "..." : ""}; the package is English only (stripCyrillicTriggers or a rewrite)`);
+  }
   for (const s of tools.excludedSkills) if ([...files.keys()].some((p) => p.startsWith(`skills/${s}/`))) P(`${s} must not ship`);
   if (!skillNames.size) P("no skills in the package");
 

@@ -4,7 +4,7 @@ description: >-
   Generate images and video on Mira AI: pick a model, attach the user's AI Blogger, location or
   product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip.
   Use it whenever the user wants to "generate", "make a video", "make an image", "animate this
-  photo", "create an ad", "сгенерируй", "сделай видео", "сделай картинку". Chain with
+  photo", "create an ad", "make a 3D model", "post it to Instagram". Chain with
   mira-video-prompting and mira-image-prompting for what to write, and with the mira-* playbooks for
   the genre. NOT for prompting theory on its own, and not for voice, music, sound effects, dubbing
   or captions (mira-audio).
@@ -36,12 +36,14 @@ connect Mira in the plugin settings and try again once.
 | `upload_reference_image` | no | An image the user attached becomes a reference URL. A clip or a track they attach reaches the clip and audio tools as `libraryItemId`. |
 | `generate_image` | yes | Stills. Returns a generation id at once. |
 | `generate_video` | yes | Clips. Returns a generation id at once; video takes minutes. Takes up to 3 reference clips in `referenceVideoUrls` (motion, camera, pacing); `kling-motion` needs exactly one clip and one photo. `draft=true` on `seedance-2-5` renders a cheap 480p take to try an idea; `quality="hd"` renders straight to 1080p. |
-| `list_generations` | no | The account's recent generations with ids, URLs and poster URLs: image and video by default, `audio`, `transcript` or `analysis` only when asked for by kind. To find an earlier clip to extend or a source for a clip operation. |
+| `list_generations` | no | The account's recent generations with ids, URLs and poster URLs: image / video / model3d by default, `audio`, `transcript` or `analysis` only when asked for by kind. To find an earlier clip to extend, a 3D model to rig, a source for a clip operation. |
 | `get_generation` / `wait_for_generation` | no | Status and the result. `wait_for_generation` blocks up to ~50 s and may need several calls. |
 | `extend_video` | yes | Native continuation of a clip the account already made. `direction="backward"` (seedance-2-5) adds what happens before the first frame. |
 | `finalize_draft` | yes | Re-renders a 480p draft as the same take in 1080p, within 7 days of the draft. |
 | `upscale_video` | yes | Topaz on a finished clip - a Mira clip (`generationId`) or an attached file (`libraryItemId`): `target` `1080p` (default, 720p only), `4k` (720p or 1080p, up to 30 s; `fps` up to 60 in the same pass) or `fps` (FPS Boost at the same resolution: `fps` 24-120, default 60; `slowdown` 2/4/8 for slow motion - longer clip, no sound; up to 60 s of output). `credits_spent` is the confirmed price. A result cannot be upscaled, boosted or extended again: for 4K at 60 fps run `4k` + `fps` 60 on the original in one pass. Not for drafts: finalize them instead. |
-| `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` / `list_my_mira_guides` / `update_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes; edit their own guides. The user publishes in the editor on the website. [references/guides.md](references/guides.md). |
+| `generate_3d` | yes | One object as a 3D model from text or up to four photos (`hunyuan-3.1`, `meshy-7`, `trellis-2`, `rodin-fast`). Result files (GLB plus other formats) come back in `files`. Playbook: `3d`; read mira-3d. |
+| `rig_3d` | yes | Humanoid skeleton with walk/run on a finished 3D generation (`generationId`), plus animation clips by preset id. |
+| `search_mira_guides` / `get_mira_guide` / `draft_mira_guide` / `list_my_mira_guides` / `update_mira_guide` / `publish_mira_guide` | no | Community guides at [mira.mybots.pro/guides](https://mira.mybots.pro/guides): real results with the model and prompt behind them, written by users (not the playbooks). Search before an unfamiliar effect or look; draft a guide from a result the user likes; edit their own guides; publish only when they explicitly ask. [references/guides.md](references/guides.md). |
 | `list_direct_presets` / `direct_video` | `direct_video` yes | Direct presets: the user answers a short questionnaire (short film, music video, product or UGC ad, brand film, real-estate tour, micro drama, explainer, trailer, social post, ad remake) and the preset directs ONE clip up to 30 s - you write no prompt. Offer one when the user wants such a piece and brings no prompt. [references/direct-presets.md](references/direct-presets.md). |
 | `list_blogger_traits` / `create_blogger_draft` / `save_blogger` / `list_blogger_presets` / `blogger_motion` / `blogger_speak` / `set_blogger_voice` / `swap_object` | draft, save, motion, speak, swap | AI Bloggers, the user's persistent brand characters: build one from traits or words (a draft, then the save after a clear yes, with a voice), make it repeat a clip, take a person's place in one or speak a script in its voice; `swap_object` replaces one element of any clip from photos. `bloggerId` works on the generate, clip and audio tools. [references/ai-blogger.md](references/ai-blogger.md). |
 | `list_miracle_presets` / `miracle_analyze` / `miracle` | `miracle` only | Miracle (the Miracle tab of AI Bloggers): in a clip of 3-30 s, replace the people (an AI Blogger or a photo), an outfit, a product, the place or a sign while every move, the camera and the sound stay; on Seedance also redraw it in a style, add people and end with the blogger's line. Analyse first (free), confirm, then run (Seedance one pass by default, or Kling in parts; about 5-8 min). [references/miracle.md](references/miracle.md). |
@@ -52,23 +54,23 @@ connect Mira in the plugin settings and try again once.
 | `lipsync_video` | yes | The mouth in a clip re-animated to a new track from `generate_audio` or an attached file. Up to 60 s. |
 | `marketing_brief` | yes | Script, shot list, a ready `generate_video` prompt, caption, hashtags and voiceover text for a product clip, returned in the same call. |
 | `generate_audio` / `plan_music` | yes / no | Speech, multi-voice dialogue, sound effects and music; `plan_music` drafts a free section plan for music timed to the cut. |
-| `list_voices` / `design_voice` / `save_voice` | design only | The platform's voices and the user's own; a new voice from a description, kept after a yes. |
+| `list_voices` / `design_voice` / `save_voice` / `delete_voice` | design only | The platform's voices and the user's own; a new voice from a description, kept or removed (removal is permanent: ask first). |
 | `add_soundtrack` / `voiceover_video` / `add_captions` | yes | On a finished clip: music the model writes by watching it; a spoken script over the ducked original; burned subtitles plus an SRT. |
 | `translate_video` / `change_voice` | yes | The clip's speech dubbed into another language, lip sync optional (up to 180 s); the same performance in another voice (up to 120 s). |
 | `isolate_voice` / `separate_stems` | yes | Speech cleaned of noise, music and echo; a track or a clip's sound split into 2 or 6 stems. |
 | `transcribe_video` / `analyze_transcript` | yes / partly | A word-timed transcript and SRT with speakers (up to 30 min); silence cuts and multicam splits (free), the best short clips, SEO, chapters. |
-| `estimate_cost` / `get_credit_balance` | no | What a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. The balance says what the user's account can cover. |
-| `film_list_projects` / `film_get_project` / `film_list_elements` / `film_list_assets` | no | AI Film Studio team projects and AI Marketing Studio campaigns (`projectType: "marketing"`): read the brief, the cast and the bin, then render into the project with `filmProjectId` + `elementIds` on `generate_image` / `generate_video` (the workspace owner pays). [references/film-studio.md](references/film-studio.md). |
+| `estimate_cost` / `get_credit_balance` | no | What a call would spend, before making it: image, video (duration, `draft`, `quality="hd"`), `finalize`, model3d (quality/pbr/rig/animations), rig, every clip operation (`sourceSeconds`) and every audio job (`model`, `chars`, `durationSeconds`). Quote it before a costly call. The balance says what the user's account can cover. |
+| `film_list_projects` / `film_get_project` / `film_list_elements` / `film_list_assets` / `film_move_assets` / `film_update_brief` / `film_add_comment` | no | AI Film Studio team projects and AI Marketing Studio campaigns (`projectType: "marketing"`): read the brief and the cast, then render into the project with `filmProjectId` + `elementIds` on `generate_image` / `generate_video` (the workspace owner pays); sort takes, write the brief, leave notes. [references/film-studio.md](references/film-studio.md). |
+| `list_social_accounts` / `check_social_post` / `publish_social_post` / `list_social_posts` / `get_social_post` / `cancel_social_post` / `list_comment_hooks` / `save_comment_hook` / `toggle_comment_hook` / `delete_comment_hook` / `get_comment_hook_log` | no credits; publish only after a yes | Post the user's generations to the Instagram / Threads accounts they connected to Mira, now or on a schedule, with alt text, Reel cover, collaborators, AI label and auto-replies to comments (keyword → reply + DM with buttons). Always `check_social_post` first, show the summary, then `confirm=true`. [references/social-publishing.md](references/social-publishing.md). |
 | `mkt_get_brand` / `mkt_list_styles` / `mkt_list_channels` / `mkt_create_variants` / `mkt_adapt` / `mkt_localize` / `mkt_draft_post` / `mkt_script` / `mkt_script_generate` | variants, adapt, localize, scripts | A campaign's brand kit, the composer catalog (`styleId`, `hookId`, `settingId`, `placementId`), A/B variant sets, placements and dubs (always `dryRun` first, then a yes), post drafts. [references/marketing-studio.md](references/marketing-studio.md). |
 | `list_elements` / `get_element` | no | The Mira Elements library: overlays, backgrounds, transitions, LUTs, sounds, templates and open-licence fonts for the user's own editor, with ids and previews. |
-| `get_trends` / `get_trend_video` | no | What is trending in AI video right now and how to repeat it: read mira-trends. |
 
 Clip and audio operations take exactly one source: `sourceGenerationId` (a Mira generation) or `libraryItemId` (a file the user attached to the chat). `draw_edit_video` (Draw to Edit) changes only the area the user marked on one frame - the user draws WHERE, `prompt` says WHAT. Limits, parameters and outputs: [references/media-ops.md](references/media-ops.md).
 
 ## Sound
 
 Voice, music, sound effects, dubbing, captions and voices have their own skill: read mira-audio
-before `generate_audio` or any tool that changes a clip's sound. Finish the picture first, then add the voice, the music and the captions to it. What to make next - trending AI videos and sounds from `get_trends`, and a trend repeated with its own sound - lives in mira-trends.
+before `generate_audio` or any tool that changes a clip's sound. Finish the picture first, then add the voice, the music and the captions to it.
 
 ## Workflow
 
@@ -89,7 +91,7 @@ before `generate_audio` or any tool that changes a clip's sound. Finish the pict
    narrate polling.
 6. Iterate with the same seed and a lightly edited prompt for a close variation; change the model
    only when the brief needs a capability the current one lacks.
-7. A finished result the user is happy with (or the last step of a longer job: extend, upscale, voiceover): offer once, in one sentence, to write it up as a community guide with `draft_mira_guide` (a draft; the user publishes it on the website). Not for drafts or retakes; never again after a no.
+7. A finished result the user is happy with (or the last step of a longer job: extend, upscale, voiceover): offer once, in one sentence, to write it up as a community guide with `draft_mira_guide` (a draft; publish only when they ask). Not for drafts or retakes; never again after a no.
 
 ## What the pipeline does with your prompt
 
@@ -117,5 +119,6 @@ anything not suitable for a general audience aged 13 and up, whatever the tool w
 `draft=true` (480p) → the user picks one → `finalize_draft` renders that same take in 1080p →
 `extend_video` in either direction continues the final in 1080p. A draft is never extended or
 upscaled. When the shot is already clear, skip the drafts: `quality="hd"` renders straight to
-1080p. A generation id from any step is a valid input to the next. Details and failure handling:
+1080p. For 3D: `generate_image` (clean object on a neutral background) → `generate_3d` from that
+image → `rig_3d` on the result. A generation id from any step is a valid input to the next. Details and failure handling:
 [references/locks-and-references.md](references/locks-and-references.md).

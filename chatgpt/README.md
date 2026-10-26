@@ -16,9 +16,11 @@ scripts/check.mjs` validates it. Upload that ZIP at [platform.openai.com/plugins
 | `schemas/` | Vendored agent-plugins.org 1.0.0 schemas for `plugin.json` and `mcp.json`. |
 
 The package ships every skill except mira-blender-scene, mira-after-effects, mira-premiere and
-mira-3d: the endpoint has no Blender or Adobe bridge and no 3D. When a source skill changes, the
-build fails on a rewrite that no longer matches and the check fails on an override whose source
-moved on, or on a shipped file that names a tool the endpoint does not serve.
+mira-trends: the endpoint has no Blender or Adobe bridge and no trends. It is English only: the build
+drops the quoted Cyrillic trigger phrases from skill descriptions, and the check fails on any Cyrillic
+left in the ZIP. When a source skill changes, the build fails on a rewrite that no longer matches and
+the check fails on an override whose source moved on, or on a shipped file that names a tool the
+endpoint does not serve.
 
 Not in the package on purpose: reviewer credentials and the demo video (entered in the dashboard),
 hooks, `.app.json`, prices or anything that sells credits or plans.
