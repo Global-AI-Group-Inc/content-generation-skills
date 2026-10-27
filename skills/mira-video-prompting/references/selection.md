@@ -11,6 +11,7 @@ table it points at.
 | `capricornus-1` | Capricornus 1 (Mira) | 5 / 10 / 15 / 30 | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
 | `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
+| `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
 | `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
 | `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 6 native | yes | 3000 |
 | `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 7000 |
@@ -25,6 +26,7 @@ table it points at.
 - **`capricornus-1`** — Mira's own model (early access): the house cinematic look - large-sensor optics, soft motivated light, warm highlights over cool shadows, fine grain - written into every shot, so a clip looks graded out of the box; the pick for product films, brand pieces and multi-shot stories. Up to 30 s in one pass with native audio, heavy referencing, timecoded storyboards, extends both ways, and about 15% cheaper per second than the other long-form option. It also executes phased single-take camera tricks as written - crash dive, full 360 orbit, whip pan between two places, dolly zoom, day-night cycle.
 - **`runway`** — Gen-4.5, text-to-video AND image-to-video: the sequencing specialist - executes several ordered camera moves and timed beats inside ONE prompt, and takes forceful camera work (sweeping arcs, crash zooms, whip pans) the others smear; weak on fine motor detail; NO audio; 720p; 5/10s
 - **`kling`** — best human anatomy and physics (sport, cloth, water), legible in-frame text, native audio with multi-speaker dialogue and accents; 3-15s; 1080p output
+- **`kling-4`** — the newest Kling: ONE continuous take of 3-30s at 720p, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 1080p - for those use kling
 - **`kling-turbo`** — the faster, cheaper Kling 3.0: ONE continuous take from text or a single start frame, native audio always on; 3-15s; 1080p; no reference photos, clips, end frames or multi-shot - for those use kling
 - **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, chooses its own 3-10s length (you cannot pin the duration); up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 - **`minimax`** — the purpose model for SPEECH plus legible/Cyrillic in-frame text - the only one holding both; millisecond-precise shot timing; 4-15s; NOT a general default

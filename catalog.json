@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.6",
+  "snapshot": "0.7.7",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -59,6 +59,7 @@
         "omni",
         "minimax",
         "kling",
+        "kling-4",
         "kling-turbo",
         "gpt-image-2.5-flare",
         "gpt-image-2.5-sunburst",
@@ -233,7 +234,7 @@
       "attribution": "",
       "summary": "Short paid creative on Mira AI: a bold ad clip or a banner with a hook in the first beat, an offer and a clean closing frame",
       "entry": "SKILL.md",
-      "entryBytes": 5468,
+      "entryBytes": 5546,
       "hasNotice": false,
       "sections": {}
     },
@@ -608,9 +609,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 3.0 (and Turbo), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
+      "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 4.0, Kling 3.0 (and Turbo), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
       "entry": "SKILL.md",
-      "entryBytes": 5323,
+      "entryBytes": 5440,
       "hasNotice": false,
       "sections": {
         "action": {
@@ -627,6 +628,11 @@
           "file": "references/models/happyhorse.md",
           "bytes": 5916,
           "title": "HappyHorse 1.1 (happyhorse)"
+        },
+        "models/kling-4": {
+          "file": "references/models/kling-4.md",
+          "bytes": 5270,
+          "title": "Kling 4.0 (kling-4)"
         },
         "models/kling-motion": {
           "file": "references/models/kling-motion.md",
@@ -690,7 +696,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5334,
+          "bytes": 5731,
           "title": "Selecting the model"
         },
         "textures": {
