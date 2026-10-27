@@ -57,17 +57,36 @@ work on it as on any of the user's own clips.
 | `film_move_assets` | Takes into a folder, or back to the root with an empty `folderId`. Editor role. |
 | `film_update_brief` | Markdown into one brief section: `context`, `narrative`, `visuals`, `production`, `status`, `resources`, `notes`. Appends by default; `append=false` replaces the section, only when the user asked to rewrite it. Editor role. |
 | `film_add_comment` | A note for the team on a take (`asset`), an `element` or the `brief`. Only when the user asks. |
+| `film_extract_frame` | One frame of a video take (`last` by default, `first` or seconds) saved into the bin as an image, free. Returns its `assetId` and URL. Editor role. |
+| `film_storyboard_get` | The storyboard: shots in order with `shotId`, scene, action, dialogue, frame prompt, length, cast, mode, start/end frames and the frames and takes shot from each. |
+| `film_storyboard_update` | Operations on shots: `add` (into a scene by title), `edit` by `shotId`, `remove`, `order`. Editor role, free. |
 
 Write a story or a script into `narrative`, the look and its references into `visuals`, and shot
-lists or the schedule into `production`. Use plain Markdown: headings, lists, tables, no emoji.
+the schedule into `production`; shot lists belong in the storyboard. Use plain Markdown: headings, lists, tables, no emoji.
 Lines like `![caption](film-asset:…)` are takes the team embedded in the brief: keep them where they
 are when you edit a section.
 
+## Storyboard: frame first, then the take from it
+
+Every project has a **Storyboard**: scenes and shots in order. Read it with `film_storyboard_get` and
+add or fix shots with `film_storyboard_update` rather than writing a shot list into the brief.
+
+Shoot a shot in two steps, the way the team does in the studio:
+
+1. **The frame.** `generate_image` with `filmProjectId` and the shot's `elementIds`. The frame carries
+   the faces and the place, so this is where the cast goes.
+2. **The take from the frame.** `generate_video` with `startFrameAssetId` (via the internal Mira MCP)
+   or the frame's URL in `startImageUrl`, and no `elementIds`, `refAssetIds` or reference URLs:
+   models refuse a first or last frame mixed with references. Models flagged `supports_last_frame`
+   can also land on an end frame.
+
+For a continuous shot, take the last frame of the previous shot's take with `film_extract_frame` and
+start the next take from it: the seam disappears.
+
 ## The cut is the team's
 
-Agents render takes and write the brief; the team assembles the film in Editor. A storyboard is a
-shot list in the brief plus takes rendered one by one with the project's `elementIds`. Do not build a
-movie inside a project. When the user wants the cut, point them to Editor and offer to write the
+Agents render takes and fill the storyboard; the team assembles the film in Editor (a cut can be built
+straight from the storyboard's selected takes). Do not build a movie inside a project. When the user wants the cut, point them to Editor and offer to write the
 voiceover script and subtitle lines into the brief.
 
 ## Money and refusals
