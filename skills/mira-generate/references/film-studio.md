@@ -14,6 +14,22 @@ storyboard the team is working on, or pastes a `/studio/p/...` link. Call `film_
 first; it returns the projects the user owns, the team projects they belong to and the ones shared
 with them as a guest, with their role in each.
 
+## Start a project and its cast
+
+Only when the user asks for a new project, and after `film_list_projects` shows it does not exist yet:
+
+- `film_create_project` makes a film project in the user's personal workspace, or in a team workspace
+  they can create projects in (`workspaceId` from `film_list_projects`, or the workspace name). Name
+  up to 80 characters, an optional logline up to 140. Free. Fill the brief with `film_update_brief`.
+- `film_create_element` adds a character, a location or a prop to the cast from the user's own
+  photos, 1 to 8 of ONE subject, the main angle first (a face portrait, a wide view of the place, a
+  hero shot of the product). The photos become the element's angles right away: it is `ready` at
+  once and free, and the passport is written in the background. Photos must be the user's images:
+  upload them with `upload_reference_image` or use their Mira images; other links and videos are
+  refused. A real person's face only when it is the user's own or the person agreed. Editor role.
+
+An element drawn from scratch (no photos) is made in the studio itself; it is not available here.
+
 ## Read before you render
 
 `film_get_project` returns a briefing written for an agent: the user's role, the logline, every
@@ -57,6 +73,7 @@ work on it as on any of the user's own clips.
 | `film_move_assets` | Takes into a folder, or back to the root with an empty `folderId`. Editor role. |
 | `film_update_brief` | Markdown into one brief section: `context`, `narrative`, `visuals`, `production`, `status`, `resources`, `notes`. Appends by default; `append=false` replaces the section, only when the user asked to rewrite it. Editor role. |
 | `film_add_comment` | A note for the team on a take (`asset`), an `element` or the `brief`. Only when the user asks. |
+| `film_create_element` | A cast element from the user's own photos, ready at once and free (see above). Editor role. |
 | `film_extract_frame` | One frame of a video take (`last` by default, `first` or seconds) saved into the bin as an image, free. Returns its `assetId` and URL. Editor role. |
 | `film_storyboard_get` | The storyboard: shots in order with `shotId`, scene, action, dialogue, frame prompt, length, cast, mode, start/end frames and the frames and takes shot from each. |
 | `film_storyboard_update` | Operations on shots: `add` (into a scene by title), `edit` by `shotId`, `remove`, `order`. Editor role, free. |

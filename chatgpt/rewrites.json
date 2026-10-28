@@ -4,7 +4,7 @@
   "override": {
     "skills/mira-generate/SKILL.md": {
       "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
-      "sha256": "d2080a1da499d91f8338d1a8e314f964f129dba3e0cf49d15caf4f64e8f08f6e"
+      "sha256": "5ffea70fb70403495e9dee93df4696eff18424f529104ce126ecb8e43d09da1b"
     }
   },
   "rewrite": [
