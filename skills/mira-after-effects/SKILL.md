@@ -146,4 +146,4 @@ asking. Do not add `Apply Color LUT` from a script (it opens a dialog that hangs
 a `.ffx` element. Do not build for more than 40 000 characters in one call; batch instead. Do not
 pass `save_project` to `adobe_render` without asking: it saves the user's project. Do not ship third-party pack
 names or local paths in anything public. Do not spend generation credits from this skill; footage
-comes from the user, the bank or a `mira-generate` call they approved.
+comes from the user, the bank or a `mira-generate` call they approved. Film Studio projects: `film-studio.md` in `mira-generate`.

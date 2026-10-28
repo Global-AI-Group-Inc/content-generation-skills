@@ -128,3 +128,5 @@ Ask only what the brief leaves open:
 - Music sits under the voice, not on top of it; the mix is checked at the loudest line.
 - A contact sheet at every cut has been looked at; nothing is black between clips.
 - The project is saved only when the user asked.
+
+**AI Film Studio.** An Editor cut opens as a sequence with `film_edit_open_in_app`, takes come in with `film_open_in_app`, `adobe_command export_sequence` with `film_project_id` returns the edit to the project's bin - see `film-studio.md` in `mira-generate`.

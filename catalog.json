@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.8",
+  "snapshot": "0.7.9",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -244,7 +244,7 @@
       "attribution": "",
       "summary": "Build motion pieces inside the user's own After Effects through the Mira MCP: read the project, mark the beat of the music, animate with the Mira Motion Kit (kinetic type, camera depth, velocity-matched transitions, expressions, grade) or E",
       "entry": "SKILL.md",
-      "entryBytes": 9631,
+      "entryBytes": 9690,
       "hasNotice": false,
       "sections": {
         "bank-schema": {
@@ -341,7 +341,7 @@
       "attribution": "",
       "summary": "Build and shoot scenes inside the user's own Blender through the Mira MCP: block out a set with primitives, place lights and a camera, import generated 3D assets, animate, then turn a viewport playblast into a finished clip with a video mod",
       "entry": "SKILL.md",
-      "entryBytes": 11054,
+      "entryBytes": 11321,
       "hasNotice": false,
       "sections": {
         "blockout": {
@@ -443,7 +443,7 @@
         },
         "film-studio": {
           "file": "references/film-studio.md",
-          "bytes": 8214,
+          "bytes": 11073,
           "title": "AI Film Studio projects"
         },
         "guides": {
@@ -555,7 +555,7 @@
       "attribution": "",
       "summary": "Edit in the user's own Premiere Pro through the Mira MCP: read the timeline, cut talking footage on whole sentences from a transcript, take out silences, switch multicam angles by speaker, assemble a rough cut or a vertical reel from a cut ",
       "entry": "SKILL.md",
-      "entryBytes": 7997,
+      "entryBytes": 8257,
       "hasNotice": false,
       "sections": {
         "editing": {

@@ -106,6 +106,41 @@ Agents render takes and fill the storyboard; the team assembles the film in Edit
 straight from the storyboard's selected takes). Do not build a movie inside a project. When the user wants the cut, point them to Editor and offer to write the
 voiceover script and subtitle lines into the brief.
 
+When the user asks for a rough cut, you can start one: `film_edit_create` with the takes in order (videos
+and stills butt-joined on the main track, audio on the music track), then `film_edit_update` with
+`appendAssetIds` to add more. `film_edit_list` and `film_edit_get` read the team's cuts, `film_edit_render`
+exports one to MP4 on Mira's servers for free, and `film_edit_export` gives a 30-minute download link for
+editors outside Mira: `package` (every file plus XML, EDL and SRT), `xmeml` (Premiere Pro and DaVinci
+Resolve import it), `edl` or `srt`.
+
+## Desktop apps: After Effects, Premiere Pro, Blender
+
+A project lives in the browser, but the team can finish it in their own apps. Check
+`film_desktop_status` first: it says whether After Effects and Premiere Pro (the Mira panel) and Blender
+(the Mira add-on) are connected right now. If an app is off, tell the user to open it, sign in to Mira
+and switch the bridge on (mira.mybots.pro/adobe, mira.mybots.pro/blender); do not retry in a loop.
+
+- **Takes into an app.** `film_open_in_app` with up to 12 assetIds and a host (`aeft`, `ppro`, `blender`)
+  downloads them on the user's machine. In After Effects and Premiere they go into the Mira bin, or onto
+  the open composition or sequence with destination `active`. In Blender an image becomes a reference
+  plane and the camera background, a video a Video Sequencer strip and the camera background - the way to
+  match a blockout against a take. Any team member's take works, not only the user's own.
+- **A cut into Premiere.** `film_edit_open_in_app` rebuilds an Editor cut as a new Premiere Pro sequence
+  (host `ppro`, the default): same clips and in/out points, dissolves and dips at the cuts, the sound
+  tracks with their levels and fades, the subtitles as a caption track. Host `aeft` makes a composition
+  with the clips as layers instead. A long cut takes a few minutes: the panel downloads every file.
+- **Back into the bin.** A Blender blockout recording goes into the project with `blender_playblast` and
+  `filmProjectId` (a `Blocking` folder from `film_create_folder` keeps it tidy); an After Effects render
+  with `adobe_render` and `filmProjectId`; a Premiere sequence export with `adobe_command export_sequence`
+  and `film_project_id`. A file from a link goes in with `film_import_url`, a file on disk with
+  `create_upload` and `filmProjectId`, the user's own earlier generation with `film_add_generation`.
+- **Blockout to take.** Record the blockout into the project, then `generate_video` with `filmProjectId`
+  and the recording's url in `referenceVideoUrls` (the `mira-blender-scene` rules for playblast prompts
+  apply). The take lands in the bin next to its blockout.
+
+Generations started from the panel or the add-on go into the project only when the user switched it on
+there; renders and blockout recordings are free.
+
 ## Money and refusals
 
 Tell the user the price as usual, and say once that it comes from the workspace balance. The

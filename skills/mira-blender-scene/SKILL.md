@@ -145,3 +145,5 @@ Defaults: 24 fps, 5 s, 16:9, 50 mm, three-point light, blockout under `Blockout`
 - Do not build crowds, plants or set dressing: whatever you build comes back looking the way it was built.
 - Do not build the neighbourhood: a field of look-alike houses comes back as a toy town of identical boxes; build the route and write the rest.
 - Capsule figures are fine in a Seedance playblast; only a photoreal person who is not one of the user's AI Bloggers is refused.
+
+**AI Film Studio.** For a team project: `blender_playblast` with `filmProjectId` records the blockout into its bin, `film_open_in_app` (host `blender`) brings its frames and takes in as reference planes or sequencer strips - see `film-studio.md` in `mira-generate`.
