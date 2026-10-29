@@ -9,8 +9,7 @@ project is paid by the workspace owner.
 
 ## When to use it
 
-The user talks about "the project", "our film", their team, a cast they share with others, a
-storyboard the team is working on, or pastes a `/studio/p/...` link. Call `film_list_projects`
+The user talks about "the project", "our film", their team, a cast they share with others, or pastes a `/studio/p/...` link. Call `film_list_projects`
 first; it returns the projects the user owns, the team projects they belong to and the ones shared
 with them as a guest, with their role in each.
 
@@ -75,35 +74,36 @@ work on it as on any of the user's own clips.
 | `film_add_comment` | A note for the team on a take (`asset`), an `element` or the `brief`. Only when the user asks. |
 | `film_create_element` | A cast element from the user's own photos, ready at once and free (see above). Editor role. |
 | `film_extract_frame` | One frame of a video take (`last` by default, `first` or seconds) saved into the bin as an image, free. Returns its `assetId` and URL. Editor role. |
-| `film_storyboard_get` | The storyboard: shots in order with `shotId`, scene, action, dialogue, frame prompt, length, cast, mode, start/end frames and the frames and takes shot from each. |
-| `film_storyboard_update` | Operations on shots: `add` (into a scene by title), `edit` by `shotId`, `remove`, `order`. Editor role, free. |
 
-Write a story or a script into `narrative`, the look and its references into `visuals`, and shot
-the schedule into `production`; shot lists belong in the storyboard. Use plain Markdown: headings, lists, tables, no emoji.
+Write a story, a script or the shot list into `narrative`, the look and its references into `visuals`, and
+the schedule into `production`. Use plain Markdown: headings, lists, tables, no emoji.
 Lines like `![caption](film-asset:…)` are takes the team embedded in the brief: keep them where they
 are when you edit a section.
 
-## Storyboard: frame first, then the take from it
+## Shooting a shot: frame first, then the take from it
 
-Every project has a **Storyboard**: scenes and shots in order. Read it with `film_storyboard_get` and
-add or fix shots with `film_storyboard_update` rather than writing a shot list into the brief.
+When a face has to hold, shoot in two steps, the way the team does in the studio:
 
-Shoot a shot in two steps, the way the team does in the studio:
-
-1. **The frame.** `generate_image` with `filmProjectId` and the shot's `elementIds`. The frame carries
+1. **The frame.** `generate_image` with `filmProjectId` and the cast's `elementIds`. The frame carries
    the faces and the place, so this is where the cast goes.
 2. **The take from the frame.** `generate_video` with `startFrameAssetId` (via the internal Mira MCP)
    or the frame's URL in `startImageUrl`, and no `elementIds`, `refAssetIds` or reference URLs:
    models refuse a first or last frame mixed with references. Models flagged `supports_last_frame`
    can also land on an end frame.
 
-For a continuous shot, take the last frame of the previous shot's take with `film_extract_frame` and
-start the next take from it: the seam disappears.
+## Longer takes: extend, continue, finish
+
+- **Extend in place.** A take on `seedance-2-5` or `omni` continues with `extend_video` and its
+  `generationId` (from `film_list_assets`): the cast carries over, the result is one stitched take in
+  the same bin, paid by the workspace. Any member who can generate may extend a teammate's take.
+- **Continue from the last frame.** On any other model, `film_extract_frame` the take's last frame and
+  start the next take from it: the seam disappears, but the cast rides only on that frame.
+- **Finish.** `upscale_video` takes an approved take to 1080p, 4K or a higher frame rate. Extend first,
+  upscale last: an upscaled take cannot be extended again.
 
 ## The cut is the team's
 
-Agents render takes and fill the storyboard; the team assembles the film in Editor (a cut can be built
-straight from the storyboard's selected takes). Do not build a movie inside a project. When the user wants the cut, point them to Editor and offer to write the
+Agents render takes; the team assembles the film in Editor. Do not build a movie inside a project. When the user wants the cut, point them to Editor and offer to write the
 voiceover script and subtitle lines into the brief.
 
 When the user asks for a rough cut, you can start one: `film_edit_create` with the takes in order (videos
