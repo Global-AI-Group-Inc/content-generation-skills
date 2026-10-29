@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.10",
+  "snapshot": "0.7.11",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -407,7 +407,7 @@
         },
         "rhythm": {
           "file": "references/rhythm.md",
-          "bytes": 7942,
+          "bytes": 10551,
           "title": "Rhythm and sound"
         }
       }
