@@ -28,7 +28,7 @@
     "list_comment_hooks", "save_comment_hook", "toggle_comment_hook", "delete_comment_hook", "get_comment_hook_log"
   ],
   "excluded": [
-    "film_list_workspaces", "film_get_usage", "film_get_brief", "film_set_brief", "film_search_assets", "film_get_asset", "film_update_assets", "film_get_element", "film_manage_element", "film_generate_element", "film_list_comments", "film_manage_comment", "film_get_canvas", "film_update_canvas", "film_get_publication", "film_publish", "film_manage_workspace", "film_manage_members", "film_update_project", "film_manage_folder", "film_delete", "film_director_send", "film_director_history",
+    "film_list_workspaces", "film_get_usage", "film_get_brief", "film_set_brief", "film_search_assets", "film_get_asset", "film_update_assets", "film_get_element", "film_manage_element", "film_generate_element", "film_list_comments", "film_manage_comment", "film_get_canvas", "film_update_canvas", "film_get_publication", "film_publish", "film_manage_workspace", "film_manage_members", "film_update_project", "film_manage_folder", "film_delete", "film_director_send", "film_director_history", "film_release",
     "ask_mira", "mira_history", "list_mira_dialogs",
     "create_upload", "get_trends", "get_trend_video",
     "repeat_guide", "list_bloggers",

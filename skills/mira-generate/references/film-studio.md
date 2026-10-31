@@ -97,6 +97,7 @@ Everything the web studio does has a tool. All of them check the user's role in 
 | Comments | `film_list_comments`, `film_manage_comment` (add, reply, edit, resolve, reopen) |
 | Canvas | `film_get_canvas`, `film_update_canvas` |
 | AI Director | `film_director_send` (2 credits a reply; it can start generations), `film_director_history` |
+| Release to viewers | `film_release`: `create`, `get`, `submit` (asks for the catalog, an admin decides), `withdraw`. Only when the user asks; `rightsAttested` only after they confirm the rights |
 
 Put a fresh take into a folder with `film_update_assets`, action `move`, and its `generationId`.
 
