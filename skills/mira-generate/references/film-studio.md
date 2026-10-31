@@ -27,7 +27,9 @@ Only when the user asks for a new project, and after `film_list_projects` shows 
   upload them with `upload_reference_image` or use their Mira images; other links and videos are
   refused. A real person's face only when it is the user's own or the person agreed. Editor role.
 
-An element drawn from scratch (no photos) is made in the studio itself; it is not available here.
+An element drawn from scratch (no photos): `film_generate_element`. It spends the workspace owner's
+credits, so `dryRun` first, show the price, then `dryRun=false`. A character stops at `preview` until
+`film_manage_element` `approve`.
 
 ## Read before you render
 
@@ -59,7 +61,8 @@ references too, so they cannot be combined with keyframe anchors (`startImageUrl
 Elements of kind `other` are takes or uploads the team named (a look, a clip, a sound). They go into
 a take through `refAssetIds` with their `assetId`, never through `elementIds`. Takes marked
 `approved` or `final` are the team's picks: prefer them as references; `changes` means someone wants
-that take redone. Statuses and labels belong to the team, agents do not set them.
+that take redone. Statuses and labels belong to the team: change them with
+`film_update_assets` only on the user's word.
 
 A take in the bin carries its `generationId`: `extend_video`, `upscale_video` and `finalize_draft`
 work on it as on any of the user's own clips.
@@ -79,6 +82,27 @@ Write a story, a script or the shot list into `narrative`, the look and its refe
 the schedule into `production`. Use plain Markdown: headings, lists, tables, no emoji.
 Lines like `![caption](film-asset:…)` are takes the team embedded in the brief: keep them where they
 are when you edit a section.
+
+## Run the whole studio
+
+Everything the web studio does has a tool. All of them check the user's role in the project.
+
+| Job | Tool |
+|---|---|
+| Teams | `film_list_workspaces`, `film_manage_workspace`, `film_manage_members` (invites send email: only people the user named), `film_get_usage` |
+| Project settings | `film_update_project` (name, slug, cover, move, join link), `film_get_publication`, `film_publish` (public: only when the user asks) |
+| Brief in full | `film_get_brief`, then `film_set_brief` with the section's `expectedVersion`; a teammate's save fails your write instead of being lost |
+| Bin | `film_search_assets` (filters, paging), `film_get_asset` (with versions), `film_update_assets` (move, mark, like, trash, restore; by `assetIds` or `generationIds`), `film_manage_folder` |
+| Cast | `film_get_element`, `film_manage_element` (rename, mark, approve, redraw, import, references) |
+| Comments | `film_list_comments`, `film_manage_comment` (add, reply, edit, resolve, reopen) |
+| Canvas | `film_get_canvas`, `film_update_canvas` |
+| AI Director | `film_director_send` (2 credits a reply; it can start generations), `film_director_history` |
+
+Put a fresh take into a folder with `film_update_assets`, action `move`, and its `generationId`.
+
+`film_delete` removes things for good and takes two calls: the first changes nothing and returns the
+impact and a `confirmToken` for 5 minutes. Show the impact, wait for the user's yes in words, then
+call again with the token. To hide a take use `trash`, which can be restored.
 
 ## Shooting a shot: frame first, then the take from it
 
