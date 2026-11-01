@@ -54,7 +54,12 @@ A scheduled post can be removed with `cancel_social_post` until it goes out; ask
 - `altTexts` - alt text per photo, keyed by the generation id you passed (photos only).
 - `coverGenerationId` / `thumbOffsetMs` - the Reel's cover: a photo generation or a frame in ms.
 - `shareToFeed` - false keeps a Reel in the Reels tab only.
-- `trialReel` - `manual` or `performance`: shown to non-followers first.
+- `trialReel` - test a Reel on non-followers before followers see it. Works for `reel` and for a
+  single video in `feed`. `manual`: only non-followers see it until the user shares it to followers
+  in the Instagram app; no tool can do that step. `performance`: Instagram shares it to followers by
+  itself if it performs well. The post is still public, and `shareToFeed` is ignored. Instagram gives
+  no way to read whether a trial has reached followers. If it refuses a trial, the post fails and
+  never goes out as a regular post. On Threads the same post goes out as usual.
 - `firstComment` - posted by the account under the post right after it goes live; the usual place
   for a block of hashtags.
 
