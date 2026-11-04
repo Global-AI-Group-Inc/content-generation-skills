@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.18",
+  "snapshot": "0.7.19",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -696,7 +696,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5783,
+          "bytes": 5775,
           "title": "Selecting the model"
         },
         "textures": {

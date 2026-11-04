@@ -37,4 +37,4 @@ table it points at.
 
 Withdrawn from the lineup (still in the registry for old jobs and pricing): `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
 
-The registry default is `seedance-2-5`. An empty or unknown model id resolves to it silently.
+The registry default is `omni`. An empty or unknown model id resolves to it silently.
