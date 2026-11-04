@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | seconds | model-chosen 3-10s |
-| output | provider default |
+| output | 720p; 1080p with quality=hd |
 | reference images | 6 |
 | audio | yes |
 | prompt budget | 3000 chars |

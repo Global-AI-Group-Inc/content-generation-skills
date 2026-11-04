@@ -14,7 +14,7 @@ table it points at.
 | `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
 | `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
 | `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
-| `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 6 native | yes | 3000 |
+| `omni` | Google Gemini Omni Flash | model-chosen 3-10s | 720p; 1080p with quality=hd | up to 6 native | yes | 3000 |
 | `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 6400 |
 | `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
 | `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
