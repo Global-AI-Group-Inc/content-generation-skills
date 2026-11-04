@@ -13,12 +13,12 @@ table it points at.
 | `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
 | `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
 | `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
+| `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
 | `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 6 native | yes | 3000 |
 | `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 6400 |
 | `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
 | `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
 | `wan3-prime` | Wan 3.0 Prime | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
-| `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
 
 ## What each model is for
 
@@ -28,12 +28,12 @@ table it points at.
 - **`kling`** — best human anatomy and physics (sport, cloth, water), legible in-frame text, native audio with multi-speaker dialogue and accents; 3-15s; 1080p output
 - **`kling-4`** — the newest Kling: ONE continuous take of 3-30s at 720p, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 1080p - for those use kling
 - **`kling-turbo`** — the faster, cheaper Kling 3.0: ONE continuous take from text or a single start frame, native audio always on; 3-15s; 1080p; no reference photos, clips, end frames or multi-shot - for those use kling
+- **`kling-motion`** — motion transfer: ONE photo of a character + ONE driving video (3-30 s, one person, single take) - the character in the photo performs the motion of the video; output length = video length; 1080p; keeps the clip's original sound. The only model that copies choreography exactly. Needs both inputs - refuse without a video
 - **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, chooses its own 3-10s length (you cannot pin the duration); up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 - **`minimax`** — the purpose model for SPEECH plus legible/Cyrillic in-frame text - the only one holding both; millisecond-precise shot timing; 4-15s; NOT a general default
 - **`happyhorse`** — dialogue-first with 7-language lip-sync; single-beat clips and exotic vertical ratios; briefs must stay tiny; ONE photo only - the nine-reference route exists but is not paid on our key
 - **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
 - **`wan3-prime`** — the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 10 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
-- **`kling-motion`** — motion transfer: ONE photo of a character + ONE driving video (3-30 s, one person, single take) - the character in the photo performs the motion of the video; output length = video length; 1080p; keeps the clip's original sound. The only model that copies choreography exactly. Needs both inputs - refuse without a video
 
 Withdrawn from the lineup (still in the registry for old jobs and pricing): `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
 
