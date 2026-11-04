@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.16",
+  "snapshot": "0.7.17",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -504,12 +504,12 @@
       "sections": {
         "composition": {
           "file": "references/composition.md",
-          "bytes": 2202,
+          "bytes": 2313,
           "title": "Composition patterns"
         },
         "craft": {
           "file": "references/craft.md",
-          "bytes": 2963,
+          "bytes": 3077,
           "title": "Building the image prompt"
         },
         "grade": {
@@ -621,7 +621,7 @@
         },
         "models/capricornus-1": {
           "file": "references/models/capricornus-1.md",
-          "bytes": 9595,
+          "bytes": 10169,
           "title": "Capricornus 1 (Mira) (capricornus-1)"
         },
         "models/happyhorse": {
@@ -661,12 +661,12 @@
         },
         "models/runway": {
           "file": "references/models/runway.md",
-          "bytes": 5483,
+          "bytes": 5702,
           "title": "Runway Gen-4.5 (runway)"
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9607,
+          "bytes": 10178,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {

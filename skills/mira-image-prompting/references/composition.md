@@ -1,7 +1,7 @@
 <!-- generated from the registry by comfy_study/comfy_video/build_skills.py; edit the registry, not this file -->
 # Composition patterns
 
-COMPOSITION - build three depth layers (something near, the subject, something behind), keep the subject off dead centre unless the shot is deliberately symmetrical, and let one diagonal or leading line carry the eye. Decide where the copy space is and keep it genuinely empty. Vertical frames: state that the framing is vertical, put the eyes on the upper third, and keep the bottom quarter clear - on a phone that band belongs to the platform UI, and a face or a price parked there is covered by it.
+COMPOSITION - build three depth layers (something near, the subject, something behind), keep the subject off dead centre unless the shot is deliberately symmetrical, and let one diagonal or leading line carry the eye. Decide where the calm empty area sits and say what fills it - open sky, a bare wall, an unbroken tabletop - so it reads as scenery and stays genuinely empty. Vertical frames: state that the framing is vertical, put the eyes on the upper third, and keep the bottom quarter clear - on a phone that band belongs to the platform UI, and a face or a price parked there is covered by it.
 
 ### Composition patterns
 
@@ -11,7 +11,7 @@ COMPOSITION - build three depth layers (something near, the subject, something b
 - **`macro_texture`** — Macro on surface alone, subject unrecognisable as a whole. Sells material quality.
 - **`pov_ugc`** — First-person angle, hands entering frame, slightly off-level. Reads as a real customer rather than an ad.
 - **`ots_glance`** — Over-the-shoulder onto the product or a screen. Puts the viewer beside the person instead of opposite them.
-- **`wide_breath`** — Wide frame with real air around the subject. Establishes the place and gives generous copy space.
+- **`wide_breath`** — Wide frame with real air around the subject. Establishes the place and leaves generous open scenery around it.
 - **`topdown_flatlay`** — Straight down onto a surface, objects arranged with deliberate spacing. Sets, kits, ingredients, editorial grids.
 - **`low_hero`** — Camera below eye line looking up. Makes the subject dominant; the standard bottle and sneaker angle.
 - **`high_problem`** — Camera above looking down. Makes the subject smaller and more vulnerable - the 'before' half of a story.
