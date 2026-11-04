@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.15",
+  "snapshot": "0.7.16",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -621,7 +621,7 @@
         },
         "models/capricornus-1": {
           "file": "references/models/capricornus-1.md",
-          "bytes": 9546,
+          "bytes": 9595,
           "title": "Capricornus 1 (Mira) (capricornus-1)"
         },
         "models/happyhorse": {
@@ -666,7 +666,7 @@
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 9462,
+          "bytes": 9607,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
@@ -696,7 +696,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5731,
+          "bytes": 5783,
           "title": "Selecting the model"
         },
         "textures": {

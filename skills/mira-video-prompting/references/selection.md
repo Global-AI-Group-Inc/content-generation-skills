@@ -14,7 +14,7 @@ table it points at.
 | `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
 | `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
 | `omni` | Google Gemini Omni Flash | model-chosen 3-10s | provider default | up to 6 native | yes | 3000 |
-| `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 7000 |
+| `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 6400 |
 | `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
 | `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
 | `wan3-prime` | Wan 3.0 Prime | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
@@ -22,7 +22,7 @@ table it points at.
 
 ## What each model is for
 
-- **`seedance-2-5`** — the long-form specialist: up to 30s, heavy referencing (storyboards, keyframe chains, video edit/extend); pricier than any Veo tier - reach for it only when length or reference volume decides the clip. ALSO the camera-trick model WITH audio: in live runs (2026-09-06) it executed every phased single-take trick as written - a top-down crash dive, a full 360 orbit returning to the start, a whip pan fusing two locations, a dolly zoom, a camera struck and falling while it records, a locked day-night cycle, a pass through a mirror into a new place - where Runway smeared or split half of them and Kling stopped short of the move; when the MOVE is the concept and the clip needs sound, this is the key
+- **`seedance-2-5`** — the long-form specialist: up to 30s, heavy referencing (storyboards, keyframe chains, video edit/extend); ~1.6x the price of seedance and pricier than kling-4 or wan3, which also reach 30s - reach for it when length or reference volume decides the clip. ALSO the camera-trick model WITH audio: in live runs (2026-09-06) it executed every phased single-take trick as written - a top-down crash dive, a full 360 orbit returning to the start, a whip pan fusing two locations, a dolly zoom, a camera struck and falling while it records, a locked day-night cycle, a pass through a mirror into a new place - where Runway smeared or split half of them and Kling stopped short of the move; when the MOVE is the concept and the clip needs sound, this is the key
 - **`capricornus-1`** — Mira's own model (early access): the house cinematic look - large-sensor optics, soft motivated light, warm highlights over cool shadows, fine grain - written into every shot, so a clip looks graded out of the box; the pick for product films, brand pieces and multi-shot stories. Up to 30 s in one pass with native audio, heavy referencing, timecoded storyboards, extends both ways, and about 15% cheaper per second than the other long-form option. It also executes phased single-take camera tricks as written - crash dive, full 360 orbit, whip pan between two places, dolly zoom, day-night cycle.
 - **`runway`** — Gen-4.5, text-to-video AND image-to-video: the sequencing specialist - executes several ordered camera moves and timed beats inside ONE prompt, and takes forceful camera work (sweeping arcs, crash zooms, whip pans) the others smear; weak on fine motor detail; NO audio; 720p; 5/10s
 - **`kling`** — best human anatomy and physics (sport, cloth, water), legible in-frame text, native audio with multi-speaker dialogue and accents; 3-15s; 1080p output

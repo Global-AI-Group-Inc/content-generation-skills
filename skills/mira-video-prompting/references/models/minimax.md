@@ -8,7 +8,7 @@
 | output | 1080p |
 | reference images | 9 |
 | audio | yes |
-| prompt budget | 7000 chars |
+| prompt budget | 6400 chars |
 | extend | no |
 | draft | no |
 | last frame | yes |
