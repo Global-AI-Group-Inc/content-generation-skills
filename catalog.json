@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.20",
+  "snapshot": "0.7.21",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -656,7 +656,7 @@
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 5101,
+          "bytes": 5197,
           "title": "Google Gemini Omni Flash (omni)"
         },
         "models/runway": {
@@ -696,7 +696,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5786,
+          "bytes": 5801,
           "title": "Selecting the model"
         },
         "textures": {
