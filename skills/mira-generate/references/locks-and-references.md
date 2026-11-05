@@ -63,7 +63,8 @@ end frame ALONE, and the clip then starts wherever the model likes and simply ha
 
 Each family carries the anchors differently, which matters only when something goes wrong:
 `seedance-2-5` and `wan3` send them as separate content roles, Veo as a `lastFrame` field, and
-`omni` as `<FIRST_FRAME>` / `<LAST_FRAME>` tags inside the prompt.
+`omni` as plain words inside the prompt ("start exactly on photo 1 and land exactly on the last
+photo") - Omni 1.2 deprecated its control tags. On `omni` a first-and-last-frame clip runs 3-10 s.
 
 The end frame is a strong directional guide, not a pixel-perfect constraint: the clip moves
 towards it and the final rendered frame may differ slightly. Build the second frame by EDITING

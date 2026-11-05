@@ -1,10 +1,10 @@
 <!-- generated from the registry by comfy_study/comfy_video/build_skills.py; edit the registry, not this file -->
 
-# Google Gemini Omni Flash (`omni`)
+# Google Gemini Omni 1.2 Flash (`omni`)
 
 | | |
 |---|---|
-| seconds | model-chosen 3-10s |
+| seconds | 3-15s, any whole second (3-10s with a first and a last frame) |
 | output | 720p; 1080p with quality=hd |
 | reference images | 6 |
 | audio | yes |
@@ -17,19 +17,19 @@
 
 ## When to pick it
 
-self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-10s at the length you pass (any whole second); 720p, 1080p and 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
+self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); 720p, 1080p and 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 
 ## How it reads a prompt
 
-MODEL: Gemini Omni Flash (Google Interactions API) - an all-in-one generator with NATIVE AUDIO on every clip; it renders 3-10 seconds at the exact length the platform sets as an API field (the CLIP SPEC duration), so never write a duration in seconds into the prompt - tile the timeline to that length. MULTI-SHOT IS ITS DEFAULT: left undirected, the model cuts the clip into several shots on its own. For one continuous take say so explicitly - 'Continuous, unbroken handheld shot', 'a single unbroken scene, no scene cuts'. When cuts ARE wanted, timecoded blocks are officially supported and precise: '[0-3s] A person walks to the window. [3-6s] They stop and turn around.' Natural-language timing also works ('After 3 seconds, a woman enters the scene', 'At 5s the chorus starts'). STRUCTURE: describe the scene as a director briefs a cinematographer - subject with concrete appearance details, action with amplitude and speed, environment, light, and ONE deliberate camera move per shot with a pacing word. REFERENCE TAGS (official syntax): the attached start frame is <FIRST_FRAME>; reference photos are <IMAGE_REF_0>, <IMAGE_REF_1>, ... - NUMBERING STARTS AT 0 and follows attachment order. Weave the tags into the prose: 'in the style of <IMAGE_REF_0> a woman <IMAGE_REF_1> is walking'. Every attached photo must be tagged at least once or it may be ignored. AUDIO: the model always lays a track; direct it explicitly - 'Sound design: gentle breeze, distant bird chirps', 'Include calm background music', dialogue in double quotes with delivery attached. NEGATIVES: unlike most models here, short inline negatives are the documented control - 'No dialogue.', 'No embellishments.', 'No extra sound effects.' Use them for audio and text; keep visual description positive. ON-SCREEN TEXT is a strength of this model: give the exact words in double quotes and describe their animation if wanted. LENGTH: one to two short paragraphs, or timecoded blocks when using cuts.
+MODEL: Gemini Omni 1.2 Flash (Google Interactions API) - an all-in-one generator with NATIVE AUDIO on every clip; it renders 3-15 seconds at the exact length the platform sets as an API field (the CLIP SPEC duration; 3-10 seconds when both a first and a last frame are attached, and per extension turn), so never write a duration in seconds into the prompt - tile the timeline to that length. MULTI-SHOT IS ITS DEFAULT: left undirected, the model cuts the clip into several shots on its own. For one continuous take say so explicitly - 'Continuous, unbroken handheld shot', 'a single unbroken scene, no scene cuts'. When cuts ARE wanted, timecoded blocks are officially supported and precise: '[0-3s] A person walks to the window. [3-6s] They stop and turn around.' Natural-language timing also works ('After 3 seconds, a woman enters the scene', 'At 5s the chorus starts'). STRUCTURE: describe the scene as a director briefs a cinematographer - subject with concrete appearance details, action with amplitude and speed, environment, light, and ONE deliberate camera move per shot with a pacing word. REFERENCES IN PLAIN WORDS: Omni 1.2 deprecated control tags, so the prompt carries none - no angle-bracket tags of any kind. The attached photos are photo 1, photo 2, ... in attachment order, COUNTING FROM ONE. Name each photo in the prose by its number and its role: 'the woman from photo 1 walks into the cafe from photo 2', 'the bottle in photo 3 stands on the counter'. When a first and a last frame are attached, say 'start exactly on photo 1 and land exactly on the last photo'. Up to 6 photos, at most 3 per character for up to 2 characters. Every attached photo must be named at least once or it may be ignored. AUDIO: the model always lays a track; direct it explicitly - 'Sound design: gentle breeze, distant bird chirps', 'Include calm background music', dialogue in double quotes with delivery attached. NEGATIVES: unlike most models here, short inline negatives are the documented control - 'No dialogue.', 'No embellishments.', 'No extra sound effects.' Use them for audio and text; keep visual description positive. ON-SCREEN TEXT is a strength of this model: give the exact words in double quotes and describe their animation if wanted. LENGTH: one to two short paragraphs, or timecoded blocks when using cuts.
 
 ## Doctrine
 
-Gemini Omni Flash - current text-to-video arena leader with native audio; 3-10s at the length you pass (any whole second); no square. MULTI-SHOT BY DEFAULT: for one take write 'a single unbroken scene, no scene cuts'; control cuts with timecode blocks '[0-3s] ...'. References via official tags numbered from ZERO in attachment order - <FIRST_FRAME>, <IMAGE_REF_0>, <IMAGE_REF_1> - and every attached photo must be tagged or it may be ignored. Short inline negatives are allowed ('No dialogue.'). Good at short on-screen text given in double quotes. ~2.5x seedance.
+Gemini Omni 1.2 Flash - current text-to-video arena leader with native audio; 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); no square. MULTI-SHOT BY DEFAULT: for one take write 'a single unbroken scene, no scene cuts'; control cuts with timecode blocks '[0-3s] ...'. References in plain words - photo 1, photo 2, ... counting from ONE in attachment order, never control tags (deprecated in 1.2) - and every attached photo must be named or it may be ignored. Short inline negatives are allowed ('No dialogue.'). Good at short on-screen text given in double quotes. ~0.3x seedance-2-5 per second.
 
 ## Format law the critic applies
 
-FORMAT CHECK: no duration codes in the text - the length is an API field. For one continuous take state 'a single unbroken scene, no scene cuts'. Attached photos are <FIRST_FRAME> / <IMAGE_REF_0>, <IMAGE_REF_1>, ... (numbering from 0) and each tag must appear in the prompt.
+FORMAT CHECK: no duration codes in the text - the length is an API field. For one continuous take state 'a single unbroken scene, no scene cuts'. Attached photos are named in plain words - photo 1, photo 2, ... (counting from 1) - and each must appear in the prompt; no angle-bracket control tags.
 
 ## Video references
 

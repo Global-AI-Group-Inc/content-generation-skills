@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.22",
+  "snapshot": "0.7.23",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -453,7 +453,7 @@
         },
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 11753,
+          "bytes": 11881,
           "title": "References, locks and failure handling"
         },
         "marketing-studio": {
@@ -656,8 +656,8 @@
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 5197,
-          "title": "Google Gemini Omni Flash (omni)"
+          "bytes": 5728,
+          "title": "Google Gemini Omni 1.2 Flash (omni)"
         },
         "models/runway": {
           "file": "references/models/runway.md",
@@ -696,7 +696,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5801,
+          "bytes": 5885,
           "title": "Selecting the model"
         },
         "textures": {
