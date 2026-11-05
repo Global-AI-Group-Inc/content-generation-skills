@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: anime
     image_style: anime
-    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
+    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.6-flare, nano-banana-pro, nano-banana-2.1]
     order: 60
     icon: sparkles
 ---
@@ -61,7 +61,7 @@ Who or what is in the scene, what they are doing, and one detail that must stay 
 
 For video, `seedance-2-5` when reference photos or a longer story decide the clip; `kling` for
 character action with clean motion; `omni` for a cheap multi-shot scene. For stills,
-`gpt-image-2` for a faithful re-draw of a photo; `gpt-image-2.5-flare` when the re-draw must
+`gpt-image-2` for a faithful re-draw of a photo; `gpt-image-2.6-flare` when the re-draw must
 keep the exact ratio or carry text; `nano-banana-pro` when several people must survive the
 conversion.
 

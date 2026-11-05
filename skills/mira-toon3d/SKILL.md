@@ -15,7 +15,7 @@ metadata:
     kind: both
     video_style: toon3d
     image_style: render3d
-    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
+    models: [seedance-2-5, kling, omni, gpt-image-2, gpt-image-2.6-flare, nano-banana-pro, nano-banana-2.1]
     order: 80
     icon: box
 ---
@@ -61,7 +61,7 @@ Who or what is in the scene, what happens in one action, and the identity facts 
 
 For video, `seedance-2-5` when references or length matter; `kling` for weighty character motion;
 `omni` for a cheap multi-shot scene. For stills, `gpt-image-2` for a clean product key visual;
-`gpt-image-2.5-flare` when the visual carries text or an exact ratio; `nano-banana-pro` when
+`gpt-image-2.6-flare` when the visual carries text or an exact ratio; `nano-banana-pro` when
 several characters must survive.
 
 ## Checklist

@@ -14,7 +14,7 @@ metadata:
     kind: both
     video_style: pixel
     image_style: pixel
-    models: [omni, seedance-2-5, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1]
+    models: [omni, seedance-2-5, gpt-image-2, gpt-image-2.6-flare, nano-banana-pro, nano-banana-2.1]
     order: 90
     icon: grid-2x2
 ---
@@ -61,7 +61,7 @@ The scene, the sprite in it, and the two or three colours that should dominate.
 ## Model picks
 
 For video, `omni` holds a limited palette and cuts on its own; `seedance-2-5` when a product
-reference or length decides it. For stills, `gpt-image-2` keeps a strict grid; `gpt-image-2.5-flare`
+reference or length decides it. For stills, `gpt-image-2` keeps a strict grid; `gpt-image-2.6-flare`
 or `nano-banana-pro` when pixel text must be readable.
 
 ## Checklist

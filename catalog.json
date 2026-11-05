@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.21",
+  "snapshot": "0.7.22",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -17,7 +17,7 @@
         "seedance-2-5",
         "kling",
         "gpt-image-2",
-        "gpt-image-2.5-flare",
+        "gpt-image-2.6-flare",
         "nano-banana-pro",
         "nano-banana-2.1",
         "muse-image"
@@ -38,7 +38,7 @@
         "seedance-2-5",
         "kling",
         "gpt-image-2",
-        "gpt-image-2.5-sunburst",
+        "gpt-image-2.6-sunburst",
         "seedream-5-pro",
         "seedream-4"
       ],
@@ -61,8 +61,8 @@
         "kling",
         "kling-4",
         "kling-turbo",
-        "gpt-image-2.5-flare",
-        "gpt-image-2.5-sunburst",
+        "gpt-image-2.6-flare",
+        "gpt-image-2.6-sunburst",
         "nano-banana-pro",
         "nano-banana-2.1",
         "gpt-image-2",
@@ -86,7 +86,7 @@
         "seedance-2-5",
         "runway",
         "gpt-image-2",
-        "gpt-image-2.5-sunburst",
+        "gpt-image-2.6-sunburst",
         "seedream-5-pro",
         "seedream-4"
       ],
@@ -125,7 +125,7 @@
         "kling",
         "omni",
         "gpt-image-2",
-        "gpt-image-2.5-flare",
+        "gpt-image-2.6-flare",
         "nano-banana-pro",
         "nano-banana-2.1"
       ],
@@ -163,7 +163,7 @@
         "kling",
         "omni",
         "gpt-image-2",
-        "gpt-image-2.5-flare",
+        "gpt-image-2.6-flare",
         "nano-banana-pro",
         "nano-banana-2.1"
       ],
@@ -183,7 +183,7 @@
         "omni",
         "seedance-2-5",
         "gpt-image-2",
-        "gpt-image-2.5-flare",
+        "gpt-image-2.6-flare",
         "nano-banana-pro",
         "nano-banana-2.1"
       ],
@@ -497,9 +497,9 @@
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-image-prompting",
       "license": "MIT",
       "attribution": "",
-      "summary": "How to write stills for Mira AI's image models: GPT Image 2 and 2.5, Nano Banana Pro and 2.1, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
+      "summary": "How to write stills for Mira AI's image models: GPT Image 2, 2.5 and 2.6, Nano Banana Pro and 2.1, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
       "entry": "SKILL.md",
-      "entryBytes": 4046,
+      "entryBytes": 4051,
       "hasNotice": false,
       "sections": {
         "composition": {
@@ -529,7 +529,7 @@
         },
         "models": {
           "file": "references/models.md",
-          "bytes": 5587,
+          "bytes": 6463,
           "title": "Image models on Mira"
         },
         "optics": {

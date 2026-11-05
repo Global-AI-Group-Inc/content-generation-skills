@@ -64,7 +64,7 @@ The prices are the ones `list_blogger_traits` reports today; quote from it, neve
    - `styleReferenceUrl`: a photo whose outfit the character wears. Clothes only.
 3. Show the draft. To change something, call `create_blogger_draft` again with the same traits,
    `previousDraftId` and `editText`: a new draft that keeps everything else (8 credits).
-4. Saving costs 45: say so and wait for a clear yes. `save_blogger {draftId, name, language}`;
+4. Saving costs 67: say so and wait for a clear yes. `save_blogger {draftId, name, language}`;
    `language` is the language of the voice previews. The angles take a few minutes. Play the 3
    voice previews; the user's pick goes to `set_blogger_voice` as `generatedVoiceId`.
 

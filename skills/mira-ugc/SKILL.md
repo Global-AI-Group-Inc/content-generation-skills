@@ -15,7 +15,7 @@ metadata:
     kind: both
     video_style: ugc
     image_style: ugc
-    models: [minimax, omni, seedance-2-5, kling, gpt-image-2, gpt-image-2.5-flare, nano-banana-pro, nano-banana-2.1, muse-image]
+    models: [minimax, omni, seedance-2-5, kling, gpt-image-2, gpt-image-2.6-flare, nano-banana-pro, nano-banana-2.1, muse-image]
     order: 10
     icon: smartphone
 ---
@@ -74,7 +74,7 @@ What is the product, who is showing it, and what would that person honestly say 
 For speech to camera pick `minimax`: it holds spoken lines and legible packaging text. For a quick
 silent clip `omni` is cheapest and cuts on its own. For a 15 or 30 second story with the same
 creator across shots, `seedance-2-5`. For a photo, `gpt-image-2` for a plain phone-photo look,
-`gpt-image-2.5-flare` when the packaging text must be readable at the exact story ratio,
+`gpt-image-2.6-flare` when the packaging text must be readable at the exact story ratio,
 `nano-banana-pro` for a multilingual design, `muse-image` (1 credit) for a cheap draft or a shot
 in a real, recognisable place.
 

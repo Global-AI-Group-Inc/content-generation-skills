@@ -1,8 +1,8 @@
 # Image models on Mira
 
-Eleven models, one pipeline. Every model costs three credits per image except Muse Image at one,
+Thirteen models, one pipeline. Every model costs three credits per image except Muse Image at one,
 Seedream 5 Pro and Nano Banana 2.1 at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
-Image 2.5 Sunburst.
+Image 2.6 and 2.5 Sunburst.
 Pick the pricier ones only when their strengths are needed.
 
 ## gpt-image-2
@@ -13,9 +13,24 @@ and skin. Preserves product geometry, packaging and logos. The right default for
 packshots and structured ad layouts. In this setup it returns 2:3 for every tall ratio, so a 9:16
 or 4:5 that must be exact goes elsewhere.
 
+## gpt-image-2.6-flare
+
+The newest GPT image family at the fast three-credit tier, served straight from OpenAI. It plans
+the frame before it renders, so it holds a dense brief, complex layouts, small type and the
+relationships between objects better than 2.5. Everything 2.5 Flare does below holds here too:
+exact ratio on a free-form canvas, legible text in any script including Cyrillic, faithful
+multi-photo edits. The first pick for a text-bearing post, story or banner.
+
+## gpt-image-2.6-sunburst
+
+Premium. The newest family at its most detailed: planned composition, rich light, the tightest
+control over edits, and it keeps one character, place or product identical across a series - Mira
+draws its own characters, bloggers, locations and props on it. Honours the ratio exactly. Slower
+than Flare, so not for drafts.
+
 ## gpt-image-2.5-flare
 
-The newest GPT image family at the fast three-credit tier, served straight from OpenAI. The same
+The previous GPT image generation at the fast three-credit tier, served straight from OpenAI. The same
 brief-holding, product fidelity and multi-photo edits as gpt-image-2, plus legible in-image text in
 any script including Cyrillic, and it renders the exact requested ratio on a free-form canvas: a
 9:16 story really is 9:16. The first pick for a text-bearing post, story or banner, and for a
@@ -24,7 +39,7 @@ a reference verbatim.
 
 ## gpt-image-2.5-sunburst
 
-Premium. The same family at its highest quality setting: sharper detail, richer light and shadow,
+Premium, previous generation. The same family at its highest quality setting: sharper detail, richer light and shadow,
 and the tightest control over edits, changing only what you name and keeping the rest of the
 reference. Production-ready campaign creative, polished product imagery, an edit that must stay
 faithful. Honours the ratio exactly. Slower than Flare, so not for drafts.
@@ -86,7 +101,7 @@ weight and type character, then describe the picture under the type. The brief i
 exactly as written - nothing rewrites it - so say everything explicitly. Holds the exact ratio.
 With photos attached it edits the FIRST one (add a headline, swap a label, restyle the
 background) and takes the rest as references. Latin and short Cyrillic lines render cleanly; for
-long Cyrillic copy take gpt-image-2.5-flare.
+long Cyrillic copy take gpt-image-2.6-flare.
 
 ## flux
 
@@ -95,8 +110,8 @@ text is the weakest of the lineup; never pick it for copy. Returns 2:3 for tall 
 
 ## The rule that outranks the rest
 
-Aspect ratio overrides everything above. When the ratio must be exact, pick gpt-image-2.5-flare,
-gpt-image-2.5-sunburst, nano-banana-pro, nano-banana-2.1, muse-image, ideogram-4.5 or a seedream model.
+Aspect ratio overrides everything above. When the ratio must be exact, pick gpt-image-2.6-flare,
+gpt-image-2.6-sunburst, the 2.5 pair, nano-banana-pro, nano-banana-2.1, muse-image, ideogram-4.5 or a seedream model.
 The panoramic 21:9, 4:1, 8:1, 1:4 and 1:8 exist only on nano-banana-2.1; any other model renders
 them 1:1. Leave the model empty only if nothing
 fits; it then falls back to gpt-image-2.

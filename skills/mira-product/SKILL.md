@@ -15,7 +15,7 @@ metadata:
     kind: both
     video_style: product
     image_style: product-card
-    models: [seedance-2-5, kling, gpt-image-2, gpt-image-2.5-sunburst, seedream-5-pro, seedream-4]
+    models: [seedance-2-5, kling, gpt-image-2, gpt-image-2.6-sunburst, seedream-5-pro, seedream-4]
     order: 20
     icon: package
 ---
@@ -67,7 +67,7 @@ Name the product and what must stay exact about it, then the surface it sits on.
 
 For video, `seedance-2-5` keeps a product identical across several reference photos and long
 takes; `kling` renders materials and reflections convincingly, in 1080p with sound. For stills, `gpt-image-2` holds a detailed packshot brief with many constraints;
-`gpt-image-2.5-sunburst` (premium) for the polished hero packshot or a faithful edit of the user's
+`gpt-image-2.6-sunburst` (premium) for the polished hero packshot or a faithful edit of the user's
 own product photo; `seedream-5-pro` for a premium photoreal packshot at true 2K where glass, metal
 and fabric must read as photographed; `seedream-4` keeps one product consistent across a series.
 
