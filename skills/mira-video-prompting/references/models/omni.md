@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | seconds | 3-15s, any whole second (3-10s with a first and a last frame) |
-| output | 720p; 1080p with quality=hd |
+| output | 720p; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd |
 | reference images | 6 |
 | audio | yes |
 | prompt budget | 3000 chars |
@@ -17,7 +17,7 @@
 
 ## When to pick it
 
-self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); 720p, 1080p and 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
+self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); 720p, plus a cheap 360p tier for quick tries and 1080p / 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 
 ## How it reads a prompt
 

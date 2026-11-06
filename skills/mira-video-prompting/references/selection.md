@@ -14,7 +14,7 @@ table it points at.
 | `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
 | `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
 | `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
-| `omni` | Google Gemini Omni 1.2 Flash | 3-15s, any whole second (3-10s with a first and a last frame) | 720p; 1080p with quality=hd | up to 6 native | yes | 3000 |
+| `omni` | Google Gemini Omni 1.2 Flash | 3-15s, any whole second (3-10s with a first and a last frame) | 720p; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd | up to 6 native | yes | 3000 |
 | `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 6400 |
 | `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
 | `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
@@ -29,7 +29,7 @@ table it points at.
 - **`kling-4`** — the newest Kling: ONE continuous take of 3-30s at 720p, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 1080p - for those use kling
 - **`kling-turbo`** — the faster, cheaper Kling 3.0: ONE continuous take from text or a single start frame, native audio always on; 3-15s; 1080p; no reference photos, clips, end frames or multi-shot - for those use kling
 - **`kling-motion`** — motion transfer: ONE photo of a character + ONE driving video (3-30 s, one person, single take) - the character in the photo performs the motion of the video; output length = video length; 1080p; keeps the clip's original sound. The only model that copies choreography exactly. Needs both inputs - refuse without a video
-- **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); 720p, 1080p and 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
+- **`omni`** — self-directing storyteller and the only model that can EDIT an existing clip: multi-shots by default, renders on-frame text well, 3-15s at the length you pass (any whole second; 3-10s with a first and a last frame); 720p, plus a cheap 360p tier for quick tries and 1080p / 4K tiers; up to 6 photo refs and first/last frame anchors, but NO clip input at all - its video port is closed on our key
 - **`minimax`** — the purpose model for SPEECH plus legible/Cyrillic in-frame text - the only one holding both; millisecond-precise shot timing; 4-15s; NOT a general default
 - **`happyhorse`** — dialogue-first with 7-language lip-sync; single-beat clips and exotic vertical ratios; briefs must stay tiny; ONE photo only - the nine-reference route exists but is not paid on our key
 - **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
