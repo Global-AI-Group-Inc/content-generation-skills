@@ -26,10 +26,15 @@ Only when the user asks for a new project, and after `film_list_projects` shows 
   once and free, and the passport is written in the background. Photos must be the user's images:
   upload them with `upload_reference_image` or use their Mira images; other links and videos are
   refused. A real person's face only when it is the user's own or the person agreed. Editor role.
+  For a prop pass `category`: `vehicle`, `clothing`, `footwear`, `jewelry`, `bag`, `gadget`,
+  `furniture`, `food`, `cosmetics`, `tool` or `other`. The angles are shot on a grey backdrop with
+  nobody in frame, so without it the model cannot tell a car from a toy car or an earring from a bag.
 
 An element drawn from scratch (no photos): `film_generate_element`. It spends the workspace owner's
 credits, so `dryRun` first, show the price, then `dryRun=false`. A character stops at `preview` until
 `film_manage_element` `approve`.
+
+A prop drawn from scratch takes the same `category`.
 
 ## Read before you render
 

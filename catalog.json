@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.24",
+  "snapshot": "0.7.25",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -443,7 +443,7 @@
         },
         "film-studio": {
           "file": "references/film-studio.md",
-          "bytes": 13055,
+          "bytes": 13403,
           "title": "AI Film Studio projects"
         },
         "guides": {
