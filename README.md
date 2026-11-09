@@ -32,6 +32,8 @@ Then connect the MCP server in your agent. The page at [mira.mybots.pro/mcp](htt
 | Skill | Kind | What it does |
 |---|---|---|
 | `mira-blender-scene` | core | Build and shoot scenes in the user's own Blender through the `blender_*` tools: blockout in metres, lights, camera, keyframes, generated assets, playblast → video model. |
+| `mira-unity-scene` | core | Build scenes and avatars in the user's own Unity Editor through the `unity_*` tools: C# in the Editor, generated models and VRM avatars with motion and voice, playblast → video model, Android and iOS test builds. |
+| `mira-unreal-scene` | core | Build levels and avatars in the user's own Unreal Editor (5.7, 5.8) through the `unreal_*` tools: Python in the Editor in centimetres and Z-up, generated models, IK Rig retargeting and voice, Sequencer playblast → video model, Android and iOS test builds. |
 | `mira-after-effects` | core | Build motion pieces in the user's own After Effects through the `adobe_*` tools: plates, overlays, templates, type, transitions, sound, grade, render; reads a private element bank when one exists. |
 | `mira-premiere` | core | Edit in the user's own Premiere Pro through the `adobe_*` tools: read the timeline, cut speech on sentences from a transcript, take out silences, switch multicam by speaker, assemble a cut or a vertical reel from a cut plan in one call, captions and markers. |
 | `mira-generate` | core | Drive the Mira MCP tools: connect, pick a model, attach brand assets, build an AI Blogger and make it move and speak, generate, wait, extend, upscale, build 3D and rig it, reuse recipes from community guides, draft, edit and publish the user's own guides. Explains what the pipeline keeps and what it fills in. |

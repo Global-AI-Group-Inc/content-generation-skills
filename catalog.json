@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.29",
+  "snapshot": "0.7.30",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -623,6 +623,32 @@
           "file": "references/scripting.md",
           "bytes": 4315,
           "title": "Scripting Unity through unity_execute_csharp"
+        }
+      }
+    },
+    "mira-unreal-scene": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-unreal-scene",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Build levels, characters and avatars inside the user's own Unreal Editor (UE 5.7 and 5.8) through the Mira MCP: read the level, change it with Python, import generated images, clips and 3D models, turn a rigged character into a talking, mov",
+      "entry": "SKILL.md",
+      "entryBytes": 7478,
+      "hasNotice": false,
+      "sections": {
+        "avatar": {
+          "file": "references/avatar.md",
+          "bytes": 2678,
+          "title": "Avatars in Unreal"
+        },
+        "scripting": {
+          "file": "references/scripting.md",
+          "bytes": 5399,
+          "title": "Scripting Unreal through unreal_execute_python"
+        },
+        "sequencer": {
+          "file": "references/sequencer.md",
+          "bytes": 2957,
+          "title": "Sequencer: camera moves and playblasts"
         }
       }
     },
