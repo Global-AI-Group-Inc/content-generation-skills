@@ -6,7 +6,7 @@
     "finalize_draft", "reframe_video", "remove_background", "upload_reference_image",
     "get_generation", "wait_for_generation",
     "list_models", "list_effects", "list_direct_presets", "list_generations",
-    "estimate_cost", "list_brand_assets",
+    "estimate_cost", "list_locations_and_products",
     "generate_3d", "rig_3d",
     "modify_video", "draw_edit_video", "swap_object",
     "generate_audio", "add_soundtrack", "add_sound_effects", "voiceover_video", "add_captions",
@@ -25,7 +25,7 @@
     "ask_mira", "mira_history", "list_mira_dialogs",
     "create_upload", "get_trends", "get_trend_video",
     "repeat_guide", "list_bloggers",
-    "get_credit_balance", "mkt_localize",
+    "get_credit_balance", "mkt_localize", "list_brand_assets",
     "motion_control", "lipsync_video", "avatar_video", "recast_video", "translate_video",
     "design_voice", "save_voice", "delete_voice", "change_voice",
     "list_blogger_traits", "list_blogger_presets", "create_blogger_draft", "save_blogger",
@@ -41,7 +41,7 @@
     "adobe_import_generation", "adobe_place_element", "adobe_install_fonts", "adobe_command",
     "adobe_apply_recipe", "adobe_audit_frame", "adobe_measure_reference", "adobe_reference"
   ],
-  "renamed": {},
+  "renamed": { "list_brand_assets": "list_locations_and_products" },
   "excludedPrefixes": ["blender_", "adobe_"],
   "excludedSkills": ["mira-blender-scene", "mira-after-effects", "mira-premiere", "mira-trends"]
 }
