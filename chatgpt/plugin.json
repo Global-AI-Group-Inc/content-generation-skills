@@ -25,7 +25,7 @@
       "interface": {
         "displayName": "Mira AI",
         "shortDescription": "AI images, video and sound",
-        "longDescription": "Mira AI turns a description, a photo or a clip into finished images, video and sound, right in the conversation.\n\nWhat you can do:\n- Generate images and videos from text or from a reference photo, on a choice of current image and video models.\n- Animate a photo, extend a clip forward or backward, upscale it to 1080p or 4K, raise its frame rate or change its aspect ratio.\n- Edit a clip you already have: change the lighting, weather or backdrop, remove the background, recast a person, make a character follow a motion, or redraw one marked area.\n- Add sound: voiceover, multi-voice dialogue, music written for the cut, sound effects, captions, dubbing into another language and clean voice tracks.\n- Keep a character consistent across shots with AI Bloggers, and reuse your own people, places and products.\n- Turn an object into a 3D model you can download, and rig a character so it walks and runs.\n- Post finished results to the Instagram and Threads accounts you connected to Mira, now or on a schedule, after you confirm each post.\n- Work in your team's AI Film Studio and Marketing Studio projects, and learn from community guides that show the real recipe behind each result.\n\nThe bundled skills give the assistant Mira's playbooks for UGC, product shots, ads, cinematic pieces, explainers, anime, illustration, 3D cartoon and pixel art, plus prompting notes for every model.\n\nWho it is for: creators, marketers and small teams who make social video, ads and visuals.\n\nRequirements and limits: you need a Mira account and sign in once when the plugin first asks. Renders run on your existing Mira account, and Mira tells you what a long or heavy job will use before it starts. A video takes a few minutes. Mira refuses sexual content, realistic depictions of real people without their consent and anything else that is not suitable for a general audience.",
+        "longDescription": "Mira AI turns a description, a photo or a clip into finished images, video and sound, right in the conversation.\n\nWhat you can do:\n- Generate images and videos from text or from a reference photo, on a choice of current image and video models.\n- Animate a photo, extend a clip forward or backward, upscale it to 1080p or 4K, raise its frame rate or change its aspect ratio.\n- Edit a clip you already have: change the lighting, weather or backdrop, remove the background, swap one object for another, or redraw one marked area.\n- Add sound: voiceover, multi-voice dialogue, music written for the cut, sound effects, captions, transcripts and clean voice tracks.\n- Reuse your own places and products, and keep a team project's cast consistent across shots.\n- Turn an object into a 3D model you can download, and rig a character so it walks and runs.\n- Work in your team's AI Film Studio and Marketing Studio projects, and learn from community guides that show the real recipe behind each result.\n\nThe bundled skills give the assistant Mira's playbooks for UGC, product shots, ads, cinematic pieces, explainers, anime, illustration, 3D cartoon and pixel art, plus prompting notes for every model.\n\nWho it is for: creators, marketers and small teams who make social video, ads and visuals.\n\nRequirements and limits: you need a Mira account and sign in once when the plugin first asks. Renders run on your existing Mira account, and Mira tells you what a long or heavy job will use before it starts. A video takes a few minutes. Mira refuses sexual content, realistic depictions of real people without their consent and anything else that is not suitable for a general audience.",
         "developerName": "Global AI Group, Inc.",
         "category": "Creativity",
         "capabilities": [
@@ -34,12 +34,10 @@
           "Animate photos",
           "Extend, upscale and reframe videos",
           "Edit existing videos",
-          "Voiceover, dialogue and dubbing",
+          "Voiceover and dialogue",
           "Music and sound effects",
           "Captions and transcripts",
-          "Consistent AI characters",
           "3D models and rigging",
-          "Publish to Instagram and Threads",
           "Team film and marketing projects",
           "Community guides"
         ],
@@ -113,7 +111,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "First release in the plugin directory: image, video and 3D generation, video edits, voice, music, captions, AI Bloggers, team projects, publishing to connected Instagram and Threads accounts and community guides, with Mira's playbook and prompting skills."
+        "release_notes": "First release in the plugin directory: image, video and 3D generation, video edits, voice, music, captions, team projects and community guides, with Mira's playbook and prompting skills."
       }
     }
   }

@@ -1,27 +1,33 @@
 {
   "about": "How the ChatGPT/Codex package differs from the repo skills. The /chatgpt endpoint serves only the tools in chatgpt-tools.json: no Blender or Adobe bridges, no ask_mira, no trends, no raw uploads (chat attachments arrive through the client). The package is English only: `stripCyrillicTriggers` drops the quoted non-English trigger phrases from every shipped SKILL.md description, and rewrites cover the rest. Every `find` must match the source exactly once, so the build fails as soon as a source edit makes a rewrite stale. `override` files replace a source file whole; `sha256` is the source they were written against, and check.mjs fails when the source moves on without them. Tools in chatgpt-tools.json `renamed` are renamed in every shipped file: the bare lowercase word only (not Miracle, not miracle_*, not file names such as miracle.md, and not the `estimate_cost` kind value, which keeps its name).",
-  "drop": [],
+  "drop": [
+    "skills/mira-generate/references/ai-blogger.md",
+    "skills/mira-generate/references/miracle.md",
+    "skills/mira-generate/references/social-publishing.md"
+  ],
   "override": {
     "skills/mira-generate/SKILL.md": {
       "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
       "sha256": "5ffea70fb70403495e9dee93df4696eff18424f529104ce126ecb8e43d09da1b"
+    },
+    "skills/mira-generate/references/media-ops.md": {
+      "with": "chatgpt/overrides/skills/mira-generate/references/media-ops.md",
+      "sha256": "9ebde7b8a58eef72c90b60362661c8bd332809a70f63917924b6707c3a1bb531"
+    },
+    "skills/mira-audio/SKILL.md": {
+      "with": "chatgpt/overrides/skills/mira-audio/SKILL.md",
+      "sha256": "520eadf937ffae1bb257004010e1f85f27074b3cedc71568e9d5bd7167bcb9bb"
+    },
+    "skills/mira-audio/references/voices.md": {
+      "with": "chatgpt/overrides/skills/mira-audio/references/voices.md",
+      "sha256": "2d6539c5b239da284b02bae550babb1a43a2ac757ced8463005c9b136da0fefc"
     }
   },
   "rewrite": [
     {
-      "file": "skills/mira-audio/SKILL.md",
-      "find": "  NOT for the picture itself (mira-generate) or for laying sound on a timeline in the user's\n  After Effects (mira-after-effects).",
-      "replace": "  NOT for the picture itself (mira-generate)."
-    },
-    {
-      "file": "skills/mira-audio/SKILL.md",
-      "find": "`libraryItemId` for a file the user brings (`create_upload` kind `video` or `audio`, PUT the\nbytes, use the returned id).",
-      "replace": "`libraryItemId` for a file the user attached to the chat."
-    },
-    {
       "file": "skills/mira-audio/references/dialogue.md",
-      "find": "it plays under a clip in an editor or in the user's After\nEffects (mira-after-effects).",
-      "replace": "it plays under a clip in the user's own editor."
+      "find": "it plays under a clip in an editor or in the user's After\nEffects (mira-after-effects). `lipsync_video` animates one face per clip, so a two-shot of both\nspeakers is better made as one clip",
+      "replace": "it plays under a clip in the user's own editor. A scene where both\nspeakers are seen talking is better made as one clip"
     },
     {
       "file": "skills/mira-audio/references/sfx.md",
@@ -34,34 +40,9 @@
       "replace": "The user's editor can measure the real\ngrid with its own beat detection."
     },
     {
-      "file": "skills/mira-generate/references/ai-blogger.md",
-      "find": "(a generation, or an upload through `create_upload` kind `video`)",
-      "replace": "(a generation, or a clip they attached to the chat)"
-    },
-    {
       "file": "skills/mira-generate/references/direct-presets.md",
       "find": "`upload_reference_image` or `create_upload` (kind `audio` for a\nsong, `video` for an ad clip)",
       "replace": "`upload_reference_image` or a file they attached to the chat (a\nsong, an ad clip)"
-    },
-    {
-      "file": "skills/mira-generate/references/media-ops.md",
-      "find": "`subjectPrompt` says what to keep when the frame has several candidates. In After Effects,\n`adobe_import_generation` places the matte as the clip's track matte.",
-      "replace": "`subjectPrompt` says what to keep when the frame has several candidates. In an editor, the matte\ngoes on the clip as its track matte."
-    },
-    {
-      "file": "skills/mira-generate/references/media-ops.md",
-      "find": "a track\nfrom `create_upload` kind `audio`)",
-      "replace": "a track\nthe user attached to the chat)"
-    },
-    {
-      "file": "skills/mira-generate/references/media-ops.md",
-      "find": "for a file sent through `create_upload` (kind `video`, or `audio` for a track).",
-      "replace": "for a clip or a track the user attached to the chat."
-    },
-    {
-      "file": "skills/mira-generate/references/miracle.md",
-      "find": "or a file sent through `create_upload` (kind `video`, then\n   `libraryItemId`).",
-      "replace": "or a clip the user attached to the chat\n   (`libraryItemId`)."
     },
     {
       "file": "skills/mira-generate/references/guides.md",
@@ -117,6 +98,161 @@
       "file": "skills/mira-generate/references/film-studio.md",
       "find": "## Run the whole studio\n\nEverything the web studio does has a tool. All of them check the user's role in the project.\n\n| Job | Tool |\n|---|---|\n| Teams | `film_list_workspaces`, `film_manage_workspace`, `film_manage_members` (invites send email: only people the user named), `film_get_usage` |\n| Project settings | `film_update_project` (name, slug, cover, move, join link), `film_get_publication`, `film_publish` (public: only when the user asks) |\n| Brief in full | `film_get_brief`, then `film_set_brief` with the section's `expectedVersion`; a teammate's save fails your write instead of being lost |\n| Bin | `film_search_assets` (filters, paging), `film_get_asset` (with versions), `film_update_assets` (move, mark, like, trash, restore; by `assetIds` or `generationIds`), `film_manage_folder` |\n| Cast | `film_get_element`, `film_manage_element` (rename, mark, approve, redraw, import, references) |\n| Comments | `film_list_comments`, `film_manage_comment` (add, reply, edit, resolve, reopen) |\n| Canvas | `film_get_canvas`, `film_update_canvas` |\n| AI Director | `film_director_send` (2 credits a reply; it can start generations), `film_director_history` |\n| Release to viewers | `film_release`: `create`, `list`, `get`, `submit` (asks for the catalog, an admin decides), `withdraw`. A project can hold episodes: `create` with `newEpisode` and a `title` adds one and never replaces a film; with several episodes every other call needs `releaseId` from `list`. Only when the user asks; `rightsAttested` only after they confirm the rights |\n\nPut a fresh take into a folder with `film_update_assets`, action `move`, and its `generationId`.\n\n`film_delete` removes things for good and takes two calls: the first changes nothing and returns the\nimpact and a `confirmToken` for 5 minutes. Show the impact, wait for the user's yes in words, then\ncall again with the token. To hide a take use `trash`, which can be restored.\n\n",
       "replace": ""
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": "`list_brand_assets` returns three kinds of asset with ids:\n\n- **AI Blogger**: the user's recurring character - a person (`kind: human`) or a designed\n  character or anthropomorphic animal (`kind: mascot`, which keeps its own render style in every\n  scene). Pass `bloggerId` (`avatarId` is the older name of the same parameter and still works).\n  The platform injects the canonical shots and an appearance passport (CHARACTER LOCK). Identity\n  never changes: face, hair, build, age, marks. Clothes, and the medium of a photoreal person, may\n  change; say so in the prompt when they should. A user with none can build one right here:\n  `create_blogger_draft` from traits or words, then `save_blogger` (ai-blogger.md); the AI Bloggers\n  section of the Mira app does the same. The character sheet (the 2×3 collage) is attached by the\n  platform itself; never pass it as a reference URL, a grid in the input turns into a split frame.\n",
+      "replace": "`list_brand_assets` returns the user's places and products with ids:\n\n"
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": "is the only family where an attached\nAI Blogger or photo of a person reaches",
+      "replace": "is the only family where an attached\nphoto of a person reaches"
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": "`imageRole`,\n`bloggerId`, `studioId` or `productId` in the same call",
+      "replace": "`imageRole`,\n`studioId` or `productId` in the same call"
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": "real-looking person who is not one of the account's AI Bloggers is refused before billing\n(`moderation_blocked`). Blockout playblasts, capsule or mannequin figures, stylised characters and\nthe account's own AI Bloggers pass.",
+      "replace": "real-looking person is refused before billing\n(`moderation_blocked`). Blockout playblasts, capsule or mannequin figures and stylised characters\npass."
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": " When the character is the user's AI Blogger, take\n`blogger_motion` instead: it builds the full-body frame for the clip's ratio (ai-blogger.md).",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-video-prompting/SKILL.md",
+      "find": "an attached AI Blogger or photo of a person as identity",
+      "replace": "an attached photo of a person as identity"
+    },
+    {
+      "file": "skills/mira-video-prompting/SKILL.md",
+      "find": "; for the user's AI Blogger, `blogger_motion` (mira-generate)",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-generate/references/direct-presets.md",
+      "find": "each ONE of `bloggerId` (a saved AI Blogger from `list_brand_assets`; the older\n     `avatarId` still works), `imageUrl` or `description`",
+      "replace": "each ONE of `imageUrl` or `description`"
+    },
+    {
+      "file": "skills/mira-generate/references/guides.md",
+      "find": "user's own subject, product or AI Blogger.",
+      "replace": "user's own subject or product."
+    },
+    {
+      "file": "skills/mira-generate/references/film-studio.md",
+      "find": "canonical references and passport, the\nsame way `bloggerId` works for a personal render, so describe",
+      "replace": "canonical references and passport, so describe"
+    },
+    {
+      "file": "skills/mira-generate/references/film-studio.md",
+      "find": "elements replace `bloggerId`, `studioId`\nand `productId`.",
+      "replace": "elements replace `studioId`\nand `productId`."
+    },
+    {
+      "file": "skills/mira-generate/references/film-studio.md",
+      "find": "3D, AI Blogger motion and speech, Miracle and Direct presets are not part",
+      "replace": "3D and Direct presets are not part"
+    },
+    {
+      "file": "skills/mira-generate/references/marketing-studio.md",
+      "find": "| `mkt_localize` | A finished video dubbed into up to 6 languages (`dub`, `dub_lipsync`) or captioned. |",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-generate/references/marketing-studio.md",
+      "find": "`mkt_list_channels` lists the Instagram and Threads accounts shared with the workspace.",
+      "replace": "`mkt_list_channels` lists the channels shared with the workspace."
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": "Voices a user designed from a description are read with Eleven v3 automatically (ElevenLabs says\ndesigned voices perform less well on v4); cloned and library voices use v4.\n\n",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": "\nThe generation id of the result feeds `lipsync_video` as `audioGenerationId` and `change_voice`\nas `sourceGenerationId`.\n",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": "; v4 also keeps a cloned\nvoice sounding like itself in a language its owner never recorded.",
+      "replace": "."
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": "`list_voices` returns the platform's voices and the user's\nown, each with",
+      "replace": "`list_voices` returns the platform's library voices, each with"
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": "list_voices {\"scope\": \"mine\"}\n",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/speech.md",
+      "find": " Designing a new voice is in voices.md.",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/mix.md",
+      "find": "Run it before `translate_video` (a noisy source\nseparates speakers worse and carries the noise into the dub), before `transcribe_video` and\n`add_captions` (fewer recognition errors) and before `change_voice` (the changer copies noise).",
+      "replace": "Run it before `transcribe_video` and\n`add_captions` (fewer recognition errors)."
+    },
+    {
+      "file": "skills/mira-audio/references/dub-captions.md",
+      "find": "# Dubbing, captions and transcripts",
+      "replace": "# Captions and transcripts"
+    },
+    {
+      "file": "skills/mira-audio/references/dub-captions.md",
+      "find": "- `language` is an ISO-639-1 hint; set it on a dubbed clip to the dub's language.",
+      "replace": "- `language` is an ISO-639-1 hint for the spoken language."
+    },
+    {
+      "file": "skills/mira-audio/references/dub-captions.md",
+      "find": "| a dub with captions | `translate_video` → `add_captions` with `language` = the target |\n",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/mix.md",
+      "section": "## A face saying a new track: lipsync_video",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-audio/references/dub-captions.md",
+      "section": "## Dub a clip: translate_video",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-ugc/SKILL.md",
+      "section": "## Posting it",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-ads/SKILL.md",
+      "section": "## Posting it",
+      "replace": ""
+    },
+    {
+      "file": "skills/mira-generate/references/film-studio.md",
+      "find": "the owner's balance is empty. The owner tops it up; never send a\n  member to buy credits for a team render.",
+      "replace": "the workspace cannot cover the render. Say so and that the\n  workspace owner handles it; do not suggest buying anything."
+    },
+    {
+      "file": "skills/mira-ugc/SKILL.md",
+      "find": "the brand library by `elementId` instead of `bloggerId`.",
+      "replace": "the brand library by `elementId`."
+    },
+    {
+      "file": "skills/mira-generate/references/locks-and-references.md",
+      "find": "Seedance screens every photo for real-looking faces before billing. When it refuses one, the\nplatform registers the refused photos in its private asset library for the length of that one\nrender, sends the same take again with them as assets, and deletes them as soon as the render\nends - the face stays the one in the photo, and nothing is needed from you: the call simply\ntakes a little longer. Only AI Blogger, uploaded and library photos go this way; a\nstylised request (`style` anime, render3d or pixel, or a drawn medium in the prompt) is redrawn\ninto one composed start frame instead, because an asset would drag the clip back to photoreal.\n",
+      "replace": "Seedance screens every photo for real-looking faces before billing and refuses a real person's\nface; use people you made yourself or that the user has the right to show.\n"
     }
   ],
   "stripCyrillicTriggers": true
