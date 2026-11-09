@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.27",
+  "snapshot": "0.7.28",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -604,6 +604,27 @@
       "entryBytes": 6592,
       "hasNotice": false,
       "sections": {}
+    },
+    "mira-unity-scene": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-unity-scene",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Build scenes, characters and avatars inside the user's own Unity Editor through the Mira MCP: read the scene, change it with C#, import generated 3D models with their clips, turn a rigged character or a VRM into a talking, moving humanoid, ",
+      "entry": "SKILL.md",
+      "entryBytes": 7654,
+      "hasNotice": false,
+      "sections": {
+        "avatar": {
+          "file": "references/avatar.md",
+          "bytes": 2204,
+          "title": "Avatars in Unity"
+        },
+        "scripting": {
+          "file": "references/scripting.md",
+          "bytes": 4315,
+          "title": "Scripting Unity through unity_execute_csharp"
+        }
+      }
     },
     "mira-video-prompting": {
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-video-prompting",

@@ -39,9 +39,10 @@
     "adobe_status", "adobe_get_project", "adobe_execute_script", "adobe_export_frame", "adobe_contact_sheet",
     "adobe_beat_markers", "adobe_render", "adobe_render_status", "adobe_render_cancel",
     "adobe_import_generation", "adobe_place_element", "adobe_install_fonts", "adobe_command",
-    "adobe_apply_recipe", "adobe_audit_frame", "adobe_measure_reference", "adobe_reference"
+    "adobe_apply_recipe", "adobe_audit_frame", "adobe_measure_reference", "adobe_reference",
+    "unity_status", "unity_get_scene", "unity_search_api", "unity_execute_csharp", "unity_screenshot", "unity_import_generation", "unity_playblast", "unity_build_player", "unity_setup_avatar", "unity_apply_motion", "unity_avatar_speak"
   ],
   "renamed": { "list_brand_assets": "list_locations_and_products" },
-  "excludedPrefixes": ["blender_", "adobe_"],
-  "excludedSkills": ["mira-blender-scene", "mira-after-effects", "mira-premiere", "mira-trends"]
+  "excludedPrefixes": ["blender_", "adobe_", "unity_"],
+  "excludedSkills": ["mira-blender-scene", "mira-unity-scene", "mira-after-effects", "mira-premiere", "mira-trends"]
 }
