@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.28",
+  "snapshot": "0.7.29",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -611,7 +611,7 @@
       "attribution": "",
       "summary": "Build scenes, characters and avatars inside the user's own Unity Editor through the Mira MCP: read the scene, change it with C#, import generated 3D models with their clips, turn a rigged character or a VRM into a talking, moving humanoid, ",
       "entry": "SKILL.md",
-      "entryBytes": 7654,
+      "entryBytes": 8093,
       "hasNotice": false,
       "sections": {
         "avatar": {

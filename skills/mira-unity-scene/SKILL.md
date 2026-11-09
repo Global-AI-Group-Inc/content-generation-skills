@@ -11,7 +11,7 @@ description: >-
   Blender scenes (mira-blender-scene).
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Mira Unity scene
@@ -24,12 +24,12 @@ The user's Unity Editor is your workbench. The tools that reach it:
 | `unity_get_scene` | objects (hierarchy paths, components, transforms), cameras, lights |
 | `unity_execute_csharp` | your C# runs in the Editor — the way you change anything |
 | `unity_search_api` | the UnityEngine/UnityEditor API of their exact Unity version |
-| `unity_screenshot` | the Scene view or a camera, as an image |
+| `unity_screenshot` | the Scene view or a camera (16:9 unless `aspect` says 9:16, 1:1 …), as an image |
 | `unity_import_generation` | a finished 3D generation into `Assets/Mira/Generations` and the scene, clips on an Animator |
 | `unity_setup_avatar` | a rigged generation or a VRM → humanoid with a `MiraAvatar` (voice, lip-sync, blinking) |
 | `unity_apply_motion` | an animation generation baked into a humanoid clip and played on any humanoid |
 | `unity_avatar_speak` | a speech generation as the avatar's voice; the mouth follows it in Play mode |
-| `unity_playblast` | edit-mode recording through a camera, uploaded as an MP4 for `referenceVideoUrls` |
+| `unity_playblast` | edit-mode recording through a camera (16:9 unless `aspect`), uploaded as an MP4 for `referenceVideoUrls` |
 | `unity_build_player` | Android `.apk` or iOS Xcode project of the open scene |
 
 Everything runs on the user's machine with their permissions and every call is listed in their
@@ -90,6 +90,11 @@ Details: `references/avatar.md`.
 materials, one camera move, 3–10 s; `unity_playblast(camera: true)` steps every Timeline and
 Animator in edit mode and uploads an MP4 tagged as a blockout. Pass its `url` in
 `referenceVideoUrls` of `generate_video` with the shot described in words.
+
+**Hand-held camera.** The user can drive a scene camera with their phone (Window → Mira → Video → Phone
+camera): walking, turning, REC. A take lands as an AnimationClip on the camera's Animator, so
+`unity_playblast` replays it. Offer it when the user wants a natural hand-held move; you cannot start it
+yourself — the phone has to scan the QR code in their window.
 
 **Phone builds** need the Android or iOS module (`unity_status.build_targets`); if missing, tell the
 user to add it in Unity Hub → Installs → Add modules. A build switches the platform and can take
