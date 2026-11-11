@@ -29,6 +29,7 @@ Name the ONE thing that decides the image:
 | a polished campaign visual or a faithful edit of the user's photo, inspected closely | `gpt-image-2.6-sunburst` (premium) |
 | the same product or person across several images | `seedream-4` |
 | premium photoreal at true 2K: skin, fabric, glass, metal that must look photographed | `seedream-5-pro` (4 credits) |
+| an everyday photoreal still, or a step-by-step edit of one photo that must leave everything else untouched; a sticker or cut-out on a transparent background | `seedream-5.5` (2 credits; no 4:5 or 5:4) |
 | a real, specific place, landmark or product that must be recognisable; cheap drafts | `muse-image` (1 credit) |
 | a poster, cover, label or layout where the lettering IS the design | `ideogram-4.5` (6 credits) |
 | a panoramic banner, header or strip (21:9, 4:1, 8:1) or a tall scroll (1:4, 1:8) | `nano-banana-2.1` (4 credits, the only model with these ratios) |

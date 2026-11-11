@@ -1,7 +1,7 @@
 # Image models on Mira
 
-Thirteen models, one pipeline. Every model costs three credits per image except Muse Image at one,
-Seedream 5 Pro and Nano Banana 2.1 at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
+Fourteen models, one pipeline. Every model costs three credits per image except Muse Image at one,
+Seedream 5.5 at two, Seedream 5 Pro and Nano Banana 2.1 at four, Ideogram 4.5 at six and the premium tier at eight: Nano Banana Pro and GPT
 Image 2.6 and 2.5 Sunburst.
 Pick the pricier ones only when their strengths are needed.
 
@@ -82,6 +82,16 @@ across the frame. Keeps one product or one person identical across several refer
 follows a long, structured brief. Premium product and lifestyle stills, close-ups where texture
 is inspected. Keep on-image text to a short line in quotes. Served straight from ModelArk; if
 ByteDance is saturated the same model is delivered through Pika.
+
+## seedream-5.5
+
+ByteDance's newest Seedream, two credits. Photographic realism at 2K: skin with real texture,
+fabric, glass and metal, at half the price of Seedream 5 Pro. The most careful editor in the
+lineup: on an attached photo it changes only what the brief names and leaves every other region
+as it was, so one image can be refined step by step, each result fed back as the next reference.
+Option `background: transparent` returns a PNG with a real alpha channel, for stickers, cut-outs
+and design assets. Ratios are 1:1, 3:4, 2:3, 9:16, 4:3, 3:2, 16:9 and 21:9; it has no 4:5 or
+5:4, and no 4K. Keep on-image text to a short line in quotes. Served through Pika.
 
 ## muse-image
 

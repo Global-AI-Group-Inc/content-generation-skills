@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.30",
+  "snapshot": "0.7.31",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -40,6 +40,7 @@
         "gpt-image-2",
         "gpt-image-2.6-sunburst",
         "seedream-5-pro",
+        "seedream-5.5",
         "seedream-4"
       ],
       "order": 20,
@@ -88,6 +89,7 @@
         "gpt-image-2",
         "gpt-image-2.6-sunburst",
         "seedream-5-pro",
+        "seedream-5.5",
         "seedream-4"
       ],
       "order": 40,
@@ -362,7 +364,7 @@
       "attribution": "",
       "summary": "Film-grade mood pieces on Mira AI: one strong image, motivated light, real optics, a grade",
       "entry": "SKILL.md",
-      "entryBytes": 4336,
+      "entryBytes": 4413,
       "hasNotice": false,
       "sections": {}
     },
@@ -499,7 +501,7 @@
       "attribution": "",
       "summary": "How to write stills for Mira AI's image models: GPT Image 2, 2.5 and 2.6, Nano Banana Pro and 2.1, Seedream 4, 4K and 5 Pro, Muse Image, Ideogram 4.5, Flux",
       "entry": "SKILL.md",
-      "entryBytes": 4051,
+      "entryBytes": 4256,
       "hasNotice": false,
       "sections": {
         "composition": {
@@ -529,7 +531,7 @@
         },
         "models": {
           "file": "references/models.md",
-          "bytes": 6463,
+          "bytes": 7155,
           "title": "Image models on Mira"
         },
         "optics": {
@@ -571,7 +573,7 @@
       "attribution": "",
       "summary": "Product-as-hero visuals on Mira AI: studio packshots, lifestyle scenes with the product in use, hands holding it, marketplace cards",
       "entry": "SKILL.md",
-      "entryBytes": 5123,
+      "entryBytes": 5289,
       "hasNotice": false,
       "sections": {}
     },
