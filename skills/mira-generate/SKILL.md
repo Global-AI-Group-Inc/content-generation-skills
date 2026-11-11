@@ -22,7 +22,7 @@ the facts: who, what, where, what happens, what is said, what must not change.
 
 ## Connect
 
-Server: `https://mcp.mybots.pro/mcp` (streamable HTTP). It signs in with the user's Mira account
+Server: `https://mcp.miralabs.art/mcp` (streamable HTTP). It signs in with the user's Mira account
 through OAuth on the first call that spends credits; there is no API key. The setup page for each
 client is [miralabs.art/mcp](https://miralabs.art/mcp). If `tools/list` works but a call
 returns 401, the user has to finish the sign-in in the browser window the client opened.

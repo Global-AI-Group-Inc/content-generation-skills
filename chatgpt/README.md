@@ -8,7 +8,7 @@ scripts/check.mjs` validates it. Upload that ZIP at [platform.openai.com/plugins
 | File | What it is |
 |---|---|
 | `plugin.json` | The Agent Plugins manifest with the listing, review cases and publication under `extensions["com.openai"]`. `version` comes from `VERSION` at build time. |
-| `mcp.json` | One remote server, `https://mcp.mybots.pro/chatgpt`, with OAuth (CIMD). |
+| `mcp.json` | One remote server, `https://mcp.miralabs.art/chatgpt`, with OAuth (CIMD). |
 | `chatgpt-tools.json` | The tools that endpoint serves, and every other tool of `/mcp`. Mirrors `ChatGptToolset.Default` in mybots.mcp: change both together. |
 | `rewrites.json` | How the shipped skills differ from `skills/`: files dropped, files overridden whole, exact text rewrites. |
 | `overrides/` | Whole-file replacements, each pinned to the sha256 of the source it was written against. |

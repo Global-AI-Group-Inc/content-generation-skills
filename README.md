@@ -10,7 +10,7 @@
 
 Skills for AI agents that generate images, video, audio and 3D on [Mira AI](https://miralabs.art). Ten of them are playbooks: UGC, product, ads, cinematic, explainer, anime, illustration, 3D toon, pixel art, 3D model. Pass a playbook id as the `skill` parameter of `generate_video`, `generate_image` or `generate_3d` and the platform's prompt pipeline applies the genre's doctrine itself. The other nine are knowledge: how to drive the Mira MCP server, how to make voice, music, sound effects, dubbing and captions, how the fourteen video models differ, how the image models differ, the camera, light, look, rhythm and continuity banks the pipeline is built on, what is trending in AI video and how to repeat it, and how to build scenes in the user's own Blender, motion pieces in their After Effects and edits in their Premiere Pro through the bridge tools.
 
-Works with Claude Code, Codex, Cursor and any agent that reads `SKILL.md` files. Generation runs through the Mira MCP server at `https://mcp.mybots.pro/mcp`, signs in with your Mira account and spends your own credits. No API keys.
+Works with Claude Code, Codex, Cursor and any agent that reads `SKILL.md` files. Generation runs through the Mira MCP server at `https://mcp.miralabs.art/mcp`, signs in with your Mira account and spends your own credits. No API keys.
 
 ## Install
 

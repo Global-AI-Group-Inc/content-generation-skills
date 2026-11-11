@@ -187,7 +187,7 @@ async function checkChatgptPackage() {
       if (exceptions.some((x) => x.file === path && x.name === m[1])) continue;
       P(`${path}: names '${m[1]}', which the /chatgpt endpoint does not serve (reword it in chatgpt/rewrites.json)`);
     }
-    if (text.includes("mcp.mybots.pro/mcp")) P(`${path}: points at the /mcp endpoint; the plugin connects /chatgpt by itself`);
+    if (/mcp\.(mybots\.pro|miralabs\.art)\/mcp\b/.test(text)) P(`${path}: points at the /mcp endpoint; the plugin connects /chatgpt by itself`);
     for (const m of text.matchAll(/\]\((?![a-z][a-z0-9+.-]*:|#)([^)#\s]+)/g)) {
       const target = posixJoin(path, m[1]);
       if (!files.has(target)) P(`${path}: link to ${m[1]} does not resolve inside the package`);

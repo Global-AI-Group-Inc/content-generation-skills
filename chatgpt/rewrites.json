@@ -8,7 +8,7 @@
   "override": {
     "skills/mira-generate/SKILL.md": {
       "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
-      "sha256": "f5e32d12ba4cf123261f5c3157b60eb04897d0014961c75c5deab6ca2d1579e8"
+      "sha256": "e46b872b8269c112da98a941b6daf4ff688dfea5dd633f55111a25724a1d77d7"
     },
     "skills/mira-generate/references/media-ops.md": {
       "with": "chatgpt/overrides/skills/mira-generate/references/media-ops.md",

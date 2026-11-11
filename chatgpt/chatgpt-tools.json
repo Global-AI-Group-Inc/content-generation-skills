@@ -1,6 +1,6 @@
 {
-  "about": "Tools served by https://mcp.mybots.pro/chatgpt, the endpoint of the ChatGPT/Codex plugin. The same list lives in mybots.mcp (ChatGptToolset.Default): change both together. `excluded` is every other tool of the main /mcp endpoint (plus the repeat_guide prompt); check.mjs fails when a shipped skill names one of them. `renamed`: tools /chatgpt exposes under another name than /mcp; the build renames them in the shipped skills.",
-  "endpoint": "https://mcp.mybots.pro/chatgpt",
+  "about": "Tools served by https://mcp.miralabs.art/chatgpt, the endpoint of the ChatGPT/Codex plugin. The same list lives in mybots.mcp (ChatGptToolset.Default): change both together. `excluded` is every other tool of the main /mcp endpoint (plus the repeat_guide prompt); check.mjs fails when a shipped skill names one of them. `renamed`: tools /chatgpt exposes under another name than /mcp; the build renames them in the shipped skills.",
+  "endpoint": "https://mcp.miralabs.art/chatgpt",
   "tools": [
     "generate_image", "generate_video", "direct_video", "extend_video", "upscale_video",
     "finalize_draft", "reframe_video", "remove_background", "upload_reference_image",
