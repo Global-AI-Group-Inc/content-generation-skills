@@ -430,7 +430,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 20788,
+      "entryBytes": 20776,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -445,12 +445,12 @@
         },
         "film-studio": {
           "file": "references/film-studio.md",
-          "bytes": 13403,
+          "bytes": 13391,
           "title": "AI Film Studio projects"
         },
         "guides": {
           "file": "references/guides.md",
-          "bytes": 9502,
+          "bytes": 9496,
           "title": "Community guides"
         },
         "locks-and-references": {
@@ -460,7 +460,7 @@
         },
         "marketing-studio": {
           "file": "references/marketing-studio.md",
-          "bytes": 5740,
+          "bytes": 5734,
           "title": "AI Marketing Studio campaigns"
         },
         "media-ops": {
@@ -480,7 +480,7 @@
         },
         "social-publishing": {
           "file": "references/social-publishing.md",
-          "bytes": 4993,
+          "bytes": 4987,
           "title": "Posting to Instagram and Threads, with auto-replies"
         }
       }
@@ -613,7 +613,7 @@
       "attribution": "",
       "summary": "Build scenes, characters and avatars inside the user's own Unity Editor through the Mira MCP: read the scene, change it with C#, import generated 3D models with their clips, turn a rigged character or a VRM into a talking, moving humanoid, ",
       "entry": "SKILL.md",
-      "entryBytes": 8093,
+      "entryBytes": 8090,
       "hasNotice": false,
       "sections": {
         "avatar": {
@@ -634,7 +634,7 @@
       "attribution": "",
       "summary": "Build levels, characters and avatars inside the user's own Unreal Editor (UE 5.7 and 5.8) through the Mira MCP: read the level, change it with Python, import generated images, clips and 3D models, turn a rigged character into a talking, mov",
       "entry": "SKILL.md",
-      "entryBytes": 7478,
+      "entryBytes": 7475,
       "hasNotice": false,
       "sections": {
         "avatar": {
