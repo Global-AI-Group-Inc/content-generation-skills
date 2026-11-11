@@ -44,7 +44,7 @@ the result, ask before spending credits.
 - A test build to see it on a phone.
 
 Not connected (`unreal_status.connected == false`): tell the user to open their project with Mira for
-Unreal Engine (mira.mybots.pro/unreal) in `Plugins/`, Window → Mira → sign in → **Connect agents**, and
+Unreal Engine (miralabs.art/unreal) in `Plugins/`, Window → Mira → sign in → **Connect agents**, and
 stop. Do not retry in a loop.
 
 ## Doctrine

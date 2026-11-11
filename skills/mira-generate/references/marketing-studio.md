@@ -1,6 +1,6 @@
 # AI Marketing Studio campaigns
 
-AI Marketing Studio ([mira.mybots.pro/marketing](https://mira.mybots.pro/marketing)) is where a
+AI Marketing Studio ([miralabs.art/marketing](https://miralabs.art/marketing)) is where a
 marketing team runs campaigns together. It shares workspaces with AI Film Studio: the same team, the
 same owner's wallet, the same roles. A campaign is a project with `projectType: "marketing"`. It has
 a brand kit, a library of products, talent and locations, a bin of works, A/B variant sets, a review

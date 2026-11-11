@@ -4,9 +4,9 @@
   "description": "Generate images, video and sound with Mira AI from ChatGPT and Codex: playbooks and prompting skills plus the Mira MCP server for images, clips, edits, voice, music and captions.",
   "author": {
     "name": "Global AI Group, Inc.",
-    "url": "https://mira.mybots.pro"
+    "url": "https://miralabs.art"
   },
-  "homepage": "https://mira.mybots.pro",
+  "homepage": "https://miralabs.art",
   "repository": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "license": "MIT",
   "keywords": [
@@ -41,8 +41,8 @@
           "Team film and marketing projects",
           "Community guides"
         ],
-        "websiteURL": "https://mira.mybots.pro",
-        "supportURL": "https://mira.mybots.pro/support",
+        "websiteURL": "https://miralabs.art",
+        "supportURL": "https://miralabs.art/support",
         "privacyPolicyURL": "https://mybots.pro/privacy/",
         "termsOfServiceURL": "https://mybots.pro/terms/",
         "defaultPrompt": [

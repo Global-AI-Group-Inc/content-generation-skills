@@ -1,12 +1,12 @@
 {
   "name": "mira",
-  "version": "0.7.31",
+  "version": "0.7.32",
   "description": "Mira AI skills: playbooks and prompting knowledge for image, video and audio generation through the Mira MCP server.",
   "author": {
     "name": "Global AI Group, Inc.",
-    "url": "https://mira.mybots.pro"
+    "url": "https://miralabs.art"
   },
-  "homepage": "https://mira.mybots.pro/skills",
+  "homepage": "https://miralabs.art/skills",
   "repository": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "license": "MIT",
   "keywords": [

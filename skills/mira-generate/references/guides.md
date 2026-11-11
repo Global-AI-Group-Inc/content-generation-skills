@@ -1,6 +1,6 @@
 # Community guides
 
-Community guides live at [mira.mybots.pro/guides](https://mira.mybots.pro/guides). Mira users write
+Community guides live at [miralabs.art/guides](https://miralabs.art/guides). Mira users write
 them about a result of their own: what they wanted, the steps they took, and for every image or clip
 the recipe behind it (model, prompt, ratio, duration, resolution, seed, the credits it cost, the
 references the author chose to share). Users write them, not the platform, and they are not the

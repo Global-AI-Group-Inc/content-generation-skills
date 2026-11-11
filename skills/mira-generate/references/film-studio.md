@@ -1,6 +1,6 @@
 # AI Film Studio projects
 
-AI Film Studio ([mira.mybots.pro/studio](https://mira.mybots.pro/studio)) is where a team makes a film
+AI Film Studio ([miralabs.art/studio](https://miralabs.art/studio)) is where a team makes a film
 together. A workspace holds the team and its wallet; each project inside it has a fixed cast
 (Elements), a shared bin of takes, a Liked collection, folders, a brief, a canvas and Editor, where
 the team cuts the film itself: takes on a timeline, voiceover, sound effects, music and subtitles,
@@ -148,7 +148,7 @@ Resolve import it), `edl` or `srt`.
 A project lives in the browser, but the team can finish it in their own apps. Check
 `film_desktop_status` first: it says whether After Effects and Premiere Pro (the Mira panel) and Blender
 (the Mira add-on) are connected right now. If an app is off, tell the user to open it, sign in to Mira
-and switch the bridge on (mira.mybots.pro/adobe, mira.mybots.pro/blender); do not retry in a loop.
+and switch the bridge on (miralabs.art/adobe, miralabs.art/blender); do not retry in a loop.
 
 - **Takes into an app.** `film_open_in_app` with up to 12 assetIds and a host (`aeft`, `ppro`, `blender`)
   downloads them on the user's machine. In After Effects and Premiere they go into the Mira bin, or onto

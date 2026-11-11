@@ -1,7 +1,7 @@
 # Posting to Instagram and Threads, with auto-replies
 
 The user's own Instagram and Threads accounts, connected on
-[mira.mybots.pro/integrations](https://mira.mybots.pro/integrations), can receive posts straight from
+[miralabs.art/integrations](https://miralabs.art/integrations), can receive posts straight from
 Mira: now or at a time in the user's content plan. A post can carry auto-replies to comments
 (comment hooks): a keyword or any comment under the post gets a public reply and a DM with buttons.
 They are saved with the post and start working the moment it goes live.

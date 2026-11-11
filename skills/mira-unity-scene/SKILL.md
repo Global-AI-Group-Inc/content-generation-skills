@@ -44,7 +44,7 @@ the result, ask before spending credits.
 - A test build to see it on a phone.
 
 Not connected (`unity_status.connected == false`): tell the user to open Unity with Mira for Unity
-(mira.mybots.pro/unity), Window → Mira → sign in → **Connect agents**, and stop. Do not retry in a loop.
+(miralabs.art/unity), Window → Mira → sign in → **Connect agents**, and stop. Do not retry in a loop.
 
 ## Doctrine
 
