@@ -154,7 +154,15 @@ combine with keyframe anchors (`startImageUrl`/`endImageUrl`).
 When the user already knows the shot, skip the drafts: `quality="hd"` renders `seedance-2-5`
 straight to 1080p at the same 1080p price a final costs (about 100 credits per 5 s). Drafting
 first pays off only when there are several takes to choose from. `list_models` reports
-`supports_hd`; models that render 1080p anyway (Kling, Veo, Wan) need no parameter.
+`supports_hd`.
+
+Every model with more than one resolution takes the same `quality` parameter; the tier a model
+offers is in its row of [selection.md](../../mira-video-prompting/references/selection.md).
+`sd` is the tier below the standard one (720p on `kling`, `kling-turbo`, `kling-motion`, `minimax`,
+`wan3`, `wan3-prime`, `happyhorse`; 360p on `omni`) for cheap tries, `ld` is 480p on `wan3` and
+`wan3-prime`, `hd` is 1080p on `kling-4`, `seedance-2-5` and `omni`, `uhd` is 4K on `kling` and
+`omni`. Each tier has its own price - quote it with `estimate_cost` - and a tier the model lacks
+is refused before any charge. `runway` renders at one resolution.
 
 ## Seeds
 

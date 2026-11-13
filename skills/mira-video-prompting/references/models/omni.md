@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | seconds | 3-15s, any whole second (3-10s with a first and a last frame) |
-| output | 720p; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd |
+| output | 720p by default; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd |
 | reference images | 6 |
 | audio | yes |
 | prompt budget | 3000 chars |

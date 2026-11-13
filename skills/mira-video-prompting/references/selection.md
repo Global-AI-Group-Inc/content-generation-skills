@@ -7,18 +7,18 @@ table it points at.
 
 | key | model | seconds | output | references | audio | prompt budget |
 |---|---|---|---|---|---|---|
-| `seedance-2-5` | ByteDance Seedance 2.5 | 5 / 10 / 15 / 30 | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
-| `capricornus-1` | Capricornus 1 (Mira) | 5 / 10 / 15 / 30 | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
+| `seedance-2-5` | ByteDance Seedance 2.5 | 4-30s, any whole second | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
+| `capricornus-1` | Capricornus 1 (Mira) | 4-30s, any whole second | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
-| `kling` | Kling 3.0 | 5 / 10 / 15 | 1080p | up to 7 native | yes | 2500 |
-| `kling-4` | Kling 4.0 | 5 / 10 / 15 / 30 | 720p | up to 7 native | yes | 5000 |
-| `kling-turbo` | Kling 3.0 Turbo | 5 / 10 / 15 | 1080p | up to 1 native | yes | 2500 |
-| `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p | up to 1 native | yes | 2500 |
-| `omni` | Google Gemini Omni 1.2 Flash | 3-15s, any whole second (3-10s with a first and a last frame) | 720p; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd | up to 6 native | yes | 3000 |
-| `minimax` | MiniMax H3 (Hailuo 3.0) | 5 / 10 / 15 | 1080p | up to 9 native | yes | 6400 |
-| `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p | up to 1 native | yes | 400 |
-| `wan3` | Wan 3.0 | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
-| `wan3-prime` | Wan 3.0 Prime | 5 / 10 / 15 / 30 | 1080p | up to 10 native | yes | 8000 |
+| `kling` | Kling 3.0 | 3-15s, any whole second | 1080p by default; 720p with quality=sd; 4K with quality=uhd | up to 7 native | yes | 2500 |
+| `kling-4` | Kling 4.0 | 3-30s, any whole second | 720p by default; 1080p with quality=hd | up to 7 native | yes | 5000 |
+| `kling-turbo` | Kling 3.0 Turbo | 3-15s, any whole second | 1080p by default; 720p with quality=sd | up to 1 native | yes | 2500 |
+| `kling-motion` | kling-motion | 5 / 10 / 15 / 30 | 1080p by default; 720p with quality=sd | up to 1 native | yes | 2500 |
+| `omni` | Google Gemini Omni 1.2 Flash | 3-15s, any whole second (3-10s with a first and a last frame) | 720p by default; 360p with quality=sd; 1080p with quality=hd; 4K with quality=uhd | up to 6 native | yes | 3000 |
+| `minimax` | MiniMax H3 (Hailuo 3.0) | 4-15s, any whole second | 1080p by default; 720p with quality=sd | up to 9 native | yes | 6400 |
+| `happyhorse` | HappyHorse 1.1 | 5 / 10 / 15 | 1080p by default; 720p with quality=sd | up to 1 native | yes | 400 |
+| `wan3` | Wan 3.0 | 2-30s, any whole second | 1080p by default; 480p with quality=ld; 720p with quality=sd | up to 10 native | yes | 8000 |
+| `wan3-prime` | Wan 3.0 Prime | 2-30s, any whole second | 1080p by default; 480p with quality=ld; 720p with quality=sd | up to 10 native | yes | 8000 |
 
 ## What each model is for
 

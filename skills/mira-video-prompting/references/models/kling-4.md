@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| seconds | 5 / 10 / 15 / 30 |
-| output | 720p |
+| seconds | 3-30s, any whole second |
+| output | 720p by default; 1080p with quality=hd |
 | reference images | 7 |
 | audio | yes |
 | prompt budget | 5000 chars |

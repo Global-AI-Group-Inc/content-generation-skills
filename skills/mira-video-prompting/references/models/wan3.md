@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| seconds | 5 / 10 / 15 / 30 |
-| output | 1080p |
+| seconds | 2-30s, any whole second |
+| output | 1080p by default; 480p with quality=ld; 720p with quality=sd |
 | reference images | 10 |
 | audio | yes |
 | prompt budget | 8000 chars |

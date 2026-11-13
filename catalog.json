@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.33",
+  "snapshot": "0.7.34",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -455,7 +455,7 @@
         },
         "locks-and-references": {
           "file": "references/locks-and-references.md",
-          "bytes": 11881,
+          "bytes": 12455,
           "title": "References, locks and failure handling"
         },
         "marketing-studio": {
@@ -670,42 +670,42 @@
         },
         "models/capricornus-1": {
           "file": "references/models/capricornus-1.md",
-          "bytes": 10169,
+          "bytes": 10176,
           "title": "Capricornus 1 (Mira) (capricornus-1)"
         },
         "models/happyhorse": {
           "file": "references/models/happyhorse.md",
-          "bytes": 5916,
+          "bytes": 5949,
           "title": "HappyHorse 1.1 (happyhorse)"
         },
         "models/kling-4": {
           "file": "references/models/kling-4.md",
-          "bytes": 5270,
+          "bytes": 5311,
           "title": "Kling 4.0 (kling-4)"
         },
         "models/kling-motion": {
           "file": "references/models/kling-motion.md",
-          "bytes": 2197,
+          "bytes": 2230,
           "title": "kling-motion (kling-motion)"
         },
         "models/kling-turbo": {
           "file": "references/models/kling-turbo.md",
-          "bytes": 2001,
+          "bytes": 2046,
           "title": "Kling 3.0 Turbo (kling-turbo)"
         },
         "models/kling": {
           "file": "references/models/kling.md",
-          "bytes": 8294,
+          "bytes": 8360,
           "title": "Kling 3.0 (kling)"
         },
         "models/minimax": {
           "file": "references/models/minimax.md",
-          "bytes": 7794,
+          "bytes": 7839,
           "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
         },
         "models/omni": {
           "file": "references/models/omni.md",
-          "bytes": 5812,
+          "bytes": 5823,
           "title": "Google Gemini Omni 1.2 Flash (omni)"
         },
         "models/runway": {
@@ -715,7 +715,7 @@
         },
         "models/seedance-2-5": {
           "file": "references/models/seedance-2-5.md",
-          "bytes": 10178,
+          "bytes": 10185,
           "title": "ByteDance Seedance 2.5 (seedance-2-5)"
         },
         "models/veo-lite": {
@@ -735,17 +735,17 @@
         },
         "models/wan3-prime": {
           "file": "references/models/wan3-prime.md",
-          "bytes": 8052,
+          "bytes": 8114,
           "title": "Wan 3.0 Prime (wan3-prime)"
         },
         "models/wan3": {
           "file": "references/models/wan3.md",
-          "bytes": 7971,
+          "bytes": 8033,
           "title": "Wan 3.0 (wan3)"
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5969,
+          "bytes": 6381,
           "title": "Selecting the model"
         },
         "textures": {

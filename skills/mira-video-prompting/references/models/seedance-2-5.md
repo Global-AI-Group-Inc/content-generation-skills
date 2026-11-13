@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| seconds | 5 / 10 / 15 / 30 |
+| seconds | 4-30s, any whole second |
 | output | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p |
 | reference images | 30 |
 | audio | yes |

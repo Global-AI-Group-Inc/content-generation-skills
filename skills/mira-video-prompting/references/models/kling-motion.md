@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | seconds | 5 / 10 / 15 / 30 |
-| output | 1080p |
+| output | 1080p by default; 720p with quality=sd |
 | reference images | 1 |
 | audio | yes |
 | prompt budget | 2500 chars |
