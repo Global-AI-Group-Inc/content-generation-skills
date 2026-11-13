@@ -25,7 +25,7 @@ MODEL: Kling 4.0 (Kuaishou) - the newest Kling: photoreal people with clean anat
 
 ## Doctrine
 
-Kling 4.0: the newest Kling - photoreal people, believable physics and legible in-frame text, ONE continuous take of 3-30 s at 720p, native audio always on, 21:9 available. Up to 7 reference photos (@image_N) or one reference clip (@video_1), a start frame and an end frame. Write it as SCENE / CAMERA / ACTION with timed beats / AUDIO / LOOK. Pick it over kling for long single takes (up to 30 s), wide 21:9 and the newest model, at a slightly lower price than kling (720p against kling's 1080p). Pick kling for a cut-up multi-shot sequence or 1080p, kling-turbo for cheap drafts.
+Kling 4.0: the newest Kling - photoreal people, believable physics and legible in-frame text, ONE continuous take of 3-30 s at 720p, native audio always on, 21:9 available. Up to 7 reference photos (@image_N) or one reference clip (@video_1), a start frame and an end frame. Write it as SCENE / CAMERA / ACTION with timed beats / AUDIO / LOOK. Pick it over kling for long single takes (up to 30 s), wide 21:9 and the newest model, at a slightly lower price than kling (720p by default, 1080p with quality=hd). Pick kling for a cut-up multi-shot sequence or 4K, kling-turbo for cheap drafts.
 
 ## Format law the critic applies
 
