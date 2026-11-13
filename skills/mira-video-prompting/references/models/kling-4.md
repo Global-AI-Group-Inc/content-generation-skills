@@ -17,7 +17,7 @@
 
 ## When to pick it
 
-the newest Kling: ONE continuous take of 3-30s at 720p, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 1080p - for those use kling
+the newest Kling: ONE continuous take of 3-30s, 720p by default and 1080p with quality=hd, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 4K - for those use kling
 
 ## How it reads a prompt
 

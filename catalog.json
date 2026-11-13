@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.34",
+  "snapshot": "0.7.35",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -680,7 +680,7 @@
         },
         "models/kling-4": {
           "file": "references/models/kling-4.md",
-          "bytes": 5311,
+          "bytes": 5343,
           "title": "Kling 4.0 (kling-4)"
         },
         "models/kling-motion": {
@@ -745,7 +745,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 6381,
+          "bytes": 6413,
           "title": "Selecting the model"
         },
         "textures": {
