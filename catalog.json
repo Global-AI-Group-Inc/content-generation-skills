@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.36",
+  "snapshot": "0.7.37",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -445,7 +445,7 @@
         },
         "film-studio": {
           "file": "references/film-studio.md",
-          "bytes": 13391,
+          "bytes": 14758,
           "title": "AI Film Studio projects"
         },
         "guides": {
@@ -702,6 +702,11 @@
           "file": "references/models/minimax.md",
           "bytes": 7839,
           "title": "MiniMax H3 (Hailuo 3.0) (minimax)"
+        },
+        "models/mira-cinematic": {
+          "file": "references/models/mira-cinematic.md",
+          "bytes": 5425,
+          "title": "Mira Cinematic (Mira) (mira-cinematic)"
         },
         "models/omni": {
           "file": "references/models/omni.md",
