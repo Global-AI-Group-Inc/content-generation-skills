@@ -7,12 +7,12 @@
 | | |
 |---|---|
 | seconds | 4-30s, any whole second |
-| output | 720p; 1080p with quality=hd; 540p draft, finalized to 1080p |
+| output | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p |
 | reference images | 5 |
 | audio | yes |
 | prompt budget | 1300 chars |
 | extend | forward and backward |
-| draft | yes: generate_video draft=true renders 540p (one pass, up to 20 s); finalize_draft re-renders the same take in 1080p within 7 days |
+| draft | yes: generate_video draft=true renders 480p (one pass, up to 20 s); finalize_draft re-renders the same take in 1080p within 7 days |
 | last frame | yes |
 | reference clips | 1 control video up to 30 s: a 3D staging playblast drives layout and camera, any other clip drives motion |
 | reference audio | up to 2, follows the voice or music; no binding needed |
