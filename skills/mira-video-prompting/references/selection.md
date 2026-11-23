@@ -8,7 +8,6 @@ table it points at.
 | key | model | seconds | output | references | audio | prompt budget |
 |---|---|---|---|---|---|---|
 | `seedance-2-5` | ByteDance Seedance 2.5 | 4-30s, any whole second | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
-| `capricornus-1` | Capricornus 1 (Mira) | 4-30s, any whole second | 720p; 1080p with quality=hd; 480p draft, finalized to 1080p | up to 30 native | yes | 6000 |
 | `runway` | Runway Gen-4.5 | 5 / 10 | provider default | up to 4, merged into one start frame | no | 1000 |
 | `kling` | Kling 3.0 | 3-15s, any whole second | 1080p by default; 720p with quality=sd; 4K with quality=uhd | up to 7 native | yes | 2500 |
 | `kling-4` | Kling 4.0 | 3-30s, any whole second | 720p by default; 1080p with quality=hd | up to 7 native | yes | 5000 |
@@ -23,7 +22,6 @@ table it points at.
 ## What each model is for
 
 - **`seedance-2-5`** — the long-form specialist: up to 30s, heavy referencing (storyboards, keyframe chains, video edit/extend); ~1.6x the price of seedance and pricier than kling-4 or wan3, which also reach 30s - reach for it when length or reference volume decides the clip. ALSO the camera-trick model WITH audio: in live runs (2026-09-06) it executed every phased single-take trick as written - a top-down crash dive, a full 360 orbit returning to the start, a whip pan fusing two locations, a dolly zoom, a camera struck and falling while it records, a locked day-night cycle, a pass through a mirror into a new place - where Runway smeared or split half of them and Kling stopped short of the move; when the MOVE is the concept and the clip needs sound, this is the key
-- **`capricornus-1`** — Mira's own model (early access): the house cinematic look - large-sensor optics, soft motivated light, warm highlights over cool shadows, fine grain - written into every shot, so a clip looks graded out of the box; the pick for product films, brand pieces and multi-shot stories. Up to 30 s in one pass with native audio, heavy referencing, timecoded storyboards, extends both ways, and about 15% cheaper per second than the other long-form option. It also executes phased single-take camera tricks as written - crash dive, full 360 orbit, whip pan between two places, dolly zoom, day-night cycle.
 - **`runway`** — Gen-4.5, text-to-video AND image-to-video: the sequencing specialist - executes several ordered camera moves and timed beats inside ONE prompt, and takes forceful camera work (sweeping arcs, crash zooms, whip pans) the others smear; weak on fine motor detail; NO audio; 720p; 5/10s
 - **`kling`** — best human anatomy and physics (sport, cloth, water), legible in-frame text, native audio with multi-speaker dialogue and accents; 3-15s; 1080p output
 - **`kling-4`** — the newest Kling: ONE continuous take of 3-30s, 720p by default and 1080p with quality=hd, native audio always on, 21:9 available; best-in-line anatomy, physics and legible in-frame text; up to 7 photo refs or one reference clip, start and end frames; slightly cheaper than kling; no multi-shot and no 4K - for those use kling
@@ -35,6 +33,6 @@ table it points at.
 - **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
 - **`wan3-prime`** — the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 10 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
 
-Withdrawn from the lineup (still in the registry for old jobs and pricing): `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
+Withdrawn from the lineup (still in the registry for old jobs and pricing): `capricornus-1`, `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
 
 The registry default is `omni`. An empty or unknown model id resolves to it silently.
