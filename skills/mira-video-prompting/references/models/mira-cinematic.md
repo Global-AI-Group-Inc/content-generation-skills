@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | seconds | 4-15s, any whole second |
-| output | 768p by default (1344x768 at 16:9); 2K (2560x1440) with quality=hd - text and frame takes only, up to 8 s |
+| output | 768p by default (1344x768 at 16:9); 2K (2560x1440) with quality=hd - text and frame takes only, up to 10 s |
 | reference images | 9 |
 | audio | yes |
 | prompt budget | 6400 chars |
@@ -19,7 +19,7 @@
 
 ## When to pick it
 
-Mira's own model, AI Film Studio only: 4-15s, native stereo audio with verbatim speech (English, Russian), legible in-frame text incl. Cyrillic, multi-shot by timecodes, 6 ratios incl. 21:9; start/end frames (end frame alone too), up to 9 reference images and 2 voice references, ONE clip - a 3D staging playblast from Blender/Unity/Unreal drives the layout and camera exactly, any other clip is a camera reference; extend forward and backward by 5 or 10 s; a 2K tier (2560x1440) for text and frame takes of up to 8 s. Pick it in Film Studio for dialogue scenes, takes with the cast, a blockout that must be followed precisely, or when the house model is wanted; not available outside a film project
+Mira's own model, AI Film Studio only: 4-15s, native stereo audio with verbatim speech (English, Russian), legible in-frame text incl. Cyrillic, multi-shot by timecodes, 6 ratios incl. 21:9; start/end frames (end frame alone too), up to 9 reference images and 2 voice references, ONE clip - a 3D staging playblast from Blender/Unity/Unreal drives the layout and camera exactly, any other clip is a camera reference; extend forward and backward by 5 or 10 s; a 2K tier (2560x1440) for text and frame takes of up to 10 s. Pick it in Film Studio for dialogue scenes, takes with the cast, a blockout that must be followed precisely, or when the house model is wanted; not available outside a film project
 
 ## How it reads a prompt
 
@@ -48,7 +48,7 @@ With a STAGING CLIP (a playblast of the user's 3D scene) the camera path, the fr
 
 ## Doctrine
 
-Mira Cinematic: Mira's own model for AI Film Studio - 4-15 s, native stereo audio with verbatim speech, legible in-frame text incl. Cyrillic, multi-shot by timecodes, 6 ratios, start/end frames, up to 9 reference images, 2 voice references, one clip (3D staging playblast = layout and camera; any other clip = camera and pacing reference), extend by 5 or 10 s both ways, 2K tier for text and frame takes up to 8 s. OUTPUT IS NOT FREE PROSE - exactly three labelled fields, each on its own line: integrated_multimodal_description: / overall_soundscape: / non_diegetic_music:. Shots open '[Shot 1]' with no timestamp, later '[Shot N] At 00:03.500, the camera cuts to ...'. With references the format has six sections (subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music) and subjects are bound as <Subject N> from <Picture N>. Dialogue: speaker id (S1) + <d>[English] line</d>. Up to 7000 characters.
+Mira Cinematic: Mira's own model for AI Film Studio - 4-15 s, native stereo audio with verbatim speech, legible in-frame text incl. Cyrillic, multi-shot by timecodes, 6 ratios, start/end frames, up to 9 reference images, 2 voice references, one clip (3D staging playblast = layout and camera; any other clip = camera and pacing reference), extend by 5 or 10 s both ways, 2K tier for text and frame takes up to 10 s. OUTPUT IS NOT FREE PROSE - exactly three labelled fields, each on its own line: integrated_multimodal_description: / overall_soundscape: / non_diegetic_music:. Shots open '[Shot 1]' with no timestamp, later '[Shot N] At 00:03.500, the camera cuts to ...'. With references the format has six sections (subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music) and subjects are bound as <Subject N> from <Picture N>. Dialogue: speaker id (S1) + <d>[English] line</d>. Up to 7000 characters.
 
 ## Format law the critic applies
 
