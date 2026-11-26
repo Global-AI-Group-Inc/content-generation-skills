@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.42",
+  "snapshot": "0.7.43",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -445,7 +445,7 @@
         },
         "film-studio": {
           "file": "references/film-studio.md",
-          "bytes": 14645,
+          "bytes": 14881,
           "title": "AI Film Studio projects"
         },
         "guides": {
@@ -705,7 +705,7 @@
         },
         "models/mira-cinematic": {
           "file": "references/models/mira-cinematic.md",
-          "bytes": 5383,
+          "bytes": 8193,
           "title": "Mira Cinematic (Mira) (mira-cinematic)"
         },
         "models/omni": {
