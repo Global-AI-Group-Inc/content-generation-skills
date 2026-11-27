@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.46",
+  "snapshot": "0.7.47",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -736,7 +736,7 @@
         },
         "models/mira-cinematic": {
           "file": "references/models/mira-cinematic.md",
-          "bytes": 9590,
+          "bytes": 10727,
           "title": "Mira Cinematic (Mira) (mira-cinematic)"
         },
         "models/omni": {
