@@ -8,7 +8,7 @@
   "override": {
     "skills/mira-generate/SKILL.md": {
       "with": "chatgpt/overrides/skills/mira-generate/SKILL.md",
-      "sha256": "e46b872b8269c112da98a941b6daf4ff688dfea5dd633f55111a25724a1d77d7"
+      "sha256": "4aacfb23a54abf4b2ee7d386c32b16ce6ae01286a663854815a7fddd09c14e1f"
     },
     "skills/mira-generate/references/media-ops.md": {
       "with": "chatgpt/overrides/skills/mira-generate/references/media-ops.md",
@@ -258,6 +258,21 @@
       "file": "skills/mira-generate/references/locks-and-references.md",
       "find": "Seedance screens every photo for real-looking faces before billing. When it refuses one, the\nplatform registers the refused photos in its private asset library for the length of that one\nrender, sends the same take again with them as assets, and deletes them as soon as the render\nends - the face stays the one in the photo, and nothing is needed from you: the call simply\ntakes a little longer. Only AI Blogger, uploaded and library photos go this way; a\nstylised request (`style` anime, render3d or pixel, or a drawn medium in the prompt) is redrawn\ninto one composed start frame instead, because an asset would drag the clip back to photoreal.\n",
       "replace": "Seedance screens every photo for real-looking faces before billing and refuses a real person's\nface; use people you made yourself or that the user has the right to show.\n"
+    },
+    {
+      "file": "skills/mira-drama/SKILL.md",
+      "find": "| dialogue recorded apart, then lips matched | `generate_audio` kind `dialogue` then `lipsync_video` (mira-audio) |",
+      "replace": "| dialogue recorded apart, laid over listener shots | `generate_audio` kind `dialogue` (mira-audio) |"
+    },
+    {
+      "file": "skills/mira-drama/references/shots.md",
+      "find": "(`generate_audio` kind `dialogue`), then match lips per shot (`lipsync_video`), or lay it over\nlistener shots in the cut (mira-audio).",
+      "replace": "(`generate_audio` kind `dialogue`), then lay it over listener shots in the cut (mira-audio)."
+    },
+    {
+      "file": "skills/mira-drama/references/repair.md",
+      "find": "**After Effects or Premiere.** When the user cuts in their own editor, hand over the takes and the\nshot list (mira-premiere, mira-after-effects); in AI Film Studio the cut is the team's Editor\n(film-studio.md).",
+      "replace": "**The user's own editor.** When the user cuts in their own editor, hand over the takes and the\nshot list; in AI Film Studio the cut is the team's Editor (film-studio.md)."
     }
   ],
   "stripCyrillicTriggers": true

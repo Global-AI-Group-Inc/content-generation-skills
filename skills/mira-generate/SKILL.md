@@ -125,8 +125,8 @@ When `adobe_status` says connected, the user's After Effects (or Premiere Pro) i
 - A `skill` adds the playbook's doctrine to the plan step. It does not override anything you wrote.
 - `style` is the medium only: `anime`, `illustration`, `toon3d`, `pixel`. A playbook of the same
   name already implies it.
-- Bank keys such as `push_in` or `rembrandt` must never appear in a prompt. Describe the move or
-  the light in words; the pipeline maps it.
+- Bank keys (`push_in`, `rembrandt`) never go in a prompt: say the move and light in words, and pass the keys
+  from `mira-craft` in `generate_video` `direction` (`camera_moves`, `lighting`; grade for a series). Dramas: `mira-drama`.
 
 ## UX rules
 

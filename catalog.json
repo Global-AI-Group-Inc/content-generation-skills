@@ -1,6 +1,6 @@
 {
   "schema": "visual-guides-catalog-1",
-  "snapshot": "0.7.44",
+  "snapshot": "0.7.45",
   "repo": "https://github.com/Global-AI-Group-Inc/content-generation-skills",
   "tools": {},
   "skills": [
@@ -374,7 +374,7 @@
       "attribution": "",
       "summary": "The camera, light, look, rhythm, time, continuity, physics and direction banks Mira's prompt pipeline is built on, generated from the live registry: 78 camera moves, 37 lighting schemes, film stocks, grades, lenses, camera styles, palettes,",
       "entry": "SKILL.md",
-      "entryBytes": 2661,
+      "entryBytes": 3497,
       "hasNotice": false,
       "sections": {
         "camera": {
@@ -414,6 +414,37 @@
         }
       }
     },
+    "mira-drama": {
+      "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-drama",
+      "license": "MIT",
+      "attribution": "",
+      "summary": "Write and shoot AI short dramas on Mira: vertical micro-drama series, mini-series of 3-10 episodes for Reels and TikTok, a single dramatic scene with dialogue",
+      "entry": "SKILL.md",
+      "entryBytes": 6201,
+      "hasNotice": false,
+      "sections": {
+        "repair": {
+          "file": "references/repair.md",
+          "bytes": 4493,
+          "title": "Repair and the cut"
+        },
+        "scene": {
+          "file": "references/scene.md",
+          "bytes": 5758,
+          "title": "Scene: blocking, power, the bible"
+        },
+        "series": {
+          "file": "references/series.md",
+          "bytes": 7468,
+          "title": "Series, episode, hook, payoff"
+        },
+        "shots": {
+          "file": "references/shots.md",
+          "bytes": 5802,
+          "title": "Shots: what one generation can hold"
+        }
+      }
+    },
     "mira-explainer": {
       "source": "https://github.com/Global-AI-Group-Inc/content-generation-skills/tree/main/skills/mira-explainer",
       "license": "MIT",
@@ -430,7 +461,7 @@
       "attribution": "",
       "summary": "Generate images and video on Mira AI through its MCP server: connect, pick a model, attach the user's AI Blogger, location or product, write the prompt, pass a playbook skill, wait for the result, extend or upscale a clip",
       "entry": "SKILL.md",
-      "entryBytes": 20778,
+      "entryBytes": 20871,
       "hasNotice": false,
       "sections": {
         "ai-blogger": {
@@ -660,7 +691,7 @@
       "attribution": "",
       "summary": "Which of Mira's video models to pick (the live list is in references/selection.md) and how each one treats a prompt: Seedance 2.5, Runway Gen-4.5, Kling 4.0, Kling 3.0 (and Turbo), Gemini Omni Flash, MiniMax H3, HappyHorse, Wan 3.0",
       "entry": "SKILL.md",
-      "entryBytes": 5440,
+      "entryBytes": 6073,
       "hasNotice": false,
       "sections": {
         "action": {
@@ -750,7 +781,7 @@
         },
         "selection": {
           "file": "references/selection.md",
-          "bytes": 5644,
+          "bytes": 5654,
           "title": "Selecting the model"
         },
         "textures": {

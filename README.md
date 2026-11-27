@@ -42,6 +42,7 @@ Then connect the MCP server in your agent. The page at [miralabs.art/mcp](https:
 | `mira-video-prompting` | knowledge | Which of the fourteen video models to pick and what each one actually does with a prompt. One reference file per recommended model. |
 | `mira-image-prompting` | knowledge | The image models and the craft banks for stills: light, optics, composition, grade, materials, and the words that hurt. |
 | `mira-craft` | knowledge | The camera, light, look, rhythm and continuity banks the pipeline reads. Generated from the live registry. |
+| `mira-drama` | knowledge | AI short dramas and mini-series: season curve, the first five seconds, end-of-episode hooks, payoffs, villains, dialogue as action, blocking and the axis, the continuity bible, what one shot holds per model, repair and the cut. Every shot leaves with a camera move and a light in `direction`. |
 | `mira-ugc` | playbook | Phone-shot creator content: review, unboxing, how-to, testimonial. |
 | `mira-product` | playbook | The product as the hero: studio, lifestyle, hands. |
 | `mira-ads` | playbook | Short paid creative with a hook in the first beat and a clean closing frame. |

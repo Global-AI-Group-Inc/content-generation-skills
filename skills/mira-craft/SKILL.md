@@ -30,6 +30,16 @@ and put the chosen entry's description into the prompt in your own words. A prom
 bank key (`push_in`, `rembrandt`) is a bug; it happened in production once and the clip came back
 with the key rendered as a caption.
 
+The one place a key belongs is the `direction` parameter of `generate_video`. There the keys are
+the interface: `camera_moves` (up to 4, in the order they happen inside the shot), `lighting` (one
+scheme), and `grade`, `stock`, `palette` when the look matters, plus `camera_style`, `lens`,
+`focal`, `genre`, `era`, `tempo` from direction.md. The pipeline expands each key into its
+description and treats it as your decision. On every take you direct, pass at least the camera
+move and the light; keep the grade, stock and palette the same across the takes of one series so
+they cut together; and write the same decision in words in the prompt so the two agree. An
+unknown key is dropped without a word, so copy keys from these files, never invent them. Stills
+have no `direction`: there the decision goes into the prompt as words only.
+
 Choose, do not collect. One item from every list describes a scene that cannot physically exist.
 
 | You are deciding | Read |

@@ -33,6 +33,6 @@ table it points at.
 - **`wan3`** — the long-take model: 30 seconds in ONE continuous generation, so a whole story keeps one look and one cast - no stitching; shot-numbered storyboard with timecodes, native audio, 10 photo refs; 2-30s; 1080p
 - **`wan3-prime`** — the accelerated Wan 3.0: the same long take (30 seconds in ONE generation, one look and one cast), the same shot-numbered storyboard, native audio and 10 photo refs, rendered several times faster; ~1.4x the price of wan3; 2-30s; 1080p
 
-Withdrawn from the lineup (still in the registry for old jobs and pricing): `capricornus-1`, `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
+Withdrawn from the lineup (still in the registry for old jobs and pricing): `magi-2`, `capricornus-1`, `veo`, `veo-lite`, `veo-quality`, `seedance`, `wan`, `grok`. Do not pick them.
 
 The registry default is `omni`. An empty or unknown model id resolves to it silently.

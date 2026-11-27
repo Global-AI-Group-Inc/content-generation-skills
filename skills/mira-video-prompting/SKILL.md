@@ -70,7 +70,13 @@ sees; never smooth, clean or render words - a surface left unsaid comes back as 
 Every timed beat states where the camera stands, what the lens is aimed at, the move with its
 cause and the frame it ends on (U13). For a fight, a chase or any impact read
 [references/action.md](references/action.md): a beat budget, contact before consequence, one
-slowed hit, and two bodies kept apart on screen.
+slowed hit, and two bodies kept apart on screen. A dialogue scene, a short drama or a series:
+read `mira-drama` (what one shot holds, speech timing per model, reactions, contact, continuity).
+
+Decide the camera move and the light yourself on every clip you direct: pick them in `mira-craft`
+(camera.md, light.md), pass the keys in `generate_video` `direction` (`camera_moves` up to 4 in
+order, `lighting`, and `grade` / `stock` / `palette` kept the same across a series), and write the
+same decision in words in the prompt. Keys go in `direction`, never in the prose.
 
 ## Step 4. Check before you send
 
@@ -79,10 +85,12 @@ slowed hit, and two bodies kept apart on screen.
 - Would the model file object to anything you wrote (speech on a silent model, a cut on a
   one-take model, a 1:1 on Omni)?
 - Did a bank key leak in (`push_in`, `rembrandt`)? Replace it with the described motion or light.
+- Is there a camera move and a light in `direction`, and does the prose say the same thing?
 - Do the big surfaces have wear and light, or would the model draw them clean (references/textures.md)?
 - Does every beat say where the camera is and what frame it ends on (U13)?
 - In a fight: within the beat budget, one slowed hit, the two bodies never merging (references/action.md)?
 
 ## Output
 
-Return the prompt as one block of prose, then the model id and the duration. Nothing else.
+Return the prompt as one block of prose, then the model id, the duration and the `direction` JSON.
+Nothing else.
